@@ -4,7 +4,7 @@
 
 **Document ID:** BASELINE-001
 
-**Version:** 1.0.0
+**Version:** 1.1.0
 
 **Status:** Approved Baseline
 
@@ -81,6 +81,7 @@ The approved engineering documentation baseline consists of the following docume
 | ----- | ----- |
 | ADR-001 | Release Strategy |
 | ADR-002 | Technology Stack |
+| ADR-003 | Python Runtime and Development Toolchain |
 
 ---
 
@@ -143,6 +144,7 @@ ARCH-001
         ↓  
 ADR-001  
 ADR-002  
+ADR-003
         ↓  
 SPEC-001  
 SPEC-002  
@@ -188,6 +190,10 @@ Following approval of this baseline:
 * revisions shall preserve backward traceability.
 
 Any modification affecting the approved baseline shall follow the Engineering Governance process defined by EGS-001.
+
+Version 1.1.0 of this baseline incorporates ADR-003 — Python Runtime and Development Toolchain (`docs/adr/ADR-003-python-runtime-and-development-toolchain.md`) as a controlled architectural decision identified during implementation planning.
+
+This revision preserves the original authorization for Release 1 implementation. It does not reopen the Release 1 product scope, does not modify functional requirements, and does not introduce business functionality. Feature Specifications SPEC-001, SPEC-002 and SPEC-003 remain unchanged, and the baseline identifier remains BASELINE-001.
 
 ---
 

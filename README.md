@@ -33,12 +33,18 @@ Per `docs/adr/ADR-002-technology-stack.md`:
 - Hosting: Hostinger VPS
 - Internationalization: Django i18n — English (default) and Brazilian Portuguese
 
+The Python runtime policy, dependency management and development toolchain are
+governed by `docs/adr/ADR-003-python-runtime-and-development-toolchain.md` (ADR-003).
+
 ## Development Status
 
 - Engineering Documentation baseline: **Approved** (BASELINE-001)
 - Implementation phase: **SPEC-001 — MVP Foundation** in progress
-  - **Phase 1 (Project Bootstrap and Django Foundation): complete** — uv toolchain, Django project with split settings, approved modular apps, frontend and test scaffolding
-  - Next implementation activity: **SPEC-001 — Phase 2** (shared UI, global navigation, Home/About/Skills/Experience/Portfolio pages, i18n templates, SEO)
+  - **Phase 1 implementation:** complete — uv toolchain, Django project with split settings, approved modular apps, frontend and test scaffolding
+  - **Phase 1 technical checks:** passed — Django system check, pytest, Ruff, mypy
+  - **Phase 1 PostgreSQL local connectivity validation:** pending
+  - **Phase 1 final acceptance:** pending
+  - Next activity: complete PostgreSQL local connectivity validation and formally close SPEC-001 Phase 1.
 
 ## Repository Structure
 
@@ -60,6 +66,7 @@ Authoritative local development and deployment guidance is defined in:
 - `docs/03-architecture.md` — architecture and module organization
 - `docs/06-deployment-and-operations.md` — environment model and configuration
 - `docs/adr/ADR-002-technology-stack.md` — approved stack and constraints
+- `docs/adr/ADR-003-python-runtime-and-development-toolchain.md` — approved runtime and development toolchain
 - `docs/specs/SPEC-001-mvp-foundation.md` — first implementation scope
 
 Environment configuration is environment-based and external to source code.

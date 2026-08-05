@@ -1,18 +1,21 @@
 \# ADR-003 — Python Runtime and Development Toolchain
 
-| Field | Value |  
-|-------|-------|  
-| \*\*Document ID\*\* | ADR-003 |  
-| \*\*Title\*\* | Python Runtime and Development Toolchain |  
-| \*\*Version\*\* | 1.0.0 |  
-| \*\*Status\*\* | Proposed |  
-| \*\*Owner\*\* | Solution Architecture |  
-| \*\*Approver\*\* | Product Owner |  
-| \*\*Project\*\* | Site Portfolio |  
-| \*\*Release\*\* | Release 1 — MVP |  
-| \*\*Engineering Process\*\* | Specification-Driven Development (SDD) |  
-| \*\*Classification\*\* | Architectural Decision Record |  
-| \*\*Created\*\* | 2026-08-05 |  
+| Field | Value |
+|-------|-------|
+| \*\*Document ID\*\* | ADR-003 |
+| \*\*Decision ID\*\* | ARCH-DEC-003 |
+| \*\*Title\*\* | Python Runtime and Development Toolchain |
+| \*\*Version\*\* | 1.0.0 |
+| \*\*Status\*\* | Approved Baseline |
+| \*\*Decision Status\*\* | Accepted |
+| \*\*Decision Classification\*\* | Runtime and Development Toolchain Decision |
+| \*\*Project\*\* | Site Portfolio |
+| \*\*Owner\*\* | Architecture & Engineering Review |
+| \*\*Approver\*\* | Product Owner |
+| \*\*Development Model\*\* | Specification-Driven Development (SDD) |
+| \*\*Target Release\*\* | Release 1 — MVP |
+| \*\*Classification\*\* | Architectural Decision Record |
+| \*\*Created\*\* | 2026-08-05 |
 | \*\*Last Updated\*\* | 2026-08-05 |
 
 \---
@@ -1211,9 +1214,7 @@ consistent with this ADR.
 
 \# 19\. Approval Statement
 
-This Architectural Decision Record is submitted for approval according to the Engineering Generation Standard.
-
-Following Product Owner approval, this document becomes part of the official engineering baseline governing Release 1\.
+This Architectural Decision Record is approved and constitutes an authoritative part of the official engineering baseline governing Release 1\.
 
 Implementation activities shall comply with the engineering policies established herein.
 
@@ -1227,7 +1228,7 @@ No implementation shall intentionally deviate from this Architectural Decision R
 |--------|-------|  
 | Document ID | ADR-003 |  
 | Version | 1.0.0 |  
-| Status | \*\*Approved\*\* \*(after Product Owner approval)\* |  
+| Status | \*\*Approved Baseline\*\* |
 | Classification | Architectural Decision Record |  
 | Authority | Engineering Baseline |  
 | Applies To | Release 1 — MVP |  
