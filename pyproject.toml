@@ -1,0 +1,12 @@
+# Project metadata only.
+# The approved engineering baseline (ADR-002, ARCH-001, SPEC-001) defines the
+# technology stack (Python + Django) but does not approve dependency versions,
+# a Python version policy, or development-tool configuration. Those values are
+# intentionally not declared here and shall be established by the subsequent
+# environment-bootstrap activity.
+
+[project]
+name = "luis-franca-portfolio"
+description = "Personal professional portfolio of Luís Eduardo Carvalho França (Site Portfolio)."
+readme = "README.md"
+version = "0.1.0"

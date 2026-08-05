@@ -1,0 +1,95 @@
+.PHONY: help check-structure check-docs check-names check-secrets status
+
+help:
+	@printf 'Luis Franca Portfolio - repository bootstrap targets\n'
+	@printf '\n'
+	@printf '  help             Show available targets\n'
+	@printf '  check-structure  Validate required top-level structure and .gitkeep markers\n'
+	@printf '  check-docs       Validate presence of canonical normative documents\n'
+	@printf '  check-names      Verify obsolete repository names and document paths are absent\n'
+	@printf '  check-secrets    Search for accidentally committed secrets\n'
+	@printf '  status           Show working directory, branch, Git status, remote origin\n'
+
+STRUCTURE_DIRS = backend frontend docker nginx scripts tests .github/workflows
+
+check-structure:
+	@status=0; \
+	for dir in $(STRUCTURE_DIRS); do \
+		if [ -d "$$dir" ] && [ -f "$$dir/.gitkeep" ]; then \
+			printf 'PASS  %s/.gitkeep\n' "$$dir"; \
+		else \
+			printf 'FAIL  %s missing .gitkeep marker\n' "$$dir"; \
+			status=1; \
+		fi; \
+	done; \
+	if [ $$status -eq 0 ]; then \
+		printf 'PASS  repository structure complete\n'; \
+	fi; \
+	exit $$status
+
+DOC_FILES = \
+	docs/00-engineering-generation-standard.md \
+	docs/01-product-brief.md \
+	docs/02-technical-specification.md \
+	docs/03-architecture.md \
+	docs/04-api-and-data-contracts.md \
+	docs/05-testing-and-acceptance.md \
+	docs/06-deployment-and-operations.md \
+	docs/adr/ADR-001-release-strategy.md \
+	docs/adr/ADR-002-technology-stack.md \
+	docs/specs/SPEC-001-mvp-foundation.md \
+	docs/specs/SPEC-002-contact-and-communication.md \
+	docs/specs/SPEC-003-portfolio-and-projects.md \
+	docs/specs/BASELINE-001.md
+
+check-docs:
+	@status=0; \
+	for file in $(DOC_FILES); do \
+		if [ -f "$$file" ]; then \
+			printf 'PASS  %s\n' "$$file"; \
+		else \
+			printf 'FAIL  %s missing\n' "$$file"; \
+			status=1; \
+		fi; \
+	done; \
+	if [ $$status -eq 0 ]; then \
+		printf 'PASS  all canonical documents present\n'; \
+	fi; \
+	exit $$status
+
+check-names:
+	@status=0; \
+	if grep -RInE --exclude-dir=.git 'LF_[T]echnology_Information|LF [T]echnology|lf-[t]echnology-portfolio' .; then \
+		printf 'FAIL  obsolete repository branding found\n'; \
+		status=1; \
+	fi; \
+	if grep -RInE --exclude-dir=.git 'docs/adr/ADR-002 — [T]echnology Stack\.md|docs/specs/SPEC-001 — [M]VP Foundation\.md|docs/specs/SPEC-002 — [C]ontact & Communication\.md|docs/specs/SPEC-003 — [P]ortfolio & Projects\.md' .; then \
+		printf 'FAIL  obsolete document-path form found\n'; \
+		status=1; \
+	fi; \
+	if [ $$status -eq 0 ]; then \
+		printf 'PASS  no obsolete repository names or document-path forms\n'; \
+	fi; \
+	exit $$status
+
+check-secrets:
+	@status=0; \
+	files=$$(grep -RIlE --exclude-dir=.git --exclude=.env.example -i \
+		'(api[_-]?key|access[_-]?key|client[_-]?secret|secret[_-]?key|token|password|passwd|private[_-]?key|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY)[[:space:]]*[:=][[:space:]]*[^[:space:]]+' \
+		. 2>/dev/null); \
+	if [ -n "$$files" ]; then \
+		for f in $$files; do \
+			printf 'FAIL  potential secret detected in %s\n' "$$f"; \
+		done; \
+		status=1; \
+	else \
+		printf 'PASS  no potential secrets detected\n'; \
+	fi; \
+	exit $$status
+
+status:
+	@printf 'working directory: %s\n' "$$(pwd)"; \
+	printf 'active branch:     %s\n' "$$(git branch --show-current)"; \
+	printf 'Git status:\n'; \
+	git status; \
+	printf 'remote origin:     %s\n' "$$(git remote get-url origin)"
