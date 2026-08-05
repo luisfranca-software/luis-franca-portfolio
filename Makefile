@@ -10,15 +10,26 @@ help:
 	@printf '  check-secrets    Search for accidentally committed secrets\n'
 	@printf '  status           Show working directory, branch, Git status, remote origin\n'
 
-STRUCTURE_DIRS = backend frontend docker nginx scripts tests .github/workflows
+GITKEEP_DIRS = docker nginx scripts .github/workflows \
+	frontend/templates frontend/static/css frontend/static/js frontend/static/images frontend/static/fonts
+
+STRUCTURE_FILES = backend/manage.py backend/config/settings/base.py tests/unit/test_settings.py
 
 check-structure:
 	@status=0; \
-	for dir in $(STRUCTURE_DIRS); do \
+	for dir in $(GITKEEP_DIRS); do \
 		if [ -d "$$dir" ] && [ -f "$$dir/.gitkeep" ]; then \
 			printf 'PASS  %s/.gitkeep\n' "$$dir"; \
 		else \
 			printf 'FAIL  %s missing .gitkeep marker\n' "$$dir"; \
+			status=1; \
+		fi; \
+	done; \
+	for file in $(STRUCTURE_FILES); do \
+		if [ -f "$$file" ]; then \
+			printf 'PASS  %s\n' "$$file"; \
+		else \
+			printf 'FAIL  %s missing\n' "$$file"; \
 			status=1; \
 		fi; \
 	done; \
@@ -59,11 +70,11 @@ check-docs:
 
 check-names:
 	@status=0; \
-	if grep -RInE --exclude-dir=.git 'LF_[T]echnology_Information|LF [T]echnology|lf-[t]echnology-portfolio' .; then \
+	if grep -RInE --exclude-dir=.git --exclude-dir=.venv --exclude-dir=.pytest_cache --exclude-dir=.mypy_cache --exclude-dir=.ruff_cache 'LF_[T]echnology_Information|LF [T]echnology|lf-[t]echnology-portfolio' .; then \
 		printf 'FAIL  obsolete repository branding found\n'; \
 		status=1; \
 	fi; \
-	if grep -RInE --exclude-dir=.git 'docs/adr/ADR-002 — [T]echnology Stack\.md|docs/specs/SPEC-001 — [M]VP Foundation\.md|docs/specs/SPEC-002 — [C]ontact & Communication\.md|docs/specs/SPEC-003 — [P]ortfolio & Projects\.md' .; then \
+	if grep -RInE --exclude-dir=.git --exclude-dir=.venv --exclude-dir=.pytest_cache --exclude-dir=.mypy_cache --exclude-dir=.ruff_cache 'docs/adr/ADR-002 — [T]echnology Stack\.md|docs/specs/SPEC-001 — [M]VP Foundation\.md|docs/specs/SPEC-002 — [C]ontact & Communication\.md|docs/specs/SPEC-003 — [P]ortfolio & Projects\.md' .; then \
 		printf 'FAIL  obsolete document-path form found\n'; \
 		status=1; \
 	fi; \
@@ -74,8 +85,8 @@ check-names:
 
 check-secrets:
 	@status=0; \
-	files=$$(grep -RIlE --exclude-dir=.git --exclude=.env.example -i \
-		'(api[_-]?key|access[_-]?key|client[_-]?secret|secret[_-]?key|token|password|passwd|private[_-]?key|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY)[[:space:]]*[:=][[:space:]]*[^[:space:]]+' \
+	files=$$(grep -RPIl --exclude-dir=.git --exclude-dir=.venv --exclude-dir=.pytest_cache --exclude-dir=.mypy_cache --exclude-dir=.ruff_cache --exclude=.env.example --exclude=.env -i \
+		'(api[_-]?key|access[_-]?key|client[_-]?secret|secret[_-]?key|token|password|passwd|private[_-]?key|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY)[[:space:]]*[:=][[:space:]]*(?!os\.environ|os\.getenv|env[a-z_]*\b)[^[:space:]]+' \
 		. 2>/dev/null); \
 	if [ -n "$$files" ]; then \
 		for f in $$files; do \

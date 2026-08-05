@@ -1,12 +1,52 @@
-# Project metadata only.
-# The approved engineering baseline (ADR-002, ARCH-001, SPEC-001) defines the
-# technology stack (Python + Django) but does not approve dependency versions,
-# a Python version policy, or development-tool configuration. Those values are
-# intentionally not declared here and shall be established by the subsequent
-# environment-bootstrap activity.
+# Luis Franca Portfolio — engineering metadata.
+# Authoritative source: ADR-003 — Python Runtime and Development Toolchain.
+# pyproject.toml defines the architectural intent (metadata, runtime policy,
+# compatible dependency ranges, engineering tool configuration). Exact package
+# versions are pinned by uv.lock (implementation snapshot).
 
 [project]
 name = "luis-franca-portfolio"
 description = "Personal professional portfolio of Luís Eduardo Carvalho França (Site Portfolio)."
 readme = "README.md"
 version = "0.1.0"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "Django>=5.2,<5.3",
+    "psycopg[binary]>=3.2,<4",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-django>=4.9",
+    "pytest-cov>=6",
+    "ruff>=0.8",
+    "mypy>=1.14",
+    "django-stubs>=5.1",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.development"
+pythonpath = ["backend"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["backend", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.13"
+plugins = ["mypy_django_plugin.main"]
+mypy_path = ["backend"]
+explicit_package_bases = true
+
+[[tool.mypy.overrides]]
+module = "*.migrations.*"
+ignore_errors = true
+
+[tool.django-stubs]
+django_settings_module = "config.settings.development"

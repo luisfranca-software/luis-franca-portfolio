@@ -36,8 +36,9 @@ Per `docs/adr/ADR-002-technology-stack.md`:
 ## Development Status
 
 - Engineering Documentation baseline: **Approved** (BASELINE-001)
-- Implementation phase: **Initiated** — repository structure and Git baseline established
-- Next implementation activity: **SPEC-001 — MVP Foundation** (not yet started)
+- Implementation phase: **SPEC-001 — MVP Foundation** in progress
+  - **Phase 1 (Project Bootstrap and Django Foundation): complete** — uv toolchain, Django project with split settings, approved modular apps, frontend and test scaffolding
+  - Next implementation activity: **SPEC-001 — Phase 2** (shared UI, global navigation, Home/About/Skills/Experience/Portfolio pages, i18n templates, SEO)
 
 ## Repository Structure
 
@@ -63,3 +64,19 @@ Authoritative local development and deployment guidance is defined in:
 
 Environment configuration is environment-based and external to source code.
 Copy `.env.example` to `.env` for local values; never commit real secrets.
+
+## Development Setup
+
+The Python toolchain is managed by `uv` (ADR-003):
+
+```sh
+uv sync                                  # create .venv and install dependencies
+uv run python backend/manage.py runserver
+uv run pytest                            # test suite (from repository root)
+uv run ruff check                        # lint
+uv run mypy -p config -p apps            # static type checking
+uv run mypy tests
+```
+
+Run `make help` for repository health-check targets (`check-structure`, `check-docs`,
+`check-names`, `check-secrets`).
