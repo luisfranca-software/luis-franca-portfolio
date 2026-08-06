@@ -48,6 +48,7 @@ DOC_FILES = \
 	docs/06-deployment-and-operations.md \
 	docs/adr/ADR-001-release-strategy.md \
 	docs/adr/ADR-002-technology-stack.md \
+	docs/adr/ADR-003-python-runtime-and-development-toolchain.md \
 	docs/specs/SPEC-001-mvp-foundation.md \
 	docs/specs/SPEC-002-contact-and-communication.md \
 	docs/specs/SPEC-003-portfolio-and-projects.md \
@@ -85,16 +86,30 @@ check-names:
 
 check-secrets:
 	@status=0; \
-	files=$$(grep -RPIl --exclude-dir=.git --exclude-dir=.venv --exclude-dir=.pytest_cache --exclude-dir=.mypy_cache --exclude-dir=.ruff_cache --exclude=.env.example --exclude=.env -i \
-		'(api[_-]?key|access[_-]?key|client[_-]?secret|secret[_-]?key|token|password|passwd|private[_-]?key|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY)[[:space:]]*[:=][[:space:]]*(?!os\.environ|os\.getenv|env[a-z_]*\b)[^[:space:]]+' \
-		. 2>/dev/null); \
-	if [ -n "$$files" ]; then \
-		for f in $$files; do \
+	tracked_env_files="$$( \
+		git ls-files | \
+		grep -E '(^|/)\.env($$|\.)' | \
+		grep -vE '(^|/)\.env\.example$$' || true \
+	)"; \
+	if [ -z "$$tracked_env_files" ]; then \
+		printf 'PASS  no forbidden environment files are tracked\n'; \
+	else \
+		printf 'FAIL  forbidden environment files are tracked:\n'; \
+		printf '%s\n' "$$tracked_env_files"; \
+		status=1; \
+	fi; \
+	secret_files="$$( \
+		git grep -PIl -i \
+			-e '(api[_-]?key|access[_-]?key|client[_-]?secret|secret[_-]?key|token|password|passwd|private[_-]?key|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY)[[:space:]]*[:=][[:space:]]*(?!os\.environ|os\.getenv|env[a-z_]*\b)[^[:space:]]+' \
+			-- ':!.env.example' 2>/dev/null \
+	)"; \
+	if [ -n "$$secret_files" ]; then \
+		for f in $$secret_files; do \
 			printf 'FAIL  potential secret detected in %s\n' "$$f"; \
 		done; \
 		status=1; \
 	else \
-		printf 'PASS  no potential secrets detected\n'; \
+		printf 'PASS  no potential secrets detected in tracked files\n'; \
 	fi; \
 	exit $$status
 
