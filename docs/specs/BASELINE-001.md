@@ -176,6 +176,16 @@ Implementation shall not redefine approved engineering decisions.
 
 Architectural changes identified during implementation shall require a new Architectural Decision Record before implementation proceeds.
 
+## **Implementation Status**
+
+The following implementation status is recorded for SPEC-001:
+
+* SPEC-001 Phase 1 — implemented;
+* SPEC-001 Phase 1 — validated;
+* SPEC-001 Phase 1 — accepted;
+* SPEC-001 Phase 1 — closed;
+* this baseline remains approved.
+
 ---
 
 # **8\. Change Management**
