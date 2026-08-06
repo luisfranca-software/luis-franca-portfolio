@@ -36,9 +36,19 @@ Per `docs/adr/ADR-002-technology-stack.md`:
 ## Development Status
 
 - Engineering Documentation baseline: **Approved** (BASELINE-001)
-- Implementation phase: **SPEC-001 — MVP Foundation** in progress
-  - **Phase 1 (Project Bootstrap and Django Foundation): complete** — uv toolchain, Django project with split settings, approved modular apps, frontend and test scaffolding
-  - Next implementation activity: **SPEC-001 — Phase 2** (shared UI, global navigation, Home/About/Skills/Experience/Portfolio pages, i18n templates, SEO)
+- **SPEC-001 — MVP Foundation, Phase 1 (Project Bootstrap and Django Foundation):**
+  - Implementation: **complete** — uv toolchain, Django project with split settings, approved modular apps, frontend and test scaffolding
+  - Runtime and toolchain validation: **passed** (Python 3.13.14, Django 5.2.17, PostgreSQL 18.4, uv)
+  - Django validation: **passed** (`manage.py check` — no issues)
+  - PostgreSQL local connectivity: **passed** (localhost:5432, database `luis_franca_portfolio`)
+  - Migrations: **passed**
+  - Automated tests: **passed** (pytest — 2 passed)
+  - Ruff: **passed**
+  - mypy: **passed** (no issues in 60 source files)
+  - Final acceptance: **approved**
+  - Phase 1 status: **closed**
+- Next activity: review and authorize the next implementation increment according to the approved release strategy and specification sequence.
+- Per the approved release strategy and specification sequence, **SPEC-002 — Contact & Communication** is identified as the next Feature Specification and is eligible for planning; it has not been started.
 
 ## Repository Structure
 
