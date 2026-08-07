@@ -5,7 +5,7 @@
 | \*\*Document ID\*\* | ADR-003 |  
 | \*\*Title\*\* | Python Runtime and Development Toolchain |  
 | \*\*Version\*\* | 1.0.0 |  
-| \*\*Status\*\* | Proposed |  
+| \*\*Status\*\* | Approved Baseline |
 | \*\*Owner\*\* | Solution Architecture |  
 | \*\*Approver\*\* | Product Owner |  
 | \*\*Project\*\* | Site Portfolio |  
@@ -13,7 +13,7 @@
 | \*\*Engineering Process\*\* | Specification-Driven Development (SDD) |  
 | \*\*Classification\*\* | Architectural Decision Record |  
 | \*\*Created\*\* | 2026-08-05 |  
-| \*\*Last Updated\*\* | 2026-08-05 |
+| \*\*Last Updated\*\* | 2026-08-07 |
 
 \---
 
@@ -1211,9 +1211,9 @@ consistent with this ADR.
 
 \# 19\. Approval Statement
 
-This Architectural Decision Record is submitted for approval according to the Engineering Generation Standard.
+This Architectural Decision Record has been approved by the Product Owner according to the Engineering Generation Standard.
 
-Following Product Owner approval, this document becomes part of the official engineering baseline governing Release 1\.
+This document is an approved architectural decision governing Release 1 and constitutes part of the official engineering baseline defined in BASELINE-001.
 
 Implementation activities shall comply with the engineering policies established herein.
 
@@ -1227,11 +1227,20 @@ No implementation shall intentionally deviate from this Architectural Decision R
 |--------|-------|  
 | Document ID | ADR-003 |  
 | Version | 1.0.0 |  
-| Status | \*\*Approved\*\* \*(after Product Owner approval)\* |  
+| Status | \*\*Approved Baseline\*\* |
 | Classification | Architectural Decision Record |  
 | Authority | Engineering Baseline |  
 | Applies To | Release 1 — MVP |  
 | Next Review | Upon architectural change affecting runtime, dependency management or engineering toolchain |
+
+\---
+
+\# 21\. Revision History
+
+| Version | Date | Author | Description |
+|---------|------|--------|-------------|
+| 1.0.0 | 2026-08-05 | Solution Architecture | Initial issue of the Architectural Decision Record (Proposed). |
+| 1.0.0 | 2026-08-07 | Product Owner | Approved Baseline status granted; approval recorded and inclusion in BASELINE-001 confirmed. |
 
 \---
 
