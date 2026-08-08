@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+# Generate responsive delivery derivatives and favicon candidates from the
+# approved repository masters for the Site Portfolio visual assets.
+#
+# Provenance and governance:
+#   - The approved visual masters are the authoritative raster sources and are
+#     NEVER regenerated or modified by this script.
+#   - The LF brand mark is NOT redrawn, recolored, vectorized or otherwise
+#     recreated: the favicon source is a deterministic pixel crop of the
+#     approved logo master.
+#   - Derived files have deterministic names and deterministic content for a
+#     fixed ImageMagick version and parameters.
+#
+# Regeneration command (from the repository root):
+#   bash scripts/generate-assets.sh
+# or:
+#   make generate-assets
+#
+# Requirements:
+#   - ImageMagick 7 (`magick`) or 6 (`convert`) with PNG and WebP delegates.
+#
+# No project dependency is required: asset generation is a build-time,
+# host-level step that leaves the uv-managed dependency set unchanged.
+
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+BRAND_DIR="${REPO_ROOT}/frontend/static/images/brand"
+PROFILE_DIR="${REPO_ROOT}/frontend/static/images/profile"
+FAVICON_DIR="${REPO_ROOT}/frontend/static/images/favicon"
+
+BRAND_MASTER="lf-information-system.png"
+PROFILE_MASTER="luis-franca.png"
+
+# --- Locate ImageMagick -----------------------------------------------------
+
+IM=""
+if command -v magick >/dev/null 2>&1; then
+    IM="magick"
+elif command -v convert >/dev/null 2>&1; then
+    IM="convert"
+else
+    echo "ERROR: ImageMagick (magick/convert) is required to generate assets." >&2
+    exit 1
+fi
+
+# --- Guard: masters must exist with the expected dimensions -----------------
+
+"${IM}" identify -format "%wx%h" "${BRAND_DIR}/${BRAND_MASTER}" 2>/dev/null \
+    | grep -q "^1254x1254$" || {
+        echo "ERROR: ${BRAND_MASTER} missing or not 1254x1254." >&2
+        exit 1
+    }
+"${IM}" identify -format "%wx%h" "${PROFILE_DIR}/${PROFILE_MASTER}" 2>/dev/null \
+    | grep -q "^896x1195$" || {
+        echo "ERROR: ${PROFILE_MASTER} missing or not 896x1195." >&2
+        exit 1
+    }
+
+# --- Logo WebP delivery derivatives -----------------------------------------
+# Derived from the 1254x1254 master; never upscaled beyond master resolution.
+
+for size in 1254 600 300; do
+    "${IM}" "${BRAND_DIR}/${BRAND_MASTER}" \
+        -filter Lanczos -resize "${size}x${size}" \
+        -quality 90 "${BRAND_DIR}/${BRAND_MASTER%.png}-${size}.webp"
+done
+
+# --- Profile photograph WebP delivery derivatives ---------------------------
+# Width-only resize preserves the native aspect ratio at every size.
+
+for size in 896 640 400; do
+    "${IM}" "${PROFILE_DIR}/${PROFILE_MASTER}" \
+        -filter Lanczos -resize "${size}x" \
+        -quality 82 "${PROFILE_DIR}/${PROFILE_MASTER%.png}-${size}.webp"
+done
+
+# --- Favicon candidates (deterministic crop of the approved logo master) ----
+#
+# The LF brand mark occupies x=217..1115, y=286..802 within the 1254x1254
+# master. The mark is first cropped to its exact bounds (original pixels
+# preserved; no redraw, no distortion) and then padded with the logo's black
+# background on a centered 1019x1019 square canvas. The padding is added
+# outside the crop so that the "INFORMATION SYSTEM" and tagline text bands
+# (y>=829) can never enter the favicon.
+#
+# STATUS: candidates require manual visual validation before adoption
+# (see frontend/static/images/README.md).
+
+FAVICON_CROP="899x517+217+286"
+
+# png:exclude-chunks keeps PNG output byte-deterministic by omitting the
+# timestamp chunks (tIME/tEXt/zTXt/iTXt) that ImageMagick would otherwise embed.
+
+"${IM}" "${BRAND_DIR}/${BRAND_MASTER}" -crop "${FAVICON_CROP}" +repage \
+    -background black -gravity center -extent 1019x1019 \
+    -define png:exclude-chunks=tIME,tEXt,zTXt,iTXt "${FAVICON_DIR}/lf-mark-master.png"
+
+"${IM}" "${FAVICON_DIR}/lf-mark-master.png" -filter Lanczos -resize 16x16 \
+    -define png:exclude-chunks=tIME,tEXt,zTXt,iTXt "${FAVICON_DIR}/favicon-16x16.png"
+"${IM}" "${FAVICON_DIR}/lf-mark-master.png" -filter Lanczos -resize 32x32 \
+    -define png:exclude-chunks=tIME,tEXt,zTXt,iTXt "${FAVICON_DIR}/favicon-32x32.png"
+"${IM}" "${FAVICON_DIR}/lf-mark-master.png" -filter Lanczos -resize 180x180 \
+    -define png:exclude-chunks=tIME,tEXt,zTXt,iTXt "${FAVICON_DIR}/apple-touch-icon.png"
+"${IM}" "${FAVICON_DIR}/lf-mark-master.png" \
+    -define icon:auto-resize=16,32,48 "${FAVICON_DIR}/favicon.ico"
+
+echo "Asset generation complete:"
+find "${BRAND_DIR}" "${PROFILE_DIR}" "${FAVICON_DIR}" -type f \( -name '*.webp' -o -name '*.png' -o -name '*.ico' \) | sort

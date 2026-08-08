@@ -1,0 +1,21 @@
+{% comment %}
+Responsive delivery of the approved professional photograph (Release 1).
+Master and derivatives: frontend/static/images/profile/.
+Reference: frontend/static/images/README.md.
+sizes is a conservative placeholder to be tuned during page integration.
+{% endcomment %}
+{% load static %}
+<picture>
+    <source
+        type="image/webp"
+        srcset="{% static 'images/profile/luis-franca-400.webp' %} 400w,
+                {% static 'images/profile/luis-franca-640.webp' %} 640w,
+                {% static 'images/profile/luis-franca-896.webp' %} 896w"
+        sizes="(min-width: 992px) 420px, (min-width: 640px) 40vw, 85vw">
+    <img
+        class="profile-photo"
+        src="{% static 'images/profile/luis-franca.png' %}"
+        alt="Professional photograph of Luis Eduardo Carvalho Franca"
+        width="896"
+        height="1195">
+</picture>
