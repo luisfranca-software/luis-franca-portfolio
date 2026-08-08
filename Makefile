@@ -1,14 +1,18 @@
-.PHONY: help check-structure check-docs check-names check-secrets status
+.PHONY: help generate-assets check-structure check-docs check-names check-secrets status
 
 help:
 	@printf 'Luis Franca Portfolio - repository bootstrap targets\n'
 	@printf '\n'
 	@printf '  help             Show available targets\n'
+	@printf '  generate-assets  Regenerate visual delivery derivatives from approved masters\n'
 	@printf '  check-structure  Validate required top-level structure and .gitkeep markers\n'
 	@printf '  check-docs       Validate presence of canonical normative documents\n'
 	@printf '  check-names      Verify obsolete repository names and document paths are absent\n'
 	@printf '  check-secrets    Search for accidentally committed secrets\n'
 	@printf '  status           Show working directory, branch, Git status, remote origin\n'
+
+generate-assets:
+	@bash scripts/generate-assets.sh
 
 GITKEEP_DIRS = docker nginx scripts .github/workflows \
 	frontend/templates frontend/static/css frontend/static/js frontend/static/images frontend/static/fonts

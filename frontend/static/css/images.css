@@ -1,0 +1,24 @@
+/* Responsive delivery for the approved Release 1 visual assets.
+ *
+ * Referenced by the reusable partials under frontend/templates/includes/
+ * and documented in frontend/static/images/README.md.
+ *
+ * Rules preserve the native aspect ratio of every image, prevent layout
+ * shift and never hardcode a single display size: the image scales with its
+ * container while width/height attributes (and aspect-ratio) reserve the
+ * correct box before the image loads.
+ */
+
+.brand-logo,
+.profile-photo {
+    max-width: 100%;
+    height: auto;
+}
+
+.brand-logo {
+    aspect-ratio: 1 / 1;
+}
+
+.profile-photo {
+    aspect-ratio: 896 / 1195;
+}

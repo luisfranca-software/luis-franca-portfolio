@@ -1,0 +1,21 @@
+{% comment %}
+Responsive delivery of the approved brand logo (Release 1).
+Master and derivatives: frontend/static/images/brand/.
+Reference: frontend/static/images/README.md.
+sizes is a conservative placeholder to be tuned during page integration.
+{% endcomment %}
+{% load static %}
+<picture>
+    <source
+        type="image/webp"
+        srcset="{% static 'images/brand/lf-information-system-300.webp' %} 300w,
+                {% static 'images/brand/lf-information-system-600.webp' %} 600w,
+                {% static 'images/brand/lf-information-system-1254.webp' %} 1254w"
+        sizes="(min-width: 992px) 220px, (min-width: 640px) 30vw, 45vw">
+    <img
+        class="brand-logo"
+        src="{% static 'images/brand/lf-information-system.png' %}"
+        alt="Luis Franca — Site Portfolio logo"
+        width="1254"
+        height="1254">
+</picture>
