@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Message sent" %} — Luis Franca{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contact-confirmation">
+  <h1>{% trans "Message sent" %}</h1>
+  <p>{% trans "Thank you for your message. I will get back to you as soon as possible." %}</p>
+  <p><a href="/">{% trans "Back to home" %}</a></p>
+</section>
+{% endblock %}

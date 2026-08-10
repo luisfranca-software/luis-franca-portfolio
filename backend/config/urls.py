@@ -1,9 +1,10 @@
 """Root URL configuration for the config project.
 
-Only bootstrap URL wiring is defined at this phase. Product URLs are
-implemented by their respective Feature Specifications.
+Product URLs are wired from their respective Feature Specifications.
 """
 
-from django.urls import URLPattern
+from django.urls import include, path
 
-urlpatterns: list[URLPattern] = []
+urlpatterns = [
+    path("contact/", include("apps.contact.urls")),
+]

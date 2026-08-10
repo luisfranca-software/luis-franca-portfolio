@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Contact" %} — Luis Franca{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contact-page">
+  <h1>{% trans "Contact" %}</h1>
+  <p class="contact-page__lead">{% trans "Send a message or request a quotation." %}</p>
+
+  {% include "includes/contact-info.html" %}
+
+  <form method="post" class="contact-form" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+    <ul class="contact-form__errors">
+      {% for error in form.non_field_errors %}<li>{{ error }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% for field in form %}
+    <div class="contact-form__field">
+      {{ field.label_tag }}
+      {{ field }}
+      {% if field.errors %}
+      <ul class="contact-form__errors">
+        {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="contact-form__submit">{% trans "Send message" %}</button>
+  </form>
+</section>
+{% endblock %}

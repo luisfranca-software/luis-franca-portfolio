@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Message received" %} — Luis Franca{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contact-confirmation">
+  <h1>{% trans "Message received" %}</h1>
+  <p>{% trans "Your message was received, but there was a temporary issue with the delivery notification. I will still receive your message. For urgent matters, please use the alternative contact channels." %}</p>
+  {% include "includes/contact-info.html" %}
+  <p><a href="/">{% trans "Back to home" %}</a></p>
+</section>
+{% endblock %}

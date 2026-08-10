@@ -1,0 +1,99 @@
+/* Contact module presentation (SPEC-002 section 6). Simple, professional,
+ * recruiter-oriented, responsive and accessible.
+ */
+
+.contact-page__lead {
+    color: var(--color-muted);
+    margin-top: 0.25rem;
+}
+
+/* Direct contact block (public professional links, WhatsApp, résumé). */
+
+.contact-info {
+    margin: 2rem 0;
+}
+
+.contact-info__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+}
+
+/* Contact form. */
+
+.contact-form {
+    display: grid;
+    gap: 1.25rem;
+    max-width: 40rem;
+}
+
+.contact-form__field {
+    display: grid;
+    gap: 0.375rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+    font-size: 0.9375rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    font: inherit;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    padding: 0.625rem 0.75rem;
+    width: 100%;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible,
+.contact-form select:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 1px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form__errors {
+    list-style: none;
+    padding: 0;
+    margin: 0.25rem 0 0;
+    color: var(--color-error);
+    font-size: 0.875rem;
+}
+
+.contact-form__submit {
+    justify-self: start;
+    font: inherit;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--color-accent);
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+}
+
+.contact-form__submit:hover,
+.contact-form__submit:focus-visible {
+    background: var(--color-accent-dark);
+}
+
+.contact-form__submit:focus-visible {
+    outline: 3px solid var(--color-accent-dark);
+    outline-offset: 2px;
+}
+
+/* Success and controlled failure confirmation pages. */
+
+.contact-confirmation {
+    max-width: 40rem;
+}

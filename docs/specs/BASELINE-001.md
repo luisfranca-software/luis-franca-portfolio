@@ -4,7 +4,7 @@
 
 **Document ID:** BASELINE-001
 
-**Version:** 1.1.0
+**Version:** 1.2.0
 
 **Status:** Approved Baseline
 
@@ -16,7 +16,7 @@
 
 **Development Model:** Specification-Driven Development (SDD)
 
-**Last Updated:** 2026-08-07
+**Last Updated:** 2026-08-10
 
 **Baseline Name:** Release 1 — Engineering Documentation Baseline
 
@@ -84,6 +84,7 @@ The approved engineering documentation baseline consists of the following docume
 | ADR-001 | Release Strategy |
 | ADR-002 | Technology Stack |
 | ADR-003 | Python Runtime and Development Toolchain |
+| ADR-004 | Transactional Email Integration (Brevo SMTP) |
 
 ---
 
@@ -126,7 +127,7 @@ The Product Owner and the Architecture & Engineering Review certify that:
 * cross-document consistency has been validated;  
 * implementation readiness has been confirmed.
 
-BASELINE-001 originally authorized the implementation of Release 1\. Following the initial approval of this baseline, ADR-003 — Python Runtime and Development Toolchain was subsequently identified during the implementation readiness assessment and approved through the controlled Architectural Decision Record process. ADR-003 extends and completes the Release 1 engineering baseline and is incorporated into this baseline by controlled revision. Approved future ADRs may further refine specific decisions in accordance with EGS-001. Implementation may not invent missing architectural decisions. This baseline remains authoritative as amended through controlled engineering governance.
+BASELINE-001 originally authorized the implementation of Release 1\. Following the initial approval of this baseline, ADR-003 — Python Runtime and Development Toolchain was subsequently identified during the implementation readiness assessment and approved through the controlled Architectural Decision Record process. Following approval of ADR-003, ADR-004 — Transactional Email Integration (Brevo SMTP) was subsequently identified during SPEC-002 implementation planning and approved through the controlled Architectural Decision Record process. ADR-003 and ADR-004 extend and complete the Release 1 engineering baseline and are incorporated into this baseline by controlled revision. Approved future ADRs may further refine specific decisions in accordance with EGS-001. Implementation may not invent missing architectural decisions. This baseline remains authoritative as amended through controlled engineering governance.
 
 ---
 
@@ -146,7 +147,8 @@ ARCH-001
         ↓  
 ADR-001  
 ADR-002  
-ADR-003
+ADR-003  
+ADR-004
         ↓  
 SPEC-001  
 SPEC-002  
@@ -190,6 +192,12 @@ The following implementation status is recorded for SPEC-001:
 * SPEC-001 Phase 1 — closed;
 * this baseline remains approved.
 
+The following implementation status is recorded for SPEC-002:
+
+* SPEC-002 Phase 2 — Contact & Communication — implemented;
+* SPEC-002 Phase 2 — validated;
+* this baseline remains approved.
+
 ---
 
 # **8\. Change Management**
@@ -204,6 +212,10 @@ Following approval of this baseline:
 Any modification affecting the approved baseline shall follow the Engineering Governance process defined by EGS-001.
 
 Version 1.1.0 of this baseline incorporates ADR-003 — Python Runtime and Development Toolchain (`docs/adr/ADR-003-python-runtime-and-development-toolchain.md`) as a controlled architectural decision identified and approved after the initial baseline approval.
+
+This revision preserves the original authorization for Release 1 implementation. It does not reopen the Release 1 product scope, does not modify functional requirements, and does not introduce business functionality. Feature Specifications SPEC-001, SPEC-002 and SPEC-003 remain unchanged, and the baseline identifier remains BASELINE-001.
+
+Version 1.2.0 of this baseline incorporates ADR-004 — Transactional Email Integration (Brevo SMTP) (`docs/adr/ADR-004-transactional-email-integration.md`) as a controlled architectural decision identified and approved before the implementation of SPEC-002.
 
 This revision preserves the original authorization for Release 1 implementation. It does not reopen the Release 1 product scope, does not modify functional requirements, and does not introduce business functionality. Feature Specifications SPEC-001, SPEC-002 and SPEC-003 remain unchanged, and the baseline identifier remains BASELINE-001.
 
@@ -254,4 +266,5 @@ No engineering artifact outside this approved baseline shall possess normative a
 | ----- | ----- | ----- |
 | 1.0.0 | 2026-08-05 | Initial approval of the Release 1 Engineering Documentation Baseline. |
 | 1.1.0 | 2026-08-07 | Controlled revision incorporating ADR-003 — Python Runtime and Development Toolchain into the baseline composition and traceability chain; corrected implementation-readiness statement. |
+| 1.2.0 | 2026-08-10 | Controlled revision incorporating ADR-004 — Transactional Email Integration (Brevo SMTP) into the baseline composition and traceability chain; recorded SPEC-002 implementation authorization. |
 
