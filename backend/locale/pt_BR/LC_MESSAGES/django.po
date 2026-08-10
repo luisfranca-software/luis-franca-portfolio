@@ -1,0 +1,135 @@
+# Luis Franca Portfolio — Brazilian Portuguese (pt_BR) translations.
+# Governing documents: ADR-002 (Internationalization), SPEC-002.
+# English is the canonical source language.
+msgid ""
+msgstr ""
+"Project-Id-Version: luis-franca-portfolio\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-10 15:00+0000\n"
+"PO-Revision-Date: 2026-08-10 15:00+0000\n"
+"Last-Translator: Site Portfolio\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: frontend/templates/base.html
+msgid "All rights reserved."
+msgstr "Todos os direitos reservados."
+
+#: frontend/templates/base.html
+msgid "Chat on WhatsApp"
+msgstr "Conversar pelo WhatsApp"
+
+#: frontend/templates/base.html
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: frontend/templates/contact/contact.html
+#: backend/apps/contact/models.py
+msgid "Contact"
+msgstr "Contato"
+
+#: frontend/templates/contact/contact.html
+msgid "Send a message or request a quotation."
+msgstr "Envie uma mensagem ou solicite um orçamento."
+
+#: frontend/templates/contact/contact.html
+msgid "Send message"
+msgstr "Enviar mensagem"
+
+#: frontend/templates/contact/success.html
+msgid "Message sent"
+msgstr "Mensagem enviada"
+
+#: frontend/templates/contact/success.html
+msgid "Thank you for your message. I will get back to you as soon as possible."
+msgstr "Obrigado pela sua mensagem. Retornarei o mais breve possível."
+
+#: frontend/templates/contact/success.html
+#: frontend/templates/contact/failure.html
+msgid "Back to home"
+msgstr "Voltar para a página inicial"
+
+#: frontend/templates/contact/failure.html
+msgid "Message received"
+msgstr "Mensagem recebida"
+
+#: frontend/templates/contact/failure.html
+msgid "Your message was received, but there was a temporary issue with the delivery notification. I will still receive your message. For urgent matters, please use the alternative contact channels."
+msgstr "Sua mensagem foi recebida, mas houve um problema temporário com a notificação de entrega. Ainda assim receberei sua mensagem. Para assuntos urgentes, utilize os canais de contato alternativos."
+
+#: frontend/templates/includes/contact-info.html
+msgid "Direct contact"
+msgstr "Contato direto"
+
+#: frontend/templates/includes/contact-info.html
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: frontend/templates/includes/contact-info.html
+msgid "GitHub"
+msgstr "GitHub"
+
+#: frontend/templates/includes/contact-info.html
+msgid "Download résumé"
+msgstr "Baixar currículo"
+
+#: backend/apps/contact/forms.py
+#: backend/apps/contact/models.py
+msgid "Full name"
+msgstr "Nome completo"
+
+#: backend/apps/contact/forms.py
+#: backend/apps/contact/models.py
+msgid "Email address"
+msgstr "Endereço de e-mail"
+
+#: backend/apps/contact/forms.py
+#: backend/apps/contact/models.py
+msgid "Subject"
+msgstr "Assunto"
+
+#: backend/apps/contact/forms.py
+#: backend/apps/contact/models.py
+msgid "Message"
+msgstr "Mensagem"
+
+#: backend/apps/contact/forms.py
+#: backend/apps/contact/models.py
+msgid "Communication type"
+msgstr "Tipo de comunicação"
+
+#: backend/apps/contact/models.py
+msgid "Quotation request"
+msgstr "Solicitação de orçamento"
+
+#: backend/apps/contact/models.py
+msgid "Received"
+msgstr "Recebida"
+
+#: backend/apps/contact/models.py
+msgid "Notified"
+msgstr "Notificada"
+
+#: backend/apps/contact/models.py
+msgid "Notification failed"
+msgstr "Falha na notificação"
+
+#: backend/apps/contact/models.py
+msgid "Processing status"
+msgstr "Status de processamento"
+
+#: backend/apps/contact/models.py
+msgid "Submitted at"
+msgstr "Enviada em"
+
+#: backend/apps/contact/models.py
+msgid "contact request"
+msgstr "solicitação de contato"
+
+#: backend/apps/contact/models.py
+msgid "contact requests"
+msgstr "solicitações de contato"

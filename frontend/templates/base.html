@@ -1,0 +1,35 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Luis Franca{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/images.css' %}">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    {% include "includes/brand-logo.html" %}
+  </header>
+
+  <main class="site-main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <p>© {% now "Y" %} Luis Franca. {% trans "All rights reserved." %}</p>
+  </footer>
+
+  {% if contact_links.whatsapp %}
+  <a
+    class="whatsapp-button"
+    href="{{ contact_links.whatsapp }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="{% trans 'Chat on WhatsApp' %}"
+  >{% trans "WhatsApp" %}</a>
+  {% endif %}
+</body>
+</html>

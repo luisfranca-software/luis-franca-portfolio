@@ -1,6 +1,7 @@
 """Shared Django settings for every environment.
 
-Governing documents: SPEC-001, ARCH-001, ADR-002, ADR-003, OPS-001.
+Governing documents: SPEC-001, SPEC-002, ARCH-001, ADR-002, ADR-003, ADR-004,
+OPS-001.
 Environment-specific and sensitive values are read from the environment; no
 secrets are hardcoded in this module.
 """
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     "apps.experience.apps.ExperienceConfig",
     "apps.portfolio.apps.PortfolioConfig",
     "apps.common.apps.CommonConfig",
+    "apps.contact.apps.ContactConfig",
 ]
 
 MIDDLEWARE = [
@@ -65,6 +67,7 @@ TEMPLATES = [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.template.context_processors.i18n",
+                "apps.common.context_processors.public_contact_links",
             ],
         },
     },
@@ -105,6 +108,36 @@ LANGUAGES = [
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
+
+# --- Email / transactional notifications ---------------------------------------
+# Provider and isolation decisions: ADR-004 (Brevo SMTP). All values originate
+# from the environment; credentials are never hardcoded.
+
+EMAIL_BACKEND = env(
+    "EMAIL_BACKEND",
+    default="django.core.mail.backends.console.EmailBackend",
+)
+EMAIL_HOST = env("EMAIL_HOST", default="")
+EMAIL_PORT = env("EMAIL_PORT", default="587")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER", default="")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD", default="")
+EMAIL_USE_TLS = env_bool("EMAIL_USE_TLS", default=True)
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="")
+
+# --- Contact module -------------------------------------------------------------
+# Governing documents: SPEC-002 (sections 7, 8), ARCH-001 (15.7, 16.3), ADR-004.
+
+CONTACT_NOTIFICATION_EMAIL = env("CONTACT_NOTIFICATION_EMAIL", default="")
+CONTACT_RETENTION_DAYS = int(env("CONTACT_RETENTION_DAYS", default="90"))
+
+# Public professional links are presentation configuration per ARCH-001 (16.3);
+# values differ per environment and are never secrets.
+CONTACT_LINKS = {
+    "whatsapp": env("WHATSAPP_CONTACT_URL", default=""),
+    "linkedin": env("LINKEDIN_PROFILE_URL", default=""),
+    "github": env("GITHUB_PROFILE_URL", default=""),
+    "resume": env("RESUME_URL", default=""),
+}
 
 # --- Logging ------------------------------------------------------------------
 

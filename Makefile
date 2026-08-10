@@ -53,6 +53,7 @@ DOC_FILES = \
 	docs/adr/ADR-001-release-strategy.md \
 	docs/adr/ADR-002-technology-stack.md \
 	docs/adr/ADR-003-python-runtime-and-development-toolchain.md \
+	docs/adr/ADR-004-transactional-email-integration.md \
 	docs/specs/SPEC-001-mvp-foundation.md \
 	docs/specs/SPEC-002-contact-and-communication.md \
 	docs/specs/SPEC-003-portfolio-and-projects.md \
