@@ -14,6 +14,7 @@ IMAGES_DIR = REPO_ROOT / "frontend" / "static" / "images"
 
 BRAND_MASTER = IMAGES_DIR / "brand" / "lf-information-system.png"
 PROFILE_MASTER = IMAGES_DIR / "profile" / "luis-franca.png"
+PROJECTS_DIR = IMAGES_DIR / "projects"
 
 BRAND_MASTER_HASH = (
     "65610007eafd5d27d53b81819a31a44ea2a07322260dd4a64dfe589a161181fc"
@@ -21,6 +22,20 @@ BRAND_MASTER_HASH = (
 PROFILE_MASTER_HASH = (
     "b80db13f3044c862321e4b081e67a20ca7b8af3f65f70b5470cfd9eacd25bacb"
 )
+PROJECT_MASTERS = {
+    "enterprise-platform": {
+        "hash": "bc67f8aa848d01521dc99602f9ee5d4e18a536eb649f2729753bdbffb559a10d",
+        "dimensions": (1480, 16384),
+    },
+    "intelligent-currency-platform": {
+        "hash": "05a437030881ccb68bf748f892574847db1f7aaa55640f1b5817e7b8112f1fb3",
+        "dimensions": (1480, 16384),
+    },
+    "sistema_cotacao_moedas": {
+        "hash": "e6223dbb6e288a75e8337945f003027c7e6e5ac319eafc8e80506c55b531c7da",
+        "dimensions": (1480, 7636),
+    },
+}
 
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 WEBP_SIGNATURE = b"RIFF"
@@ -29,6 +44,11 @@ ICO_SIGNATURE = b"\x00\x00\x01\x00"
 
 EXPECTED_BRAND_WEBP = {1254: (1254, 1254), 600: (600, 600), 300: (300, 300)}
 EXPECTED_PROFILE_WEBP = {896: (896, 1195), 640: (640, 854), 400: (400, 533)}
+EXPECTED_PROJECT_WEBP = {
+    "enterprise-platform": {900: (900, 9963), 450: (450, 4982)},
+    "intelligent-currency-platform": {900: (900, 9963), 450: (450, 4982)},
+    "sistema_cotacao_moedas": {900: (900, 4644), 450: (450, 2322)},
+}
 
 
 def _sha256(path: Path) -> str:
@@ -84,6 +104,22 @@ def test_profile_webp_derivatives() -> None:
         path = IMAGES_DIR / "profile" / f"luis-franca-{width}.webp"
         assert path.is_file(), f"missing {path.name}"
         assert _webp_dimensions(path) == expected
+
+
+def test_project_masters_match_approved_sources() -> None:
+    for name, meta in PROJECT_MASTERS.items():
+        path = PROJECTS_DIR / f"{name}.png"
+        assert path.is_file(), f"missing {path.name}"
+        assert _png_dimensions(path) == meta["dimensions"]
+        assert _sha256(path) == meta["hash"]
+
+
+def test_project_webp_derivatives() -> None:
+    for name, widths in EXPECTED_PROJECT_WEBP.items():
+        for width, expected in widths.items():
+            path = PROJECTS_DIR / f"{name}-{width}.webp"
+            assert path.is_file(), f"missing {path.name}"
+            assert _webp_dimensions(path) == expected
 
 
 def test_favicon_candidates() -> None:

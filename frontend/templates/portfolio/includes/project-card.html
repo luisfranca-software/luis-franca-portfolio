@@ -1,0 +1,53 @@
+{% comment %}
+Reusable project card (SPEC-003-REQ-003, section 8).
+Expected context: a single {{ project }} from the Portfolio project dataset.
+{% endcomment %}
+{% load static i18n %}
+<article class="project-card" id="project-{{ project.slug }}">
+  <header class="project-card__header">
+    <h2 class="project-card__title">{{ project.title }}</h2>
+  </header>
+
+  <div class="project-card__body">
+    <p class="project-card__summary">{{ project.summary }}</p>
+
+    <div class="project-card__screenshot" tabindex="0">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="{% for path, width in project.webp_variants %}{% static path %} {{ width }}w{% if not forloop.last %}, {% endif %}{% endfor %}"
+          sizes="(min-width: 992px) 360px, (min-width: 640px) 45vw, 92vw">
+        <img
+          class="project-card__screenshot-img"
+          src="{% static project.screenshot_master %}"
+          alt="{% blocktrans with title=project.title %}Screenshot of {{ title }}{% endblocktrans %}"
+          width="{{ project.screenshot_width }}"
+          height="{{ project.screenshot_height }}"
+          loading="lazy">
+      </picture>
+    </div>
+
+    <ul class="project-card__technologies">
+      {% for tech in project.technologies %}
+      <li class="project-card__technology">{{ tech }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <footer class="project-card__footer">
+    <a
+      class="project-card__link project-card__link--github"
+      href="{{ project.github_url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >{% trans "GitHub" %}</a>
+    {% if project.demo_url %}
+    <a
+      class="project-card__link project-card__link--demo"
+      href="{{ project.demo_url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >{% trans "Live demo" %}</a>
+    {% endif %}
+  </footer>
+</article>

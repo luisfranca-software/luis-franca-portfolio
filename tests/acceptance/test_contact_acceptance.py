@@ -29,7 +29,7 @@ def test_contact_form_operates_correctly_end_to_end(email_backend) -> None:
         },
     )
     assert response.status_code == 302
-    assert response.url == "/contact/success/"
+    assert response.headers["Location"] == "/contact/success/"
 
     contact_request = ContactRequest.objects.get()
     assert contact_request.full_name == "Recruiter Name"
@@ -38,7 +38,7 @@ def test_contact_form_operates_correctly_end_to_end(email_backend) -> None:
     assert len(mail.outbox) == 1
     assert mail.outbox[0].to == ["owner@example.test"]
 
-    confirmation = client.get(response.url)
+    confirmation = client.get(response.headers["Location"])
     assert confirmation.status_code == 200
     assert "Message sent" in confirmation.content.decode()
 
@@ -56,7 +56,7 @@ def test_quotation_request_workflow(email_backend) -> None:
     )
 
     assert response.status_code == 302
-    assert response.url == "/contact/success/"
+    assert response.headers["Location"] == "/contact/success/"
     contact_request = ContactRequest.objects.get()
     assert contact_request.communication_type == CommunicationType.QUOTATION
     assert contact_request.status == RequestStatus.NOTIFIED

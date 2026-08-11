@@ -8,6 +8,7 @@ from django.test import Client
 from django.utils import translation
 
 from apps.contact.forms import ContactForm
+from apps.contact.models import CommunicationType
 
 
 def test_form_labels_are_translated_to_pt_br() -> None:
@@ -17,7 +18,7 @@ def test_form_labels_are_translated_to_pt_br() -> None:
         assert str(form.fields["email"].label) == "Endereço de e-mail"
         assert str(form.fields["subject"].label) == "Assunto"
         assert str(form.fields["message"].label) == "Mensagem"
-        option_labels = dict(form.fields["communication_type"].choices)
+        option_labels = dict(CommunicationType.choices)
         assert option_labels["contact"] == "Contato"
         assert option_labels["quotation"] == "Solicitação de orçamento"
 

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Portfolio" %} — Luis Franca{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="portfolio-page">
+  <h1>{% trans "Portfolio" %}</h1>
+  <p class="portfolio-page__lead">{% trans "Selected software projects." %}</p>
+
+  <div class="project-grid">
+    {% for project in projects %}
+      {% include "portfolio/includes/project-card.html" with project=project %}
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

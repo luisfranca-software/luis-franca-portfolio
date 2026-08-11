@@ -77,6 +77,22 @@ msgstr "GitHub"
 msgid "Download résumé"
 msgstr "Baixar currículo"
 
+#: frontend/templates/portfolio/portfolio.html
+msgid "Portfolio"
+msgstr "Portfólio"
+
+#: frontend/templates/portfolio/portfolio.html
+msgid "Selected software projects."
+msgstr "Projetos de software selecionados."
+
+#: frontend/templates/portfolio/includes/project-card.html
+msgid "Live demo"
+msgstr "Demonstração ao vivo"
+
+#: frontend/templates/portfolio/includes/project-card.html
+msgid "Screenshot of %(title)s"
+msgstr "Captura de tela de %(title)s"
+
 #: backend/apps/contact/forms.py
 #: backend/apps/contact/models.py
 msgid "Full name"

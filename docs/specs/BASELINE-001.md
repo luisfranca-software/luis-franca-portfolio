@@ -198,6 +198,12 @@ The following implementation status is recorded for SPEC-002:
 * SPEC-002 Phase 2 — validated;
 * this baseline remains approved.
 
+The following implementation status is recorded for SPEC-003:
+
+* SPEC-003 — Portfolio & Projects — implemented;
+* SPEC-003 — validated;
+* this baseline remains approved.
+
 ---
 
 # **8\. Change Management**
