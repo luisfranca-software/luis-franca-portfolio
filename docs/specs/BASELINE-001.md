@@ -200,8 +200,9 @@ The following implementation status is recorded for SPEC-002:
 
 The following implementation status is recorded for SPEC-003:
 
-* SPEC-003 — Portfolio & Projects — implemented;
-* SPEC-003 — validated;
+* SPEC-003 — Portfolio & Projects — implementation completed;
+* SPEC-003 — validated by automated quality gates;
+* SPEC-003 — Product Owner acceptance and integration approval pending;
 * this baseline remains approved.
 
 ---

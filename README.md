@@ -52,9 +52,9 @@ Per `docs/adr/ADR-002-technology-stack.md`:
   - Automated tests: **passed** (pytest)
   - Status: **implemented and validated**
 - **SPEC-003 — Portfolio & Projects:**
-  - Implementation: **complete** — dedicated Portfolio section, three featured projects, reusable project cards, hover elevation, screenshot scrolling, responsive 3/2/1-column layout, Release 1 project screenshot assets
-  - Automated tests: **passed** (pytest — 78 passed)
-  - Status: **implemented and validated**
+  - Implementation: **complete** — dedicated Portfolio section, three featured projects using the approved Product Owner data, reusable project cards, hover elevation, screenshot scrolling, responsive 3/2/1-column layout, Release 1 project screenshot assets
+  - Automated tests: **passed** (pytest — 92 passed)
+  - Status: **implemented and validated** — Product Owner acceptance and integration approval pending
 - Per the approved release strategy and specification sequence, the next Feature Specification is eligible for planning once the current increment is reviewed and authorized.
 
 ## Repository Structure

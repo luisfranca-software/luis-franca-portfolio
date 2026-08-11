@@ -40,14 +40,22 @@ def test_portfolio_page_shows_technology_badges() -> None:
             assert tech in content
 
 
-def test_demo_links_rendered_when_available() -> None:
+def test_demo_links_do_not_render_in_release_1() -> None:
     content = Client().get("/portfolio/").content.decode()
 
-    with_demo = sum(1 for project in FEATURED_PROJECTS if project.demo_url)
-    assert content.count("Live demo") == with_demo
+    assert "Live demo" not in content
     for project in FEATURED_PROJECTS:
-        if project.demo_url:
-            assert project.demo_url in content
+        assert project.demo_url is None
+        assert "class=\"project-card__link--demo\"" not in content
+
+
+def test_github_links_use_approved_owner() -> None:
+    content = Client().get("/portfolio/").content.decode()
+
+    for project in FEATURED_PROJECTS:
+        assert project.github_url in content
+        assert 'rel="noopener noreferrer"' in content
+    assert "github.com/luis-franca/" not in content
 
 
 def test_screenshots_use_responsive_delivery() -> None:
