@@ -48,7 +48,7 @@ def test_valid_submission_redirects_to_success_and_emails(email_backend) -> None
     response = Client().post("/contact/", VALID_PAYLOAD)
 
     assert response.status_code == 302
-    assert response.url == "/contact/success/"
+    assert response.headers["Location"] == "/contact/success/"
     contact_request = ContactRequest.objects.get()
     assert contact_request.status == RequestStatus.NOTIFIED
     assert contact_request.communication_type == CommunicationType.CONTACT
@@ -66,7 +66,7 @@ def test_valid_quotation_submission(email_backend) -> None:
     response = Client().post("/contact/", payload)
 
     assert response.status_code == 302
-    assert response.url == "/contact/success/"
+    assert response.headers["Location"] == "/contact/success/"
     contact_request = ContactRequest.objects.get()
     assert contact_request.communication_type == CommunicationType.QUOTATION
     assert "Quotation request" in mail.outbox[0].subject
@@ -90,7 +90,7 @@ def test_notification_failure_redirects_to_failure_page(email_backend) -> None:
         response = Client().post("/contact/", VALID_PAYLOAD)
 
     assert response.status_code == 302
-    assert response.url == "/contact/failure/"
+    assert response.headers["Location"] == "/contact/failure/"
     contact_request = ContactRequest.objects.get()
     assert contact_request.status == RequestStatus.NOTIFICATION_FAILED
 

@@ -17,6 +17,9 @@ repository; they were never moved or deleted.
 | --- | --- | --- | --- |
 | `brand/lf-information-system.png` | `lf-information-system.png` | 1254x1254 | `65610007eafd5d27d53b81819a31a44ea2a07322260dd4a64dfe589a161181fc` |
 | `profile/luis-franca.png` | `luis-franca.png` | 896x1195 | `b80db13f3044c862321e4b081e67a20ca7b8af3f65f70b5470cfd9eacd25bacb` |
+| `projects/enterprise-platform.png` | `projetos/enterprise-platform.png` | 1480x16384 | `bc67f8aa848d01521dc99602f9ee5d4e18a536eb649f2729753bdbffb559a10d` |
+| `projects/intelligent-currency-platform.png` | `projetos/intelligent-currency-platform.png` | 1480x16384 | `05a437030881ccb68bf748f892574847db1f7aaa55640f1b5817e7b8112f1fb3` |
+| `projects/sistema_cotacao_moedas.png` | `projetos/sistema_cotacao_moedas.png` | 1480x7636 | `e6223dbb6e288a75e8337945f003027c7e6e5ac319eafc8e80506c55b531c7da` |
 
 The repository masters are pixel-identical copies of the approved sources and
 are the authoritative raster masters. They are never modified by generation
@@ -39,6 +42,7 @@ tooling.
 | --- | --- |
 | `brand/` | Logo master (PNG) and WebP delivery derivatives. |
 | `profile/` | Photograph master (PNG) and WebP delivery derivatives. |
+| `projects/` | Featured project screenshot masters (PNG) and WebP delivery derivatives. |
 | `favicon/` | Favicon candidates (see Favicon status below). |
 
 Naming is lowercase and deterministic: `<name>-<width>.webp` for delivery
@@ -94,6 +98,11 @@ Reference markup (brand logo):
 The `sizes` values are conservative placeholders and should be tuned when the
 pages that include these partials are implemented under the approved
 specification sequence.
+
+Project screenshots are full-page captures (taller than their display
+container). They are delivered through the same WebP `<picture>` pipeline and
+are scrolled within a fixed-height container on user interaction
+(SPEC-003-REQ-006); see `frontend/static/css/portfolio.css`.
 
 ## Favicon
 

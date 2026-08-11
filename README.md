@@ -47,8 +47,15 @@ Per `docs/adr/ADR-002-technology-stack.md`:
   - mypy: **passed** (no issues in 60 source files)
   - Final acceptance: **approved**
   - Phase 1 status: **closed**
-- Next activity: review and authorize the next implementation increment according to the approved release strategy and specification sequence.
-- Per the approved release strategy and specification sequence, **SPEC-002 — Contact & Communication** is identified as the next Feature Specification and is eligible for planning; it has not been started.
+- **SPEC-002 — Contact & Communication (Phase 2):**
+  - Implementation: **complete** — contact and quotation form, transactional email notification (Brevo SMTP per ADR-004), persistence with retention policy, controlled success/failure confirmation, floating WhatsApp entry point
+  - Automated tests: **passed** (pytest)
+  - Status: **implemented and validated**
+- **SPEC-003 — Portfolio & Projects:**
+  - Implementation: **complete** — dedicated Portfolio section, three featured projects using the approved Product Owner data, reusable project cards, hover elevation, screenshot scrolling, responsive 3/2/1-column layout, Release 1 project screenshot assets
+  - Automated tests: **passed** (pytest — 92 passed)
+  - Status: **implemented and validated** — Product Owner acceptance and integration approval pending
+- Per the approved release strategy and specification sequence, the next Feature Specification is eligible for planning once the current increment is reviewed and authorized.
 
 ## Repository Structure
 

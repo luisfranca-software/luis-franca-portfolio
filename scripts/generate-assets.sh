@@ -27,10 +27,18 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BRAND_DIR="${REPO_ROOT}/frontend/static/images/brand"
 PROFILE_DIR="${REPO_ROOT}/frontend/static/images/profile"
+PROJECTS_DIR="${REPO_ROOT}/frontend/static/images/projects"
 FAVICON_DIR="${REPO_ROOT}/frontend/static/images/favicon"
 
 BRAND_MASTER="lf-information-system.png"
 PROFILE_MASTER="luis-franca.png"
+
+# Approved Release 1 featured project screenshots (SPEC-003-REQ-002).
+PROJECT_MASTERS=(
+    "enterprise-platform.png:1480x16384"
+    "intelligent-currency-platform.png:1480x16384"
+    "sistema_cotacao_moedas.png:1480x7636"
+)
 
 # --- Locate ImageMagick -----------------------------------------------------
 
@@ -56,6 +64,25 @@ fi
         echo "ERROR: ${PROFILE_MASTER} missing or not 896x1195." >&2
         exit 1
     }
+
+# --- Project screenshot WebP delivery derivatives ----------------------------
+# Screenshots are full-page captures taller than their display container
+# (SPEC-003-REQ-006); width-only resize preserves the full-page composition.
+
+for entry in "${PROJECT_MASTERS[@]}"; do
+    master="${entry%%:*}"
+    expected="${entry##*:}"
+    if ! "${IM}" identify -format "%wx%h" "${PROJECTS_DIR}/${master}" 2>/dev/null \
+        | grep -q "^${expected}$"; then
+        echo "ERROR: ${master} missing or not ${expected}." >&2
+        exit 1
+    fi
+    for size in 900 450; do
+        "${IM}" "${PROJECTS_DIR}/${master}" \
+            -filter Lanczos -resize "${size}x" \
+            -quality 82 "${PROJECTS_DIR}/${master%.png}-${size}.webp"
+    done
+done
 
 # --- Logo WebP delivery derivatives -----------------------------------------
 # Derived from the 1254x1254 master; never upscaled beyond master resolution.
@@ -106,4 +133,4 @@ FAVICON_CROP="899x517+217+286"
     -define icon:auto-resize=16,32,48 "${FAVICON_DIR}/favicon.ico"
 
 echo "Asset generation complete:"
-find "${BRAND_DIR}" "${PROFILE_DIR}" "${FAVICON_DIR}" -type f \( -name '*.webp' -o -name '*.png' -o -name '*.ico' \) | sort
+find "${BRAND_DIR}" "${PROFILE_DIR}" "${PROJECTS_DIR}" "${FAVICON_DIR}" -type f \( -name '*.webp' -o -name '*.png' -o -name '*.ico' \) | sort
