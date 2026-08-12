@@ -5,7 +5,7 @@
  */
 
 .portfolio-page__lead {
-    color: var(--color-muted);
+    color: var(--color-text-muted);
     margin-top: 0.25rem;
 }
 

@@ -1,0 +1,48 @@
+{% load i18n %}
+<div class="footer-links">
+  <section class="footer-links__group" aria-labelledby="footer-nav-heading">
+    <h2 class="footer-links__heading" id="footer-nav-heading">{% trans "Navigation" %}</h2>
+    <ul class="footer-links__list">
+      <li><a href="{% url 'home:home' %}">{% trans "Home" %}</a></li>
+      <li><a href="{% url 'about:about' %}">{% trans "About" %}</a></li>
+      <li><a href="{% url 'skills:skills' %}">{% trans "Skills" %}</a></li>
+      <li><a href="{% url 'experience:experience' %}">{% trans "Experience" %}</a></li>
+      <li><a href="{% url 'portfolio:portfolio' %}">{% trans "Portfolio" %}</a></li>
+      <li><a href="{% url 'contact:contact' %}">{% trans "Contact" %}</a></li>
+    </ul>
+  </section>
+
+  <section class="footer-links__group" aria-labelledby="footer-contact-heading">
+    <h2 class="footer-links__heading" id="footer-contact-heading">{% trans "Professional links" %}</h2>
+    <ul class="footer-links__list">
+      {% if contact_links.linkedin %}
+      <li>
+        <a href="{{ contact_links.linkedin }}" target="_blank" rel="noopener noreferrer">
+          {% trans "LinkedIn" %}
+        </a>
+      </li>
+      {% endif %}
+      {% if contact_links.github %}
+      <li>
+        <a href="{{ contact_links.github }}" target="_blank" rel="noopener noreferrer">
+          {% trans "GitHub" %}
+        </a>
+      </li>
+      {% endif %}
+      {% if contact_links.whatsapp %}
+      <li>
+        <a href="{{ contact_links.whatsapp }}" target="_blank" rel="noopener noreferrer">
+          {% trans "WhatsApp" %}
+        </a>
+      </li>
+      {% endif %}
+      {% if contact_links.resume %}
+      <li>
+        <a href="{{ contact_links.resume }}" target="_blank" rel="noopener noreferrer">
+          {% trans "Download résumé" %}
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </section>
+</div>

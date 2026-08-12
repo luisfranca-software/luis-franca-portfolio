@@ -115,10 +115,14 @@ def test_contact_page_includes_professional_links(contact_links) -> None:
     response = Client().get("/contact/")
     content = response.content.decode()
 
-    assert "https://www.linkedin.com/in/luis-franca-example" in content
-    assert "https://github.com/luis-franca-example" in content
-    assert "https://wa.me/5511999999999" in content
-    assert "https://drive.google.com/file/d/example/view" in content
+    assert "https://www.linkedin.com/in/luisfranca-software/" in content
+    assert "https://github.com/luisfranca-software" in content
+    assert "https://wa.me/5531993423501" in content
+    resume_url = (
+        "https://drive.google.com/file/d/"
+        "1ZbhGxvtm_J7OWF2uXthPN01TSx-Xquav/view?usp=sharing"
+    )
+    assert resume_url in content
 
 
 def test_floating_whatsapp_button_rendered(contact_links) -> None:
@@ -126,7 +130,7 @@ def test_floating_whatsapp_button_rendered(contact_links) -> None:
     content = response.content.decode()
 
     assert "whatsapp-button" in content
-    assert "https://wa.me/5511999999999" in content
+    assert "https://wa.me/5531993423501" in content
 
 
 def test_floating_whatsapp_button_hidden_when_not_configured() -> None:

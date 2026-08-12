@@ -5,21 +5,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}Luis Franca{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% trans 'Luís França is a Software Engineer specializing in Python backend development, automation, and AI/LLM applications, focused on maintainable and production-ready software.' %}{% endblock %}">
+  <link rel="canonical" href="{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}{% trans 'Luís França — Software Engineer' %}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{% trans 'Luís França is a Software Engineer specializing in Python backend development, automation, and AI/LLM applications, focused on maintainable and production-ready software.' %}{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
   <link rel="stylesheet" href="{% static 'css/images.css' %}">
   <link rel="stylesheet" href="{% static 'css/site.css' %}">
   {% block extra_css %}{% endblock %}
 </head>
 <body>
+  <a class="skip-link" href="#main-content">{% trans "Skip to main content" %}</a>
+
   <header class="site-header">
-    {% include "includes/brand-logo.html" %}
+    {% include "includes/navigation.html" %}
   </header>
 
-  <main class="site-main">
+  <main id="main-content" class="site-main">
     {% block content %}{% endblock %}
   </main>
 
   <footer class="site-footer">
-    <p>© {% now "Y" %} Luis Franca. {% trans "All rights reserved." %}</p>
+    {% include "includes/footer-links.html" %}
+    <p class="site-footer__copyright">© {% now "Y" %} Luís França. {% trans "All rights reserved." %}</p>
   </footer>
 
   {% if contact_links.whatsapp %}
@@ -31,5 +43,7 @@
     aria-label="{% trans 'Chat on WhatsApp' %}"
   >{% trans "WhatsApp" %}</a>
   {% endif %}
+
+  <script src="{% static 'js/site.js' %}" defer></script>
 </body>
 </html>
