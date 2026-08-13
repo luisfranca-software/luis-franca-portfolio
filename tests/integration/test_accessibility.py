@@ -30,6 +30,15 @@ def test_navigation_uses_semantic_list(path: str) -> None:
 
 
 @pytest.mark.parametrize("path", PAGE_PATHS)
+def test_navigation_does_not_use_application_menu_roles(path: str) -> None:
+    content = Client().get(path).content.decode()
+
+    assert 'role="menubar"' not in content
+    assert 'role="menuitem"' not in content
+    assert 'role="none"' not in content
+
+
+@pytest.mark.parametrize("path", PAGE_PATHS)
 def test_images_have_descriptive_alt_text(path: str) -> None:
     content = Client().get(path).content.decode()
 

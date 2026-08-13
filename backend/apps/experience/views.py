@@ -19,15 +19,8 @@ class ExperienceView(TemplateView):
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context["milestones"] = ("DC Arquitetura", "LF Information System")
         context["education"] = (
             "Software Engineering — In progress",
             "Building Construction Technician",
-        )
-        context["training"] = (
-            "Python Impressionador — Hashtag",
-            "Python Master",
-            "IA Master",
-            "API Master — PycodeBR — In progress",
         )
         return context

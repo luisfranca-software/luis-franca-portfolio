@@ -57,34 +57,12 @@
   </div>
 
   <aside class="experience-context" aria-labelledby="experience-context-heading">
-    <h2 id="experience-context-heading">{% trans "Professional context" %}</h2>
-
-    <section aria-labelledby="experience-milestones-heading">
-      <h3 id="experience-milestones-heading">{% trans "Milestones" %}</h3>
-      <ul>
-        {% for milestone in milestones %}
-        <li>{{ milestone }}</li>
-        {% endfor %}
-      </ul>
-    </section>
-
-    <section aria-labelledby="experience-education-heading">
-      <h3 id="experience-education-heading">{% trans "Education" %}</h3>
-      <ul>
-        {% for item in education %}
-        <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    </section>
-
-    <section aria-labelledby="experience-training-heading">
-      <h3 id="experience-training-heading">{% trans "Training" %}</h3>
-      <ul>
-        {% for item in training %}
-        <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    </section>
+    <h2 id="experience-context-heading">{% trans "Education" %}</h2>
+    <ul>
+      {% for item in education %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
   </aside>
 
   <p class="content-page__cta">

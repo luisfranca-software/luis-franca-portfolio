@@ -4,6 +4,9 @@ Governing documents: SPEC-001 (SPEC-001-REQ-005), ARCH-001 (14.2, 15.7).
 
 The skills below are explicitly approved Product Owner content. They are not
 inferred from project technologies or dependency files.
+
+English remains the canonical source. Runtime translation is performed in the
+presentation layer so the dataset itself stays stable and testable.
 """
 
 from __future__ import annotations

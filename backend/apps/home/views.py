@@ -5,6 +5,8 @@ Governing documents: SPEC-001 (SPEC-001-REQ-003), ARCH-001 (12.1).
 
 from typing import Any
 
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
 
 
@@ -22,15 +24,15 @@ class HomeView(TemplateView):
         context["full_name"] = "Luís Eduardo Carvalho França"
         context["display_name"] = "Luís França"
         context["titles"] = (
-            "Software Engineer",
-            "Python Backend Engineer",
-            "AI/LLM Engineer",
+            _("Software Engineer"),
+            _("Python Backend Engineer"),
+            _("AI/LLM Engineer"),
         )
-        context["positioning"] = (
+        context["positioning"] = _(
             "Software engineering focused on Python, backend systems, automation, "
             "and AI, built with specification-driven development, architecture, "
             "automated testing, and production delivery."
         )
-        context["cta_label"] = "Let's Talk"
-        context["cta_url"] = "/contact/"
+        context["cta_label"] = _("Let's Talk")
+        context["cta_url"] = reverse_lazy("contact:contact")
         return context

@@ -119,6 +119,22 @@ msgstr "Títulos profissionais"
 msgid "Let's Talk"
 msgstr "Vamos conversar"
 
+#: backend/apps/home/views.py
+msgid "Software Engineer"
+msgstr "Engenheiro de Software"
+
+#: backend/apps/home/views.py
+msgid "Python Backend Engineer"
+msgstr "Engenheiro Python Backend"
+
+#: backend/apps/home/views.py
+msgid "AI/LLM Engineer"
+msgstr "Engenheiro de IA/LLM"
+
+#: backend/apps/home/views.py
+msgid "Software engineering focused on Python, backend systems, automation, and AI, built with specification-driven development, architecture, automated testing, and production delivery."
+msgstr "Engenharia de software focada em Python, sistemas backend, automação e IA, construída com desenvolvimento orientado a especificações, arquitetura, testes automatizados e entrega em produção."
+
 #: frontend/templates/about/about.html
 msgid "Learn about Luís França, a Software Engineer specializing in Python backend development, automation, and AI/LLM applications."
 msgstr "Conheça Luís França, Engenheiro de Software especializado em desenvolvimento backend Python, automação e aplicações de IA/LLM."

@@ -8,10 +8,23 @@ SPEC-001-REQ-008). Language selection is handled by LocaleMiddleware and the
 Django set_language view without prefixing URLs.
 """
 
+from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
+
+from apps.common.sitemaps import StaticViewSitemap
+
+SITEMAPS = {
+    "static": StaticViewSitemap,
+}
 
 urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": SITEMAPS},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
     path("", include("apps.home.urls")),
     path("about/", include("apps.about.urls")),
     path("skills/", include("apps.skills.urls")),
