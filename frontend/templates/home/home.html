@@ -8,6 +8,9 @@
 {% block content %}
 <section class="home-hero" aria-labelledby="home-heading">
   <div class="home-hero__identity">
+    <div class="home-hero__brand" aria-hidden="true">
+      {% include "includes/brand-logo.html" %}
+    </div>
     <p class="home-hero__greeting">{% trans "Hello, I'm" %}</p>
     <h1 id="home-heading" class="home-hero__name">{{ display_name }}</h1>
     <p class="home-hero__full-name">{{ full_name }}</p>

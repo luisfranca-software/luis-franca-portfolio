@@ -36,3 +36,20 @@ def test_home_page_includes_profile_photo() -> None:
 
     assert "images/profile/luis-franca" in content
     assert "Professional photograph of Luís Eduardo Carvalho França" in content
+
+
+def test_home_page_includes_approved_brand_logo() -> None:
+    content = Client().get("/").content.decode()
+
+    assert "images/brand/lf-information-system" in content
+    assert "Luís França — Site Portfolio logo" in content
+
+
+def test_home_page_preserves_identity_and_photo_with_logo() -> None:
+    content = Client().get("/").content.decode()
+
+    assert "Luís França" in content
+    assert "Luís Eduardo Carvalho França" in content
+    assert "Software Engineer" in content
+    assert "images/profile/luis-franca" in content
+    assert "images/brand/lf-information-system" in content

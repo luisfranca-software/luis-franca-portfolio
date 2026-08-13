@@ -33,5 +33,14 @@ def test_footer_contains_professional_links(contact_links) -> None:
     assert "Professional links" in content
     assert contact_links["linkedin"] in content
     assert contact_links["github"] in content
-    assert contact_links["whatsapp"] in content
     assert contact_links["resume"] in content
+
+
+def test_footer_does_not_duplicate_whatsapp_link(contact_links) -> None:
+    content = Client().get("/").content.decode()
+
+    # The floating WhatsApp CTA is the canonical persistent entry point.
+    # It must not be duplicated in the footer professional links list.
+    footer_section = content.split("Professional links")[1]
+    footer_professional_links = footer_section.split("All rights reserved")[0]
+    assert contact_links["whatsapp"] not in footer_professional_links

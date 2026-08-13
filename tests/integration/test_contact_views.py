@@ -133,7 +133,8 @@ def test_floating_whatsapp_button_rendered(contact_links) -> None:
     assert "https://wa.me/5531993423501" in content
 
 
-def test_floating_whatsapp_button_hidden_when_not_configured() -> None:
+def test_floating_whatsapp_button_hidden_when_not_configured(settings) -> None:
+    settings.CONTACT_LINKS = {**settings.CONTACT_LINKS, "whatsapp": ""}
     response = Client().get("/contact/")
     assert "whatsapp-button" not in response.content.decode()
 
