@@ -55,3 +55,16 @@ def test_home_page_has_single_h1() -> None:
 
     assert content.count("<h1") == 1
     assert "Luís França" in content
+
+
+def test_home_brand_logo_is_accessible() -> None:
+    content = Client().get("/").content.decode()
+
+    # The approved brand-logo component provides meaningful alt text; the Home
+    # wrapper must not hide it from assistive technologies.
+    brand_start = content.find('<div class="home-hero__brand">')
+    assert brand_start != -1
+    brand_end = content.find('</div>', brand_start)
+    brand_tag = content[brand_start:brand_end]
+    assert 'aria-hidden' not in brand_tag
+    assert "Luís França — Site Portfolio logo" in content

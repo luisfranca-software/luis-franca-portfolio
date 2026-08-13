@@ -8,7 +8,7 @@
 {% block content %}
 <section class="home-hero" aria-labelledby="home-heading">
   <div class="home-hero__identity">
-    <div class="home-hero__brand" aria-hidden="true">
+    <div class="home-hero__brand">
       {% include "includes/brand-logo.html" %}
     </div>
     <p class="home-hero__greeting">{% trans "Hello, I'm" %}</p>
@@ -20,7 +20,7 @@
       {% endfor %}
     </ul>
     <p class="home-hero__positioning">{{ positioning }}</p>
-    <a class="home-hero__cta button button--primary" href="{{ cta_url }}">{{ cta_label|safe }}</a>
+    <a class="home-hero__cta button button--primary" href="{{ cta_url }}">{{ cta_label }}</a>
   </div>
 
   <div class="home-hero__visual">

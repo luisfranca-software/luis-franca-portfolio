@@ -21,7 +21,7 @@ def test_root_path_presents_home_identity() -> None:
     assert "Software Engineer" in content
     assert "Python Backend Engineer" in content
     assert "AI/LLM Engineer" in content
-    assert "Let's Talk" in content
+    assert "Let&#x27;s Talk" in content
 
 
 def test_root_path_includes_professional_photo() -> None:

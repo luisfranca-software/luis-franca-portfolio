@@ -27,7 +27,8 @@ def test_home_page_presents_all_approved_titles() -> None:
 def test_home_page_presents_primary_cta() -> None:
     content = Client().get("/").content.decode()
 
-    assert "Let's Talk" in content
+    # The apostrophe is HTML-escaped by Django's default autoescaping.
+    assert "Let&#x27;s Talk" in content
     assert 'href="/contact/"' in content
 
 
