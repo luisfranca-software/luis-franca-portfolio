@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block meta_description %}{% trans "Explore the professional skills of Luís França: Python, backend engineering, AI/LLM integration, automated testing, DevOps, and specification-driven development." %}{% endblock %}
+{% block title %}{% trans "Skills" %} — Luís França{% endblock %}
+
+{% block content %}
+<section class="content-page" aria-labelledby="skills-heading">
+  <h1 id="skills-heading">{% trans "Skills" %}</h1>
+  <p class="content-page__lead">
+    {% trans "Professional technology stack approved for my software engineering practice." %}
+  </p>
+
+  <div class="skills-grid">
+    {% for group in skill_groups %}
+    <article class="skill-card" id="skills-{{ group.name|slugify }}">
+      <h2 class="skill-card__title">{{ group.name }}</h2>
+      <ul class="skill-card__list" aria-label="{% blocktrans with group=group.name %}{{ group }} skills{% endblocktrans %}">
+        {% for skill in group.skills %}
+        <li class="skill-card__item">{{ skill }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

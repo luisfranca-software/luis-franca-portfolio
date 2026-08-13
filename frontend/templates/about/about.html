@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block meta_description %}{% trans "Learn about Luís França, a Software Engineer specializing in Python backend development, automation, and AI/LLM applications." %}{% endblock %}
+{% block title %}{% trans "About" %} — Luís França{% endblock %}
+
+{% block content %}
+<section class="content-page" aria-labelledby="about-heading">
+  <h1 id="about-heading">{% trans "About" %}</h1>
+
+  <div class="prose">
+    <p>
+      {% blocktrans %}
+      I am a Software Engineer specializing in Python backend development,
+      automation, and AI/LLM applications. I build software through a
+      disciplined engineering process that connects requirements,
+      specification, architecture, implementation, automated testing,
+      validation, and production delivery.
+      {% endblocktrans %}
+    </p>
+    <p>
+      {% blocktrans %}
+      My work focuses on developing maintainable, testable, and
+      production-ready systems, with particular attention to clear
+      architecture, software quality, security, and traceability between
+      business requirements and implementation. I approach technology as an
+      engineering decision rather than an end in itself, choosing solutions
+      according to the actual requirements and constraints of each system.
+      {% endblocktrans %}
+    </p>
+  </div>
+</section>
+{% endblock %}

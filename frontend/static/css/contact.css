@@ -3,7 +3,7 @@
  */
 
 .contact-page__lead {
-    color: var(--color-muted);
+    color: var(--color-text-muted);
     margin-top: 0.25rem;
 }
 
@@ -38,6 +38,7 @@
 .contact-form label {
     font-weight: 600;
     font-size: 0.9375rem;
+    color: var(--color-text);
 }
 
 .contact-form input,
@@ -45,6 +46,7 @@
 .contact-form select {
     font: inherit;
     color: var(--color-text);
+    background: var(--color-bg-elevated);
     border: 1px solid var(--color-border);
     border-radius: 0.375rem;
     padding: 0.625rem 0.75rem;
@@ -74,21 +76,23 @@
     justify-self: start;
     font: inherit;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--color-bg);
     background: var(--color-accent);
-    border: none;
+    border: 1px solid var(--color-accent);
     border-radius: 0.375rem;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
+    transition: background 150ms ease, border-color 150ms ease;
 }
 
 .contact-form__submit:hover,
 .contact-form__submit:focus-visible {
-    background: var(--color-accent-dark);
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
 }
 
 .contact-form__submit:focus-visible {
-    outline: 3px solid var(--color-accent-dark);
+    outline: 3px solid var(--color-text);
     outline-offset: 2px;
 }
 

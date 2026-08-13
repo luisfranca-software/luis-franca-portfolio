@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block meta_description %}{% trans "Luís França is a Software Engineer specializing in Python backend development, automation, and AI/LLM applications, focused on maintainable and production-ready software." %}{% endblock %}
+
+{% block title %}{% trans "Luís França | Software Engineer · Python Backend Engineer · AI/LLM Engineer" %}{% endblock %}
+
+{% block content %}
+<section class="home-hero" aria-labelledby="home-heading">
+  <div class="home-hero__identity">
+    <div class="home-hero__brand">
+      {% include "includes/brand-logo.html" %}
+    </div>
+    <p class="home-hero__greeting">{% trans "Hello, I'm" %}</p>
+    <h1 id="home-heading" class="home-hero__name">{{ display_name }}</h1>
+    <p class="home-hero__full-name">{{ full_name }}</p>
+    <ul class="home-hero__titles" aria-label="{% trans 'Professional titles' %}">
+      {% for title in titles %}
+      <li class="home-hero__title">{{ title }}</li>
+      {% endfor %}
+    </ul>
+    <p class="home-hero__positioning">{{ positioning }}</p>
+    <a class="home-hero__cta button button--primary" href="{{ cta_url }}">{{ cta_label }}</a>
+  </div>
+
+  <div class="home-hero__visual">
+    {% include "includes/profile-photo.html" %}
+  </div>
+</section>
+{% endblock %}

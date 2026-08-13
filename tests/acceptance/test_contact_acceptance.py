@@ -84,12 +84,16 @@ def test_whatsapp_and_professional_links_are_present(contact_links) -> None:
     content = Client().get("/contact/").content.decode()
 
     assert "whatsapp-button" in content
-    assert "https://wa.me/5511999999999" in content
-    assert "https://www.linkedin.com/in/luis-franca-example" in content
-    assert "https://github.com/luis-franca-example" in content
+    assert "https://wa.me/5531993423501" in content
+    assert "https://www.linkedin.com/in/luisfranca-software/" in content
+    assert "https://github.com/luisfranca-software" in content
 
 
 def test_resume_download_references_external_storage(contact_links) -> None:
     content = Client().get("/contact/").content.decode()
 
-    assert "https://drive.google.com/file/d/example/view" in content
+    resume_url = (
+        "https://drive.google.com/file/d/"
+        "1ZbhGxvtm_J7OWF2uXthPN01TSx-Xquav/view?usp=sharing"
+    )
+    assert resume_url in content

@@ -132,7 +132,12 @@ def test_responsive_behavior_is_defined() -> None:
     assert "@media" in css
 
 
-def test_implementation_avoids_unnecessary_javascript() -> None:
+def test_portfolio_does_not_add_module_specific_javascript() -> None:
     content = Client().get("/portfolio/").content.decode()
 
-    assert "<script" not in content
+    # The only script is the shared site.js used by global navigation
+    # (SPEC-001-REQ-002); the Portfolio module itself adds no scripts.
+    assert "<script" in content
+    assert content.count("<script") == 1
+    assert "js/site.js" in content
+    assert "portfolio.js" not in content

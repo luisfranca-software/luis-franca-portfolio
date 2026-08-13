@@ -1,12 +1,12 @@
 # Luis Franca Portfolio — Brazilian Portuguese (pt_BR) translations.
-# Governing documents: ADR-002 (Internationalization), SPEC-002.
+# Governing documents: ADR-002 (Internationalization), SPEC-001, SPEC-002, SPEC-003.
 # English is the canonical source language.
 msgid ""
 msgstr ""
 "Project-Id-Version: luis-franca-portfolio\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-10 15:00+0000\n"
-"PO-Revision-Date: 2026-08-10 15:00+0000\n"
+"POT-Creation-Date: 2026-08-12 12:00+0000\n"
+"PO-Revision-Date: 2026-08-12 12:00+0000\n"
 "Last-Translator: Site Portfolio\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
@@ -14,6 +14,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: frontend/templates/base.html
+msgid "Skip to main content"
+msgstr "Pular para o conteúdo principal"
+
+#: frontend/templates/base.html
+msgid "Luís França is a Software Engineer specializing in Python backend development, automation, and AI/LLM applications, focused on maintainable and production-ready software."
+msgstr "Luís França é Engenheiro de Software especializado em desenvolvimento backend Python, automação e aplicações de IA/LLM, focado em software manutenível e pronto para produção."
+
+#: frontend/templates/base.html
+msgid "Luís França — Software Engineer"
+msgstr "Luís França — Engenheiro de Software"
 
 #: frontend/templates/base.html
 msgid "All rights reserved."
@@ -27,10 +39,357 @@ msgstr "Conversar pelo WhatsApp"
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: frontend/templates/contact/contact.html
-#: backend/apps/contact/models.py
+#: frontend/templates/includes/navigation.html
+msgid "Main navigation"
+msgstr "Navegação principal"
+
+#: frontend/templates/includes/navigation.html
+msgid "Home"
+msgstr "Início"
+
+#: frontend/templates/includes/navigation.html
+msgid "Toggle navigation"
+msgstr "Alternar navegação"
+
+#: frontend/templates/includes/navigation.html
+msgid "About"
+msgstr "Sobre"
+
+#: frontend/templates/includes/navigation.html
+msgid "Skills"
+msgstr "Habilidades"
+
+#: frontend/templates/includes/navigation.html
+msgid "Experience"
+msgstr "Experiência"
+
+#: frontend/templates/includes/navigation.html
+msgid "Portfolio"
+msgstr "Portfólio"
+
+#: frontend/templates/includes/navigation.html
 msgid "Contact"
 msgstr "Contato"
+
+#: frontend/templates/includes/language-selector.html
+msgid "Language selector"
+msgstr "Seletor de idioma"
+
+#: frontend/templates/includes/language-selector.html
+msgid "Language"
+msgstr "Idioma"
+
+#: frontend/templates/includes/language-selector.html
+msgid "Change language"
+msgstr "Alterar idioma"
+
+#: frontend/templates/includes/footer-links.html
+msgid "Navigation"
+msgstr "Navegação"
+
+#: frontend/templates/includes/footer-links.html
+msgid "Professional links"
+msgstr "Links profissionais"
+
+#: frontend/templates/includes/footer-links.html
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: frontend/templates/includes/footer-links.html
+msgid "GitHub"
+msgstr "GitHub"
+
+#: frontend/templates/includes/footer-links.html
+msgid "Download résumé"
+msgstr "Baixar currículo"
+
+#: frontend/templates/home/home.html
+msgid "Luís França | Software Engineer · Python Backend Engineer · AI/LLM Engineer"
+msgstr "Luís França | Engenheiro de Software · Engenheiro Python Backend · Engenheiro de IA/LLM"
+
+#: frontend/templates/home/home.html
+msgid "Hello, I'm"
+msgstr "Olá, eu sou"
+
+#: frontend/templates/home/home.html
+msgid "Professional titles"
+msgstr "Títulos profissionais"
+
+#: frontend/templates/home/home.html
+msgid "Let's Talk"
+msgstr "Vamos conversar"
+
+#: backend/apps/home/views.py
+msgid "Software Engineer"
+msgstr "Engenheiro de Software"
+
+#: backend/apps/home/views.py
+msgid "Python Backend Engineer"
+msgstr "Engenheiro Python Backend"
+
+#: backend/apps/home/views.py
+msgid "AI/LLM Engineer"
+msgstr "Engenheiro de IA/LLM"
+
+#: backend/apps/home/views.py
+msgid "Software engineering focused on Python, backend systems, automation, and AI, built with specification-driven development, architecture, automated testing, and production delivery."
+msgstr "Engenharia de software focada em Python, sistemas backend, automação e IA, construída com desenvolvimento orientado a especificações, arquitetura, testes automatizados e entrega em produção."
+
+#: frontend/templates/about/about.html
+msgid "Learn about Luís França, a Software Engineer specializing in Python backend development, automation, and AI/LLM applications."
+msgstr "Conheça Luís França, Engenheiro de Software especializado em desenvolvimento backend Python, automação e aplicações de IA/LLM."
+
+#: frontend/templates/about/about.html
+msgid "About"
+msgstr "Sobre"
+
+#: frontend/templates/about/about.html
+msgid "I am a Software Engineer specializing in Python backend development, automation, and AI/LLM applications. I build software through a disciplined engineering process that connects requirements, specification, architecture, implementation, automated testing, validation, and production delivery."
+msgstr "Sou Engenheiro de Software especializado em desenvolvimento backend Python, automação e aplicações de IA/LLM. Construo software por meio de um processo de engenharia disciplinado que conecta requisitos, especificação, arquitetura, implementação, testes automatizados, validação e entrega em produção."
+
+#: frontend/templates/about/about.html
+msgid "My work focuses on developing maintainable, testable, and production-ready systems, with particular attention to clear architecture, software quality, security, and traceability between business requirements and implementation. I approach technology as an engineering decision rather than an end in itself, choosing solutions according to the actual requirements and constraints of each system."
+msgstr "Meu trabalho foca em desenvolver sistemas manuteníveis, testáveis e prontos para produção, com atenção particular à arquitetura clara, qualidade de software, segurança e rastreabilidade entre requisitos de negócio e implementação. Abordo a tecnologia como uma decisão de engenharia e não como um fim em si mesmo, escolhendo soluções de acordo com os requisitos e restrições reais de cada sistema."
+
+#: frontend/templates/skills/skills.html
+msgid "Explore the professional skills of Luís França: Python, backend engineering, AI/LLM integration, automated testing, DevOps, and specification-driven development."
+msgstr "Explore as habilidades profissionais de Luís França: Python, engenharia backend, integração de IA/LLM, testes automatizados, DevOps e desenvolvimento orientado a especificações."
+
+#: frontend/templates/skills/skills.html
+msgid "Skills"
+msgstr "Habilidades"
+
+#: frontend/templates/skills/skills.html
+msgid "Professional technology stack approved for my software engineering practice."
+msgstr "Stack tecnológico profissional aprovado para minha prática de engenharia de software."
+
+#: frontend/templates/skills/skills.html
+msgid "Software Engineering"
+msgstr "Engenharia de Software"
+
+#: frontend/templates/skills/skills.html
+msgid "Software Architecture"
+msgstr "Arquitetura de Software"
+
+#: frontend/templates/skills/skills.html
+msgid "Requirements Engineering"
+msgstr "Engenharia de Requisitos"
+
+#: frontend/templates/skills/skills.html
+msgid "Specification-Driven Development"
+msgstr "Desenvolvimento Orientado a Especificações"
+
+#: frontend/templates/skills/skills.html
+msgid "Object-Oriented Programming"
+msgstr "Programação Orientada a Objetos"
+
+#: frontend/templates/skills/skills.html
+msgid "REST API Design"
+msgstr "Design de APIs REST"
+
+#: frontend/templates/skills/skills.html
+msgid "Software Documentation"
+msgstr "Documentação de Software"
+
+#: frontend/templates/skills/skills.html
+msgid "Backend & Python"
+msgstr "Backend e Python"
+
+#: frontend/templates/skills/skills.html
+msgid "Python"
+msgstr "Python"
+
+#: frontend/templates/skills/skills.html
+msgid "Django"
+msgstr "Django"
+
+#: frontend/templates/skills/skills.html
+msgid "FastAPI"
+msgstr "FastAPI"
+
+#: frontend/templates/skills/skills.html
+msgid "Flask"
+msgstr "Flask"
+
+#: frontend/templates/skills/skills.html
+msgid "Pydantic"
+msgstr "Pydantic"
+
+#: frontend/templates/skills/skills.html
+msgid "SQLAlchemy"
+msgstr "SQLAlchemy"
+
+#: frontend/templates/skills/skills.html
+msgid "Data & Integration"
+msgstr "Dados e Integração"
+
+#: frontend/templates/skills/skills.html
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#: frontend/templates/skills/skills.html
+msgid "SQLite"
+msgstr "SQLite"
+
+#: frontend/templates/skills/skills.html
+msgid "Relational Databases"
+msgstr "Bancos de Dados Relacionais"
+
+#: frontend/templates/skills/skills.html
+msgid "REST APIs"
+msgstr "APIs REST"
+
+#: frontend/templates/skills/skills.html
+msgid "External API Integration"
+msgstr "Integração com APIs Externas"
+
+#: frontend/templates/skills/skills.html
+msgid "Testing & Quality"
+msgstr "Testes e Qualidade"
+
+#: frontend/templates/skills/skills.html
+msgid "pytest"
+msgstr "pytest"
+
+#: frontend/templates/skills/skills.html
+msgid "Automated Testing"
+msgstr "Testes Automatizados"
+
+#: frontend/templates/skills/skills.html
+msgid "Unit Testing"
+msgstr "Testes Unitários"
+
+#: frontend/templates/skills/skills.html
+msgid "Integration Testing"
+msgstr "Testes de Integração"
+
+#: frontend/templates/skills/skills.html
+msgid "Acceptance Testing"
+msgstr "Testes de Aceitação"
+
+#: frontend/templates/skills/skills.html
+msgid "Ruff"
+msgstr "Ruff"
+
+#: frontend/templates/skills/skills.html
+msgid "mypy"
+msgstr "mypy"
+
+#: frontend/templates/skills/skills.html
+msgid "AI & Automation"
+msgstr "IA e Automação"
+
+#: frontend/templates/skills/skills.html
+msgid "LLM Integration"
+msgstr "Integração com LLMs"
+
+#: frontend/templates/skills/skills.html
+msgid "AI-Assisted Software Engineering"
+msgstr "Engenharia de Software Assistida por IA"
+
+#: frontend/templates/skills/skills.html
+msgid "Prompt Engineering"
+msgstr "Engenharia de Prompt"
+
+#: frontend/templates/skills/skills.html
+msgid "Workflow Automation"
+msgstr "Automação de Fluxos de Trabalho"
+
+#: frontend/templates/skills/skills.html
+msgid "RPA"
+msgstr "RPA"
+
+#: frontend/templates/skills/skills.html
+msgid "DevOps & Delivery"
+msgstr "DevOps e Entrega"
+
+#: frontend/templates/skills/skills.html
+msgid "Git"
+msgstr "Git"
+
+#: frontend/templates/skills/skills.html
+msgid "GitHub"
+msgstr "GitHub"
+
+#: frontend/templates/skills/skills.html
+msgid "Docker"
+msgstr "Docker"
+
+#: frontend/templates/skills/skills.html
+msgid "CI/CD"
+msgstr "CI/CD"
+
+#: frontend/templates/skills/skills.html
+msgid "GitHub Actions"
+msgstr "GitHub Actions"
+
+#: frontend/templates/skills/skills.html
+msgid "Linux"
+msgstr "Linux"
+
+#: frontend/templates/skills/skills.html
+msgid "Desktop Development"
+msgstr "Desenvolvimento Desktop"
+
+#: frontend/templates/skills/skills.html
+msgid "Tkinter"
+msgstr "Tkinter"
+
+#: frontend/templates/skills/skills.html
+msgid " skills"
+msgstr " habilidades"
+
+#: frontend/templates/experience/experience.html
+msgid "Read about Luís França's professional experience across architecture, BIM, construction, business management, and software engineering."
+msgstr "Leia sobre a experiência profissional de Luís França em arquitetura, BIM, construção, gestão de negócios e engenharia de software."
+
+#: frontend/templates/experience/experience.html
+msgid "Experience"
+msgstr "Experiência"
+
+#: frontend/templates/experience/experience.html
+msgid "My professional journey combines more than 20 years of experience in technology, architectural design, BIM, construction, business management, and software development. I am currently pursuing a degree in Software Engineering and hold a technical background in Building Construction, bringing a multidisciplinary perspective to the design and development of software systems."
+msgstr "Minha trajetória profissional combina mais de 20 anos de experiência em tecnologia, projeto arquitetônico, BIM, construção, gestão de negócios e desenvolvimento de software. Atualmente curso Engenharia de Software e possuo formação técnica em Edificações, trazendo uma perspectiva multidisciplinar para o projeto e desenvolvimento de sistemas de software."
+
+#: frontend/templates/experience/experience.html
+msgid "My relationship with software development began more than two decades ago, when I built an AutoLISP application integrated with AutoCAD 2000 to automate the generation of architectural floor plans and sections. Since then, programming and technology have remained recurring tools in my work, evolving across different languages and technologies to automate processes and solve practical problems."
+msgstr "Minha relação com o desenvolvimento de software começou há mais de duas décadas, quando construí uma aplicação AutoLISP integrada ao AutoCAD 2000 para automatizar a geração de plantas e cortes arquitetônicos. Desde então, a programação e a tecnologia permanecem como ferramentas recorrentes no meu trabalho, evoluindo por diferentes linguagens e tecnologias para automatizar processos e resolver problemas práticos."
+
+#: frontend/templates/experience/experience.html
+msgid "At DC Arquitetura, I worked with architectural design and BIM modeling for residential, commercial, and industrial projects, covering activities from requirements analysis and technical documentation to multidisciplinary coordination and project delivery. This experience strengthened skills in requirements analysis, structured documentation, complex information modeling, technical consistency, problem solving, and systems thinking — competencies that I now apply directly to software engineering."
+msgstr "Na DC Arquitetura, trabalhei com projeto arquitetônico e modelagem BIM para projetos residenciais, comerciais e industriais, cobrindo atividades desde análise de requisitos e documentação técnica até coordenação multidisciplinar e entrega de projetos. Essa experiência fortaleceu habilidades em análise de requisitos, documentação estruturada, modelagem complexa de informações, consistência técnica, resolução de problemas e pensamento sistêmico — competências que aplico diretamente na engenharia de software."
+
+#: frontend/templates/experience/experience.html
+msgid "At LF Information System, my work is focused on Python software engineering, backend development, APIs, application architecture, automation, relational databases, external integrations, automated testing, technical documentation, Docker, Git, and AI-assisted engineering with human oversight. Current projects include Enterprise Platform, Intelligent Currency Platform, and Sistema Cotação de Moedas, with an emphasis on modular architecture, specification-driven development, maintainability, testability, and production-oriented engineering."
+msgstr "Na LF Information System, meu trabalho foca em engenharia de software Python, desenvolvimento backend, APIs, arquitetura de aplicações, automação, bancos de dados relacionais, integrações externas, testes automatizados, documentação técnica, Docker, Git e engenharia assistida por IA com supervisão humana. Os projetos atuais incluem Enterprise Platform, Intelligent Currency Platform e Sistema Cotação de Moedas, com ênfase em arquitetura modular, desenvolvimento orientado a especificações, manutenibilidade, testabilidade e engenharia orientada a produção."
+
+#: frontend/templates/experience/experience.html
+msgid "Professional context"
+msgstr "Contexto profissional"
+
+#: frontend/templates/experience/experience.html
+msgid "Milestones"
+msgstr "Marcos"
+
+#: frontend/templates/experience/experience.html
+msgid "Education"
+msgstr "Formação"
+
+#: backend/apps/experience/views.py
+msgid "Software Engineering — In progress"
+msgstr "Engenharia de Software — Em andamento"
+
+#: backend/apps/experience/views.py
+msgid "Building Construction Technician"
+msgstr "Técnico em Edificações"
+
+#: frontend/templates/experience/experience.html
+msgid "Training"
+msgstr "Treinamentos"
+
+#: frontend/templates/experience/experience.html
+msgid "View full profile on LinkedIn"
+msgstr "Ver perfil completo no LinkedIn"
 
 #: frontend/templates/contact/contact.html
 msgid "Send a message or request a quotation."
@@ -64,22 +423,6 @@ msgstr "Sua mensagem foi recebida, mas houve um problema temporário com a notif
 #: frontend/templates/includes/contact-info.html
 msgid "Direct contact"
 msgstr "Contato direto"
-
-#: frontend/templates/includes/contact-info.html
-msgid "LinkedIn"
-msgstr "LinkedIn"
-
-#: frontend/templates/includes/contact-info.html
-msgid "GitHub"
-msgstr "GitHub"
-
-#: frontend/templates/includes/contact-info.html
-msgid "Download résumé"
-msgstr "Baixar currículo"
-
-#: frontend/templates/portfolio/portfolio.html
-msgid "Portfolio"
-msgstr "Portfólio"
 
 #: frontend/templates/portfolio/portfolio.html
 msgid "Selected software projects."

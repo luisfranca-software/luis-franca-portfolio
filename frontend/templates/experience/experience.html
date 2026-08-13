@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block meta_description %}{% trans "Read about Luís França's professional experience across architecture, BIM, construction, business management, and software engineering." %}{% endblock %}
+{% block title %}{% trans "Experience" %} — Luís França{% endblock %}
+
+{% block content %}
+<section class="content-page" aria-labelledby="experience-heading">
+  <h1 id="experience-heading">{% trans "Experience" %}</h1>
+
+  <div class="prose">
+    <p>
+      {% blocktrans %}
+      My professional journey combines more than 20 years of experience in
+      technology, architectural design, BIM, construction, business
+      management, and software development. I am currently pursuing a degree
+      in Software Engineering and hold a technical background in Building
+      Construction, bringing a multidisciplinary perspective to the design
+      and development of software systems.
+      {% endblocktrans %}
+    </p>
+    <p>
+      {% blocktrans %}
+      My relationship with software development began more than two decades
+      ago, when I built an AutoLISP application integrated with AutoCAD 2000
+      to automate the generation of architectural floor plans and sections.
+      Since then, programming and technology have remained recurring tools in
+      my work, evolving across different languages and technologies to
+      automate processes and solve practical problems.
+      {% endblocktrans %}
+    </p>
+    <p>
+      {% blocktrans %}
+      At DC Arquitetura, I worked with architectural design and BIM modeling
+      for residential, commercial, and industrial projects, covering
+      activities from requirements analysis and technical documentation to
+      multidisciplinary coordination and project delivery. This experience
+      strengthened skills in requirements analysis, structured documentation,
+      complex information modeling, technical consistency, problem solving,
+      and systems thinking — competencies that I now apply directly to
+      software engineering.
+      {% endblocktrans %}
+    </p>
+    <p>
+      {% blocktrans %}
+      At LF Information System, my work is focused on Python software
+      engineering, backend development, APIs, application architecture,
+      automation, relational databases, external integrations, automated
+      testing, technical documentation, Docker, Git, and AI-assisted
+      engineering with human oversight. Current projects include Enterprise
+      Platform, Intelligent Currency Platform, and Sistema Cotação de Moedas,
+      with an emphasis on modular architecture, specification-driven
+      development, maintainability, testability, and production-oriented
+      engineering.
+      {% endblocktrans %}
+    </p>
+  </div>
+
+  <aside class="experience-context" aria-labelledby="experience-context-heading">
+    <h2 id="experience-context-heading">{% trans "Education" %}</h2>
+    <ul>
+      {% for item in education %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+  <p class="content-page__cta">
+    <a class="button button--primary" href="{{ contact_links.linkedin }}" target="_blank" rel="noopener noreferrer">
+      {% trans "View full profile on LinkedIn" %}
+    </a>
+  </p>
+</section>
+{% endblock %}

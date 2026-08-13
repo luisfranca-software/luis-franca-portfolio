@@ -38,8 +38,9 @@ def contact_links(settings):
     """Configure externalized public professional links (ARCH-001 16.3)."""
 
     settings.CONTACT_LINKS = {
-        "whatsapp": "https://wa.me/5511999999999",
-        "linkedin": "https://www.linkedin.com/in/luis-franca-example",
-        "github": "https://github.com/luis-franca-example",
-        "resume": "https://drive.google.com/file/d/example/view",
+        "whatsapp": "https://wa.me/5531993423501",
+        "linkedin": "https://www.linkedin.com/in/luisfranca-software/",
+        "github": "https://github.com/luisfranca-software",
+        "resume": "https://drive.google.com/file/d/1ZbhGxvtm_J7OWF2uXthPN01TSx-Xquav/view?usp=sharing",
     }
+    return settings.CONTACT_LINKS
