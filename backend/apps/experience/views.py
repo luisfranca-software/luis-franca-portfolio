@@ -5,6 +5,7 @@ Governing documents: SPEC-001 (SPEC-001-REQ-006), ARCH-001 (12.1).
 
 from typing import Any
 
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
 
 
@@ -20,7 +21,7 @@ class ExperienceView(TemplateView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context["education"] = (
-            "Software Engineering — In progress",
-            "Building Construction Technician",
+            _("Software Engineering — In progress"),
+            _("Building Construction Technician"),
         )
         return context

@@ -21,8 +21,19 @@ def test_experience_page_presents_career_summary() -> None:
 def test_experience_page_includes_education_summary() -> None:
     content = Client().get("/experience/").content.decode()
 
-    assert "Software Engineering" in content
+    assert "Software Engineering — In progress" in content
     assert "Building Construction Technician" in content
+
+
+def test_experience_page_renders_education_in_portuguese() -> None:
+    client = Client(HTTP_ACCEPT_LANGUAGE="pt-br")
+    content = client.get("/experience/").content.decode()
+
+    assert "Engenharia de Software — Em andamento" in content
+    assert "Técnico em Edificações" in content
+    # English versions must not remain when Portuguese is active.
+    assert "Software Engineering — In progress" not in content
+    assert "Building Construction Technician" not in content
 
 
 def test_experience_page_does_not_show_training_section() -> None:

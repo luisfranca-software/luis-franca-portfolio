@@ -375,6 +375,14 @@ msgstr "Marcos"
 msgid "Education"
 msgstr "Formação"
 
+#: backend/apps/experience/views.py
+msgid "Software Engineering — In progress"
+msgstr "Engenharia de Software — Em andamento"
+
+#: backend/apps/experience/views.py
+msgid "Building Construction Technician"
+msgstr "Técnico em Edificações"
+
 #: frontend/templates/experience/experience.html
 msgid "Training"
 msgstr "Treinamentos"
