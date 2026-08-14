@@ -1,1247 +1,935 @@
-\# ADR-003 — Python Runtime and Development Toolchain
+# ADR-003 — Python Runtime and Development Toolchain
 
-| Field | Value |  
-|-------|-------|  
-| \*\*Document ID\*\* | ADR-003 |  
-| \*\*Title\*\* | Python Runtime and Development Toolchain |  
-| \*\*Version\*\* | 1.0.0 |  
-| \*\*Status\*\* | Approved Baseline |
-| \*\*Owner\*\* | Solution Architecture |  
-| \*\*Approver\*\* | Product Owner |  
-| \*\*Project\*\* | Site Portfolio |  
-| \*\*Release\*\* | Release 1 — MVP |  
-| \*\*Engineering Process\*\* | Specification-Driven Development (SDD) |  
-| \*\*Classification\*\* | Architectural Decision Record |  
-| \*\*Created\*\* | 2026-08-05 |  
-| \*\*Last Updated\*\* | 2026-08-07 |
+| Field | Value |
+|---|---|
+| **Document ID** | ADR-003 |
+| **Decision ID** | ARCH-DEC-003 |
+| **Title** | Python Runtime and Development Toolchain |
+| **Version** | 1.1.0 |
+| **Status** | Approved Baseline |
+| **Decision Status** | Accepted |
+| **Decision Classification** | Strategic Runtime and Engineering Toolchain Decision |
+| **Project** | Site Portfolio |
+| **Release** | Release 1 — MVP |
+| **Owner** | Solution Architecture |
+| **Approver** | Product Owner |
+| **Development Model** | Specification-Driven Development (SDD) |
+| **Created** | 2026-08-05 |
+| **Last Updated** | 2026-08-14 |
 
-\---
+---
 
-\# 1\. Purpose
+# 1. Purpose
 
-This Architectural Decision Record (ADR) formally establishes the official runtime policy, dependency management strategy and development toolchain adopted by the project.
+This Architectural Decision Record establishes the authoritative runtime, dependency management, dependency locking, PostgreSQL driver, development toolchain, and engineering bootstrap policies for the Site Portfolio project.
 
-The objective of this document is to complete the architectural baseline required before implementation activities defined in \*\*SPEC-001 — MVP Foundation\*\*, ensuring that implementation decisions remain fully traceable, reproducible and compliant with the approved engineering governance.
+This ADR closes the runtime and engineering-toolchain decision gap identified after approval of the Release 1 Engineering Documentation Baseline.
 
-This ADR complements \*\*ADR-002 — Technology Stack\*\*.
+The decisions established herein are normative for Release 1 and shall govern:
 
-It does not replace or modify the approved technology stack. Instead, it specifies how that stack shall be implemented and maintained throughout the project lifecycle.
+- local development;
+- automated verification;
+- Continuous Integration environments when introduced;
+- testing environments;
+- staging;
+- production deployment;
+- dependency maintenance;
+- engineering bootstrap;
+- future Release 1 maintenance activities.
 
-\---
+This ADR complements **ADR-002 — Technology Stack**.
 
-\# 2\. Context
+It shall not replace, redefine, or supersede the technology selections established by ADR-002.
 
-The approved engineering documentation defines:
+---
 
-\- Product objectives;  
-\- Technical requirements;  
-\- Software architecture;  
-\- API and data contracts;  
-\- Testing strategy;  
-\- Deployment model;  
-\- Release strategy;  
-\- Technology stack.
+# 2. Normative Authority
 
-During the implementation readiness assessment performed after the approval of \*\*BASELINE-001\*\*, an architectural gap was identified.
+This ADR derives its authority from:
 
-Although the approved documentation formally establishes Python, Django and PostgreSQL as the official technology stack, no document defines:
+- EGS-001 — Engineering Generation Standard;
+- PB-001 — Product Brief;
+- TS-001 — Technical Specification;
+- ARCH-001 — Software Architecture;
+- ADR-001 — Release Strategy;
+- ADR-002 — Technology Stack;
+- BASELINE-001 — Engineering Documentation Baseline.
 
-\- supported Python runtime policy;  
-\- supported Django release line;  
-\- dependency management strategy;  
-\- dependency locking policy;  
-\- PostgreSQL driver policy;  
-\- official development toolchain;  
-\- update policy for engineering dependencies.
+Within the project engineering hierarchy, this ADR refines the approved architecture by defining runtime and engineering-toolchain decisions required to implement and operate the approved technology stack.
 
-This omission is intentional.
+No implementation artifact, local environment, deployment procedure, automation, or engineering convention shall contradict the decisions established herein.
 
-Neither the Technical Specification, Architecture, Technology Stack ADR nor Feature Specifications introduce implementation-specific engineering policies.
+A deviation from this ADR requires controlled engineering review and, when materially architectural, an approved superseding ADR or approved revision of this document.
 
-According to the Engineering Generation Standard (EGS-001 v1.1.0), architectural decisions identified during implementation planning shall be documented through new ADRs before implementation proceeds.
+---
 
-Therefore, this document formalizes those missing architectural decisions while preserving complete consistency with every previously approved engineering artifact.
+# 3. Context
 
-\---
+The approved engineering baseline establishes:
 
-\# 3\. Problem Statement
+- Python as the primary backend language;
+- Django as the primary web framework;
+- PostgreSQL as the authoritative relational database;
+- a Modular Monolith architecture;
+- Specification-Driven Development;
+- environment-based configuration;
+- automated verification whenever practical;
+- reproducible deployment and operational procedures.
 
-Implementation of \*\*SPEC-001 — MVP Foundation\*\* requires a reproducible engineering environment.
+The baseline did not originally establish:
 
-Without an approved runtime and development policy, the project would have no authoritative definition for:
+- the supported Python release line;
+- the supported Django release line;
+- the dependency management mechanism;
+- dependency locking policy;
+- PostgreSQL driver policy;
+- official quality and development tooling;
+- deterministic engineering bootstrap;
+- version-update governance.
 
-\- Python interpreter selection;  
-\- Django release policy;  
-\- dependency installation process;  
-\- dependency version control;  
-\- virtual environment management;  
-\- development tooling;  
-\- quality tooling;  
-\- reproducible project bootstrap.
+Allowing these decisions to originate informally during implementation would violate the project's requirements for explicitness, reproducibility, traceability, maintainability, and controlled architectural evolution.
 
-Allowing those decisions to emerge directly during implementation would violate the Specification-Driven Development process established by the Engineering Generation Standard.
+ADR-003 therefore establishes these policies as explicit architectural decisions.
 
-Furthermore, inconsistent local environments could compromise:
+---
 
-\- reproducibility;  
-\- testing;  
-\- deployment;  
-\- traceability;  
-\- long-term maintainability.
+# 4. Problem Statement
 
-An architectural decision is therefore required before implementation continues.
+Release 1 requires an engineering environment that can be reproduced consistently across development, verification, staging, and production.
 
-\---
+Without an authoritative runtime and toolchain policy, the project would permit uncontrolled variation in:
 
-\# 4\. Decision Drivers
+- Python versions;
+- Django versions;
+- dependency resolution;
+- virtual environments;
+- PostgreSQL drivers;
+- test tooling;
+- static-analysis tooling;
+- linting and formatting;
+- dependency installation;
+- deployment environments.
 
-The following engineering drivers govern this decision.
+Such variation would compromise:
 
-\#\# DD-001 — Compliance with Engineering Governance
+- deterministic dependency resolution;
+- test reproducibility;
+- architecture compliance;
+- operational consistency;
+- security maintenance;
+- deployment reliability;
+- engineering traceability.
 
-Implementation shall remain fully compliant with:
+The project shall therefore maintain one controlled runtime and engineering-toolchain baseline.
 
-\- EGS-001 — Engineering Generation Standard;  
-\- Approved Engineering Baseline;  
-\- Approved Architectural Decisions.
+---
 
-No implementation-specific technology decision may bypass the architectural governance process.
+# 5. Decision Drivers
 
-\---
+## DD-001 — Governance Compliance
 
-\#\# DD-002 — Reproducibility
+Runtime and toolchain decisions shall comply with EGS-001 and the approved Release 1 engineering baseline.
 
-Every developer shall be able to reproduce an identical engineering environment using documented procedures only.
+Implementation shall not independently redefine architectural tooling decisions.
 
-Environment setup shall not depend on undocumented local configuration.
+## DD-002 — Reproducibility
 
-\---
+Equivalent engineering inputs shall produce equivalent dependency environments whenever practical.
 
-\#\# DD-003 — Simplicity
+Engineering setup shall not depend on undocumented local state.
 
-The selected toolchain shall minimize operational complexity while fully satisfying project requirements.
+## DD-003 — Simplicity
 
-Technologies that introduce unnecessary operational burden shall not be adopted.
+The project shall use the smallest toolchain that fully satisfies implementation, verification, and deployment requirements.
 
-\---
+Parallel tools serving equivalent responsibilities shall not be introduced without justified engineering need.
 
-\#\# DD-004 — Maintainability
+## DD-004 — Maintainability
 
-Dependency management shall support:
+Runtime and dependency policies shall support controlled maintenance and predictable upgrades.
 
-\- deterministic installations;  
-\- controlled upgrades;  
-\- long-term maintenance;  
-\- security updates.
+## DD-005 — Security
 
-\---
+Dependency acquisition, configuration, and maintenance shall minimize supply-chain and configuration risk.
 
-\#\# DD-005 — Security
+Secrets shall remain outside source control.
 
-Dependency acquisition and project configuration shall minimize supply-chain risk.
+## DD-006 — Testability
 
-Configuration shall remain environment-based.
+The toolchain shall support the verification and acceptance activities defined by TST-001.
 
-Secrets shall never be committed to source control.
+## DD-007 — Operational Consistency
 
-\---
+Development, testing, staging, and production shall operate under compatible runtime and dependency assumptions.
 
-\#\# DD-006 — Testability
+---
 
-The development environment shall support the complete verification process defined by:
+# 6. Alternatives Considered
 
-\- Testing and Acceptance;  
-\- Deployment and Operations;  
-\- Release Strategy.
+## 6.1 Alternative A — Leave Runtime and Tooling Undefined
 
-\---
-
-\#\# DD-007 — Consistency
-
-All developers, CI environments and production deployments shall execute using the same architectural assumptions.
-
-No environment-specific runtime behavior shall exist without explicit approval.
-
-\---
-
-\# 5\. Alternatives Considered
-
-The following alternatives were evaluated.
-
-\---
-
-\#\# Alternative A — Leave implementation decisions undefined
-
-\#\#\# Description
-
-Allow runtime versions, dependency management and tooling to be selected during implementation as needed.
-
-\#\#\# Advantages
-
-\- No additional documentation required.  
-\- Immediate implementation.
-
-\#\#\# Disadvantages
-
-\- Violates EGS governance.  
-\- Non-reproducible environments.  
-\- High probability of implementation divergence.  
-\- No architectural traceability.  
-\- Increased technical debt.
-
-\#\#\# Decision
+### Decision
 
 Rejected.
 
-\---
+### Rationale
 
-\#\# Alternative B — Expand ADR-002
+This alternative would permit environment divergence, undocumented implementation decisions, non-deterministic installations, and broken engineering traceability.
 
-\#\#\# Description
+---
 
-Modify ADR-002 by adding runtime and tooling policies.
+## 6.2 Alternative B — Expand ADR-002
 
-\#\#\# Advantages
-
-\- Fewer ADR documents.
-
-\#\#\# Disadvantages
-
-\- Changes an already approved architectural decision.  
-\- Mixes technology selection with implementation policy.  
-\- Reduces separation of concerns.  
-\- Requires revision of an approved ADR.
-
-\#\#\# Decision
+### Decision
 
 Rejected.
 
-\---
+### Rationale
 
-\#\# Alternative C — Introduce a dedicated Architectural Decision Record
+ADR-002 governs technology selection.
 
-\#\#\# Description
+Runtime lifecycle, dependency locking, bootstrap, and quality-tool configuration constitute separate engineering responsibilities and shall remain independently governed.
 
-Create a new ADR exclusively responsible for defining:
+---
 
-\- runtime policy;  
-\- dependency management;  
-\- development toolchain;  
-\- engineering bootstrap policy.
+## 6.3 Alternative C — Dedicated Runtime and Toolchain ADR
 
-\#\#\# Advantages
-
-\- Preserves ADR-002 unchanged.  
-\- Maintains architectural modularity.  
-\- Provides complete engineering traceability.  
-\- Fully aligned with Specification-Driven Development.  
-\- Supports future controlled evolution.
-
-\#\#\# Disadvantages
-
-\- Introduces one additional engineering document.
-
-\#\#\# Decision
+### Decision
 
 Accepted.
 
-\# 6\. Decision
+### Rationale
 
-\#\# Architectural Decision
+A dedicated ADR preserves separation of responsibilities while establishing explicit and independently evolvable runtime and engineering-toolchain governance.
 
-The project formally adopts a standardized runtime, dependency management strategy and development toolchain for the entire Release 1 lifecycle.
+---
 
-This decision complements the technology selection established by ADR-002 by defining the engineering policies required to implement, validate, deploy and maintain the approved technology stack.
+# 7. Architectural Decision
 
-The policies defined herein are mandatory for:
+The Site Portfolio project shall use one standardized Python runtime line, one dependency-management workflow, one deterministic dependency lock, one PostgreSQL driver family, and one approved engineering toolchain throughout Release 1.
 
-\- local development;  
-\- Continuous Integration environments;  
-\- testing environments;  
-\- staging environments;  
-\- production deployment;  
-\- future engineering activities performed under the approved baseline.
+The following decisions are mandatory:
 
-Implementation shall not introduce alternative runtime versions, dependency managers or quality tooling without an approved Architectural Decision Record.
+- Python 3.13 release line;
+- Django 5.2 release line;
+- `uv` for Python runtime and dependency management;
+- `pyproject.toml` for project metadata and compatible dependency declarations;
+- `uv.lock` for deterministic resolved dependency state;
+- Psycopg 3 for PostgreSQL connectivity;
+- pytest-based automated testing;
+- Ruff for linting, formatting, and import organization;
+- mypy for static type analysis;
+- django-stubs for Django-aware static analysis.
 
-\---
+Alternative runtime versions, dependency managers, PostgreSQL drivers, or overlapping engineering tools shall not be introduced without approved engineering review.
 
-\# 7\. Python Runtime Policy
+---
 
-\#\# Decision
+# 8. Python Runtime Policy
 
-The official project runtime shall be based on the Python 3.13 release line.
+## 8.1 Approved Runtime
 
-The supported runtime policy is:
+The supported Python runtime shall be:
 
-\`\`\`text  
-\>=3.13,\<3.14  
-\`\`\`
+```text
+>=3.13,<3.14
+```
 
-The runtime definition represents the architectural compatibility policy rather than a fixed patch version.
+Python 3.13 is the authoritative minor release line for Release 1.
 
-Patch-level updates within the approved release line are permitted provided they remain compatible with the approved engineering baseline.
+The project shall not depend on another Python major or minor version.
 
-\---
+## 8.2 Patch-Level Evolution
 
-\#\# Rationale
+Compatible Python 3.13 patch updates may be adopted through normal controlled maintenance.
 
-Python 3.13 provides:
+A patch update shall require:
 
-\- mature ecosystem compatibility;  
-\- stable interpreter behavior;  
-\- long-term maintainability;  
-\- broad package compatibility;  
-\- reduced operational risk compared to adopting the most recent language release immediately.
+- dependency compatibility verification;
+- automated test execution;
+- static-analysis verification;
+- application system checks;
+- operational validation where the update affects deployed environments.
 
-Selecting a stable release line instead of the newest available interpreter minimizes implementation risk while preserving future upgrade flexibility.
+A patch update shall not require a new ADR unless it introduces a material incompatibility or architectural consequence.
 
-\---
+## 8.3 Minor or Major Runtime Changes
 
-\#\# Constraints
+Migration outside the Python 3.13 release line shall require:
 
-The following constraints apply.
+- architecture review;
+- compatibility analysis;
+- dependency validation;
+- regression verification;
+- deployment impact analysis;
+- Product Owner approval;
+- an approved revision or superseding ADR where required.
 
-\#\#\# Runtime Consistency
+## 8.4 Runtime Declaration
 
-All engineering environments shall execute the same supported Python release line.
+The supported Python range shall be declared in `pyproject.toml`.
 
-Different developers shall not use different major or minor Python versions.
+Undocumented interpreter selection shall not constitute an approved project runtime.
 
-\---
+---
 
-\#\#\# Version Control
+# 9. Django Release Policy
 
-The runtime compatibility policy shall be declared in:
+## 9.1 Approved Framework Line
 
-\- \`pyproject.toml\`
+The supported Django runtime shall be:
 
-The project shall not rely on undocumented local interpreter selection.
+```text
+>=5.2,<5.3
+```
 
-\---
+Release 1 shall remain on the Django 5.2 release line.
 
-\#\#\# Upgrade Policy
+## 9.2 Compatibility
 
-Moving from one Python minor release to another requires:
+Django updates within the approved release line shall preserve compatibility with:
 
-\- architectural review;  
-\- compatibility verification;  
-\- successful execution of the complete validation process;  
-\- formal approval through engineering governance.
+- Python 3.13;
+- Psycopg 3;
+- approved application behavior;
+- migrations;
+- automated tests;
+- deployment configuration.
 
-Patch updates within the approved release line do not require a new ADR but shall follow the normal maintenance process.
+## 9.3 Framework Evolution
 
-\---
+Migration outside the Django 5.2 release line shall require architectural evaluation.
 
-\# 8\. Django Release Policy
+A framework migration shall not occur solely through dependency-file modification.
 
-\#\# Decision
+---
 
-The official application framework shall remain Django.
+# 10. Dependency Management Policy
 
-The approved framework policy is:
+## 10.1 Approved Dependency Manager
 
-\`\`\`text  
-\>=5.2,\<5.3  
-\`\`\`
+The official dependency and runtime management tool shall be:
 
-The project adopts the Django 5.2 release line for the complete Release 1 lifecycle.
+```text
+uv
+```
 
-\---
+`uv` shall be responsible for:
 
-\#\# Rationale
+- runtime acquisition where required;
+- virtual environment management;
+- dependency resolution;
+- dependency installation;
+- dependency synchronization;
+- lockfile generation and validation;
+- execution within the managed environment.
 
-The selected release line provides:
+The project shall not maintain a parallel dependency-management workflow for the same Python application environment.
 
-\- long-term stability;  
-\- predictable maintenance;  
-\- compatibility with the approved Modular Monolith architecture;  
-\- mature ecosystem support.
+## 10.2 Project Metadata
 
-Using a single release line throughout Release 1 minimizes regression risk and avoids unnecessary architectural change during implementation.
+`pyproject.toml` shall be the authoritative source for:
 
-\---
+- project metadata;
+- supported Python range;
+- direct runtime dependencies;
+- development dependency groups;
+- compatible dependency ranges;
+- engineering-tool configuration where supported.
 
-\#\# Constraints
+## 10.3 Dependency Introduction
 
-\#\#\# Framework Exclusivity
+A dependency shall be introduced only when justified by an approved implementation or engineering requirement.
 
-All server-side application functionality shall be implemented using Django.
+Dependencies shall be evaluated for:
 
-Alternative backend frameworks are not approved.
+- necessity;
+- compatibility;
+- maintainability;
+- security;
+- testability;
+- operational impact;
+- architectural impact.
 
-\---
+Dependencies shall not be introduced solely for speculative future functionality.
 
-\#\#\# Minor Version Stability
+## 10.4 Runtime and Development Dependencies
 
-Implementation shall remain within the approved Django release line.
+Runtime dependencies and development-only dependencies shall remain logically separated.
 
-Migration to another minor release requires architectural evaluation.
+Production behavior shall not depend on tooling required exclusively for development or verification.
 
-\---
+---
 
-\#\#\# Major Upgrade Policy
+# 11. Dependency Lock Strategy
 
-Future migration to a new Django major release shall require:
+## 11.1 Authoritative Dependency Artifacts
 
-\- compatibility assessment;  
-\- regression testing;  
-\- implementation planning;  
-\- approval through architectural governance.
+The authoritative Python dependency artifacts shall be:
 
-\---
+```text
+pyproject.toml
+uv.lock
+```
 
-\# 9\. Dependency Management Policy
+Their responsibilities are distinct.
 
-\#\# Decision
+### `pyproject.toml`
 
-The project adopts a single official dependency management solution.
+Defines architectural and project compatibility intent.
 
-The approved dependency manager is:
+### `uv.lock`
 
-\`\`\`text  
-uv  
-\`\`\`
+Defines the resolved dependency graph used for deterministic installations.
 
-The dependency manager shall be responsible for:
+Both files shall remain version controlled.
 
-\- Python runtime acquisition when required;  
-\- virtual environment creation;  
-\- dependency installation;  
-\- dependency synchronization;  
-\- dependency resolution;  
-\- execution of project commands inside the managed environment;  
-\- lockfile generation.
+## 11.2 Locked Synchronization
 
-No parallel dependency management workflow shall be maintained.
+CI, staging, production, and release-validation environments shall use the committed lockfile.
 
-\---
+A deployment or verification workflow shall not silently resolve a dependency graph different from the committed lock state.
 
-\#\# Project Metadata
+## 11.3 Lockfile Changes
 
-Project metadata shall be maintained in:
+A change to `uv.lock` shall be intentional and reviewable.
 
-\`\`\`text  
-pyproject.toml  
-\`\`\`
+A lockfile update shall require:
 
-The \`pyproject.toml\` file becomes the authoritative source describing:
+1. controlled dependency resolution;
+2. compatibility verification;
+3. automated testing;
+4. static-analysis verification;
+5. Django/application validation where applicable;
+6. review of material security or architectural consequences;
+7. version-control commit.
 
-\- project metadata;  
-\- runtime compatibility;  
-\- runtime dependencies;  
-\- development dependencies;  
-\- engineering tool configuration.
+Unreviewed dependency upgrades are prohibited.
 
-\---
+## 11.4 Artifact Consistency
 
-\#\# Dependency Declaration
+`pyproject.toml` and `uv.lock` shall remain mutually consistent.
 
-Runtime dependencies shall be declared using compatible version ranges.
+A repository state in which declared dependency intent and the committed lockfile disagree shall not be considered release-ready.
 
-Development dependencies shall remain separated from runtime dependencies.
+---
 
-Only dependencies required by approved specifications may be introduced.
+# 12. PostgreSQL Driver Policy
 
-Adding libraries based solely on anticipated future needs is prohibited.
+## 12.1 Approved Driver
 
-\---
+The project shall use Psycopg 3.
 
-\#\# Dependency Governance
+The approved dependency compatibility policy shall be:
 
-Every dependency shall satisfy the following principles:
+```text
+psycopg[binary]>=3.2,<4
+```
 
-\- necessity;  
-\- maintainability;  
-\- security;  
-\- compatibility;  
-\- traceability.
+## 12.2 Integration Boundary
 
-Dependencies without demonstrated project value shall not be approved.
+Psycopg shall be consumed through Django's PostgreSQL database backend.
 
-\---
+The driver shall not become an application-domain abstraction or direct business dependency.
 
-\#\# Dependency Review
+## 12.3 Database Access
 
-Dependency upgrades shall follow the approved engineering lifecycle:
+Django ORM shall remain the default persistence interface, consistent with ARCH-001.
 
-Implementation
+Raw SQL shall be used only where permitted by ARCH-001 and justified by an actual engineering requirement.
 
-↓
+## 12.4 Driver Replacement
 
-Verification
+An additional or replacement PostgreSQL driver shall require architectural evaluation and approval.
 
-↓
+---
 
-Validation
+# 13. Development and Verification Toolchain
 
-↓
+## 13.1 Automated Testing
 
-Acceptance
+The approved automated testing toolchain shall include:
 
-↓
+```text
+pytest
+pytest-django
+pytest-cov
+```
 
-Release
+These tools shall support the applicable unit, integration, functional, regression, and acceptance verification defined by TST-001 and Feature Specifications.
 
-Emergency security updates shall follow the operational procedures defined in Deployment and Operations.
+## 13.2 Static Type Analysis
 
-\---
+The approved static-analysis tool shall be:
 
-\# 10\. Dependency Lock Strategy
+```text
+mypy
+```
 
-\#\# Decision
+Static type verification shall form part of the engineering verification workflow where configured by the repository baseline.
 
-The project adopts deterministic dependency locking.
+## 13.3 Django Type Support
 
-The authoritative project files become:
+The approved Django typing extension shall be:
 
-\`\`\`text  
-pyproject.toml  
-uv.lock  
-\`\`\`
+```text
+django-stubs
+```
 
-\---
+Its configuration shall remain compatible with the project's approved Django settings structure.
 
-\#\# Responsibilities
+## 13.4 Linting, Formatting, and Imports
 
-\#\#\# pyproject.toml
+The approved code-quality tool shall be:
 
-Defines:
+```text
+Ruff
+```
 
-\- project metadata;  
-\- compatible dependency ranges;  
-\- engineering configuration;  
-\- supported runtime policy.
+Ruff shall provide the repository's configured responsibilities for:
 
-It represents the architectural intent.
+- linting;
+- formatting where configured;
+- import organization;
+- enforceable code-quality rules.
 
-\---
+An overlapping formatter or linter shall not be added without demonstrated engineering benefit and controlled review.
 
-\#\#\# uv.lock
+## 13.5 Tool Configuration
 
-Defines:
+Engineering-tool configuration shall be centralized in `pyproject.toml` whenever supported and when doing so preserves clarity.
 
-\- exact dependency graph;  
-\- exact package versions;  
-\- reproducible installations.
+Duplicated configuration shall be avoided.
 
-It represents the implementation snapshot.
+---
 
-\---
+# 14. Engineering Bootstrap Policy
 
-\#\# Version Control
+## 14.1 Reproducible Bootstrap
 
-The lockfile shall be committed to the repository.
+An engineering environment shall be reproducible from:
 
-Every engineering environment shall use the committed lockfile.
+- version-controlled source code;
+- approved engineering documentation;
+- `pyproject.toml`;
+- `uv.lock`;
+- documented environment configuration.
 
-Local regeneration without version control is prohibited.
+Undocumented manual dependency installation shall not be required.
 
-\---
+## 14.2 Environment Isolation
 
-\#\# Reproducibility
+Project dependencies shall execute within an isolated project environment.
 
-Project installation shall produce equivalent dependency trees across:
+Globally installed Python packages shall not constitute project dependencies.
 
-\- developer workstations;  
-\- CI environments;  
-\- staging;  
-\- production.
+## 14.3 Environment-Specific Configuration
 
-The lock strategy is therefore mandatory for ensuring engineering reproducibility.
+Runtime dependencies shall remain reproducible across environments, while environment-specific operational values shall remain externally configured in accordance with AR-009, SEC-003, ES-005, and OPS-001.
 
-\---
+Runtime reproducibility shall not require production secrets to exist in source control.
 
-\#\# Update Policy
+## 14.4 Bootstrap Verification
 
-Dependency updates shall be performed intentionally.
+An engineering bootstrap shall not be considered valid solely because dependencies install successfully.
 
-Updating the lockfile requires:
+Applicable verification shall include:
 
-1\. dependency synchronization;  
-2\. verification;  
-3\. automated validation;  
-4\. architectural compatibility confirmation;  
-5\. repository commit.
+- dependency consistency;
+- Django system checks;
+- automated testing;
+- lint/static-analysis gates defined by the repository;
+- documentation/repository health checks where applicable.
 
-Uncontrolled dependency upgrades are prohibited.
+---
 
-\---
+# 15. Environment Consistency
 
-\#\# Compliance Statement
+The same approved runtime compatibility policy shall apply to:
 
-The runtime policy, framework policy, dependency management strategy and lock strategy defined in this document complement ADR-002 without modifying the approved technology stack.
+- development;
+- testing;
+- CI;
+- staging;
+- production.
 
-These decisions establish the mandatory engineering foundation required before implementation of SPEC-001 — MVP Foundation and shall remain authoritative throughout Release 1 unless superseded by a future approved Architectural Decision Record.
+Environment-specific differences shall be limited to legitimate operational configuration, platform characteristics, or approved deployment concerns.
 
-\# 11\. PostgreSQL Driver Policy
+An environment shall not introduce a different Python minor release, Django release line, dependency graph, or PostgreSQL driver without approved engineering justification.
 
-\#\# Decision
+Patch-level runtime or dependency differences shall be controlled and shall not invalidate deterministic release behavior.
 
-The project formally adopts \*\*Psycopg 3\*\* as the official PostgreSQL driver for the entire Release 1 lifecycle.
+---
 
-The approved dependency policy is:
+# 16. Version Update and Change-Control Policy
 
-\`\`\`text  
-psycopg\[binary\]\>=3.2,\<4  
-\`\`\`
+## 16.1 Controlled Evolution
 
-The driver shall be integrated exclusively through the Django database backend approved in ADR-002.
+Runtime, framework, driver, dependency-manager, and engineering-tool versions shall evolve through controlled changes.
 
-Direct database access outside the architectural boundaries defined in ARCH-001 is prohibited.
+Updates shall not be performed solely because a newer version exists.
 
-\---
+## 16.2 Evaluation Criteria
 
-\#\# Rationale
+Version changes shall evaluate:
 
-The selected driver provides:
+- compatibility;
+- security impact;
+- regression risk;
+- architecture impact;
+- deployment impact;
+- operational complexity;
+- maintenance benefit.
 
-\- active long-term maintenance;  
-\- full compatibility with modern PostgreSQL releases;  
-\- compatibility with the approved Django release line;  
-\- improved maintainability over previous driver generations;  
-\- simplified installation during local development.
+## 16.3 Material Changes
 
-The project adopts the binary distribution for engineering reproducibility.
+The following changes are material and shall require Architecture & Engineering Review:
 
-Future production deployments may adopt platform-specific builds if operational requirements justify that evolution.
+- Python minor or major release change;
+- Django release-line change;
+- dependency-manager replacement;
+- dependency-locking strategy change;
+- PostgreSQL driver replacement;
+- replacement of core testing or static-analysis tooling.
 
-\---
+Where such a change alters an approved architectural decision, an approved ADR revision or superseding ADR is required.
 
-\#\# Constraints
+## 16.4 Security Maintenance
 
-\#\#\# Database Access
+Urgent security updates may use the emergency-change provisions of OPS-001.
 
-All persistence operations shall be performed through the Django ORM.
+Emergency handling shall not permanently bypass documentation, verification, traceability, or post-change validation requirements.
 
-Direct SQL execution is permitted only when technically justified and documented.
+---
 
-\---
+# 17. Security Requirements
 
-\#\#\# Driver Exclusivity
+Runtime and dependency management shall preserve the project's security baseline.
 
-No additional PostgreSQL drivers shall be introduced into the project.
+The following requirements are mandatory:
 
-Alternative database adapters require approval through a new Architectural Decision Record.
+- secrets shall not be stored in `pyproject.toml` or `uv.lock`;
+- local secret files shall not be committed;
+- dependency changes shall remain reviewable;
+- unnecessary dependencies shall not be introduced;
+- production configuration shall remain environment-based;
+- engineering tools shall not require production credentials for normal validation;
+- sensitive configuration shall remain outside source-controlled implementation artifacts.
 
-\---
+Dependency locking improves reproducibility but shall not be treated as a substitute for dependency-security review.
 
-\#\#\# Compatibility
+---
 
-Driver updates shall preserve compatibility with:
+# 18. Verification and Quality Gates
 
-\- approved Python runtime;  
-\- approved Django release line;  
-\- approved PostgreSQL version policy.
+Compliance with this ADR shall be objectively verifiable.
 
-\---
+Applicable verification evidence shall include:
 
-\# 12\. Development Toolchain
+- supported Python runtime declaration;
+- supported Django dependency range;
+- Psycopg 3 dependency declaration;
+- committed `uv.lock`;
+- successful locked dependency synchronization;
+- successful automated tests;
+- successful Ruff checks according to repository configuration;
+- successful mypy checks according to repository configuration;
+- successful Django system checks;
+- successful canonical-document and repository-governance checks where defined.
 
-\#\# Decision
+Failure of a mandatory verification gate shall prevent the affected increment from being considered release-ready.
 
-The project adopts a standardized engineering toolchain supporting implementation, verification, validation and maintenance activities defined by the approved engineering documentation.
+This ADR does not replace TST-001.
 
-Only tools approved by this ADR shall be considered part of the official engineering environment.
+Testing and acceptance remain governed by TST-001.
 
-\---
+---
 
-\#\# Runtime Management
+# 19. Operational Requirements
 
-Official tool:
+Deployment and Operations shall preserve the runtime and dependency policies defined by this ADR.
 
-\`\`\`text  
-uv  
-\`\`\`
+Production deployment shall:
 
-Responsibilities:
+- use the approved Python release line;
+- use a dependency environment derived from the committed project artifacts;
+- avoid uncontrolled dependency resolution;
+- preserve environment-based configuration;
+- maintain separation between source-controlled configuration definitions and production secrets;
+- support deterministic restoration of the approved application dependency state.
 
-\- Python runtime management;  
-\- virtual environment management;  
-\- dependency installation;  
-\- dependency synchronization;  
-\- command execution;  
-\- lock generation.
+This ADR does not define infrastructure installation commands, service-management commands, or release runbooks.
 
-\---
+Those responsibilities remain governed by OPS-001 and approved operational procedures.
 
-\#\# Testing Framework
+---
 
-Official framework:
+# 20. Consequences
 
-\`\`\`text  
-pytest  
-pytest-django  
-pytest-cov  
-\`\`\`
+## 20.1 Positive Consequences
 
-Responsibilities:
+The decision provides:
 
-\- unit testing;  
-\- integration testing;  
-\- Django test execution;  
-\- coverage reporting.
+- deterministic dependency management;
+- controlled runtime compatibility;
+- consistent engineering environments;
+- explicit dependency governance;
+- reproducible testing;
+- reduced tooling fragmentation;
+- clear upgrade boundaries;
+- improved deployment reproducibility;
+- explicit engineering traceability.
 
-The testing framework shall support the Testing and Acceptance process defined in TST-001.
+## 20.2 Negative Consequences
 
-\---
+The decision introduces:
 
-\#\# Static Analysis
+- controlled constraints on runtime and framework upgrades;
+- mandatory lockfile maintenance;
+- required validation before dependency changes;
+- governance overhead for material toolchain substitutions.
 
-Official tool:
+These consequences are accepted because they preserve Release 1 correctness, reproducibility, and maintainability.
 
-\`\`\`text  
-mypy  
-\`\`\`
+---
 
-Responsibilities:
+# 21. Requirement and Decision Traceability
 
-\- static type verification;  
-\- interface consistency;  
-\- early detection of programming defects.
+This ADR maintains traceability to the approved engineering baseline.
 
-Type checking shall become part of the engineering validation workflow.
+## 21.1 Business Requirements
 
-\---
+Applicable business requirements include:
 
-\#\# Code Quality
+- BR-005 — support future business expansion;
+- BR-006 — provide an excellent user experience across supported devices;
+- BR-008 — preserve long-term product evolution without architectural redesign.
 
-Official tool:
+## 21.2 Technical Requirements
 
-\`\`\`text  
-Ruff  
-\`\`\`
+Applicable requirements include:
 
-Responsibilities:
+- TR-001 — preserve engineering traceability;
+- TR-002 — require approved specification before implementation;
+- TR-004 — preserve modular evolution;
+- TR-005 — synchronize documentation and implementation;
+- TR-006 — ensure independent testability;
+- TR-007 — incorporate security by default;
+- TR-008 — prioritize engineering quality;
+- NFR-003 — maintainability;
+- NFR-008 — portability;
+- NFR-009 — extensibility;
+- SEC-003 — environment-based sensitive configuration;
+- SEC-005 — secure dependency management;
+- SEC-006 — secure defaults;
+- ES-002 — version-controlled engineering documentation;
+- ES-005 — environment-based configuration;
+- ES-006 — automated verification whenever feasible;
+- ES-009 — implementation consistency with architecture.
 
-\- linting;  
-\- formatting;  
-\- import organization;  
-\- enforcement of approved coding standards.
+## 21.3 Architecture Requirements
 
-No secondary formatter or linter shall be introduced without architectural approval.
+Applicable architecture requirements include:
 
-\---
+- AR-001 — Modular Monolith;
+- AR-004 — Single Deployable Application;
+- AR-005 — Relational Persistence;
+- AR-009 — Environment-Based Configuration;
+- AR-010 — Controlled Architectural Evolution.
 
-\#\# Django Typing Support
-
-Official extension:
-
-\`\`\`text  
-django-stubs  
-\`\`\`
-
-Responsibilities:
-
-\- Django-aware type analysis;  
-\- framework-specific typing support;  
-\- improved static verification.
-
-\---
-
-\#\# Project Metadata
-
-The engineering toolchain configuration shall be maintained in:
-
-\`\`\`text  
-pyproject.toml  
-\`\`\`
-
-No duplicated configuration files shall be introduced when equivalent configuration can be centralized.
-
-\---
-
-\#\# Toolchain Principles
-
-The selected engineering toolchain shall satisfy:
-
-\- simplicity;  
-\- reproducibility;  
-\- maintainability;  
-\- deterministic execution;  
-\- low operational complexity;  
-\- compatibility with Continuous Integration.
-
-\---
-
-\# 13\. Project Bootstrap Policy
-
-\#\# Decision
-
-Every engineering environment shall be created from an empty workspace using only documented procedures.
-
-No undocumented manual configuration shall be required before implementation activities.
-
-\---
-
-\#\# Bootstrap Objectives
-
-The bootstrap process shall provide:
-
-\- Python runtime acquisition;  
-\- virtual environment creation;  
-\- dependency installation;  
-\- dependency synchronization;  
-\- project validation;  
-\- deterministic engineering environment.
-
-\---
-
-\#\# Authoritative Sources
-
-The bootstrap process shall derive its configuration exclusively from:
-
-\- approved engineering documentation;  
-\- pyproject.toml;  
-\- uv.lock;  
-\- environment configuration files.
-
-No hidden local configuration shall influence project initialization.
-
-\---
-
-\#\# Environment Isolation
-
-Every developer shall use an isolated project environment.
-
-Global Python packages shall not be considered part of the project environment.
-
-Engineering reproducibility shall not depend on the operating system configuration.
-
-\---
-
-\#\# Deterministic Installation
-
-Executing the documented bootstrap procedure shall produce equivalent environments across:
-
-\- Linux;  
-\- Continuous Integration;  
-\- staging;  
-\- production.
-
-Environmental differences shall remain restricted to externally configured operational parameters.
-
-\---
-
-\#\# Bootstrap Validation
-
-Completion of the bootstrap process shall be verified by successful execution of:
-
-\- dependency synchronization;  
-\- project validation commands;  
-\- testing baseline;  
-\- static analysis baseline.
-
-The project shall not be considered ready for implementation before successful bootstrap validation.
-
-\---
-
-\# 14\. Version Update Policy
-
-\#\# Decision
-
-Version updates shall follow a controlled engineering process.
-
-No dependency, runtime or engineering tool shall be upgraded without evaluation of architectural compatibility.
-
-\---
-
-\#\# Runtime Updates
-
-Python updates shall be classified as:
-
-\#\#\# Patch Updates
-
-Permitted within the approved runtime line.
-
-Subject to:
-
-\- compatibility verification;  
-\- automated validation.
-
-\---
-
-\#\#\# Minor Release Updates
-
-Require:
-
-\- engineering review;  
-\- compatibility assessment;  
-\- successful regression validation.
-
-\---
-
-\#\#\# Major Release Updates
-
-Require:
-
-\- new Architectural Decision Record;  
-\- implementation planning;  
-\- engineering approval.
-
-\---
-
-\#\# Framework Updates
-
-Django updates shall follow the same governance model.
-
-Major framework migrations require:
-
-\- architecture review;  
-\- implementation impact assessment;  
-\- regression validation;  
-\- Product Owner approval.
-
-\---
-
-\#\# Dependency Updates
-
-Dependencies shall be updated intentionally.
-
-The update workflow shall include:
-
-1\. dependency resolution;  
-2\. lockfile regeneration;  
-3\. static analysis;  
-4\. automated testing;  
-5\. implementation verification;  
-6\. repository commit.
-
-\---
-
-\#\# Toolchain Updates
-
-Engineering tools shall remain compatible with:
-
-\- approved Python runtime;  
-\- approved Django release line;  
-\- approved engineering process.
-
-Introducing additional engineering tools without documented justification is prohibited.
-
-\---
-
-\#\# Security Updates
-
-Security-related dependency updates shall receive implementation priority.
-
-Emergency security updates shall follow the operational governance established in OPS-001 while preserving traceability and reproducibility.
-
-\---
-
-\#\# Compatibility Principle
-
-Version evolution shall preserve:
-
-\- architectural consistency;  
-\- implementation reproducibility;  
-\- operational stability;  
-\- engineering traceability;  
-\- approved release scope.
-
-Technology evolution shall remain incremental and governed by the Specification-Driven Development process.
-
-\---
-
-\#\# Engineering Compliance Statement
-
-The PostgreSQL driver policy, development toolchain, bootstrap policy and version update policy defined in this document complete the engineering foundation required for Release 1\.
-
-These policies operationalize the technology stack approved in ADR-002 while preserving full compliance with:
-
-\- EGS-001 — Engineering Generation Standard;  
-\- PB-001 — Product Brief;  
-\- TS-001 — Technical Specification;  
-\- ARCH-001 — Software Architecture;  
-\- ADC-001 — API and Data Contracts;  
-\- TST-001 — Testing and Acceptance;  
-\- OPS-001 — Deployment and Operations;  
-\- ADR-001 — Release Strategy;  
-\- ADR-002 — Technology Stack;  
-\- BASELINE-001;  
-\- SPEC-001 — MVP Foundation.
-
-\# 15\. Consequences
-
-\#\# Positive Consequences
-
-The approval of this Architectural Decision Record establishes a complete engineering foundation for the implementation of Release 1\.
-
-The project gains:
-
-\- a single officially supported Python runtime policy;  
-\- a standardized Django release policy;  
-\- deterministic dependency management;  
-\- reproducible engineering environments;  
-\- standardized bootstrap procedures;  
-\- controlled dependency evolution;  
-\- standardized engineering tooling;  
-\- reduced onboarding complexity;  
-\- improved implementation reproducibility;  
-\- improved maintainability;  
-\- improved engineering governance;  
-\- improved release predictability.
-
-This decision eliminates architectural ambiguity before implementation of SPEC-001.
-
-\---
-
-\#\# Engineering Consequences
-
-Following approval of this ADR:
-
-\- \`pyproject.toml\` becomes the authoritative engineering metadata file.  
-\- \`uv.lock\` becomes the authoritative dependency lock file.  
-\- All engineering environments shall follow the bootstrap procedure defined by this ADR.  
-\- Development tooling shall remain standardized across all environments.  
-\- Dependency updates shall become controlled engineering activities.  
-\- Future runtime changes shall require engineering governance.
-
-\---
-
-\#\# Operational Consequences
-
-Deployment environments shall execute software using the approved runtime policy.
-
-Configuration management remains externalized according to OPS-001.
-
-No operational environment shall introduce runtime variations outside the approved compatibility policy.
-
-\---
-
-\#\# Maintenance Consequences
-
-Engineering maintenance becomes predictable through:
-
-\- deterministic dependency resolution;  
-\- reproducible installations;  
-\- standardized engineering commands;  
-\- controlled dependency evolution;  
-\- architectural traceability.
-
-\---
-
-\#\# Governance Consequences
-
-This ADR extends the approved engineering baseline without modifying previously approved Architectural Decision Records.
-
-ADR-001 remains unchanged.
-
-ADR-002 remains unchanged.
-
-This document complements the existing architectural decisions by defining engineering execution policies.
-
-\---
-
-\# 16\. Traceability
-
-\#\# Upstream Traceability
-
-This decision derives from the following approved engineering documentation:
-
-| Source | Relationship |  
-|---------|--------------|  
-| EGS-001 — Engineering Generation Standard | Engineering governance |  
-| PB-001 — Product Brief | Business objectives |  
-| TS-001 — Technical Specification | Technical requirements |  
-| ARCH-001 — Software Architecture | Architectural constraints |  
-| ADC-001 — API and Data Contracts | Contract preservation |  
-| TST-001 — Testing and Acceptance | Verification process |  
-| OPS-001 — Deployment and Operations | Operational requirements |  
-| ADR-001 — Release Strategy | Incremental implementation strategy |  
-| ADR-002 — Technology Stack | Approved technology stack |  
-| BASELINE-001 | Engineering authorization |  
-| SPEC-001 — MVP Foundation | Initial implementation scope |
-
-\---
-
-\#\# Downstream Traceability
-
-The following engineering artifacts shall comply with this ADR:
-
-\- repository bootstrap;  
-\- pyproject.toml;  
-\- uv.lock;  
-\- virtual environment;  
-\- dependency installation;  
-\- implementation of SPEC-001;  
-\- implementation of SPEC-002;  
-\- implementation of SPEC-003;  
-\- Continuous Integration configuration;  
-\- testing automation;  
-\- deployment procedures.
-
-\---
-
-\#\# Architectural Relationships
+## 21.4 Architectural Decisions
 
 This ADR:
 
-\- complements ADR-002;  
-\- does not replace ADR-002;  
-\- does not supersede ADR-001;  
-\- does not modify ARCH-001;  
-\- does not alter Technical Specification requirements.
+- implements and refines ADR-002;
+- remains consistent with ADR-001;
+- is referenced by ADR-004 where runtime and engineering-toolchain policy applies;
+- does not supersede ADR-001, ADR-002, or ADR-004.
 
-\---
+## 21.5 Downstream Artifacts
 
-\#\# Future Evolution
+The following artifacts shall conform to this ADR where applicable:
 
-Future modifications affecting:
+- `pyproject.toml`;
+- `uv.lock`;
+- dependency bootstrap procedures;
+- testing configuration;
+- CI configuration;
+- staging configuration;
+- production dependency provisioning;
+- SPEC-001 implementation;
+- SPEC-002 implementation;
+- SPEC-003 implementation;
+- operational release procedures.
 
-\- supported Python runtime;  
-\- Django release line;  
-\- dependency manager;  
-\- PostgreSQL driver;  
-\- engineering toolchain;  
-\- dependency locking strategy;
+---
 
-shall require either:
+# 22. Cross-Document References
 
-\- a revision of this ADR, or  
-\- a new Architectural Decision Record,
+This ADR shall be interpreted together with:
 
-depending on engineering impact and governance requirements.
+- EGS-001 — Engineering Generation Standard;
+- PB-001 — Product Brief;
+- TS-001 — Technical Specification;
+- ARCH-001 — Software Architecture;
+- ADC-001 — API and Data Contracts;
+- TST-001 — Testing and Acceptance;
+- OPS-001 — Deployment and Operations;
+- ADR-001 — Release Strategy;
+- ADR-002 — Technology Stack;
+- ADR-004 — Transactional Email Integration;
+- SPEC-001 — MVP Foundation;
+- SPEC-002 — Contact & Communication;
+- SPEC-003 — Portfolio & Projects;
+- BASELINE-001 — Engineering Documentation Baseline.
 
-\---
+No lower-authority implementation artifact shall redefine the policies established herein.
 
-\# 17\. Cross-Document References
+---
 
-\#\# Normative References
+# 23. Cross-Document Reconciliation
 
-This document shall be interpreted together with:
+The reconciliation represented by version 1.1.0 resolves the governance inconsistency present in ADR-003 version 1.0.0.
 
-\- EGS-001 — Engineering Generation Standard  
-\- PB-001 — Product Brief  
-\- TS-001 — Technical Specification  
-\- ARCH-001 — Software Architecture  
-\- ADC-001 — API and Data Contracts  
-\- TST-001 — Testing and Acceptance  
-\- OPS-001 — Deployment and Operations  
-\- ADR-001 — Release Strategy  
-\- ADR-002 — Technology Stack  
-\- BASELINE-001  
-\- SPEC-001 — MVP Foundation  
-\- SPEC-002 — Contact & Communication  
-\- SPEC-003 — Portfolio & Projects
+The following corrections are normative:
 
-\---
+1. the document status is reconciled from the historical `Proposed` state to `Approved Baseline`;
+2. the decision status is explicitly recorded as `Accepted`;
+3. conditional future-approval language is removed;
+4. mandatory decisions use normative `shall`, `shall not`, and `requires` language;
+5. the document receives explicit Decision ID `ARCH-DEC-003`;
+6. runtime, dependency, tooling, security, operational, and verification responsibilities are explicitly bounded;
+7. `pyproject.toml` and `uv.lock` responsibilities are formally separated;
+8. compatibility with TST-001 and OPS-001 is explicit;
+9. ADR-004 is incorporated into the cross-document relationship model;
+10. implementation and repository evidence are treated as validation of the decision rather than as the source of the decision.
 
-\#\# Implementation References
+No technology selection is changed by this reconciliation.
 
-Implementation activities initiated after approval of this ADR shall use this document as the authoritative reference for:
+No business requirement, Feature Specification, API contract, deployment topology, or Release 1 functional scope is modified.
 
-\- runtime policy;  
-\- dependency management;  
-\- engineering bootstrap;  
-\- engineering toolchain;  
-\- version management.
+---
 
-Implementation documents shall not redefine policies established herein.
+# 24. Compliance
 
-\---
+This ADR complies with:
 
-\# 18\. Compliance
+- EGS-001 — Engineering Generation Standard;
+- Specification-Driven Development;
+- approved Project Governance;
+- PB-001;
+- TS-001;
+- ARCH-001;
+- ADC-001;
+- TST-001;
+- OPS-001;
+- ADR-001;
+- ADR-002;
+- ADR-004;
+- approved Release 1 Feature Specifications.
 
-\#\# Engineering Compliance
+The reconciliation has been evaluated for:
 
-This Architectural Decision Record complies with:
+- normative authority;
+- responsibility boundaries;
+- canonical terminology;
+- mandatory-language consistency;
+- architectural consistency;
+- traceability;
+- implementation independence;
+- testing compatibility;
+- operational compatibility;
+- controlled evolution.
 
-\- Engineering Generation Standard (EGS-001 v1.1.0);  
-\- Specification-Driven Development process;  
-\- approved engineering governance;  
-\- approved architectural baseline.
+No architectural conflict is introduced.
 
-\---
+---
 
-\#\# Architectural Compliance
+# 25. Future Review Triggers
 
-This ADR:
+This ADR shall be reviewed when any of the following occurs:
 
-\- preserves the Modular Monolith architecture;  
-\- preserves the approved technology stack;  
-\- introduces no architectural conflicts;  
-\- introduces no business requirement changes;  
-\- introduces no functional scope changes.
+- Python release-line replacement;
+- Django release-line replacement;
+- dependency-manager replacement;
+- dependency-locking strategy replacement;
+- PostgreSQL driver replacement;
+- material engineering-toolchain replacement;
+- substantial CI/runtime architecture change;
+- revised architecture that invalidates assumptions in this ADR;
+- revised EGS or higher-authority baseline affecting its normative scope.
 
-\---
+---
 
-\#\# Release Compliance
+# 26. Supersession Policy
 
-This ADR applies exclusively to:
+This ADR remains authoritative until:
 
-\`\`\`text  
-Release 1 — MVP  
-\`\`\`
+- superseded by an approved Architectural Decision Record;
+- superseded by an approved revision of this ADR;
+- formally retired through the controlled lifecycle established by EGS-001.
 
-It introduces no functionality beyond the approved release scope.
+An implementation change shall not implicitly supersede this ADR.
 
-\---
+---
 
-\#\# Specification Compliance
+# 27. Approval Statement
 
-The policies established herein support implementation of:
+ADR-003 version 1.1.0 constitutes the approved architectural decision governing the Python runtime, dependency management, dependency locking, PostgreSQL driver, development toolchain, and engineering bootstrap policies for Release 1.
 
-\- SPEC-001;  
-\- SPEC-002;  
-\- SPEC-003;
+The Product Owner approval establishes that:
 
-without modifying their approved requirements.
+- Python 3.13 is the approved runtime release line;
+- Django 5.2 is the approved framework release line;
+- `uv` is the approved dependency and runtime management solution;
+- `pyproject.toml` and `uv.lock` are the authoritative dependency-management artifacts;
+- Psycopg 3 is the approved PostgreSQL driver;
+- pytest, Ruff, mypy, and django-stubs constitute the approved engineering verification toolchain;
+- material deviations require controlled engineering approval.
 
-\---
+All Release 1 implementation, verification, staging, production deployment, and maintenance activities shall comply with this ADR while it remains in Approved Baseline status.
 
-\#\# Operational Compliance
+---
 
-Deployment, testing, validation and maintenance activities shall execute according to the runtime and dependency policies defined in this document.
+# 28. Document Status
 
-\---
+| Field | Value |
+|---|---|
+| Document ID | ADR-003 |
+| Decision ID | ARCH-DEC-003 |
+| Version | 1.1.0 |
+| Status | **Approved Baseline** |
+| Decision Status | **Accepted** |
+| Classification | Architectural Decision Record |
+| Authority | Release 1 Engineering Baseline |
+| Applies To | Release 1 — MVP |
+| Next Review | Upon a material runtime, framework, dependency-management, driver, or toolchain change |
 
-\#\# Repository Compliance
+---
 
-The repository shall maintain:
+# 29. Revision History
 
-\- pyproject.toml;  
-\- uv.lock;  
-\- environment configuration;  
-\- standardized engineering tooling;
+| Version | Date | Status | Description |
+|---|---|---|---|
+| 1.0.0 | 2026-08-05 | Proposed | Initial ADR defining Python runtime, Django release line, `uv`, dependency locking, Psycopg 3, development tooling, bootstrap, and update policies. |
+| 1.1.0 | 2026-08-14 | Approved Baseline | Governance reconciliation. Resolved inconsistent Proposed/mandatory status, established `ARCH-DEC-003`, normalized normative language, formalized approval and authority, strengthened traceability, verification, operational boundaries, security, dependency governance, and alignment with ADR-004 and the implemented Release 1 baseline. |
 
-consistent with this ADR.
+---
 
-\---
+# 30. Final Normative Provision
 
-\# 19\. Approval Statement
+ADR-003 establishes the authoritative Release 1 runtime and engineering-toolchain baseline.
 
-This Architectural Decision Record has been approved by the Product Owner according to the Engineering Generation Standard.
+All affected engineering and implementation artifacts shall remain consistent with this decision.
 
-This document is an approved architectural decision governing Release 1 and constitutes part of the official engineering baseline defined in BASELINE-001.
+Runtime versions, framework versions, dependency management, locking, PostgreSQL driver selection, and core engineering tooling shall not evolve through undocumented implementation changes.
 
-Implementation activities shall comply with the engineering policies established herein.
+Material changes shall follow:
 
-No implementation shall intentionally deviate from this Architectural Decision Record without prior architectural approval.
+**Requirement → Impact Analysis → Architecture Review → Decision → Implementation → Verification → Validation → Approval → Release**
 
-\---
+No deviation from this ADR shall be considered approved unless processed through the controlled engineering governance established by EGS-001.
 
-\# 20\. Document Status
+---
 
-| Field | Value |  
-|--------|-------|  
-| Document ID | ADR-003 |  
-| Version | 1.0.0 |  
-| Status | \*\*Approved Baseline\*\* |
-| Classification | Architectural Decision Record |  
-| Authority | Engineering Baseline |  
-| Applies To | Release 1 — MVP |  
-| Next Review | Upon architectural change affecting runtime, dependency management or engineering toolchain |
-
-\---
-
-\# 21\. Revision History
-
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 1.0.0 | 2026-08-05 | Solution Architecture | Initial issue of the Architectural Decision Record (Proposed). |
-| 1.0.0 | 2026-08-07 | Product Owner | Approved Baseline status granted; approval recorded and inclusion in BASELINE-001 confirmed. |
-
-\---
-
-\# End of Document  
+# End of Document
