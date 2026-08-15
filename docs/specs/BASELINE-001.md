@@ -4,7 +4,7 @@
 
 **Document ID:** BASELINE-001
 
-**Version:** 1.2.0
+**Version:** 1.3.0
 
 **Status:** Approved Baseline
 
@@ -85,6 +85,7 @@ The approved engineering documentation baseline consists of the following docume
 | ADR-002 | Technology Stack |
 | ADR-003 | Python Runtime and Development Toolchain |
 | ADR-004 | Transactional Email Integration (Brevo SMTP) |
+| ADR-005 | Production Application Runtime and Reverse Proxy |
 
 ---
 
@@ -127,7 +128,7 @@ The Product Owner and the Architecture & Engineering Review certify that:
 * cross-document consistency has been validated;  
 * implementation readiness has been confirmed.
 
-BASELINE-001 originally authorized the implementation of Release 1\. Following the initial approval of this baseline, ADR-003 — Python Runtime and Development Toolchain was subsequently identified during the implementation readiness assessment and approved through the controlled Architectural Decision Record process. Following approval of ADR-003, ADR-004 — Transactional Email Integration (Brevo SMTP) was subsequently identified during SPEC-002 implementation planning and approved through the controlled Architectural Decision Record process. ADR-003 and ADR-004 extend and complete the Release 1 engineering baseline and are incorporated into this baseline by controlled revision. Approved future ADRs may further refine specific decisions in accordance with EGS-001. Implementation may not invent missing architectural decisions. This baseline remains authoritative as amended through controlled engineering governance.
+BASELINE-001 originally authorized the implementation of Release 1\. Following the initial approval of this baseline, ADR-003 — Python Runtime and Development Toolchain was subsequently identified during the implementation readiness assessment and approved through the controlled Architectural Decision Record process. Following approval of ADR-003, ADR-004 — Transactional Email Integration (Brevo SMTP) was subsequently identified during SPEC-002 implementation planning and approved through the controlled Architectural Decision Record process. ADR-005 — Production Application Runtime and Reverse Proxy was subsequently identified during production deployment planning and approved through the controlled Architectural Decision Record process. ADR-003, ADR-004, and ADR-005 extend and complete the Release 1 engineering baseline and are incorporated into this baseline by controlled revision. Approved future ADRs may further refine specific decisions in accordance with EGS-001. Implementation may not invent missing architectural decisions. This baseline remains authoritative as amended through controlled engineering governance.
 
 ---
 
@@ -149,6 +150,7 @@ ADR-001
 ADR-002  
 ADR-003  
 ADR-004
+ADR-005
         ↓  
 SPEC-001  
 SPEC-002  
@@ -226,6 +228,10 @@ Version 1.2.0 of this baseline incorporates ADR-004 — Transactional Email Inte
 
 This revision preserves the original authorization for Release 1 implementation. It does not reopen the Release 1 product scope, does not modify functional requirements, and does not introduce business functionality. Feature Specifications SPEC-001, SPEC-002 and SPEC-003 remain unchanged, and the baseline identifier remains BASELINE-001.
 
+Version 1.3.0 of this baseline incorporates ADR-005 — Production Application Runtime and Reverse Proxy (`docs/adr/ADR-005-production-application-runtime-and-reverse-proxy.md`) as the controlled architectural decision governing the Release 1 production application server, process supervision, reverse proxy, static-file delivery, network exposure, and TLS termination topology.
+
+This revision preserves the original authorization for Release 1 implementation. It does not reopen the Release 1 product scope, does not modify functional requirements, and does not introduce business functionality. Feature Specifications SPEC-001, SPEC-002 and SPEC-003 remain unchanged, and the baseline identifier remains BASELINE-001.
+
 ---
 
 # **9\. Baseline Status**
@@ -274,4 +280,4 @@ No engineering artifact outside this approved baseline shall possess normative a
 | 1.0.0 | 2026-08-05 | Initial approval of the Release 1 Engineering Documentation Baseline. |
 | 1.1.0 | 2026-08-07 | Controlled revision incorporating ADR-003 — Python Runtime and Development Toolchain into the baseline composition and traceability chain; corrected implementation-readiness statement. |
 | 1.2.0 | 2026-08-10 | Controlled revision incorporating ADR-004 — Transactional Email Integration (Brevo SMTP) into the baseline composition and traceability chain; recorded SPEC-002 implementation authorization. |
-
+| 1.3.0 | 2026-08-14 | Controlled revision incorporating ADR-005 — Production Application Runtime and Reverse Proxy into the baseline composition and traceability chain; authorized the approved Release 1 production runtime topology. |
