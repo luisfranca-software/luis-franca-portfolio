@@ -1,0 +1,21 @@
+{% load i18n %}
+<section
+  class="homepage__section homepage__container home-process"
+  id="process"
+  aria-labelledby="process-heading"
+  data-trace-id="PRC-00"
+>
+  <header class="home-process__header">
+    <p class="home-process__eyebrow" aria-hidden="true">05</p>
+    <h2 id="process-heading">{% trans "How I Work" %}</h2>
+  </header>
+  <ol class="home-process__list">
+    {% for step in process_steps %}
+    <li class="home-process__step" data-process-step="{{ step.slug }}">
+      <span class="home-process__marker" aria-hidden="true">{{ step.ordinal }}</span>
+      <h3>{{ step.title }}</h3>
+      <p>{{ step.description }}</p>
+    </li>
+    {% endfor %}
+  </ol>
+</section>

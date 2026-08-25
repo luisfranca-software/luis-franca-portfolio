@@ -17,6 +17,11 @@ def test_development_settings_are_loaded() -> None:
     assert development.USE_TZ is True
 
 
+def test_development_settings_always_allow_local_hosts() -> None:
+    assert "localhost" in development.ALLOWED_HOSTS
+    assert "127.0.0.1" in development.ALLOWED_HOSTS
+
+
 def test_approved_app_modules_are_installed() -> None:
     approved_modules = {
         "apps.core",

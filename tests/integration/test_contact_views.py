@@ -125,18 +125,19 @@ def test_contact_page_includes_professional_links(contact_links) -> None:
     assert resume_url in content
 
 
-def test_floating_whatsapp_button_rendered(contact_links) -> None:
+def test_header_whatsapp_action_rendered(contact_links) -> None:
     response = Client().get("/contact/")
     content = response.content.decode()
 
-    assert "whatsapp-button" in content
+    assert "site-nav__whatsapp" in content
+    assert "whatsapp-button" not in content
     assert "https://wa.me/5531993423501" in content
 
 
-def test_floating_whatsapp_button_hidden_when_not_configured(settings) -> None:
+def test_header_whatsapp_action_hidden_when_not_configured(settings) -> None:
     settings.CONTACT_LINKS = {**settings.CONTACT_LINKS, "whatsapp": ""}
     response = Client().get("/contact/")
-    assert "whatsapp-button" not in response.content.decode()
+    assert "site-nav__whatsapp" not in response.content.decode()
 
 
 def test_post_without_csrf_token_is_rejected() -> None:

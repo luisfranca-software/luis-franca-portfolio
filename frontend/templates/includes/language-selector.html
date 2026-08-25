@@ -1,17 +1,13 @@
 {% load i18n %}
-<form class="language-selector" action="{% url 'set_language' %}" method="post" aria-label="{% trans 'Language selector' %}">
-  {% csrf_token %}
-  <label class="visually-hidden" for="language-selector">{% trans "Language" %}</label>
-  <select id="language-selector" name="language" onchange="this.form.submit()">
-    {% get_current_language as CURRENT_LANGUAGE %}
-    {% get_available_languages as LANGUAGES %}
-    {% for code, name in LANGUAGES %}
-    <option value="{{ code }}"{% if code == CURRENT_LANGUAGE %} selected{% endif %}>
-      {% if code == "en" %}English{% elif code == "pt-br" %}Português (Brasil){% else %}{{ name }}{% endif %}
-    </option>
-    {% endfor %}
-  </select>
-  <noscript>
-    <button type="submit">{% trans "Change language" %}</button>
-  </noscript>
-</form>
+{% get_current_language as CURRENT_LANGUAGE %}
+<div class="language-selector" data-trace-id="HDR-02" role="group" aria-label="{% trans 'Language selector' %}">
+  <form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}<input type="hidden" name="language" value="pt-br"><input type="hidden" name="next" value="{{ request.path }}">
+    <button type="submit" lang="pt-BR" aria-label="Português (Brasil)"{% if CURRENT_LANGUAGE == "pt-br" %} aria-current="true"{% endif %}>PT</button>
+  </form>
+  <span aria-hidden="true">|</span>
+  <form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}<input type="hidden" name="language" value="en"><input type="hidden" name="next" value="{{ request.path }}">
+    <button type="submit" lang="en" aria-label="English"{% if CURRENT_LANGUAGE == "en" %} aria-current="true"{% endif %}>EN</button>
+  </form>
+</div>

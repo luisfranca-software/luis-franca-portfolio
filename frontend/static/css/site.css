@@ -1,5 +1,5 @@
-/* Site-wide layout, visual identity, navigation, footer and the persistent
- * floating WhatsApp entry point (SPEC-002-REQ-007).
+/* Site-wide layout, visual identity, navigation, footer and the shared Header
+ * WhatsApp entry point (SPEC-002-REQ-007; SDD-RWD-001 RWD-FR-024).
  *
  * Visual identity: dark blue palette, blue gradients, gold accents
  * (SPEC-001 section 6).
@@ -114,6 +114,7 @@ li {
     font-size: 1rem;
     min-width: 0;
     flex-shrink: 0;
+    min-height: 44px;
 }
 
 @media (min-width: 360px) {
@@ -137,6 +138,13 @@ li {
     color: var(--color-accent);
 }
 
+.site-nav__brand .brand-logo {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+}
+
 .site-nav__toggle {
     display: none;
     flex-direction: column;
@@ -147,6 +155,15 @@ li {
     padding: 0.5rem;
     cursor: pointer;
     flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.site-nav__toggle:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
 }
 
 .site-nav__toggle-bar {
@@ -167,12 +184,15 @@ li {
 }
 
 .site-nav__link {
+    display: inline-flex;
+    align-items: center;
     color: var(--color-text-muted);
     text-decoration: none;
     font-weight: 500;
     padding: 0.25rem 0;
     border-bottom: 2px solid transparent;
     transition: color 150ms ease, border-color 150ms ease;
+    min-height: 44px;
 }
 
 .site-nav__link:hover,
@@ -181,7 +201,24 @@ li {
     border-bottom-color: var(--color-accent);
 }
 
-@media (max-width: 768px) {
+.site-nav__whatsapp {
+    color: #ffffff;
+    background: #1eb85a;
+    border: 1px solid #25d366;
+    border-radius: 999px;
+    padding-inline: 0.875rem;
+}
+
+.site-nav__whatsapp:hover,
+.site-nav__whatsapp:focus-visible {
+    color: #ffffff;
+    background: #168f46;
+    border-bottom-color: #25d366;
+}
+
+/* FIT-HDR-001 — validated at 848 CSS px (53rem). The Compact mode therefore
+ * owns widths through 847px; the Full Header begins at the measured boundary. */
+@media (max-width: 847px) {
     .site-nav__toggle {
         display: flex;
     }
@@ -205,9 +242,15 @@ li {
     }
 
     .site-nav__link {
-        display: block;
+        display: flex;
         padding: 0.75rem 0;
         border-bottom: 1px solid var(--color-border);
+    }
+
+    .site-nav__whatsapp {
+        justify-content: center;
+        padding-inline: 0.875rem;
+        border: 1px solid #25d366;
     }
 }
 
@@ -230,6 +273,7 @@ li {
     cursor: pointer;
     max-width: 100%;
     min-width: 0;
+    min-height: 44px;
 }
 
 @media (min-width: 360px) {
@@ -242,6 +286,34 @@ li {
 .language-selector select:focus-visible {
     outline: 3px solid var(--color-accent);
     outline-offset: 2px;
+}
+
+/* SDD-RWD-001 approved Header anatomy. */
+.site-nav { max-width: 1440px; min-height: 80px; padding: 0 48px; gap: 16px; background: #020b1f; }
+.site-nav__brand { order: 1; }
+.site-nav__menu { order: 2; margin-inline: auto 0; }
+.language-selector { order: 3; gap: 6px; height: 44px; }
+.site-nav__whatsapp-action { order: 4; }
+.site-nav__toggle { order: 5; }
+.site-nav__brand .brand-logo { width: 84px; height: 54px; object-fit: contain; }
+.language-selector form { display: flex; }
+.language-selector button { min-width: 32px; min-height: 44px; padding: 0 6px; border: 0; border-bottom: 2px solid transparent; color: #b8c0cc; background: transparent; font: 500 14px/20px Inter, var(--font-body); cursor: pointer; }
+.language-selector button[aria-current="true"] { color: #f2f4f8; border-bottom-color: #09d5fd; }
+.language-selector button:focus-visible { outline: 3px solid #09d5fd; outline-offset: 1px; }
+.language-selector > span { color: #24324a; }
+.site-nav__whatsapp-action { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #24324a; border-radius: 8px; }
+.site-nav__whatsapp-action img { width: 24px; height: 24px; }
+@media (max-width: 847px) {
+    .site-nav { min-height: 72px; padding: 0 24px; gap: 8px; }
+    .site-nav__brand .brand-logo { width: 68px; height: 44px; }
+    .site-nav__brand { margin-right: auto; }
+    .site-nav__menu { order: 6; margin: 0; }
+    .language-selector { gap: 2px; }
+    .language-selector button { min-width: 24px; padding-inline: 2px; }
+}
+@media (max-width: 379px) {
+    .site-nav { padding-inline: 20px; gap: 6px; }
+    .language-selector button { min-width: 22px; padding: 0; }
 }
 
 /* Main content. */
@@ -303,119 +375,6 @@ a:focus-visible {
 .button--primary:focus-visible {
     outline: 3px solid var(--color-text);
     outline-offset: 2px;
-}
-
-/* Home hero (SPEC-001-REQ-003). */
-
-.home-hero {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: center;
-    padding: 1.5rem 0 2.5rem;
-    min-width: 0;
-}
-
-@media (min-width: 768px) {
-    .home-hero {
-        grid-template-columns: 1.25fr 1fr;
-        gap: 2.5rem;
-        padding: 3rem 0 4rem;
-    }
-}
-
-.home-hero__identity {
-    min-width: 0;
-}
-
-.home-hero__greeting {
-    margin: 0 0 0.5rem;
-    color: var(--color-accent);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 0.875rem;
-}
-
-.home-hero__name {
-    margin: 0;
-    font-size: clamp(2rem, 8vw, 3.75rem);
-    line-height: 1.1;
-    background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent-hover) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    overflow-wrap: break-word;
-}
-
-.home-hero__full-name {
-    margin: 0.5rem 0 1rem;
-    color: var(--color-text-muted);
-    font-size: 1rem;
-    overflow-wrap: break-word;
-}
-
-.home-hero__titles {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0 0 1.5rem;
-    padding: 0;
-}
-
-.home-hero__title {
-    background: var(--color-bg-elevated);
-    color: var(--color-text);
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    padding: 0.35rem 0.9rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.home-hero__positioning {
-    margin: 0 0 2rem;
-    color: var(--color-text-muted);
-    font-size: clamp(1rem, 4vw, 1.125rem);
-    max-width: 40rem;
-}
-
-.home-hero__visual {
-    display: flex;
-    justify-content: center;
-    min-width: 0;
-}
-
-.home-hero__visual .profile-photo {
-    width: 100%;
-    max-width: min(320px, 100%);
-    border-radius: 0.75rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-}
-
-.home-hero__brand {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
-}
-
-.home-hero__brand .brand-logo {
-    width: 64px;
-    height: auto;
-    border-radius: 0.5rem;
-}
-
-@media (min-width: 360px) {
-    .home-hero__brand .brand-logo {
-        width: 72px;
-    }
-}
-
-@media (min-width: 768px) {
-    .home-hero__brand .brand-logo {
-        width: 80px;
-    }
 }
 
 /* Content pages (About, Experience). */
@@ -597,31 +556,23 @@ a:focus-visible {
     border-top: 1px solid var(--color-border);
 }
 
-/* Persistent floating WhatsApp entry point (SPEC-002-REQ-007). */
+/* Shared motion preference: state changes remain immediate and functional. */
 
-.whatsapp-button {
-    position: fixed;
-    right: 1.25rem;
-    bottom: 1.25rem;
-    z-index: 20;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #25d366;
-    color: #ffffff;
-    padding: 0.75rem 1.25rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
-}
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 
-.whatsapp-button:hover,
-.whatsapp-button:focus-visible {
-    background: #1eb85a;
-}
+    .site-nav__link,
+    .button,
+    .skill-card {
+        transition-duration: 0.01ms;
+    }
 
-.whatsapp-button:focus-visible {
-    outline: 3px solid var(--color-text);
-    outline-offset: 2px;
+    .button--primary:hover,
+    .button--primary:focus-visible,
+    .skill-card:hover,
+    .skill-card:focus-within {
+        transform: none;
+    }
 }

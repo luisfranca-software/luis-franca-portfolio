@@ -1,0 +1,21 @@
+{% load i18n %}
+<section
+  class="homepage__section homepage__container home-engineering"
+  id="engineering"
+  aria-labelledby="engineering-heading"
+  data-trace-id="ENG-00"
+>
+  <header class="home-engineering__header">
+    <p class="home-engineering__eyebrow" aria-hidden="true">03</p>
+    <h2 id="engineering-heading">{% trans "What I Engineer" %}</h2>
+  </header>
+  <ol class="home-engineering__list">
+    {% for capability in engineering_capabilities %}
+    <li class="home-engineering__item" data-engineering-item="{{ capability.slug }}" data-trace-id="ENG-0{{ forloop.counter|add:'1' }}">
+      <span class="home-engineering__ordinal" aria-hidden="true">{{ capability.ordinal }}</span>
+      <h3>{{ capability.title }}</h3>
+      <p>{{ capability.description }}</p>
+    </li>
+    {% endfor %}
+  </ol>
+</section>

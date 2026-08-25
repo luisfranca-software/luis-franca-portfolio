@@ -1,8 +1,20 @@
 {% load i18n %}
 <nav class="site-nav" aria-label="{% trans 'Main navigation' %}">
-  <a class="site-nav__brand" href="{% url 'home:home' %}" aria-label="{% trans 'Home' %}">
+  <a class="site-nav__brand" href="{% url 'home:home' %}" aria-label="{% trans 'Home' %}" data-trace-id="HDR-01">
+    {% if is_homepage %}
+    {% include "includes/brand-logo.html" with image_loading="eager" %}
+    {% else %}
     <span class="site-nav__brand-name">Luís França</span>
+    {% endif %}
   </a>
+
+  {% include "includes/language-selector.html" %}
+
+  {% if contact_links.whatsapp %}
+  <a class="site-nav__whatsapp-action" href="{{ contact_links.whatsapp }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'Chat on WhatsApp' %}" data-trace-id="HDR-03">
+    {% load static %}<img src="{% static 'images/brand/whatsapp.svg' %}" alt="" width="24" height="24" aria-hidden="true">
+  </a>
+  {% endif %}
 
   <button
     class="site-nav__toggle"
@@ -10,6 +22,7 @@
     aria-expanded="false"
     aria-controls="site-nav-menu"
     aria-label="{% trans 'Toggle navigation' %}"
+    data-trace-id="HDR-04"
   >
     <span class="site-nav__toggle-bar" aria-hidden="true"></span>
     <span class="site-nav__toggle-bar" aria-hidden="true"></span>
@@ -17,6 +30,20 @@
   </button>
 
   <ul class="site-nav__menu" id="site-nav-menu">
+    {% if is_homepage %}
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="#engineering">{% trans "Engineering" %}</a>
+    </li>
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="#projects">{% trans "Projects" %}</a>
+    </li>
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="#process">{% trans "Process" %}</a>
+    </li>
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="#contact">{% trans "Contact" %}</a>
+    </li>
+    {% else %}
     <li class="site-nav__item">
       <a class="site-nav__link" href="{% url 'home:home' %}">{% trans "Home" %}</a>
     </li>
@@ -35,7 +62,6 @@
     <li class="site-nav__item">
       <a class="site-nav__link" href="{% url 'contact:contact' %}">{% trans "Contact" %}</a>
     </li>
+    {% endif %}
   </ul>
-
-  {% include "includes/language-selector.html" %}
 </nav>

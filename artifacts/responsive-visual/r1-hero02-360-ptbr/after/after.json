@@ -1,0 +1,912 @@
+{
+  "browser": "Chromium 151.0.7922.108 snap",
+  "locales": [
+    {
+      "requestedLocale": "en-US",
+      "widths": {
+        "1024": {
+          "clientWidth": 1024,
+          "hero02": {
+            "bottom": 477,
+            "height": 280,
+            "right": 464,
+            "width": 416,
+            "x": 48,
+            "y": 197
+          },
+          "heroCopy": {
+            "bottom": 725,
+            "height": 596,
+            "right": 464,
+            "width": 416,
+            "x": 48,
+            "y": 129
+          },
+          "horizontalOverflow": false,
+          "img02": {
+            "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "backgroundPosition": "0% 0%",
+            "backgroundRepeat": "repeat-y",
+            "backgroundSize": "1024px",
+            "rect": {
+              "bottom": 4288.78125,
+              "height": 4207.78125,
+              "right": 1024,
+              "width": 1024,
+              "x": 0,
+              "y": 81
+            }
+          },
+          "lang": "en",
+          "portrait": {
+            "bottom": 670.703125,
+            "height": 393.703125,
+            "right": 960,
+            "width": 480,
+            "x": 480,
+            "y": 277
+          },
+          "scrollWidth": 1024,
+          "technologyVisual": {
+            "bottom": 699,
+            "height": 544,
+            "right": 976,
+            "width": 480,
+            "x": 496,
+            "y": 155
+          },
+          "titles": [
+            {
+              "availableWidth": 416,
+              "bottom": 309,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 112,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": 16.6875,
+              "overflowWrap": "break-word",
+              "requiredWidth": 432.6875,
+              "right": 464,
+              "text": "Software Engineer",
+              "visualLines": 2,
+              "whiteSpace": "normal",
+              "width": 416,
+              "x": 48,
+              "y": 197
+            },
+            {
+              "availableWidth": 416,
+              "bottom": 421,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 112,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": 188.46875,
+              "overflowWrap": "break-word",
+              "requiredWidth": 604.46875,
+              "right": 464,
+              "text": "Python Backend Engineer",
+              "visualLines": 2,
+              "whiteSpace": "normal",
+              "width": 416,
+              "x": 48,
+              "y": 309
+            },
+            {
+              "availableWidth": 416,
+              "bottom": 477,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -26.09375,
+              "overflowWrap": "break-word",
+              "requiredWidth": 389.90625,
+              "right": 464,
+              "text": "AI/LLM Engineer",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 416,
+              "x": 48,
+              "y": 421
+            }
+          ],
+          "viewport": 1024
+        },
+        "1440": {
+          "clientWidth": 1440,
+          "hero02": {
+            "bottom": 333,
+            "height": 168,
+            "right": 736,
+            "width": 688,
+            "x": 48,
+            "y": 165
+          },
+          "heroCopy": {
+            "bottom": 513,
+            "height": 384,
+            "right": 736,
+            "width": 688,
+            "x": 48,
+            "y": 129
+          },
+          "horizontalOverflow": false,
+          "img02": {
+            "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "backgroundPosition": "0% 0%",
+            "backgroundRepeat": "repeat-y",
+            "backgroundSize": "1440px",
+            "rect": {
+              "bottom": 2622.84375,
+              "height": 2541.84375,
+              "right": 1440,
+              "width": 1440,
+              "x": 0,
+              "y": 81
+            }
+          },
+          "lang": "en",
+          "portrait": {
+            "bottom": 728.28125,
+            "height": 492.125,
+            "right": 1360,
+            "width": 600,
+            "x": 760,
+            "y": 236.15625
+          },
+          "scrollWidth": 1440,
+          "technologyVisual": {
+            "bottom": 513,
+            "height": 384,
+            "right": 1392,
+            "width": 608,
+            "x": 784,
+            "y": 129
+          },
+          "titles": [
+            {
+              "availableWidth": 688,
+              "bottom": 221,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -255.3125,
+              "overflowWrap": "break-word",
+              "requiredWidth": 432.6875,
+              "right": 736,
+              "text": "Software Engineer",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 688,
+              "x": 48,
+              "y": 165
+            },
+            {
+              "availableWidth": 688,
+              "bottom": 277,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -83.53125,
+              "overflowWrap": "break-word",
+              "requiredWidth": 604.46875,
+              "right": 736,
+              "text": "Python Backend Engineer",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 688,
+              "x": 48,
+              "y": 221
+            },
+            {
+              "availableWidth": 688,
+              "bottom": 333,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -298.09375,
+              "overflowWrap": "break-word",
+              "requiredWidth": 389.90625,
+              "right": 736,
+              "text": "AI/LLM Engineer",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 688,
+              "x": 48,
+              "y": 277
+            }
+          ],
+          "viewport": 1440
+        },
+        "360": {
+          "clientWidth": 360,
+          "hero02": {
+            "bottom": 277,
+            "height": 136,
+            "right": 340,
+            "width": 320,
+            "x": 20,
+            "y": 141
+          },
+          "heroCopy": {
+            "bottom": 487,
+            "height": 382,
+            "right": 340,
+            "width": 320,
+            "x": 20,
+            "y": 105
+          },
+          "horizontalOverflow": false,
+          "img02": {
+            "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "backgroundPosition": "0% 0%",
+            "backgroundRepeat": "repeat-y",
+            "backgroundSize": "360px",
+            "rect": {
+              "bottom": 6371.21875,
+              "height": 6298.21875,
+              "right": 360,
+              "width": 360,
+              "x": 0,
+              "y": 73
+            }
+          },
+          "lang": "en",
+          "portrait": {
+            "bottom": 1001.46875,
+            "height": 262.46875,
+            "right": 340,
+            "width": 320,
+            "x": 20,
+            "y": 739
+          },
+          "scrollWidth": 360,
+          "technologyVisual": {
+            "bottom": 1019,
+            "height": 500,
+            "right": 340,
+            "width": 320,
+            "x": 20,
+            "y": 519
+          },
+          "titles": [
+            {
+              "availableWidth": 320,
+              "bottom": 175,
+              "fontSize": "26px",
+              "fontWeight": "600",
+              "height": 34,
+              "letterSpacing": "-0.26px",
+              "lineHeight": "34px",
+              "overflow": -85.625,
+              "overflowWrap": "break-word",
+              "requiredWidth": 234.375,
+              "right": 340,
+              "text": "Software Engineer",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 320,
+              "x": 20,
+              "y": 141
+            },
+            {
+              "availableWidth": 320,
+              "bottom": 243,
+              "fontSize": "26px",
+              "fontWeight": "600",
+              "height": 68,
+              "letterSpacing": "-0.26px",
+              "lineHeight": "34px",
+              "overflow": 7.421875,
+              "overflowWrap": "break-word",
+              "requiredWidth": 327.421875,
+              "right": 340,
+              "text": "Python Backend Engineer",
+              "visualLines": 2,
+              "whiteSpace": "normal",
+              "width": 320,
+              "x": 20,
+              "y": 175
+            },
+            {
+              "availableWidth": 320,
+              "bottom": 277,
+              "fontSize": "26px",
+              "fontWeight": "600",
+              "height": 34,
+              "letterSpacing": "-0.26px",
+              "lineHeight": "34px",
+              "overflow": -108.796875,
+              "overflowWrap": "break-word",
+              "requiredWidth": 211.203125,
+              "right": 340,
+              "text": "AI/LLM Engineer",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 320,
+              "x": 20,
+              "y": 243
+            }
+          ],
+          "viewport": 360
+        },
+        "768": {
+          "clientWidth": 768,
+          "hero02": {
+            "bottom": 309,
+            "height": 168,
+            "right": 736,
+            "width": 704,
+            "x": 32,
+            "y": 141
+          },
+          "heroCopy": {
+            "bottom": 467,
+            "height": 362,
+            "right": 736,
+            "width": 704,
+            "x": 32,
+            "y": 105
+          },
+          "horizontalOverflow": false,
+          "img02": {
+            "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "backgroundPosition": "0% 0%",
+            "backgroundRepeat": "repeat-y",
+            "backgroundSize": "768px",
+            "rect": {
+              "bottom": 5464.390625,
+              "height": 5391.390625,
+              "right": 768,
+              "width": 768,
+              "x": 0,
+              "y": 73
+            }
+          },
+          "lang": "en",
+          "portrait": {
+            "bottom": 1048.140625,
+            "height": 460.140625,
+            "right": 665,
+            "width": 561,
+            "x": 104,
+            "y": 588
+          },
+          "scrollWidth": 768,
+          "technologyVisual": {
+            "bottom": 1091,
+            "height": 600,
+            "right": 736,
+            "width": 704,
+            "x": 32,
+            "y": 491
+          },
+          "titles": [
+            {
+              "availableWidth": 704,
+              "bottom": 197,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -271.3125,
+              "overflowWrap": "break-word",
+              "requiredWidth": 432.6875,
+              "right": 736,
+              "text": "Software Engineer",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 704,
+              "x": 32,
+              "y": 141
+            },
+            {
+              "availableWidth": 704,
+              "bottom": 253,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -99.53125,
+              "overflowWrap": "break-word",
+              "requiredWidth": 604.46875,
+              "right": 736,
+              "text": "Python Backend Engineer",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 704,
+              "x": 32,
+              "y": 197
+            },
+            {
+              "availableWidth": 704,
+              "bottom": 309,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -314.09375,
+              "overflowWrap": "break-word",
+              "requiredWidth": 389.90625,
+              "right": 736,
+              "text": "AI/LLM Engineer",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 704,
+              "x": 32,
+              "y": 253
+            }
+          ],
+          "viewport": 768
+        }
+      }
+    },
+    {
+      "requestedLocale": "pt-BR",
+      "widths": {
+        "1024": {
+          "clientWidth": 1024,
+          "hero02": {
+            "bottom": 533,
+            "height": 336,
+            "right": 464,
+            "width": 416,
+            "x": 48,
+            "y": 197
+          },
+          "heroCopy": {
+            "bottom": 807,
+            "height": 678,
+            "right": 464,
+            "width": 416,
+            "x": 48,
+            "y": 129
+          },
+          "horizontalOverflow": false,
+          "img02": {
+            "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "backgroundPosition": "0% 0%",
+            "backgroundRepeat": "repeat-y",
+            "backgroundSize": "1024px",
+            "rect": {
+              "bottom": 4444.78125,
+              "height": 4363.78125,
+              "right": 1024,
+              "width": 1024,
+              "x": 0,
+              "y": 81
+            }
+          },
+          "lang": "pt-br",
+          "portrait": {
+            "bottom": 711.703125,
+            "height": 393.703125,
+            "right": 960,
+            "width": 480,
+            "x": 480,
+            "y": 318
+          },
+          "scrollWidth": 1024,
+          "technologyVisual": {
+            "bottom": 740,
+            "height": 544,
+            "right": 976,
+            "width": 480,
+            "x": 496,
+            "y": 196
+          },
+          "titles": [
+            {
+              "availableWidth": 416,
+              "bottom": 309,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 112,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": 145.796875,
+              "overflowWrap": "break-word",
+              "requiredWidth": 561.796875,
+              "right": 464,
+              "text": "Engenheiro de Software",
+              "visualLines": 2,
+              "whiteSpace": "normal",
+              "width": 416,
+              "x": 48,
+              "y": 197
+            },
+            {
+              "availableWidth": 416,
+              "bottom": 421,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 112,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": 247.796875,
+              "overflowWrap": "break-word",
+              "requiredWidth": 663.796875,
+              "right": 464,
+              "text": "Engenheiro Python Backend",
+              "visualLines": 2,
+              "whiteSpace": "normal",
+              "width": 416,
+              "x": 48,
+              "y": 309
+            },
+            {
+              "availableWidth": 416,
+              "bottom": 533,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 112,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": 103.03125,
+              "overflowWrap": "break-word",
+              "requiredWidth": 519.03125,
+              "right": 464,
+              "text": "Engenheiro de IA/LLM",
+              "visualLines": 2,
+              "whiteSpace": "normal",
+              "width": 416,
+              "x": 48,
+              "y": 421
+            }
+          ],
+          "viewport": 1024
+        },
+        "1440": {
+          "clientWidth": 1440,
+          "hero02": {
+            "bottom": 333,
+            "height": 168,
+            "right": 736,
+            "width": 688,
+            "x": 48,
+            "y": 165
+          },
+          "heroCopy": {
+            "bottom": 513,
+            "height": 384,
+            "right": 736,
+            "width": 688,
+            "x": 48,
+            "y": 129
+          },
+          "horizontalOverflow": false,
+          "img02": {
+            "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "backgroundPosition": "0% 0%",
+            "backgroundRepeat": "repeat-y",
+            "backgroundSize": "1440px",
+            "rect": {
+              "bottom": 2606.84375,
+              "height": 2525.84375,
+              "right": 1440,
+              "width": 1440,
+              "x": 0,
+              "y": 81
+            }
+          },
+          "lang": "pt-br",
+          "portrait": {
+            "bottom": 728.28125,
+            "height": 492.125,
+            "right": 1360,
+            "width": 600,
+            "x": 760,
+            "y": 236.15625
+          },
+          "scrollWidth": 1440,
+          "technologyVisual": {
+            "bottom": 513,
+            "height": 384,
+            "right": 1392,
+            "width": 608,
+            "x": 784,
+            "y": 129
+          },
+          "titles": [
+            {
+              "availableWidth": 688,
+              "bottom": 221,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -126.203125,
+              "overflowWrap": "break-word",
+              "requiredWidth": 561.796875,
+              "right": 736,
+              "text": "Engenheiro de Software",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 688,
+              "x": 48,
+              "y": 165
+            },
+            {
+              "availableWidth": 688,
+              "bottom": 277,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -24.203125,
+              "overflowWrap": "break-word",
+              "requiredWidth": 663.796875,
+              "right": 736,
+              "text": "Engenheiro Python Backend",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 688,
+              "x": 48,
+              "y": 221
+            },
+            {
+              "availableWidth": 688,
+              "bottom": 333,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -168.96875,
+              "overflowWrap": "break-word",
+              "requiredWidth": 519.03125,
+              "right": 736,
+              "text": "Engenheiro de IA/LLM",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 688,
+              "x": 48,
+              "y": 277
+            }
+          ],
+          "viewport": 1440
+        },
+        "360": {
+          "clientWidth": 360,
+          "hero02": {
+            "bottom": 277,
+            "height": 136,
+            "right": 340,
+            "width": 320,
+            "x": 20,
+            "y": 141
+          },
+          "heroCopy": {
+            "bottom": 573,
+            "height": 468,
+            "right": 340,
+            "width": 320,
+            "x": 20,
+            "y": 105
+          },
+          "horizontalOverflow": false,
+          "img02": {
+            "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "backgroundPosition": "0% 0%",
+            "backgroundRepeat": "repeat-y",
+            "backgroundSize": "360px",
+            "rect": {
+              "bottom": 6557.21875,
+              "height": 6484.21875,
+              "right": 360,
+              "width": 360,
+              "x": 0,
+              "y": 73
+            }
+          },
+          "lang": "pt-br",
+          "portrait": {
+            "bottom": 1087.46875,
+            "height": 262.46875,
+            "right": 340,
+            "width": 320,
+            "x": 20,
+            "y": 825
+          },
+          "scrollWidth": 360,
+          "technologyVisual": {
+            "bottom": 1105,
+            "height": 500,
+            "right": 340,
+            "width": 320,
+            "x": 20,
+            "y": 605
+          },
+          "titles": [
+            {
+              "availableWidth": 320,
+              "bottom": 175,
+              "fontSize": "25px",
+              "fontWeight": "600",
+              "height": 34,
+              "letterSpacing": "-0.25px",
+              "lineHeight": "34px",
+              "overflow": -27.390625,
+              "overflowWrap": "break-word",
+              "requiredWidth": 292.609375,
+              "right": 340,
+              "text": "Engenheiro de Software",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 320,
+              "x": 20,
+              "y": 141
+            },
+            {
+              "availableWidth": 320,
+              "bottom": 243,
+              "fontSize": "25px",
+              "fontWeight": "600",
+              "height": 68,
+              "letterSpacing": "-0.25px",
+              "lineHeight": "34px",
+              "overflow": 25.734375,
+              "overflowWrap": "break-word",
+              "requiredWidth": 345.734375,
+              "right": 340,
+              "text": "Engenheiro Python Backend",
+              "visualLines": 2,
+              "whiteSpace": "normal",
+              "width": 320,
+              "x": 20,
+              "y": 175
+            },
+            {
+              "availableWidth": 320,
+              "bottom": 277,
+              "fontSize": "25px",
+              "fontWeight": "600",
+              "height": 34,
+              "letterSpacing": "-0.25px",
+              "lineHeight": "34px",
+              "overflow": -49.671875,
+              "overflowWrap": "break-word",
+              "requiredWidth": 270.328125,
+              "right": 340,
+              "text": "Engenheiro de IA/LLM",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 320,
+              "x": 20,
+              "y": 243
+            }
+          ],
+          "viewport": 360
+        },
+        "768": {
+          "clientWidth": 768,
+          "hero02": {
+            "bottom": 309,
+            "height": 168,
+            "right": 736,
+            "width": 704,
+            "x": 32,
+            "y": 141
+          },
+          "heroCopy": {
+            "bottom": 467,
+            "height": 362,
+            "right": 736,
+            "width": 704,
+            "x": 32,
+            "y": 105
+          },
+          "horizontalOverflow": false,
+          "img02": {
+            "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "backgroundPosition": "0% 0%",
+            "backgroundRepeat": "repeat-y",
+            "backgroundSize": "768px",
+            "rect": {
+              "bottom": 5490.390625,
+              "height": 5417.390625,
+              "right": 768,
+              "width": 768,
+              "x": 0,
+              "y": 73
+            }
+          },
+          "lang": "pt-br",
+          "portrait": {
+            "bottom": 1048.140625,
+            "height": 460.140625,
+            "right": 665,
+            "width": 561,
+            "x": 104,
+            "y": 588
+          },
+          "scrollWidth": 768,
+          "technologyVisual": {
+            "bottom": 1091,
+            "height": 600,
+            "right": 736,
+            "width": 704,
+            "x": 32,
+            "y": 491
+          },
+          "titles": [
+            {
+              "availableWidth": 704,
+              "bottom": 197,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -142.203125,
+              "overflowWrap": "break-word",
+              "requiredWidth": 561.796875,
+              "right": 736,
+              "text": "Engenheiro de Software",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 704,
+              "x": 32,
+              "y": 141
+            },
+            {
+              "availableWidth": 704,
+              "bottom": 253,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -40.203125,
+              "overflowWrap": "break-word",
+              "requiredWidth": 663.796875,
+              "right": 736,
+              "text": "Engenheiro Python Backend",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 704,
+              "x": 32,
+              "y": 197
+            },
+            {
+              "availableWidth": 704,
+              "bottom": 309,
+              "fontSize": "48px",
+              "fontWeight": "600",
+              "height": 56,
+              "letterSpacing": "-0.48px",
+              "lineHeight": "56px",
+              "overflow": -184.96875,
+              "overflowWrap": "break-word",
+              "requiredWidth": 519.03125,
+              "right": 736,
+              "text": "Engenheiro de IA/LLM",
+              "visualLines": 1,
+              "whiteSpace": "normal",
+              "width": 704,
+              "x": 32,
+              "y": 253
+            }
+          ],
+          "viewport": 768
+        }
+      }
+    }
+  ],
+  "state": "after"
+}

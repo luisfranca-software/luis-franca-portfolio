@@ -1,5 +1,8 @@
 """Integration tests for the Home page (SPEC-001-REQ-003)."""
 
+import re
+from urllib.parse import urlparse
+
 from django.test import Client
 
 
@@ -35,22 +38,26 @@ def test_home_page_presents_primary_cta() -> None:
 def test_home_page_includes_profile_photo() -> None:
     content = Client().get("/").content.decode()
 
-    assert "images/profile/luis-franca" in content
+    assert "images/profile/luis-franca-transparent-02.png" in content
     assert "Professional photograph of Luís Eduardo Carvalho França" in content
 
 
-def test_home_page_includes_approved_brand_logo() -> None:
-    content = Client().get("/").content.decode()
-
-    assert "images/brand/lf-information-system" in content
-    assert "Luís França — Site Portfolio logo" in content
-
-
-def test_home_page_preserves_identity_and_photo_with_logo() -> None:
+def test_home_page_preserves_identity_and_photo() -> None:
     content = Client().get("/").content.decode()
 
     assert "Luís França" in content
     assert "Luís Eduardo Carvalho França" in content
     assert "Software Engineer" in content
-    assert "images/profile/luis-franca" in content
-    assert "images/brand/lf-information-system" in content
+    assert "images/profile/luis-franca-transparent-02.png" in content
+
+
+def test_home_page_loads_scoped_responsive_foundations() -> None:
+    content = Client().get("/").content.decode()
+
+    assert 'class="site-main site-main--homepage"' in content
+    assert 'class="homepage"' in content
+    assert 'class="home-hero homepage__container homepage__section"' in content
+    stylesheet = re.search(r'href="([^"]*?/static/css/home\.css(?:\?[^"]*)?)"', content)
+
+    assert stylesheet is not None
+    assert urlparse(stylesheet.group(1)).path == "/static/css/home.css"

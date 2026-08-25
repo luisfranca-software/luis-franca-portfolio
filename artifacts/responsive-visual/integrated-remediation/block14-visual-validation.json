@@ -1,0 +1,1004 @@
+{
+  "environment": {
+    "browser": "Chromium 151.0.7922.108 snap",
+    "device_pixel_ratio": 1,
+    "os": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "viewport_height": 900,
+    "zoom": "100%"
+  },
+  "interpolation_widths": [
+    390,
+    480,
+    640,
+    820,
+    900,
+    1100,
+    1280
+  ],
+  "locales": [
+    {
+      "locale": "en-US",
+      "widths": {
+        "1024": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "full",
+            "hero": "split",
+            "process": 6,
+            "projects": 2
+          },
+          "overflow": {
+            "page": false,
+            "selectors": [
+              ".home-hero"
+            ]
+          },
+          "reference": true,
+          "screenshot": "artifacts/responsive-visual/integrated-remediation/homepage-en-us-1024.png"
+        },
+        "1100": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__nav",
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "full",
+            "hero": "split",
+            "process": 6,
+            "projects": 2
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "1280": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__nav",
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 4,
+            "evidence": 4,
+            "evidenceContact": "side",
+            "footer": "horizontal",
+            "header": "full",
+            "hero": "split",
+            "process": 7,
+            "projects": 3
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "1440": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": [
+              "exchange",
+              "rates.",
+              "Developed",
+              "incrementally",
+              "through"
+            ]
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 4,
+            "evidence": 4,
+            "evidenceContact": "side",
+            "footer": "horizontal",
+            "header": "full",
+            "hero": "split",
+            "process": 7,
+            "projects": 3
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": true,
+          "screenshot": "artifacts/responsive-visual/integrated-remediation/homepage-en-us-1440.png"
+        },
+        "360": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": [
+              "queries",
+              "through",
+              "an",
+              "external",
+              "API,"
+            ]
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": false,
+            "cta": false,
+            "github": false,
+            "linkedin": false,
+            "projects": false
+          },
+          "mode": {
+            "engineering": 1,
+            "evidence": 1,
+            "evidenceContact": "stacked",
+            "footer": "stacked",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 1,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": true,
+          "screenshot": "artifacts/responsive-visual/integrated-remediation/homepage-en-us-360.png"
+        },
+        "390": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": [
+              "forecasting,",
+              "and",
+              "analyzing",
+              "exchange"
+            ]
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": false,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": false
+          },
+          "mode": {
+            "engineering": 1,
+            "evidence": 1,
+            "evidenceContact": "stacked",
+            "footer": "stacked",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 1,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "480": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": false,
+            "cta": false,
+            "github": true,
+            "linkedin": false,
+            "projects": false
+          },
+          "mode": {
+            "engineering": 1,
+            "evidence": 1,
+            "evidenceContact": "stacked",
+            "footer": "stacked",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 1,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "640": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__nav",
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 4,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "768": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 4,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": true,
+          "screenshot": "artifacts/responsive-visual/integrated-remediation/homepage-en-us-768.png"
+        },
+        "820": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 4,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "900": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__nav",
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "full",
+            "hero": "stacked",
+            "process": 6,
+            "projects": 2
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        }
+      }
+    },
+    {
+      "locale": "pt-BR",
+      "widths": {
+        "1024": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "full",
+            "hero": "split",
+            "process": 6,
+            "projects": 2
+          },
+          "overflow": {
+            "page": false,
+            "selectors": [
+              ".home-hero"
+            ]
+          },
+          "reference": true,
+          "screenshot": "artifacts/responsive-visual/integrated-remediation/homepage-pt-br-1024.png"
+        },
+        "1100": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__nav",
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "full",
+            "hero": "split",
+            "process": 6,
+            "projects": 2
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "1280": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__nav",
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 4,
+            "evidence": 4,
+            "evidenceContact": "side",
+            "footer": "horizontal",
+            "header": "full",
+            "hero": "split",
+            "process": 7,
+            "projects": 3
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "1440": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 4,
+            "evidence": 4,
+            "evidenceContact": "side",
+            "footer": "horizontal",
+            "header": "full",
+            "hero": "split",
+            "process": 7,
+            "projects": 3
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": true,
+          "screenshot": "artifacts/responsive-visual/integrated-remediation/homepage-pt-br-1440.png"
+        },
+        "360": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": [
+              "cota\u00e7\u00f5es",
+              "de",
+              "moedas",
+              "por",
+              "meio",
+              "de"
+            ]
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": false,
+            "cta": false,
+            "github": false,
+            "linkedin": false,
+            "projects": false
+          },
+          "mode": {
+            "engineering": 1,
+            "evidence": 1,
+            "evidenceContact": "stacked",
+            "footer": "stacked",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 1,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": true,
+          "screenshot": "artifacts/responsive-visual/integrated-remediation/homepage-pt-br-360.png"
+        },
+        "390": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": false,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": false
+          },
+          "mode": {
+            "engineering": 1,
+            "evidence": 1,
+            "evidenceContact": "stacked",
+            "footer": "stacked",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 1,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "480": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": [
+              "de",
+              "c\u00e2mbio.",
+              "Desenvolvida",
+              "incrementalmente",
+              "em"
+            ]
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": false,
+            "cta": false,
+            "github": true,
+            "linkedin": false,
+            "projects": false
+          },
+          "mode": {
+            "engineering": 1,
+            "evidence": 1,
+            "evidenceContact": "stacked",
+            "footer": "stacked",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 1,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "640": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": [
+              "interface",
+              "gr\u00e1fica",
+              "e",
+              "gera\u00e7\u00e3o",
+              "de",
+              "relat\u00f3rios.",
+              "O",
+              "projeto",
+              "documenta",
+              "uma"
+            ]
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__nav",
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 4,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "768": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": [
+              "relat\u00f3rios.",
+              "O",
+              "projeto",
+              "documenta",
+              "uma",
+              "evolu\u00e7\u00e3o",
+              "arquitetural",
+              "desde",
+              "um",
+              "projeto",
+              "inicial"
+            ]
+          },
+          "component_collisions": {
+            "ai": [],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 4,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": true,
+          "screenshot": "artifacts/responsive-visual/integrated-remediation/homepage-pt-br-768.png"
+        },
+        "820": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": [
+              "projeto",
+              "documenta",
+              "uma",
+              "evolu\u00e7\u00e3o",
+              "arquitetural",
+              "desde",
+              "um",
+              "projeto",
+              "inicial",
+              "orientado",
+              "a",
+              "objetos"
+            ]
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__nav",
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "compact",
+            "hero": "stacked",
+            "process": 4,
+            "projects": 1
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        },
+        "900": {
+          "background": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+          "broken_words": {
+            "engineering": [],
+            "evidence": [],
+            "footer": [],
+            "header": [],
+            "hero": [],
+            "process": [],
+            "projects": []
+          },
+          "component_collisions": {
+            "ai": [
+              ".homepage-footer__nav",
+              ".homepage-footer__social"
+            ],
+            "header": [],
+            "hero": false
+          },
+          "footer_target_collisions": {
+            "contact": true,
+            "cta": false,
+            "github": true,
+            "linkedin": true,
+            "projects": true
+          },
+          "mode": {
+            "engineering": 2,
+            "evidence": 2,
+            "evidenceContact": "stacked",
+            "footer": "horizontal",
+            "header": "full",
+            "hero": "stacked",
+            "process": 6,
+            "projects": 2
+          },
+          "overflow": {
+            "page": false,
+            "selectors": []
+          },
+          "reference": false
+        }
+      }
+    }
+  ],
+  "reference_widths": [
+    360,
+    768,
+    1024,
+    1440
+  ],
+  "schema_version": 1
+}

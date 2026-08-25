@@ -55,7 +55,36 @@ Per `docs/adr/ADR-002-technology-stack.md`:
   - Implementation: **complete** — dedicated Portfolio section, three featured projects using the approved Product Owner data, reusable project cards, hover elevation, screenshot scrolling, responsive 3/2/1-column layout, Release 1 project screenshot assets
   - Automated tests: **passed** (pytest — 92 passed)
   - Status: **implemented and validated** — Product Owner acceptance and integration approval pending
-- Per the approved release strategy and specification sequence, the next Feature Specification is eligible for planning once the current increment is reviewed and authorized.
+- **Release 1.1 — Homepage Responsive:**
+  - FIGMA-04 responsive visual design (1440, 1024, 768, and 360): **complete and human approved**
+  - FIGMA-05 responsive consolidation and implementation handoff: **complete and human approved**
+  - SDD-RWD-001 responsive implementation specification: **complete, human approved, and persisted**
+  - Responsive implementation preflight: **complete**
+  - Responsive foundations / Block 1: **complete and human approved**
+  - Semantic Homepage structure and section data / Block 2: **complete and human approved**
+  - Header and WhatsApp migration / Block 3: **complete and human approved**
+  - Hero and approved assets / Block 4: **complete and human approved**
+  - Engineering section / Block 5: **complete and human approved**
+  - Selected Engineering Work / Block 6: **complete and human approved**
+  - Process / How I Work / Block 7: **complete and human approved**
+  - Professional Evidence and Contact CTA / Block 8: **complete and human approved**
+  - Footer / Block 9: **complete and human approved**
+  - AI/RAG reserved visual / Block 10: **complete and human approved**
+  - Accessibility, i18n, responsive images, and reduced motion / Block 11: **complete and human approved**
+  - Intrinsic-fit browser measurement / Block 12: **complete and human approved**
+  - Breakpoint finalization / Block 13: **complete and human approved**
+  - Visual regression / Block 14 previous result: **human rejected — superseded by integrated remediation candidate**
+  - Figma traceability: **normalized across 360/768/1024/1440**
+  - Geometry-driven visual remediation: **browser-validated — pending human visual review and PostgreSQL-backed full regression**
+  - Intrinsic-fit validation: **13 × FIT-VALIDATED**
+  - Breakpoint finalization: **complete**
+  - Responsive browser validation: **complete through Block 13 boundaries**
+  - Responsive visual regression: **complete**
+  - Responsive interpolation validation: **complete**
+  - Technical responsive implementation: **complete**
+  - Final human acceptance: **pending**
+  - Normative specification: `docs/specs/SDD-RWD-001-homepage-responsive-implementation-specification.md`
+  - The next stage is final human review of the integrated remediation evidence.
 
 ## Repository Structure
 

@@ -5,26 +5,167 @@
 
 {% block title %}{% trans "Luís França | Software Engineer · Python Backend Engineer · AI/LLM Engineer" %}{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}?v=r3c-hero02">
+{% endblock %}
+
+{% block main_class %} site-main--homepage{% endblock %}
+{% block footer_class %} site-footer--homepage{% endblock %}
+
 {% block content %}
-<section class="home-hero" aria-labelledby="home-heading">
-  <div class="home-hero__identity">
-    <div class="home-hero__brand">
-      {% include "includes/brand-logo.html" %}
-    </div>
-    <p class="home-hero__greeting">{% trans "Hello, I'm" %}</p>
-    <h1 id="home-heading" class="home-hero__name">{{ display_name }}</h1>
-    <p class="home-hero__full-name">{{ full_name }}</p>
-    <ul class="home-hero__titles" aria-label="{% trans 'Professional titles' %}">
+<div class="homepage">
+<div class="homepage__technology-background" data-trace-id="IMG-02" aria-hidden="true"></div>
+<section class="home-hero homepage__container homepage__section" id="home" aria-labelledby="home-heading" data-trace-id="HERO-00">
+  <div class="home-hero__copy" data-trace-id="HERO-00A">
+    <p class="home-hero__greeting" data-trace-id="HERO-01">{% trans "Hello, I'm" %} {{ display_name }}</p>
+    <h1 id="home-heading" class="home-hero__titles" data-trace-id="HERO-02">
       {% for title in titles %}
-      <li class="home-hero__title">{{ title }}</li>
+      <span class="home-hero__title">{{ title }}</span>
       {% endfor %}
-    </ul>
-    <p class="home-hero__positioning">{{ positioning }}</p>
-    <a class="home-hero__cta button button--primary" href="{{ cta_url }}">{{ cta_label }}</a>
+    </h1>
+    <p class="home-hero__positioning" data-trace-id="HERO-03">{{ positioning }}</p>
+    <div class="home-hero__actions" data-trace-id="HERO-04">
+      <a class="home-hero__cta button button--primary" href="{{ cta_url }}" data-trace-id="HERO-04A">
+        {{ cta_label }} <span aria-hidden="true">→</span>
+      </a>
+      {% if contact_links.linkedin %}
+      <a class="home-hero__social" href="{{ contact_links.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'LinkedIn' %}" data-trace-id="HERO-05A">
+        <img src="{% static 'images/brand/linkedin.svg' %}" alt="" width="24" height="24" aria-hidden="true">
+      </a>
+      {% endif %}
+      {% if contact_links.github %}
+      <a class="home-hero__social" href="{{ contact_links.github }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'GitHub' %}" data-trace-id="HERO-06">
+        <img src="{% static 'images/brand/github.svg' %}" alt="" width="24" height="24" aria-hidden="true">
+      </a>
+      {% endif %}
+    </div>
   </div>
 
-  <div class="home-hero__visual">
+  <div class="home-hero__visual" data-trace-id="HERO-07">
+    <div class="home-hero__atmosphere" aria-hidden="true">
+      <i class="home-hero__atmosphere-ide"></i>
+      <i class="home-hero__atmosphere-explorer-cyan"></i>
+      <i class="home-hero__atmosphere-explorer-warm"></i>
+    </div>
+    <div class="home-hero__gutter" aria-hidden="true" data-trace-id="HERO-07B">01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24</div>
+    <div class="home-hero__ide" aria-hidden="true" data-trace-id="HERO-07A">
+      <ol class="home-hero__code">
+        <li><code><b>from</b> dataclasses <b>import</b> dataclass</code></li>
+        <li><code><b>from</b> typing <b>import</b> List, Optional</code></li>
+        <li><code><b>from</b> enum <b>import</b> Enum</code></li>
+        <li><code>&nbsp;</code></li>
+        <li><code><b>class</b> DeliveryContext(Enum):</code></li>
+        <li><code>&nbsp;&nbsp;SPECIFICATIONS = <em>"specs"</em></code></li>
+        <li><code>&nbsp;&nbsp;ARCHITECTURE = <em>"architecture"</em></code></li>
+        <li><code>&nbsp;&nbsp;TESTING = <em>"testing"</em></code></li>
+        <li><code>&nbsp;&nbsp;DEPLOYMENT = <em>"production"</em></code></li>
+        <li><code>&nbsp;</code></li>
+        <li><code><b>@dataclass</b>(frozen=True)</code></li>
+        <li><code><b>class</b> ProjectContext:</code></li>
+        <li><code>&nbsp;&nbsp;name: str</code></li>
+        <li><code>&nbsp;&nbsp;stack: List[str]</code></li>
+        <li><code>&nbsp;&nbsp;automation: bool = True</code></li>
+        <li><code>&nbsp;&nbsp;ai_enabled: bool = True</code></li>
+        <li><code>&nbsp;</code></li>
+        <li><code><b>def</b> build_delivery(context: ProjectContext):</code></li>
+        <li><code>&nbsp;&nbsp;<b>return</b> {</code></li>
+        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;<em>"specs"</em>: context.stack,</code></li>
+        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;<em>"automation"</em>: context.automation,</code></li>
+        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;<em>"ai"</em>: context.ai_enabled,</code></li>
+        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;<em>"delivery"</em>: <em>"production"</em>,</code></li>
+        <li><code>&nbsp;&nbsp;}</code></li>
+      </ol>
+    </div>
+    <div class="home-hero__explorer" aria-hidden="true" data-trace-id="HERO-08">
+      <div class="home-hero__explorer-structure" data-trace-id="HERO-08B"></div>
+      <div class="home-hero__explorer-labels" data-trace-id="HERO-08A">
+      <p>▰&nbsp; portfolio/</p>
+      <ul>
+        <li>▾&nbsp; ▰ backend/</li>
+        <li>&nbsp;&nbsp;▾&nbsp; ▰ apps/</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;▱ core/</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;▱ api/</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;▱ services/</li>
+        <li>&nbsp;&nbsp;▱ tests/</li>
+        <li>&nbsp;&nbsp;▱ requirements.txt</li>
+        <li>▾&nbsp; ▰ frontend/</li>
+        <li>&nbsp;&nbsp;▱ src/</li>
+        <li>&nbsp;&nbsp;▱ components/</li>
+        <li>&nbsp;&nbsp;▱ assets/</li>
+        <li>▰ docs/</li>
+        <li>&nbsp;&nbsp;▱ specifications/</li>
+        <li>&nbsp;&nbsp;▱ architecture/</li>
+        <li>&nbsp;&nbsp;▱ deployment/</li>
+        <li>▱ .github/</li>
+        <li>▱ README.md</li>
+      </ul>
+      </div>
+    </div>
+    <div class="home-hero__portrait-rim" aria-hidden="true" data-trace-id="HERO-09A"></div>
     {% include "includes/profile-photo.html" %}
   </div>
 </section>
+
+{% include "home/includes/engineering.html" %}
+
+<section
+  class="homepage__section homepage__container home-projects"
+  id="projects"
+  aria-labelledby="projects-heading"
+  data-trace-id="PRJ-00"
+>
+  <header class="home-projects__header">
+    <p class="home-projects__eyebrow" aria-hidden="true">04</p>
+    <h2 id="projects-heading">{% trans "Selected Engineering Work" %}</h2>
+  </header>
+  <div class="home-projects__list">
+    {% for project in featured_projects %}
+      {% include "home/includes/project-card.html" with project=project %}
+    {% endfor %}
+  </div>
+</section>
+
+{% include "home/includes/process.html" %}
+
+<div class="home-evidence-contact homepage__container" data-trace-id="EVD-00">
+  <section
+    class="homepage__section home-evidence"
+    id="evidence"
+    aria-labelledby="evidence-heading"
+    data-trace-id="EVD-01"
+  >
+    <header class="home-evidence__header">
+      <p class="home-evidence__eyebrow" aria-hidden="true">06</p>
+      <h2 id="evidence-heading">{% trans "Professional Evidence" %}</h2>
+    </header>
+    <ul class="home-evidence__list">
+      {% for theme in evidence_themes %}
+      <li class="home-evidence__item" data-evidence-theme="{{ theme.slug }}" data-trace-id="EVD-0{{ forloop.counter|add:'2' }}">
+        <h3>{{ theme.title }}</h3>
+        <p>{{ theme.description }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section
+    class="homepage__section home-contact"
+    id="contact"
+    aria-labelledby="contact-heading"
+    data-trace-id="CTA-00"
+  >
+    <p class="home-contact__eyebrow" aria-hidden="true">06</p>
+    <h2 id="contact-heading" data-trace-id="CTA-01">{% trans "Let's build something meaningful" %}</h2>
+    <p class="home-contact__copy" data-trace-id="CTA-02">{% trans "Open to challenging software engineering work and purposeful collaboration." %}</p>
+    <a class="home-contact__action button button--primary" href="{{ contact_cta_url }}" data-trace-id="CTA-03">
+      {% trans "Contact me" %} <span aria-hidden="true">→</span>
+    </a>
+  </section>
+</div>
+
+<div class="home-ai-rag" aria-hidden="true" data-trace-id="AIR-00">
+  <span><b>Juju IA</b></span>
+  <i></i>
+</div>
+</div>
 {% endblock %}

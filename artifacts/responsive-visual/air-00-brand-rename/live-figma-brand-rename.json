@@ -1,0 +1,14 @@
+{
+  "file_key": "7XIYTbKZrLk77biI0UhRIb",
+  "traceability_id": "AIR-00",
+  "previous_text": "Jujuju AI",
+  "new_text": "Juju IA",
+  "instances": {
+    "Homepage / 360 v1": {"node_id": "316:751", "x": 130, "y": 6834, "width": 210, "height": 48},
+    "Homepage / 768 v1": {"node_id": "297:509", "x": 526, "y": 5126, "width": 210, "height": 48},
+    "Homepage / 1024 v1": {"node_id": "270:1493", "x": 766, "y": 4138, "width": 210, "height": 48},
+    "Homepage / Desktop v1": {"node_id": "154:1374", "x": 1182, "y": 2360, "width": 210, "height": 48}
+  },
+  "geometry_changed": false,
+  "supporting_text": ""
+}

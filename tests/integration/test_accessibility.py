@@ -1,5 +1,7 @@
 """Integration tests for accessibility baseline (SPEC-001 section 9)."""
 
+import re
+
 import pytest
 from django.test import Client
 
@@ -47,7 +49,9 @@ def test_images_have_descriptive_alt_text(path: str) -> None:
         return
 
     assert 'alt="' in content
-    assert 'alt=""' not in content
+    for image in re.findall(r"<img\b[^>]*>", content):
+        if 'alt=""' in image:
+            assert 'aria-hidden="true"' in image
 
 
 def test_home_page_has_single_h1() -> None:
@@ -57,14 +61,8 @@ def test_home_page_has_single_h1() -> None:
     assert "Luís França" in content
 
 
-def test_home_brand_logo_is_accessible() -> None:
+def test_home_portrait_is_accessible() -> None:
     content = Client().get("/").content.decode()
 
-    # The approved brand-logo component provides meaningful alt text; the Home
-    # wrapper must not hide it from assistive technologies.
-    brand_start = content.find('<div class="home-hero__brand">')
-    assert brand_start != -1
-    brand_end = content.find('</div>', brand_start)
-    brand_tag = content[brand_start:brand_end]
-    assert 'aria-hidden' not in brand_tag
-    assert "Luís França — Site Portfolio logo" in content
+    assert 'class="profile-photo"' in content
+    assert 'alt="Professional photograph of Luís Eduardo Carvalho França"' in content

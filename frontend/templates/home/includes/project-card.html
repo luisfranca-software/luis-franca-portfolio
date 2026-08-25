@@ -1,0 +1,38 @@
+{% load static i18n %}
+<article class="home-project" data-home-project="{{ project.slug }}" data-trace-id="PRJ-0{{ forloop.counter|add:'1' }}">
+  <picture class="home-project__visual">
+    <source
+      type="image/webp"
+      srcset="{% for path, width in project.webp_variants reversed %}{% static path %} {{ width }}w{% if not forloop.last %}, {% endif %}{% endfor %}"
+      sizes="(min-width: 75rem) 30vw, (min-width: 56rem) 45vw, 92vw">
+    <img
+      class="home-project__image"
+      src="{% static project.screenshot_master %}"
+      alt="{% blocktrans with title=project.title %}Screenshot of {{ title }}{% endblocktrans %}"
+      width="{{ project.screenshot_width }}"
+      height="{{ project.screenshot_height }}"
+      loading="lazy"
+      decoding="async">
+  </picture>
+
+  <div class="home-project__content">
+    <h3>{% translate project.title %}</h3>
+    <p class="home-project__summary">{% translate project.summary %}</p>
+    <ul class="home-project__technologies" aria-label="{% trans 'Technologies' %}">
+      {% for technology in project.technologies %}
+      <li>{{ technology }}</li>
+      {% endfor %}
+    </ul>
+    <footer class="home-project__actions">
+      <a class="home-project__case-study" href="{% url 'portfolio:portfolio' %}">{% trans "View case study" %} <span aria-hidden="true">→</span></a>
+      <a class="home-project__source" href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" aria-label="{% blocktrans with title=project.title %}View {{ title }} source on GitHub{% endblocktrans %}">
+        <img src="{% static 'images/brand/github.svg' %}" alt="" width="24" height="24" aria-hidden="true">
+      </a>
+      {% if project.demo_url %}
+      <a href="{{ project.demo_url }}" target="_blank" rel="noopener noreferrer">
+        {% trans "Live demo" %} <span aria-hidden="true">↗</span>
+      </a>
+      {% endif %}
+    </footer>
+  </div>
+</article>

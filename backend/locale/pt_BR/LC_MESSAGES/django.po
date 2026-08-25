@@ -71,6 +71,18 @@ msgstr "Portfólio"
 msgid "Contact"
 msgstr "Contato"
 
+#: frontend/templates/includes/navigation.html
+msgid "Engineering"
+msgstr "Engenharia"
+
+#: frontend/templates/includes/navigation.html
+msgid "Projects"
+msgstr "Projetos"
+
+#: frontend/templates/includes/navigation.html
+msgid "Process"
+msgstr "Processo"
+
 #: frontend/templates/includes/language-selector.html
 msgid "Language selector"
 msgstr "Seletor de idioma"
@@ -492,3 +504,180 @@ msgstr "solicitação de contato"
 #: backend/apps/contact/models.py
 msgid "contact requests"
 msgstr "solicitações de contato"
+
+#: backend/apps/home/content.py
+msgid "Backend Engineering"
+msgstr "Engenharia Backend"
+
+#: backend/apps/home/content.py
+msgid "Robust Python services, domain logic, persistence, and production-ready backend systems."
+msgstr "Serviços Python robustos, lógica de domínio, persistência e sistemas backend prontos para produção."
+
+#: backend/apps/home/content.py
+msgid "Software Architecture"
+msgstr "Arquitetura de Software"
+
+#: backend/apps/home/content.py
+msgid "Modular boundaries, explicit interfaces, specification-driven decisions, and maintainable delivery."
+msgstr "Limites modulares, interfaces explícitas, decisões orientadas por especificações e entrega sustentável."
+
+#: backend/apps/home/content.py
+msgid "APIs & Automation"
+msgstr "APIs e Automação"
+
+#: backend/apps/home/content.py
+msgid "API integrations, workflow automation, testing, and reliable connections between systems."
+msgstr "Integrações de API, automação de fluxos de trabalho, testes e conexões confiáveis entre sistemas."
+
+#: backend/apps/home/content.py
+msgid "AI & Intelligent Systems"
+msgstr "IA e Sistemas Inteligentes"
+
+#: backend/apps/home/content.py
+msgid "AI/LLM capabilities developed with engineering discipline, traceability, and product purpose."
+msgstr "Capacidades de IA/LLM desenvolvidas com disciplina de engenharia, rastreabilidade e propósito de produto."
+
+#: backend/apps/home/content.py
+msgid "Requirements"
+msgstr "Requisitos"
+
+#: backend/apps/home/content.py
+msgid "Specification"
+msgstr "Especificação"
+
+#: backend/apps/home/content.py
+msgid "Architecture"
+msgstr "Arquitetura"
+
+#: backend/apps/home/content.py
+msgid "Implementation"
+msgstr "Implementação"
+
+#: backend/apps/home/content.py
+msgid "Testing"
+msgstr "Testes"
+
+#: backend/apps/home/content.py
+msgid "Deployment"
+msgstr "Implantação"
+
+#: backend/apps/home/content.py
+msgid "Validation"
+msgstr "Validação"
+
+#: backend/apps/home/content.py
+msgid "Quality First"
+msgstr "Qualidade em Primeiro Lugar"
+
+#: backend/apps/home/content.py
+msgid "Delivery"
+msgstr "Entrega"
+
+#: backend/apps/home/content.py
+msgid "Governance"
+msgstr "Governança"
+
+#: frontend/templates/home/includes/engineering.html
+msgid "What I Engineer"
+msgstr "O que eu desenvolvo"
+
+#: frontend/templates/home/home.html
+msgid "Selected Engineering Work"
+msgstr "Trabalhos de Engenharia Selecionados"
+
+#: frontend/templates/home/includes/project-card.html
+msgid "View %(title)s source on GitHub"
+msgstr "Ver o código-fonte de %(title)s no GitHub"
+
+#: frontend/templates/home/includes/process.html
+msgid "How I Work"
+msgstr "Como eu trabalho"
+
+#: frontend/templates/home/home.html
+msgid "Professional Evidence"
+msgstr "Evidências Profissionais"
+
+#: frontend/templates/home/home.html
+msgid "Let's build something meaningful"
+msgstr "Vamos construir algo significativo"
+
+#: frontend/templates/home/home.html
+msgid "Contact me"
+msgstr "Entre em contato"
+
+#: frontend/templates/home/home.html
+msgid "Open to new opportunities, challenging projects, and impactful collaborations."
+msgstr "Aberto a novas oportunidades, projetos desafiadores e colaborações de impacto."
+
+#: frontend/templates/includes/homepage-footer.html
+msgid "Engineering with evidence."
+msgstr "Engenharia com evidências."
+
+#: frontend/templates/includes/brand-logo.html
+msgid "Luís França — Site Portfolio logo"
+msgstr "Logotipo do Site Portfolio de Luís França"
+
+#: frontend/templates/home/includes/project-card.html
+msgid "Enterprise-grade web platform demonstrating specification-driven software engineering, modular architecture, security, automated testing, DevOps, observability, and software governance across the full development lifecycle."
+msgstr "Plataforma web de nível empresarial que demonstra engenharia de software orientada por especificações, arquitetura modular, segurança, testes automatizados, DevOps, observabilidade e governança de software em todo o ciclo de desenvolvimento."
+
+#: frontend/templates/home/includes/project-card.html
+msgid "Modular currency intelligence platform for querying, tracking, forecasting, and analyzing exchange rates. Developed incrementally through successive releases, it combines API integration, PostgreSQL, automated testing, Docker, CI/CD, machine learning, and AI capabilities while maintaining software engineering and architectural discipline."
+msgstr "Plataforma modular de inteligência cambial para consultar, acompanhar, prever e analisar taxas de câmbio. Desenvolvida incrementalmente em versões sucessivas, combina integração de APIs, PostgreSQL, testes automatizados, Docker, CI/CD, aprendizado de máquina e recursos de IA, preservando a disciplina de engenharia de software e arquitetura."
+
+#: frontend/templates/home/includes/project-card.html
+msgid "Python RPA application for automated currency quotation queries through an external API, featuring historical data, a graphical interface, and report generation. The project documents an architectural evolution from an initial object-oriented design to a complete MVC structure supported by automated tests and mocks."
+msgstr "Aplicação RPA em Python para consultas automatizadas de cotações de moedas por meio de uma API externa, com dados históricos, interface gráfica e geração de relatórios. O projeto documenta uma evolução arquitetural desde um projeto inicial orientado a objetos até uma estrutura MVC completa, apoiada por testes automatizados e mocks."
+
+#: frontend/templates/includes/homepage-footer.html
+msgid "Footer navigation"
+msgstr "Navegação do rodapé"
+
+#: frontend/templates/home/includes/project-card.html
+msgid "Technologies"
+msgstr "Tecnologias"
+
+#: frontend/templates/home/home.html frontend/templates/includes/profile-photo.html
+msgid "Professional photograph of Luís Eduardo Carvalho França"
+msgstr "Fotografia profissional de Luís Eduardo Carvalho França"
+msgid "Clarify goals, constraints, users, and measurable outcomes."
+msgstr "Esclarecer objetivos, restrições, usuários e resultados mensuráveis."
+
+msgid "Translate requirements into explicit behavior and acceptance criteria."
+msgstr "Traduzir requisitos em comportamento explícito e critérios de aceitação."
+
+msgid "Shape boundaries, interfaces, data flow, and technical trade-offs."
+msgstr "Definir limites, interfaces, fluxo de dados e compromissos técnicos."
+
+msgid "Build maintainable software from the approved technical direction."
+msgstr "Construir software sustentável a partir da direção técnica aprovada."
+
+msgid "Verify behavior, resilience, accessibility, and regression safety."
+msgstr "Verificar comportamento, resiliência, acessibilidade e segurança contra regressões."
+
+msgid "Release through controlled automation and observable environments."
+msgstr "Entregar por meio de automação controlada e ambientes observáveis."
+
+msgid "Measure outcomes and feed evidence into the next iteration."
+msgstr "Medir resultados e incorporar evidências à próxima iteração."
+
+msgid "Explicit boundaries, modular design, and documented technical decisions."
+msgstr "Limites explícitos, design modular e decisões técnicas documentadas."
+
+msgid "Automated testing and regression safety across project delivery."
+msgstr "Testes automatizados e segurança contra regressões em toda a entrega."
+
+msgid "Containerized environments, CI/CD, observability, and controlled releases."
+msgstr "Ambientes conteinerizados, CI/CD, observabilidade e lançamentos controlados."
+
+msgid "Specification-driven work with human review and release approval."
+msgstr "Trabalho orientado por especificações com revisão humana e aprovação de lançamento."
+
+msgid "Open to challenging software engineering work and purposeful collaboration."
+msgstr "Aberto a trabalho desafiador de engenharia de software e colaboração com propósito."
+
+msgid "Ask AI / RAG"
+msgstr "Pergunte à IA / RAG"
+
+msgid "Explore engineering context"
+msgstr "Explore o contexto de engenharia"

@@ -1,0 +1,48 @@
+{
+  "clientWidth": 360,
+  "computed": {
+    "fontFamily": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+    "fontWeight": "600",
+    "letterSpacing": "-0.25px",
+    "lineHeight": "34px"
+  },
+  "selectedFontSize": 23.1,
+  "table": [
+    {
+      "availableWidth": 320,
+      "fontSize": 24.5,
+      "overflow": 18.8125,
+      "requiredWidth": 338.8125
+    },
+    {
+      "availableWidth": 320,
+      "fontSize": 24,
+      "overflow": 11.90625,
+      "requiredWidth": 331.90625
+    },
+    {
+      "availableWidth": 320,
+      "fontSize": 23.5,
+      "overflow": 4.984375,
+      "requiredWidth": 324.984375
+    },
+    {
+      "availableWidth": 320,
+      "fontSize": 23.25,
+      "overflow": 1.53125,
+      "requiredWidth": 321.53125
+    },
+    {
+      "availableWidth": 320,
+      "fontSize": 23.1,
+      "overflow": -0.625,
+      "requiredWidth": 319.375
+    },
+    {
+      "availableWidth": 320,
+      "fontSize": 23,
+      "overflow": -1.921875,
+      "requiredWidth": 318.078125
+    }
+  ]
+}

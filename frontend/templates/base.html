@@ -25,24 +25,18 @@
     {% include "includes/navigation.html" %}
   </header>
 
-  <main id="main-content" class="site-main">
+  <main id="main-content" class="site-main{% block main_class %}{% endblock %}">
     {% block content %}{% endblock %}
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer{% block footer_class %}{% endblock %}">
+    {% if is_homepage %}
+    {% include "includes/homepage-footer.html" %}
+    {% else %}
     {% include "includes/footer-links.html" %}
     <p class="site-footer__copyright">© {% now "Y" %} Luís França. {% trans "All rights reserved." %}</p>
+    {% endif %}
   </footer>
-
-  {% if contact_links.whatsapp %}
-  <a
-    class="whatsapp-button"
-    href="{{ contact_links.whatsapp }}"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="{% trans 'Chat on WhatsApp' %}"
-  >{% trans "WhatsApp" %}</a>
-  {% endif %}
 
   <script src="{% static 'js/site.js' %}" defer></script>
 </body>

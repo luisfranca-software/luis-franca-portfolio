@@ -1,0 +1,236 @@
+{
+  "comparisons": [
+    {
+      "locale": "en-US",
+      "width": "360",
+      "before": {
+        "bottom": 880,
+        "height": 48,
+        "right": 325,
+        "width": 210,
+        "x": 115,
+        "y": 832
+      },
+      "after": {
+        "bottom": 880,
+        "height": 48,
+        "right": 325,
+        "width": 210,
+        "x": 115,
+        "y": 832
+      },
+      "beforeEdge": {
+        "bottom": 20,
+        "right": 35
+      },
+      "afterEdge": {
+        "bottom": 20,
+        "right": 35
+      },
+      "text": "Juju IA"
+    },
+    {
+      "locale": "en-US",
+      "width": "768",
+      "before": {
+        "bottom": 868,
+        "height": 48,
+        "right": 721,
+        "width": 210,
+        "x": 511,
+        "y": 820
+      },
+      "after": {
+        "bottom": 868,
+        "height": 48,
+        "right": 721,
+        "width": 210,
+        "x": 511,
+        "y": 820
+      },
+      "beforeEdge": {
+        "bottom": 32,
+        "right": 47
+      },
+      "afterEdge": {
+        "bottom": 32,
+        "right": 47
+      },
+      "text": "Juju IA"
+    },
+    {
+      "locale": "en-US",
+      "width": "1024",
+      "before": {
+        "bottom": 852,
+        "height": 48,
+        "right": 961,
+        "width": 210,
+        "x": 751,
+        "y": 804
+      },
+      "after": {
+        "bottom": 852,
+        "height": 48,
+        "right": 961,
+        "width": 210,
+        "x": 751,
+        "y": 804
+      },
+      "beforeEdge": {
+        "bottom": 48,
+        "right": 63
+      },
+      "afterEdge": {
+        "bottom": 48,
+        "right": 63
+      },
+      "text": "Juju IA"
+    },
+    {
+      "locale": "en-US",
+      "width": "1440",
+      "before": {
+        "bottom": 852,
+        "height": 48,
+        "right": 1377,
+        "width": 210,
+        "x": 1167,
+        "y": 804
+      },
+      "after": {
+        "bottom": 852,
+        "height": 48,
+        "right": 1377,
+        "width": 210,
+        "x": 1167,
+        "y": 804
+      },
+      "beforeEdge": {
+        "bottom": 48,
+        "right": 63
+      },
+      "afterEdge": {
+        "bottom": 48,
+        "right": 63
+      },
+      "text": "Juju IA"
+    },
+    {
+      "locale": "pt-BR",
+      "width": "360",
+      "before": {
+        "bottom": 880,
+        "height": 48,
+        "right": 325,
+        "width": 210,
+        "x": 115,
+        "y": 832
+      },
+      "after": {
+        "bottom": 880,
+        "height": 48,
+        "right": 325,
+        "width": 210,
+        "x": 115,
+        "y": 832
+      },
+      "beforeEdge": {
+        "bottom": 20,
+        "right": 35
+      },
+      "afterEdge": {
+        "bottom": 20,
+        "right": 35
+      },
+      "text": "Juju IA"
+    },
+    {
+      "locale": "pt-BR",
+      "width": "768",
+      "before": {
+        "bottom": 868,
+        "height": 48,
+        "right": 721,
+        "width": 210,
+        "x": 511,
+        "y": 820
+      },
+      "after": {
+        "bottom": 868,
+        "height": 48,
+        "right": 721,
+        "width": 210,
+        "x": 511,
+        "y": 820
+      },
+      "beforeEdge": {
+        "bottom": 32,
+        "right": 47
+      },
+      "afterEdge": {
+        "bottom": 32,
+        "right": 47
+      },
+      "text": "Juju IA"
+    },
+    {
+      "locale": "pt-BR",
+      "width": "1024",
+      "before": {
+        "bottom": 852,
+        "height": 48,
+        "right": 961,
+        "width": 210,
+        "x": 751,
+        "y": 804
+      },
+      "after": {
+        "bottom": 852,
+        "height": 48,
+        "right": 961,
+        "width": 210,
+        "x": 751,
+        "y": 804
+      },
+      "beforeEdge": {
+        "bottom": 48,
+        "right": 63
+      },
+      "afterEdge": {
+        "bottom": 48,
+        "right": 63
+      },
+      "text": "Juju IA"
+    },
+    {
+      "locale": "pt-BR",
+      "width": "1440",
+      "before": {
+        "bottom": 852,
+        "height": 48,
+        "right": 1377,
+        "width": 210,
+        "x": 1167,
+        "y": 804
+      },
+      "after": {
+        "bottom": 852,
+        "height": 48,
+        "right": 1377,
+        "width": 210,
+        "x": 1167,
+        "y": 804
+      },
+      "beforeEdge": {
+        "bottom": 48,
+        "right": 63
+      },
+      "afterEdge": {
+        "bottom": 48,
+        "right": 63
+      },
+      "text": "Juju IA"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{% load static i18n %}
+<div class="homepage-footer" data-trace-id="FTR-01">
+  <div class="homepage-footer__brand" data-trace-id="FTR-02">
+    {% include "includes/brand-logo.html" %}
+  </div>
+  <p class="homepage-footer__copyright">© {% now "Y" %} Luís França</p>
+  <p class="homepage-footer__tagline">{% trans "Engineering with evidence." %}</p>
+  <nav class="homepage-footer__nav" aria-label="{% trans 'Footer navigation' %}">
+    <ul>
+      <li><a href="#projects" data-trace-id="FTR-03">{% trans "Projects" %}</a></li>
+      <li><a href="#contact" data-trace-id="FTR-04">{% trans "Contact" %}</a></li>
+    </ul>
+  </nav>
+  <nav class="homepage-footer__social" aria-label="{% trans 'Professional links' %}">
+    <ul>
+      {% if contact_links.linkedin %}
+      <li><a href="{{ contact_links.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'LinkedIn' %}" data-trace-id="FTR-05"><img src="{% static 'images/brand/linkedin.svg' %}" alt="" width="24" height="24" aria-hidden="true"></a></li>
+      {% endif %}
+      {% if contact_links.github %}
+      <li><a href="{{ contact_links.github }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'GitHub' %}" data-trace-id="FTR-06"><img src="{% static 'images/brand/github.svg' %}" alt="" width="24" height="24" aria-hidden="true"></a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>

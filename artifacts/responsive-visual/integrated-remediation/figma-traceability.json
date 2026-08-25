@@ -1,0 +1,25 @@
+{
+  "file_key": "7XIYTbKZrLk77biI0UhRIb",
+  "frames": {
+    "360": "316:615",
+    "768": "297:373",
+    "1024": "270:1357",
+    "1440": "153:2"
+  },
+  "phase_a": {
+    "canonical_names": true,
+    "renamed_native_occurrences": 219,
+    "created_hdr_02_nodes": {
+      "360": "374:1109",
+      "768": "374:1113"
+    },
+    "geometry_changed_except_hdr_02": false,
+    "gate_a": "PASS"
+  },
+  "asset_sha256": {
+    "IMG-00_figma_and_repository": "1c2a24c2d8e9fa5b46fb29cf9907d0998166bf419ae9e6b8941d0d846aadbebc",
+    "IMG-01_figma_export": "2753aae9ff269bb98e0d1389739a17ee149553e1a8bfca957c7e842db82b91a1",
+    "IMG-02_figma_and_repository": "09eb5be0c589996137e5aea87d9eb06609559c5e9f1a0e9cf0de6a4033b8726d"
+  },
+  "gate_b": "PASS"
+}

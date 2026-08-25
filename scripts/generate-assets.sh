@@ -27,11 +27,14 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BRAND_DIR="${REPO_ROOT}/frontend/static/images/brand"
 PROFILE_DIR="${REPO_ROOT}/frontend/static/images/profile"
+BACKGROUND_DIR="${REPO_ROOT}/frontend/static/images/background"
 PROJECTS_DIR="${REPO_ROOT}/frontend/static/images/projects"
 FAVICON_DIR="${REPO_ROOT}/frontend/static/images/favicon"
 
 BRAND_MASTER="lf-information-system.png"
 PROFILE_MASTER="luis-franca.png"
+HOMEPAGE_PORTRAIT_MASTER="luis-franca-transparent-02.png"
+HOMEPAGE_BACKGROUND_MASTER="homepage-background-desktop-02.png"
 
 # Approved Release 1 featured project screenshots (SPEC-003-REQ-002).
 PROJECT_MASTERS=(
@@ -62,6 +65,16 @@ fi
 "${IM}" identify -format "%wx%h" "${PROFILE_DIR}/${PROFILE_MASTER}" 2>/dev/null \
     | grep -q "^896x1195$" || {
         echo "ERROR: ${PROFILE_MASTER} missing or not 896x1195." >&2
+        exit 1
+    }
+"${IM}" identify -format "%wx%h" "${PROFILE_DIR}/${HOMEPAGE_PORTRAIT_MASTER}" 2>/dev/null \
+    | grep -q "^1385x1136$" || {
+        echo "ERROR: ${HOMEPAGE_PORTRAIT_MASTER} missing or not 1385x1136." >&2
+        exit 1
+    }
+"${IM}" identify -format "%wx%h" "${BACKGROUND_DIR}/${HOMEPAGE_BACKGROUND_MASTER}" 2>/dev/null \
+    | grep -q "^933x1686$" || {
+        echo "ERROR: ${HOMEPAGE_BACKGROUND_MASTER} missing or not 933x1686." >&2
         exit 1
     }
 
@@ -100,6 +113,16 @@ for size in 896 640 400; do
     "${IM}" "${PROFILE_DIR}/${PROFILE_MASTER}" \
         -filter Lanczos -resize "${size}x" \
         -quality 82 "${PROFILE_DIR}/${PROFILE_MASTER%.png}-${size}.webp"
+done
+
+# --- Homepage portrait WebP delivery derivatives ----------------------------
+# The approved -02 RGBA master remains the PNG fallback. Width-only WebP
+# derivatives retain transparency and cover measured reference-state demand.
+
+for size in 1024 768 480; do
+    "${IM}" "${PROFILE_DIR}/${HOMEPAGE_PORTRAIT_MASTER}" \
+        -filter Lanczos -resize "${size}x" \
+        -quality 88 "${PROFILE_DIR}/${HOMEPAGE_PORTRAIT_MASTER%.png}-${size}.webp"
 done
 
 # --- Favicon candidates (deterministic crop of the approved logo master) ----

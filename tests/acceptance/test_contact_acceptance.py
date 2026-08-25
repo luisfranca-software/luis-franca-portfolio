@@ -83,7 +83,8 @@ def test_submissions_are_persisted() -> None:
 def test_whatsapp_and_professional_links_are_present(contact_links) -> None:
     content = Client().get("/contact/").content.decode()
 
-    assert "whatsapp-button" in content
+    assert "site-nav__whatsapp" in content
+    assert "whatsapp-button" not in content
     assert "https://wa.me/5531993423501" in content
     assert "https://www.linkedin.com/in/luisfranca-software/" in content
     assert "https://github.com/luisfranca-software" in content

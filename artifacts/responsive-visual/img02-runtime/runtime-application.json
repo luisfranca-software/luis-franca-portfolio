@@ -1,0 +1,500 @@
+{
+  "asset": {
+    "headers": {
+      "Content-Disposition": "inline; filename=\"homepage-background-desktop-02.png\"",
+      "Content-Length": "1530898",
+      "Content-Type": "image/png",
+      "Date": "Mon, 24 Aug 2026 16:56:32 GMT",
+      "Last-Modified": "Thu, 20 Aug 2026 11:11:15 GMT",
+      "Server": "WSGIServer/0.2 CPython/3.13.14"
+    },
+    "httpStatus": 200,
+    "liveMatchesLocal": true,
+    "localSha1": "b06fb16c56279829bc6adb74058b8d60081e5854",
+    "sha1": "b06fb16c56279829bc6adb74058b8d60081e5854",
+    "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+  },
+  "browser": "Chromium 151.0.7922.108 snap",
+  "browserCacheDisabled": true,
+  "freshTemporaryProfile": true,
+  "homepageUrl": "http://127.0.0.1:8000/",
+  "schemaVersion": 1,
+  "stylesheet": {
+    "headers": {
+      "Content-Disposition": "inline; filename=\"home.css\"",
+      "Content-Length": "31314",
+      "Content-Type": "text/css",
+      "Date": "Mon, 24 Aug 2026 16:56:32 GMT",
+      "Last-Modified": "Mon, 24 Aug 2026 16:43:42 GMT",
+      "Server": "WSGIServer/0.2 CPython/3.13.14"
+    },
+    "httpStatus": 200,
+    "liveMatchesLocal": true,
+    "localSha1": "d87f4428e2c8a411b38b398f35d266cba022dd0c",
+    "sha1": "d87f4428e2c8a411b38b398f35d266cba022dd0c",
+    "sourceLine": 37,
+    "url": "http://127.0.0.1:8000/static/css/home.css"
+  },
+  "widths": {
+    "1024": {
+      "assetFetch": {
+        "ok": true,
+        "status": 200,
+        "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+      },
+      "clientWidth": 1009,
+      "computed": {
+        "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+        "backgroundPosition": "50% 0%",
+        "backgroundRepeat": "repeat-y",
+        "backgroundSize": "1024px",
+        "pointerEvents": "none",
+        "position": "absolute"
+      },
+      "contentRects": {
+        ".home-ai-rag": {
+          "height": 48,
+          "width": 210,
+          "x": 751,
+          "y": 804
+        },
+        ".home-engineering": {
+          "height": 647.03125,
+          "width": 913,
+          "x": 48,
+          "y": 773
+        },
+        ".home-evidence-contact": {
+          "height": 853.828125,
+          "width": 913,
+          "x": 48,
+          "y": 3454.390625
+        },
+        ".home-hero": {
+          "height": 692,
+          "width": 913,
+          "x": 48,
+          "y": 81
+        },
+        ".home-process": {
+          "height": 716.234375,
+          "width": 913,
+          "x": 48,
+          "y": 2738.15625
+        },
+        ".home-projects": {
+          "height": 1318.125,
+          "width": 913,
+          "x": 48,
+          "y": 1420.03125
+        },
+        ".homepage-footer": {
+          "height": 44,
+          "width": 969,
+          "x": 20,
+          "y": 4341.21875
+        },
+        ".site-header": {
+          "height": 81,
+          "width": 1009,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "contentShiftAgainstBackgroundDisabled": 0,
+      "documentHeight": 4489,
+      "documentWidth": 1009,
+      "horizontalOverflow": false,
+      "matchedRules": [
+        {
+          "cssText": "box-sizing: border-box;",
+          "selector": "*",
+          "source": "http://127.0.0.1:8000/static/css/site.css"
+        },
+        {
+          "cssText": "position: absolute; z-index: 0; inset: 0px; pointer-events: none; background-image: url(\"../images/background/homepage-background-desktop-02.png\"); background-position: center top; background-size: 100vw; background-repeat: repeat-y;",
+          "selector": ".homepage__technology-background",
+          "source": "http://127.0.0.1:8000/static/css/home.css"
+        }
+      ],
+      "ownerRect": {
+        "height": 4227.21875,
+        "width": 1009,
+        "x": 0,
+        "y": 81
+      },
+      "pseudoElements": {
+        "after": {
+          "backgroundImage": "none",
+          "content": "none"
+        },
+        "before": {
+          "backgroundImage": "none",
+          "content": "none"
+        }
+      },
+      "resources": [
+        {
+          "decodedBodySize": 1530898,
+          "encodedBodySize": 1530898,
+          "initiatorType": "css",
+          "transferSize": 1531198,
+          "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+        },
+        {
+          "decodedBodySize": 1530898,
+          "encodedBodySize": 1530898,
+          "initiatorType": "fetch",
+          "transferSize": 1531198,
+          "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+        }
+      ],
+      "viewport": 1024
+    },
+    "1440": {
+      "assetFetch": {
+        "ok": true,
+        "status": 200,
+        "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+      },
+      "clientWidth": 1425,
+      "computed": {
+        "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+        "backgroundPosition": "50% 0%",
+        "backgroundRepeat": "repeat-y",
+        "backgroundSize": "1440px",
+        "pointerEvents": "none",
+        "position": "absolute"
+      },
+      "contentRects": {
+        ".home-ai-rag": {
+          "height": 48,
+          "width": 210,
+          "x": 1167,
+          "y": 804
+        },
+        ".home-engineering": {
+          "height": 448.5625,
+          "width": 1329,
+          "x": 48,
+          "y": 561
+        },
+        ".home-evidence-contact": {
+          "height": 510.875,
+          "width": 1329,
+          "x": 48,
+          "y": 2113.78125
+        },
+        ".home-hero": {
+          "height": 480,
+          "width": 1329,
+          "x": 48,
+          "y": 81
+        },
+        ".home-process": {
+          "height": 379.28125,
+          "width": 1329,
+          "x": 48,
+          "y": 1734.5
+        },
+        ".home-projects": {
+          "height": 724.9375,
+          "width": 1329,
+          "x": 48,
+          "y": 1009.5625
+        },
+        ".homepage-footer": {
+          "height": 44,
+          "width": 1344,
+          "x": 40.5,
+          "y": 2657.65625
+        },
+        ".site-header": {
+          "height": 81,
+          "width": 1425,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "contentShiftAgainstBackgroundDisabled": 0,
+      "documentHeight": 2806,
+      "documentWidth": 1425,
+      "horizontalOverflow": false,
+      "matchedRules": [
+        {
+          "cssText": "box-sizing: border-box;",
+          "selector": "*",
+          "source": "http://127.0.0.1:8000/static/css/site.css"
+        },
+        {
+          "cssText": "position: absolute; z-index: 0; inset: 0px; pointer-events: none; background-image: url(\"../images/background/homepage-background-desktop-02.png\"); background-position: center top; background-size: 100vw; background-repeat: repeat-y;",
+          "selector": ".homepage__technology-background",
+          "source": "http://127.0.0.1:8000/static/css/home.css"
+        }
+      ],
+      "ownerRect": {
+        "height": 2543.65625,
+        "width": 1425,
+        "x": 0,
+        "y": 81
+      },
+      "pseudoElements": {
+        "after": {
+          "backgroundImage": "none",
+          "content": "none"
+        },
+        "before": {
+          "backgroundImage": "none",
+          "content": "none"
+        }
+      },
+      "resources": [
+        {
+          "decodedBodySize": 1530898,
+          "encodedBodySize": 1530898,
+          "initiatorType": "css",
+          "transferSize": 1531198,
+          "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+        },
+        {
+          "decodedBodySize": 1530898,
+          "encodedBodySize": 1530898,
+          "initiatorType": "fetch",
+          "transferSize": 1531198,
+          "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+        },
+        {
+          "decodedBodySize": 1530898,
+          "encodedBodySize": 1530898,
+          "initiatorType": "fetch",
+          "transferSize": 1531198,
+          "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+        },
+        {
+          "decodedBodySize": 1530898,
+          "encodedBodySize": 1530898,
+          "initiatorType": "fetch",
+          "transferSize": 1531198,
+          "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+        }
+      ],
+      "viewport": 1440
+    },
+    "360": {
+      "assetFetch": {
+        "ok": true,
+        "status": 200,
+        "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+      },
+      "clientWidth": 345,
+      "computed": {
+        "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+        "backgroundPosition": "50% 0%",
+        "backgroundRepeat": "repeat-y",
+        "backgroundSize": "360px",
+        "pointerEvents": "none",
+        "position": "absolute"
+      },
+      "contentRects": {
+        ".home-ai-rag": {
+          "height": 48,
+          "width": 210,
+          "x": 115,
+          "y": 832
+        },
+        ".home-engineering": {
+          "height": 1148.59375,
+          "width": 305,
+          "x": 20,
+          "y": 1019
+        },
+        ".home-evidence-contact": {
+          "height": 1083.703125,
+          "width": 305,
+          "x": 20,
+          "y": 5323.828125
+        },
+        ".home-hero": {
+          "height": 946,
+          "width": 305,
+          "x": 20,
+          "y": 73
+        },
+        ".home-process": {
+          "height": 1357.46875,
+          "width": 305,
+          "x": 20,
+          "y": 3966.359375
+        },
+        ".home-projects": {
+          "height": 1798.765625,
+          "width": 305,
+          "x": 20,
+          "y": 2167.59375
+        },
+        ".homepage-footer": {
+          "height": 216.78125,
+          "width": 305,
+          "x": 20,
+          "y": 6440.53125
+        },
+        ".site-header": {
+          "height": 73,
+          "width": 345,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "contentShiftAgainstBackgroundDisabled": 0,
+      "documentHeight": 6761,
+      "documentWidth": 345,
+      "horizontalOverflow": false,
+      "matchedRules": [
+        {
+          "cssText": "box-sizing: border-box;",
+          "selector": "*",
+          "source": "http://127.0.0.1:8000/static/css/site.css"
+        },
+        {
+          "cssText": "position: absolute; z-index: 0; inset: 0px; pointer-events: none; background-image: url(\"../images/background/homepage-background-desktop-02.png\"); background-position: center top; background-size: 100vw; background-repeat: repeat-y;",
+          "selector": ".homepage__technology-background",
+          "source": "http://127.0.0.1:8000/static/css/home.css"
+        }
+      ],
+      "ownerRect": {
+        "height": 6334.53125,
+        "width": 345,
+        "x": 0,
+        "y": 73
+      },
+      "pseudoElements": {
+        "after": {
+          "backgroundImage": "none",
+          "content": "none"
+        },
+        "before": {
+          "backgroundImage": "none",
+          "content": "none"
+        }
+      },
+      "resources": [
+        {
+          "decodedBodySize": 1530898,
+          "encodedBodySize": 1530898,
+          "initiatorType": "css",
+          "transferSize": 1531198,
+          "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+        }
+      ],
+      "viewport": 360
+    },
+    "768": {
+      "assetFetch": {
+        "ok": true,
+        "status": 200,
+        "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+      },
+      "clientWidth": 753,
+      "computed": {
+        "backgroundImage": "url(\"http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png\")",
+        "backgroundPosition": "50% 0%",
+        "backgroundRepeat": "repeat-y",
+        "backgroundSize": "768px",
+        "pointerEvents": "none",
+        "position": "absolute"
+      },
+      "contentRects": {
+        ".home-ai-rag": {
+          "height": 48,
+          "width": 210,
+          "x": 511,
+          "y": 820
+        },
+        ".home-engineering": {
+          "height": 650.1875,
+          "width": 689,
+          "x": 32,
+          "y": 1123
+        },
+        ".home-evidence-contact": {
+          "height": 795.96875,
+          "width": 689,
+          "x": 32,
+          "y": 4648.734375
+        },
+        ".home-hero": {
+          "height": 1050,
+          "width": 689,
+          "x": 32,
+          "y": 73
+        },
+        ".home-process": {
+          "height": 859.3125,
+          "width": 689,
+          "x": 32,
+          "y": 3789.421875
+        },
+        ".home-projects": {
+          "height": 2016.234375,
+          "width": 689,
+          "x": 32,
+          "y": 1773.1875
+        },
+        ".homepage-footer": {
+          "height": 44,
+          "width": 713,
+          "x": 20,
+          "y": 5477.703125
+        },
+        ".site-header": {
+          "height": 73,
+          "width": 753,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "contentShiftAgainstBackgroundDisabled": 0,
+      "documentHeight": 5626,
+      "documentWidth": 753,
+      "horizontalOverflow": false,
+      "matchedRules": [
+        {
+          "cssText": "box-sizing: border-box;",
+          "selector": "*",
+          "source": "http://127.0.0.1:8000/static/css/site.css"
+        },
+        {
+          "cssText": "position: absolute; z-index: 0; inset: 0px; pointer-events: none; background-image: url(\"../images/background/homepage-background-desktop-02.png\"); background-position: center top; background-size: 100vw; background-repeat: repeat-y;",
+          "selector": ".homepage__technology-background",
+          "source": "http://127.0.0.1:8000/static/css/home.css"
+        }
+      ],
+      "ownerRect": {
+        "height": 5371.703125,
+        "width": 753,
+        "x": 0,
+        "y": 73
+      },
+      "pseudoElements": {
+        "after": {
+          "backgroundImage": "none",
+          "content": "none"
+        },
+        "before": {
+          "backgroundImage": "none",
+          "content": "none"
+        }
+      },
+      "resources": [
+        {
+          "decodedBodySize": 1530898,
+          "encodedBodySize": 1530898,
+          "initiatorType": "css",
+          "transferSize": 1531198,
+          "url": "http://127.0.0.1:8000/static/images/background/homepage-background-desktop-02.png"
+        }
+      ],
+      "viewport": 768
+    }
+  }
+}

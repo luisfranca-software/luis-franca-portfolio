@@ -1,21 +1,17 @@
-{% comment %}
-Responsive delivery of the approved professional photograph (Release 1).
-Master and derivatives: frontend/static/images/profile/.
-Reference: frontend/static/images/README.md.
-sizes is a conservative placeholder to be tuned during page integration.
-{% endcomment %}
-{% load static %}
-<picture>
+{% comment %}Responsive delivery from the human-approved Homepage portrait master.{% endcomment %}
+{% load static i18n %}
+<picture data-trace-id="IMG-00">
     <source
         type="image/webp"
-        srcset="{% static 'images/profile/luis-franca-400.webp' %} 400w,
-                {% static 'images/profile/luis-franca-640.webp' %} 640w,
-                {% static 'images/profile/luis-franca-896.webp' %} 896w"
-        sizes="(min-width: 992px) 420px, (min-width: 640px) 40vw, 85vw">
+        srcset="{% static 'images/profile/luis-franca-transparent-02-480.webp' %} 480w,
+                {% static 'images/profile/luis-franca-transparent-02-768.webp' %} 768w,
+                {% static 'images/profile/luis-franca-transparent-02-1024.webp' %} 1024w"
+        sizes="(min-width: 64rem) 46vw, (min-width: 48.0625rem) 58vw, 92vw">
     <img
         class="profile-photo"
-        src="{% static 'images/profile/luis-franca.png' %}"
-        alt="Professional photograph of Luís Eduardo Carvalho França"
-        width="896"
-        height="1195">
+        src="{% static 'images/profile/luis-franca-transparent-02.png' %}"
+        alt="{% trans 'Professional photograph of Luís Eduardo Carvalho França' %}"
+        width="1385"
+        height="1136"
+        fetchpriority="high">
 </picture>

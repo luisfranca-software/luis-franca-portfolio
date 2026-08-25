@@ -99,6 +99,21 @@ The `sizes` values are conservative placeholders and should be tuned when the
 pages that include these partials are implemented under the approved
 specification sequence.
 
+## Release 1.1 Homepage authorities
+
+The human-approved Homepage portrait master is
+`profile/luis-franca-transparent-02.png` (1385x1136, RGBA). Deterministic
+transparent WebP delivery derivatives are generated at 480, 768, and 1024 px
+wide; the master PNG is the fallback.
+
+The human-approved Homepage background master is
+`background/homepage-background-desktop-02.png` (933x1686, RGB). It is
+delivered directly with Homepage-scoped CSS crop/focal adjustment; no
+breakpoint-specific background derivatives are generated in Block 4.
+
+The similarly named variants without `-02` are not approved substitutes and
+remain in the repository only as protected obsolete candidates.
+
 Project screenshots are full-page captures (taller than their display
 container). They are delivered through the same WebP `<picture>` pipeline and
 are scrolled within a fixed-height container on user interaction

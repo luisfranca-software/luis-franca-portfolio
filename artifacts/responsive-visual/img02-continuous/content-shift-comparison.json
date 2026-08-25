@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "before": "artifacts/responsive-visual/img02-continuous/before/before.json",
+  "after": "artifacts/responsive-visual/img02-continuous/after/after.json",
+  "locales": ["en-US", "pt-BR"],
+  "sharedWidths": [360, 390, 480, 640, 768, 820, 900, 1024, 1100, 1280, 1440],
+  "traceIds": ["HDR-01", "HERO-00", "ENG-00", "PRJ-00", "PRC-00", "EVD-00", "FTR-01", "AIR-00"],
+  "contentShiftCount": 0,
+  "shifts": []
+}
