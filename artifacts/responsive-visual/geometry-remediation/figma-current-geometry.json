@@ -1,0 +1,11 @@
+{
+  "authority": {"file_key": "7XIYTbKZrLk77biI0UhRIb", "extracted": "2026-08-23", "method": "live Figma Plugin API"},
+  "frames": {
+    "360": {"id": "316:615", "size": [360, 6960], "hero": [0, 72, 360, 944], "titles": [20, 140, 320, 102], "code": [33, 505, 186, 448], "explorer": [192, 505, 148, 310], "portrait": [20, 704, 320, 262.58], "sections": {"engineering": [0,1016,360,1090], "projects": [0,2106,360,1950], "process": [0,4056,360,1366], "evidence_contact": [0,5422,360,1194], "footer": [0,6616,360,344]}},
+    "768": {"id": "297:373", "size": [768, 5416], "hero": [0,72,768,1088], "titles": [32,140,704,168], "code": [89,528,295,384], "explorer": [442,528,294,384], "portrait": [104,625,561,522], "sections": {"engineering": [0,1160,768,616], "projects": [0,1776,768,1708], "process": [0,3484,768,888], "evidence_contact": [0,4372,768,850], "footer": [0,5222,768,194]}},
+    "1024": {"id": "270:1357", "size": [1024, 4428], "hero": [0,80,1024,640], "titles": [48,196,416,224], "code": [524,164,332,336], "explorer": [802,164,174,324], "portrait": [480,250,531,427], "sections": {"engineering": [0,720,1024,616], "process": [0,1336,1024,718], "evidence_contact": [0,2054,1024,850], "footer": [0,2904,1024,194], "projects": [0,3098,1024,1330]}},
+    "1440": {"id": "153:2", "size": [1440, 2604], "hero": [0,80,1440,480], "titles": [48,164,688,168], "code": [812,140,332,336], "explorer": [1144,148,248,324], "portrait": [760,203.87,600,492.13], "sections": {"engineering": [0,560,1440,380], "projects": [0,940,1440,700], "process": [0,1640,1440,366], "evidence_contact": [0,2006,1440,410], "footer": [0,2416,1440,188]}}
+  },
+  "image_hashes": {"IMG-00": "0d13002aa48611843bf721c7d821eaeb4d27e1bf", "IMG-01": "3083b91cb81b000cf06563e6a4b3bafdab3971d8", "IMG-02": "b06fb16c56279829bc6adb74058b8d60081e5854"},
+  "gate_a": "PASS"
+}

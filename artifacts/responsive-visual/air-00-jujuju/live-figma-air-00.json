@@ -1,0 +1,13 @@
+{
+  "file_key": "7XIYTbKZrLk77biI0UhRIb",
+  "approved_label": "Jujuju AI",
+  "supporting_text": "",
+  "instances": {
+    "360": {"node_id": "316:751", "x": 130, "y": 6834, "width": 210, "height": 48},
+    "768": {"node_id": "297:509", "x": 526, "y": 5126, "width": 210, "height": 48},
+    "1024": {"node_id": "270:1493", "x": 766, "y": 4138, "width": 210, "height": 48},
+    "1440": {"node_id": "154:1374", "x": 1182, "y": 2360, "width": 210, "height": 48}
+  },
+  "mutated_node_ids": ["316:751", "297:509", "270:1493", "154:1374"],
+  "preserved": ["geometry", "component instances", "visual treatment", "native node IDs", "AIR-00 traceability"]
+}

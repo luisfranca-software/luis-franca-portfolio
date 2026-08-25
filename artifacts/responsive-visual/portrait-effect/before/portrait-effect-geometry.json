@@ -1,0 +1,474 @@
+{
+  "360": {
+    "portrait": {
+      "selector": ".home-hero__visual picture",
+      "rect": {
+        "x": 20,
+        "y": 682.828125,
+        "width": 305,
+        "height": 406.765625
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "matrix(1, 0, 0, 1, -152.5, 0)",
+      "zIndex": "4",
+      "parent": "home-hero__visual"
+    },
+    "image": {
+      "selector": ".profile-photo",
+      "rect": {
+        "x": 20,
+        "y": 682.828125,
+        "width": 305,
+        "height": 406.765625
+      },
+      "position": "static",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "drop-shadow(rgba(0, 0, 0, 0.48) 0px 16px 20px)",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "auto",
+      "parent": ""
+    },
+    "effect": {
+      "selector": ".home-hero__portrait-rim",
+      "rect": {
+        "x": 68.796875,
+        "y": 676.59375,
+        "width": 219.609375,
+        "height": 430
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(0, 170, 255, 0.38) 0px 0px 32px 0px",
+      "filter": "none",
+      "borderRadius": "45% 45% 18% 18%",
+      "transform": "none",
+      "zIndex": "3",
+      "parent": "home-hero__visual"
+    },
+    "visual": {
+      "selector": ".home-hero__visual",
+      "rect": {
+        "x": 20,
+        "y": 606.59375,
+        "width": 305,
+        "height": 500
+      },
+      "position": "relative",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "auto",
+      "parent": "home-hero homepage__container homepage__section"
+    },
+    "code": {
+      "selector": ".home-hero__ide",
+      "rect": {
+        "x": 34,
+        "y": 630.59375,
+        "width": 186,
+        "height": 210
+      },
+      "position": "absolute",
+      "opacity": "0.92",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "1",
+      "parent": "home-hero__visual"
+    },
+    "explorer": {
+      "selector": ".home-hero__explorer",
+      "rect": {
+        "x": 177,
+        "y": 627.59375,
+        "width": 148,
+        "height": 310
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(3, 20, 61, 0.7) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(35, 66, 255, 0.15) 0px 0px 24px 0px inset",
+      "filter": "none",
+      "borderRadius": "12px",
+      "transform": "none",
+      "zIndex": "2",
+      "parent": "home-hero__visual"
+    },
+    "asset": "http://127.0.0.1:8001/static/images/profile/luis-franca-transparent-02-480.webp",
+    "pageOverflow": false
+  },
+  "768": {
+    "portrait": {
+      "selector": ".home-hero__visual picture",
+      "rect": {
+        "x": 120.5,
+        "y": 426.046875,
+        "width": 512,
+        "height": 682.84375
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "matrix(1, 0, 0, 1, -256, 0)",
+      "zIndex": "4",
+      "parent": "home-hero__visual"
+    },
+    "image": {
+      "selector": ".profile-photo",
+      "rect": {
+        "x": 120.5,
+        "y": 426.046875,
+        "width": 512,
+        "height": 682.84375
+      },
+      "position": "static",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "drop-shadow(rgba(0, 0, 0, 0.48) 0px 16px 20px)",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "auto",
+      "parent": ""
+    },
+    "effect": {
+      "selector": ".home-hero__portrait-rim",
+      "rect": {
+        "x": 142.234375,
+        "y": 592.890625,
+        "width": 496.09375,
+        "height": 516
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(0, 170, 255, 0.38) 0px 0px 32px 0px",
+      "filter": "none",
+      "borderRadius": "45% 45% 18% 18%",
+      "transform": "none",
+      "zIndex": "3",
+      "parent": "home-hero__visual"
+    },
+    "visual": {
+      "selector": ".home-hero__visual",
+      "rect": {
+        "x": 32,
+        "y": 508.890625,
+        "width": 689,
+        "height": 600
+      },
+      "position": "relative",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "auto",
+      "parent": "home-hero homepage__container homepage__section"
+    },
+    "code": {
+      "selector": ".home-hero__ide",
+      "rect": {
+        "x": 32,
+        "y": 526.890625,
+        "width": 523.625,
+        "height": 245.390625
+      },
+      "position": "absolute",
+      "opacity": "0.92",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "1",
+      "parent": "home-hero__visual"
+    },
+    "explorer": {
+      "selector": ".home-hero__explorer",
+      "rect": {
+        "x": 481,
+        "y": 562.890625,
+        "width": 240,
+        "height": 226.5625
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(3, 20, 61, 0.7) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(35, 66, 255, 0.15) 0px 0px 24px 0px inset",
+      "filter": "none",
+      "borderRadius": "12px",
+      "transform": "none",
+      "zIndex": "2",
+      "parent": "home-hero__visual"
+    },
+    "asset": "http://127.0.0.1:8001/static/images/profile/luis-franca-transparent-02-768.webp",
+    "pageOverflow": false
+  },
+  "1024": {
+    "portrait": {
+      "selector": ".home-hero__visual picture",
+      "rect": {
+        "x": 534.3984375,
+        "y": 145.375,
+        "width": 422.390625,
+        "height": 563.34375
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "matrix(1, 0, 0, 1, -211.195, 0)",
+      "zIndex": "4",
+      "parent": "home-hero__visual"
+    },
+    "image": {
+      "selector": ".profile-photo",
+      "rect": {
+        "x": 534.3984375,
+        "y": 145.375,
+        "width": 422.390625,
+        "height": 563.34375
+      },
+      "position": "static",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "drop-shadow(rgba(0, 0, 0, 0.48) 0px 16px 20px)",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "auto",
+      "parent": ""
+    },
+    "effect": {
+      "selector": ".home-hero__portrait-rim",
+      "rect": {
+        "x": 572.796875,
+        "y": 240.875,
+        "width": 345.609375,
+        "height": 467.84375
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(0, 170, 255, 0.38) 0px 0px 32px 0px",
+      "filter": "none",
+      "borderRadius": "45% 45% 18% 18%",
+      "transform": "none",
+      "zIndex": "3",
+      "parent": "home-hero__visual"
+    },
+    "visual": {
+      "selector": ".home-hero__visual",
+      "rect": {
+        "x": 496,
+        "y": 164.71875,
+        "width": 480,
+        "height": 544
+      },
+      "position": "relative",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "auto",
+      "parent": "home-hero homepage__container homepage__section"
+    },
+    "code": {
+      "selector": ".home-hero__ide",
+      "rect": {
+        "x": 524,
+        "y": 200.71875,
+        "width": 332,
+        "height": 237.890625
+      },
+      "position": "absolute",
+      "opacity": "0.92",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "1",
+      "parent": "home-hero__visual"
+    },
+    "explorer": {
+      "selector": ".home-hero__explorer",
+      "rect": {
+        "x": 802,
+        "y": 200.71875,
+        "width": 174,
+        "height": 324
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(3, 20, 61, 0.7) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(35, 66, 255, 0.15) 0px 0px 24px 0px inset",
+      "filter": "none",
+      "borderRadius": "12px",
+      "transform": "none",
+      "zIndex": "2",
+      "parent": "home-hero__visual"
+    },
+    "asset": "http://127.0.0.1:8001/static/images/profile/luis-franca-transparent-02-768.webp",
+    "pageOverflow": false
+  },
+  "1440": {
+    "portrait": {
+      "selector": ".home-hero__visual picture",
+      "rect": {
+        "x": 772.546875,
+        "y": -19.390625,
+        "width": 600,
+        "height": 800.21875
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "matrix(1, 0, 0, 1, -300, 0)",
+      "zIndex": "4",
+      "parent": "home-hero__visual"
+    },
+    "image": {
+      "selector": ".profile-photo",
+      "rect": {
+        "x": 772.546875,
+        "y": -19.390625,
+        "width": 600,
+        "height": 800.21875
+      },
+      "position": "static",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "drop-shadow(rgba(0, 0, 0, 0.48) 0px 16px 20px)",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "auto",
+      "parent": ""
+    },
+    "effect": {
+      "selector": ".home-hero__portrait-rim",
+      "rect": {
+        "x": 865.515625,
+        "y": 186.578125,
+        "width": 438.421875,
+        "height": 330.25
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(0, 170, 255, 0.38) 0px 0px 32px 0px",
+      "filter": "none",
+      "borderRadius": "45% 45% 18% 18%",
+      "transform": "none",
+      "zIndex": "3",
+      "parent": "home-hero__visual"
+    },
+    "visual": {
+      "selector": ".home-hero__visual",
+      "rect": {
+        "x": 768.09375,
+        "y": 132.828125,
+        "width": 608.90625,
+        "height": 384
+      },
+      "position": "relative",
+      "opacity": "1",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "auto",
+      "parent": "home-hero homepage__container homepage__section"
+    },
+    "code": {
+      "selector": ".home-hero__ide",
+      "rect": {
+        "x": 796.09375,
+        "y": 144.828125,
+        "width": 332,
+        "height": 290.15625
+      },
+      "position": "absolute",
+      "opacity": "0.92",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "filter": "none",
+      "borderRadius": "0px",
+      "transform": "none",
+      "zIndex": "1",
+      "parent": "home-hero__visual"
+    },
+    "explorer": {
+      "selector": ".home-hero__explorer",
+      "rect": {
+        "x": 1129,
+        "y": 152.828125,
+        "width": 248,
+        "height": 324
+      },
+      "position": "absolute",
+      "opacity": "1",
+      "background": "rgba(3, 20, 61, 0.7) none repeat scroll 0% 0% / auto padding-box border-box",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(35, 66, 255, 0.15) 0px 0px 24px 0px inset",
+      "filter": "none",
+      "borderRadius": "12px",
+      "transform": "none",
+      "zIndex": "2",
+      "parent": "home-hero__visual"
+    },
+    "asset": "http://127.0.0.1:8001/static/images/profile/luis-franca-transparent-02-768.webp",
+    "pageOverflow": false
+  }
+}

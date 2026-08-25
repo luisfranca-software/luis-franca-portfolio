@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "before": "artifacts/responsive-visual/img02-paint-stack/before/before.json",
+  "after": "artifacts/responsive-visual/img02-paint-stack/after/after.json",
+  "locales": ["en-US", "pt-BR"],
+  "widths": [360, 768, 1024, 1440],
+  "traceIds": ["HDR-01", "HERO-00", "ENG-00", "PRJ-00", "PRC-00", "EVD-00", "FTR-01", "AIR-00"],
+  "contentShiftCount": 0,
+  "horizontalOverflowCountBefore": 0,
+  "horizontalOverflowCountAfter": 0,
+  "shifts": []
+}

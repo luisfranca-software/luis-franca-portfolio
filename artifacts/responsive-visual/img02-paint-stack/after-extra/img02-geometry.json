@@ -1,0 +1,2799 @@
+{
+  "canonical": {
+    "assetSha1": "b06fb16c56279829bc6adb74058b8d60081e5854",
+    "figmaFile": "7XIYTbKZrLk77biI0UhRIb",
+    "geometry": {
+      "height": 2604,
+      "width": 1440
+    },
+    "node": "199:1358"
+  },
+  "formula": "module_width = viewport_width; module_height = 2604 * viewport_width / 1440",
+  "locales": [
+    {
+      "locale": "en-US",
+      "widths": {
+        "1023": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1849.9250000000002,
+            "width": 1023
+          },
+          "backgroundOwner": {
+            "bottom": 4307.625,
+            "height": 4226.625,
+            "right": 1008,
+            "width": 1008,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1008,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1023px"
+          },
+          "documentHeight": 4489,
+          "documentWidth": 1008,
+          "expectedModule": {
+            "height": 1849.9250000000002,
+            "width": 1023
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1023,
+          "scale": 0.7104166666666667,
+          "sections": {
+            "engineering": {
+              "bottom": 1419.984375,
+              "height": 646.984375,
+              "right": 960.0625,
+              "width": 912.125,
+              "x": 47.9375,
+              "y": 773
+            },
+            "evidence_contact": {
+              "bottom": 3847.84375,
+              "height": 329.96875,
+              "right": 960.0625,
+              "width": 912.125,
+              "x": 47.9375,
+              "y": 3517.875
+            },
+            "footer": {
+              "bottom": 4384.625,
+              "height": 44,
+              "right": 988,
+              "width": 968,
+              "x": 20,
+              "y": 4340.625
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1008,
+              "width": 1008,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 773,
+              "height": 692,
+              "right": 960.0625,
+              "width": 912.125,
+              "x": 47.9375,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852.0625,
+              "height": 48,
+              "right": 960.0625,
+              "width": 210,
+              "x": 750.0625,
+              "y": 804.0625
+            },
+            "process": {
+              "bottom": 3453.875,
+              "height": 716.1875,
+              "right": 960.0625,
+              "width": 912.125,
+              "x": 47.9375,
+              "y": 2737.6875
+            },
+            "projects": {
+              "bottom": 2737.6875,
+              "height": 1317.703125,
+              "right": 960.0625,
+              "width": 912.125,
+              "x": 47.9375,
+              "y": 1419.984375
+            }
+          }
+        },
+        "1024": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1851.7333333333333,
+            "width": 1024
+          },
+          "backgroundOwner": {
+            "bottom": 4308.21875,
+            "height": 4227.21875,
+            "right": 1009,
+            "width": 1009,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1009,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1024px"
+          },
+          "documentHeight": 4489,
+          "documentWidth": 1009,
+          "expectedModule": {
+            "height": 1851.7333333333333,
+            "width": 1024
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1024,
+          "scale": 0.7111111111111111,
+          "sections": {
+            "engineering": {
+              "bottom": 1420.03125,
+              "height": 647.03125,
+              "right": 961,
+              "width": 913,
+              "x": 48,
+              "y": 773
+            },
+            "evidence_contact": {
+              "bottom": 3848.390625,
+              "height": 330,
+              "right": 961,
+              "width": 913,
+              "x": 48,
+              "y": 3518.390625
+            },
+            "footer": {
+              "bottom": 4385.21875,
+              "height": 44,
+              "right": 989,
+              "width": 969,
+              "x": 20,
+              "y": 4341.21875
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1009,
+              "width": 1009,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 773,
+              "height": 692,
+              "right": 961,
+              "width": 913,
+              "x": 48,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 961,
+              "width": 210,
+              "x": 751,
+              "y": 804
+            },
+            "process": {
+              "bottom": 3454.390625,
+              "height": 716.234375,
+              "right": 961,
+              "width": 913,
+              "x": 48,
+              "y": 2738.15625
+            },
+            "projects": {
+              "bottom": 2738.15625,
+              "height": 1318.125,
+              "right": 961,
+              "width": 913,
+              "x": 48,
+              "y": 1420.03125
+            }
+          }
+        },
+        "1280": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 2314.6666666666665,
+            "width": 1280
+          },
+          "backgroundOwner": {
+            "bottom": 2717.96875,
+            "height": 2636.96875,
+            "right": 1265,
+            "width": 1265,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1265,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1280px"
+          },
+          "documentHeight": 2899,
+          "documentWidth": 1265,
+          "expectedModule": {
+            "height": 2314.6666666666665,
+            "width": 1280
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1280,
+          "scale": 0.8888888888888888,
+          "sections": {
+            "engineering": {
+              "bottom": 1069.5625,
+              "height": 474.5625,
+              "right": 1217,
+              "width": 1169,
+              "x": 48,
+              "y": 595
+            },
+            "evidence_contact": {
+              "bottom": 2546.375,
+              "height": 275.28125,
+              "right": 756.859375,
+              "width": 708.859375,
+              "x": 48,
+              "y": 2271.09375
+            },
+            "footer": {
+              "bottom": 2794.96875,
+              "height": 44,
+              "right": 1245,
+              "width": 1225,
+              "x": 20,
+              "y": 2750.96875
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1265,
+              "width": 1265,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 595,
+              "height": 514,
+              "right": 1217,
+              "width": 1169,
+              "x": 48,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 1217,
+              "width": 210,
+              "x": 1007,
+              "y": 804
+            },
+            "process": {
+              "bottom": 2207.09375,
+              "height": 401.28125,
+              "right": 1217,
+              "width": 1169,
+              "x": 48,
+              "y": 1805.8125
+            },
+            "projects": {
+              "bottom": 1805.8125,
+              "height": 736.25,
+              "right": 1217,
+              "width": 1169,
+              "x": 48,
+              "y": 1069.5625
+            }
+          }
+        },
+        "1439": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 2602.1916666666666,
+            "width": 1439
+          },
+          "backgroundOwner": {
+            "bottom": 2624.5,
+            "height": 2543.5,
+            "right": 1424,
+            "width": 1424,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1424,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1439px"
+          },
+          "documentHeight": 2806,
+          "documentWidth": 1424,
+          "expectedModule": {
+            "height": 2602.1916666666666,
+            "width": 1439
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1439,
+          "scale": 0.9993055555555556,
+          "sections": {
+            "engineering": {
+              "bottom": 1009.5625,
+              "height": 448.5625,
+              "right": 1376,
+              "width": 1328,
+              "x": 48,
+              "y": 561
+            },
+            "evidence_contact": {
+              "bottom": 2430.90625,
+              "height": 253.28125,
+              "right": 857.40625,
+              "width": 809.40625,
+              "x": 48,
+              "y": 2177.625
+            },
+            "footer": {
+              "bottom": 2701.5,
+              "height": 44,
+              "right": 1384,
+              "width": 1344,
+              "x": 40,
+              "y": 2657.5
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1424,
+              "width": 1424,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 561,
+              "height": 480,
+              "right": 1376,
+              "width": 1328,
+              "x": 48,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 1376,
+              "width": 210,
+              "x": 1166,
+              "y": 804
+            },
+            "process": {
+              "bottom": 2113.625,
+              "height": 379.28125,
+              "right": 1376,
+              "width": 1328,
+              "x": 48,
+              "y": 1734.34375
+            },
+            "projects": {
+              "bottom": 1734.34375,
+              "height": 724.78125,
+              "right": 1376,
+              "width": 1328,
+              "x": 48,
+              "y": 1009.5625
+            }
+          }
+        },
+        "1440": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 2604.0,
+            "width": 1440
+          },
+          "backgroundOwner": {
+            "bottom": 2624.65625,
+            "height": 2543.65625,
+            "right": 1425,
+            "width": 1425,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1425,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1440px"
+          },
+          "documentHeight": 2806,
+          "documentWidth": 1425,
+          "expectedModule": {
+            "height": 2604.0,
+            "width": 1440
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1440,
+          "scale": 1.0,
+          "sections": {
+            "engineering": {
+              "bottom": 1009.5625,
+              "height": 448.5625,
+              "right": 1377,
+              "width": 1329,
+              "x": 48,
+              "y": 561
+            },
+            "evidence_contact": {
+              "bottom": 2431.0625,
+              "height": 253.28125,
+              "right": 858.03125,
+              "width": 810.03125,
+              "x": 48,
+              "y": 2177.78125
+            },
+            "footer": {
+              "bottom": 2701.65625,
+              "height": 44,
+              "right": 1384.5,
+              "width": 1344,
+              "x": 40.5,
+              "y": 2657.65625
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1425,
+              "width": 1425,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 561,
+              "height": 480,
+              "right": 1377,
+              "width": 1329,
+              "x": 48,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 1377,
+              "width": 210,
+              "x": 1167,
+              "y": 804
+            },
+            "process": {
+              "bottom": 2113.78125,
+              "height": 379.28125,
+              "right": 1377,
+              "width": 1329,
+              "x": 48,
+              "y": 1734.5
+            },
+            "projects": {
+              "bottom": 1734.5,
+              "height": 724.9375,
+              "right": 1377,
+              "width": 1329,
+              "x": 48,
+              "y": 1009.5625
+            }
+          }
+        },
+        "1600": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 2893.3333333333335,
+            "width": 1600
+          },
+          "backgroundOwner": {
+            "bottom": 2622.84375,
+            "height": 2541.84375,
+            "right": 1585,
+            "width": 1585,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1585,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1600px"
+          },
+          "documentHeight": 2804,
+          "documentWidth": 1585,
+          "expectedModule": {
+            "height": 2893.3333333333335,
+            "width": 1600
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1600,
+          "scale": 1.1111111111111112,
+          "screenshot": "artifacts/responsive-visual/img02-paint-stack/after-extra/homepage-en-us-1600.png",
+          "sections": {
+            "engineering": {
+              "bottom": 1005.5625,
+              "height": 444.5625,
+              "right": 1464.5,
+              "width": 1344,
+              "x": 120.5,
+              "y": 561
+            },
+            "evidence_contact": {
+              "bottom": 2429.25,
+              "height": 253.28125,
+              "right": 940.015625,
+              "width": 819.515625,
+              "x": 120.5,
+              "y": 2175.96875
+            },
+            "footer": {
+              "bottom": 2699.84375,
+              "height": 44,
+              "right": 1464.5,
+              "width": 1344,
+              "x": 120.5,
+              "y": 2655.84375
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1585,
+              "width": 1585,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 561,
+              "height": 480,
+              "right": 1464.5,
+              "width": 1344,
+              "x": 120.5,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 1537,
+              "width": 210,
+              "x": 1327,
+              "y": 804
+            },
+            "process": {
+              "bottom": 2111.96875,
+              "height": 379.28125,
+              "right": 1464.5,
+              "width": 1344,
+              "x": 120.5,
+              "y": 1732.6875
+            },
+            "projects": {
+              "bottom": 1732.6875,
+              "height": 727.125,
+              "right": 1464.5,
+              "width": 1344,
+              "x": 120.5,
+              "y": 1005.5625
+            }
+          }
+        },
+        "1920": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 3472.0,
+            "width": 1920
+          },
+          "backgroundOwner": {
+            "bottom": 2622.84375,
+            "height": 2541.84375,
+            "right": 1905,
+            "width": 1905,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1905,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1920px"
+          },
+          "documentHeight": 2804,
+          "documentWidth": 1905,
+          "expectedModule": {
+            "height": 3472.0,
+            "width": 1920
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1920,
+          "scale": 1.3333333333333333,
+          "screenshot": "artifacts/responsive-visual/img02-paint-stack/after-extra/homepage-en-us-1920.png",
+          "sections": {
+            "engineering": {
+              "bottom": 1005.5625,
+              "height": 444.5625,
+              "right": 1624.5,
+              "width": 1344,
+              "x": 280.5,
+              "y": 561
+            },
+            "evidence_contact": {
+              "bottom": 2429.25,
+              "height": 253.28125,
+              "right": 1100.015625,
+              "width": 819.515625,
+              "x": 280.5,
+              "y": 2175.96875
+            },
+            "footer": {
+              "bottom": 2699.84375,
+              "height": 44,
+              "right": 1624.5,
+              "width": 1344,
+              "x": 280.5,
+              "y": 2655.84375
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1905,
+              "width": 1905,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 561,
+              "height": 480,
+              "right": 1624.5,
+              "width": 1344,
+              "x": 280.5,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 1857,
+              "width": 210,
+              "x": 1647,
+              "y": 804
+            },
+            "process": {
+              "bottom": 2111.96875,
+              "height": 379.28125,
+              "right": 1624.5,
+              "width": 1344,
+              "x": 280.5,
+              "y": 1732.6875
+            },
+            "projects": {
+              "bottom": 1732.6875,
+              "height": 727.125,
+              "right": 1624.5,
+              "width": 1344,
+              "x": 280.5,
+              "y": 1005.5625
+            }
+          }
+        },
+        "360": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 651.0,
+            "width": 360
+          },
+          "backgroundOwner": {
+            "bottom": 6407.53125,
+            "height": 6334.53125,
+            "right": 345,
+            "width": 345,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 345,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "360px"
+          },
+          "documentHeight": 6761,
+          "documentWidth": 345,
+          "expectedModule": {
+            "height": 651.0,
+            "width": 360
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 360,
+          "scale": 0.25,
+          "sections": {
+            "engineering": {
+              "bottom": 2167.59375,
+              "height": 1148.59375,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 1019
+            },
+            "evidence_contact": {
+              "bottom": 5921.296875,
+              "height": 549.46875,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 5371.828125
+            },
+            "footer": {
+              "bottom": 6657.3125,
+              "height": 216.78125,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 6440.53125
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 345,
+              "width": 345,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 1019,
+              "height": 946,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 880,
+              "height": 48,
+              "right": 325,
+              "width": 210,
+              "x": 115,
+              "y": 832
+            },
+            "process": {
+              "bottom": 5323.828125,
+              "height": 1357.46875,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 3966.359375
+            },
+            "projects": {
+              "bottom": 3966.359375,
+              "height": 1798.765625,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 2167.59375
+            }
+          }
+        },
+        "390": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 705.25,
+            "width": 390
+          },
+          "backgroundOwner": {
+            "bottom": 6268.953125,
+            "height": 6195.953125,
+            "right": 375,
+            "width": 375,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 375,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "390px"
+          },
+          "documentHeight": 6623,
+          "documentWidth": 375,
+          "expectedModule": {
+            "height": 705.25,
+            "width": 390
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 390,
+          "scale": 0.2708333333333333,
+          "sections": {
+            "engineering": {
+              "bottom": 2051.59375,
+              "height": 1066.59375,
+              "right": 354.109375,
+              "width": 333.234375,
+              "x": 20.875,
+              "y": 985
+            },
+            "evidence_contact": {
+              "bottom": 5782.71875,
+              "height": 549.46875,
+              "right": 354.109375,
+              "width": 333.234375,
+              "x": 20.875,
+              "y": 5233.25
+            },
+            "footer": {
+              "bottom": 6518.734375,
+              "height": 216.78125,
+              "right": 355,
+              "width": 335,
+              "x": 20,
+              "y": 6301.953125
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 375,
+              "width": 375,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 985,
+              "height": 912,
+              "right": 354.109375,
+              "width": 333.234375,
+              "x": 20.875,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 879.125,
+              "height": 48,
+              "right": 354.125,
+              "width": 210,
+              "x": 144.125,
+              "y": 831.125
+            },
+            "process": {
+              "bottom": 5185.25,
+              "height": 1357.46875,
+              "right": 354.109375,
+              "width": 333.234375,
+              "x": 20.875,
+              "y": 3827.78125
+            },
+            "projects": {
+              "bottom": 3827.78125,
+              "height": 1776.1875,
+              "right": 354.109375,
+              "width": 333.234375,
+              "x": 20.875,
+              "y": 2051.59375
+            }
+          }
+        },
+        "480": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 868.0,
+            "width": 480
+          },
+          "backgroundOwner": {
+            "bottom": 6103,
+            "height": 6030,
+            "right": 465,
+            "width": 465,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 465,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "480px"
+          },
+          "documentHeight": 6457,
+          "documentWidth": 465,
+          "expectedModule": {
+            "height": 868.0,
+            "width": 480
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 480,
+          "scale": 0.3333333333333333,
+          "sections": {
+            "engineering": {
+              "bottom": 1973.59375,
+              "height": 1014.59375,
+              "right": 441.46875,
+              "width": 417.9375,
+              "x": 23.53125,
+              "y": 959
+            },
+            "evidence_contact": {
+              "bottom": 5673.75,
+              "height": 549.46875,
+              "right": 441.46875,
+              "width": 417.9375,
+              "x": 23.53125,
+              "y": 5124.28125
+            },
+            "footer": {
+              "bottom": 6352.78125,
+              "height": 216.78125,
+              "right": 445,
+              "width": 425,
+              "x": 20,
+              "y": 6136
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 465,
+              "width": 465,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 959,
+              "height": 886,
+              "right": 441.46875,
+              "width": 417.9375,
+              "x": 23.53125,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 876.484375,
+              "height": 48,
+              "right": 441.484375,
+              "width": 210,
+              "x": 231.484375,
+              "y": 828.484375
+            },
+            "process": {
+              "bottom": 5076.28125,
+              "height": 1351.46875,
+              "right": 441.46875,
+              "width": 417.9375,
+              "x": 23.53125,
+              "y": 3724.8125
+            },
+            "projects": {
+              "bottom": 3724.8125,
+              "height": 1751.21875,
+              "right": 441.46875,
+              "width": 417.9375,
+              "x": 23.53125,
+              "y": 1973.59375
+            }
+          }
+        },
+        "600": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1085.0,
+            "width": 600
+          },
+          "backgroundOwner": {
+            "bottom": 5985.421875,
+            "height": 5912.421875,
+            "right": 585,
+            "width": 585,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 585,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "600px"
+          },
+          "documentHeight": 6339,
+          "documentWidth": 585,
+          "expectedModule": {
+            "height": 1085.0,
+            "width": 600
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 600,
+          "scale": 0.4166666666666667,
+          "sections": {
+            "engineering": {
+              "bottom": 1895.59375,
+              "height": 962.59375,
+              "right": 557.9375,
+              "width": 530.875,
+              "x": 27.0625,
+              "y": 933
+            },
+            "evidence_contact": {
+              "bottom": 5588.359375,
+              "height": 461.46875,
+              "right": 557.9375,
+              "width": 530.875,
+              "x": 27.0625,
+              "y": 5126.890625
+            },
+            "footer": {
+              "bottom": 6235.203125,
+              "height": 216.78125,
+              "right": 565,
+              "width": 545,
+              "x": 20,
+              "y": 6018.421875
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 585,
+              "width": 585,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 933,
+              "height": 860,
+              "right": 557.9375,
+              "width": 530.875,
+              "x": 27.0625,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 872.953125,
+              "height": 48,
+              "right": 557.953125,
+              "width": 210,
+              "x": 347.953125,
+              "y": 824.953125
+            },
+            "process": {
+              "bottom": 5078.890625,
+              "height": 1343.46875,
+              "right": 557.9375,
+              "width": 530.875,
+              "x": 27.0625,
+              "y": 3735.421875
+            },
+            "projects": {
+              "bottom": 3735.421875,
+              "height": 1839.828125,
+              "right": 557.9375,
+              "width": 530.875,
+              "x": 27.0625,
+              "y": 1895.59375
+            }
+          }
+        },
+        "767": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1386.9916666666666,
+            "width": 767
+          },
+          "backgroundOwner": {
+            "bottom": 5443,
+            "height": 5370,
+            "right": 752,
+            "width": 752,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 752,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "767px"
+          },
+          "documentHeight": 5624,
+          "documentWidth": 752,
+          "expectedModule": {
+            "height": 1386.9916666666666,
+            "width": 767
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 767,
+          "scale": 0.5326388888888889,
+          "sections": {
+            "engineering": {
+              "bottom": 1773.125,
+              "height": 650.125,
+              "right": 720.015625,
+              "width": 688.046875,
+              "x": 31.96875,
+              "y": 1123
+            },
+            "evidence_contact": {
+              "bottom": 5022.828125,
+              "height": 311.5625,
+              "right": 720.015625,
+              "width": 688.046875,
+              "x": 31.96875,
+              "y": 4711.265625
+            },
+            "footer": {
+              "bottom": 5520,
+              "height": 44,
+              "right": 732,
+              "width": 712,
+              "x": 20,
+              "y": 5476
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 752,
+              "width": 752,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 1123,
+              "height": 1050,
+              "right": 720.015625,
+              "width": 688.046875,
+              "x": 31.96875,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 868.03125,
+              "height": 48,
+              "right": 720.03125,
+              "width": 210,
+              "x": 510.03125,
+              "y": 820.03125
+            },
+            "process": {
+              "bottom": 4647.265625,
+              "height": 859.234375,
+              "right": 720.015625,
+              "width": 688.046875,
+              "x": 31.96875,
+              "y": 3788.03125
+            },
+            "projects": {
+              "bottom": 3788.03125,
+              "height": 2014.90625,
+              "right": 720.015625,
+              "width": 688.046875,
+              "x": 31.96875,
+              "y": 1773.125
+            }
+          }
+        },
+        "768": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1388.8,
+            "width": 768
+          },
+          "backgroundOwner": {
+            "bottom": 5444.703125,
+            "height": 5371.703125,
+            "right": 753,
+            "width": 753,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 753,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "768px"
+          },
+          "documentHeight": 5626,
+          "documentWidth": 753,
+          "expectedModule": {
+            "height": 1388.8,
+            "width": 768
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 768,
+          "scale": 0.5333333333333333,
+          "sections": {
+            "engineering": {
+              "bottom": 1773.1875,
+              "height": 650.1875,
+              "right": 721,
+              "width": 689,
+              "x": 32,
+              "y": 1123
+            },
+            "evidence_contact": {
+              "bottom": 5024.359375,
+              "height": 311.625,
+              "right": 721,
+              "width": 689,
+              "x": 32,
+              "y": 4712.734375
+            },
+            "footer": {
+              "bottom": 5521.703125,
+              "height": 44,
+              "right": 733,
+              "width": 713,
+              "x": 20,
+              "y": 5477.703125
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 753,
+              "width": 753,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 1123,
+              "height": 1050,
+              "right": 721,
+              "width": 689,
+              "x": 32,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 868,
+              "height": 48,
+              "right": 721,
+              "width": 210,
+              "x": 511,
+              "y": 820
+            },
+            "process": {
+              "bottom": 4648.734375,
+              "height": 859.3125,
+              "right": 721,
+              "width": 689,
+              "x": 32,
+              "y": 3789.421875
+            },
+            "projects": {
+              "bottom": 3789.421875,
+              "height": 2016.234375,
+              "right": 721,
+              "width": 689,
+              "x": 32,
+              "y": 1773.1875
+            }
+          }
+        },
+        "900": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1627.5,
+            "width": 900
+          },
+          "backgroundOwner": {
+            "bottom": 4601.046875,
+            "height": 4520.046875,
+            "right": 885,
+            "width": 885,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 885,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "900px"
+          },
+          "documentHeight": 4782,
+          "documentWidth": 885,
+          "expectedModule": {
+            "height": 1627.5,
+            "width": 900
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 900,
+          "scale": 0.625,
+          "sections": {
+            "engineering": {
+              "bottom": 1793.234375,
+              "height": 662.234375,
+              "right": 844.75,
+              "width": 804.5,
+              "x": 40.25,
+              "y": 1131
+            },
+            "evidence_contact": {
+              "bottom": 4158.78125,
+              "height": 321.671875,
+              "right": 844.75,
+              "width": 804.5,
+              "x": 40.25,
+              "y": 3837.109375
+            },
+            "footer": {
+              "bottom": 4678.046875,
+              "height": 44,
+              "right": 865,
+              "width": 845,
+              "x": 20,
+              "y": 4634.046875
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 885,
+              "width": 885,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 1131,
+              "height": 1050,
+              "right": 844.75,
+              "width": 804.5,
+              "x": 40.25,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 859.75,
+              "height": 48,
+              "right": 844.75,
+              "width": 210,
+              "x": 634.75,
+              "y": 811.75
+            },
+            "process": {
+              "bottom": 3773.109375,
+              "height": 728.671875,
+              "right": 844.75,
+              "width": 804.5,
+              "x": 40.25,
+              "y": 3044.4375
+            },
+            "projects": {
+              "bottom": 3044.4375,
+              "height": 1251.203125,
+              "right": 844.75,
+              "width": 804.5,
+              "x": 40.25,
+              "y": 1793.234375
+            }
+          }
+        }
+      }
+    },
+    {
+      "locale": "pt-BR",
+      "widths": {
+        "1023": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1849.9250000000002,
+            "width": 1023
+          },
+          "backgroundOwner": {
+            "bottom": 4437.625,
+            "height": 4356.625,
+            "right": 1008,
+            "width": 1008,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1008,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1023px"
+          },
+          "documentHeight": 4619,
+          "documentWidth": 1008,
+          "expectedModule": {
+            "height": 1849.9250000000002,
+            "width": 1023
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1023,
+          "scale": 0.7104166666666667,
+          "sections": {
+            "engineering": {
+              "bottom": 1527.984375,
+              "height": 672.984375,
+              "right": 960.0625,
+              "width": 912.125,
+              "x": 47.9375,
+              "y": 855
+            },
+            "evidence_contact": {
+              "bottom": 3977.84375,
+              "height": 329.96875,
+              "right": 960.0625,
+              "width": 912.125,
+              "x": 47.9375,
+              "y": 3647.875
+            },
+            "footer": {
+              "bottom": 4514.625,
+              "height": 44,
+              "right": 988,
+              "width": 968,
+              "x": 20,
+              "y": 4470.625
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1008,
+              "width": 1008,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 855,
+              "height": 774,
+              "right": 960.0625,
+              "width": 912.125,
+              "x": 47.9375,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852.0625,
+              "height": 48,
+              "right": 960.0625,
+              "width": 210,
+              "x": 750.0625,
+              "y": 804.0625
+            },
+            "process": {
+              "bottom": 3583.875,
+              "height": 738.1875,
+              "right": 960.0625,
+              "width": 912.125,
+              "x": 47.9375,
+              "y": 2845.6875
+            },
+            "projects": {
+              "bottom": 2845.6875,
+              "height": 1317.703125,
+              "right": 960.0625,
+              "width": 912.125,
+              "x": 47.9375,
+              "y": 1527.984375
+            }
+          }
+        },
+        "1024": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1851.7333333333333,
+            "width": 1024
+          },
+          "backgroundOwner": {
+            "bottom": 4438.21875,
+            "height": 4357.21875,
+            "right": 1009,
+            "width": 1009,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1009,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1024px"
+          },
+          "documentHeight": 4619,
+          "documentWidth": 1009,
+          "expectedModule": {
+            "height": 1851.7333333333333,
+            "width": 1024
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1024,
+          "scale": 0.7111111111111111,
+          "sections": {
+            "engineering": {
+              "bottom": 1528.03125,
+              "height": 673.03125,
+              "right": 961,
+              "width": 913,
+              "x": 48,
+              "y": 855
+            },
+            "evidence_contact": {
+              "bottom": 3978.390625,
+              "height": 330,
+              "right": 961,
+              "width": 913,
+              "x": 48,
+              "y": 3648.390625
+            },
+            "footer": {
+              "bottom": 4515.21875,
+              "height": 44,
+              "right": 989,
+              "width": 969,
+              "x": 20,
+              "y": 4471.21875
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1009,
+              "width": 1009,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 855,
+              "height": 774,
+              "right": 961,
+              "width": 913,
+              "x": 48,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 961,
+              "width": 210,
+              "x": 751,
+              "y": 804
+            },
+            "process": {
+              "bottom": 3584.390625,
+              "height": 738.234375,
+              "right": 961,
+              "width": 913,
+              "x": 48,
+              "y": 2846.15625
+            },
+            "projects": {
+              "bottom": 2846.15625,
+              "height": 1318.125,
+              "right": 961,
+              "width": 913,
+              "x": 48,
+              "y": 1528.03125
+            }
+          }
+        },
+        "1280": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 2314.6666666666665,
+            "width": 1280
+          },
+          "backgroundOwner": {
+            "bottom": 2719.96875,
+            "height": 2638.96875,
+            "right": 1265,
+            "width": 1265,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1265,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1280px"
+          },
+          "documentHeight": 2901,
+          "documentWidth": 1265,
+          "expectedModule": {
+            "height": 2314.6666666666665,
+            "width": 1280
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1280,
+          "scale": 0.8888888888888888,
+          "sections": {
+            "engineering": {
+              "bottom": 1095.5625,
+              "height": 500.5625,
+              "right": 1217,
+              "width": 1169,
+              "x": 48,
+              "y": 595
+            },
+            "evidence_contact": {
+              "bottom": 2616.375,
+              "height": 297.28125,
+              "right": 756.859375,
+              "width": 708.859375,
+              "x": 48,
+              "y": 2319.09375
+            },
+            "footer": {
+              "bottom": 2796.96875,
+              "height": 44,
+              "right": 1245,
+              "width": 1225,
+              "x": 20,
+              "y": 2752.96875
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1265,
+              "width": 1265,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 595,
+              "height": 514,
+              "right": 1217,
+              "width": 1169,
+              "x": 48,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 1217,
+              "width": 210,
+              "x": 1007,
+              "y": 804
+            },
+            "process": {
+              "bottom": 2255.09375,
+              "height": 423.28125,
+              "right": 1217,
+              "width": 1169,
+              "x": 48,
+              "y": 1831.8125
+            },
+            "projects": {
+              "bottom": 1831.8125,
+              "height": 736.25,
+              "right": 1217,
+              "width": 1169,
+              "x": 48,
+              "y": 1095.5625
+            }
+          }
+        },
+        "1439": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 2602.1916666666666,
+            "width": 1439
+          },
+          "backgroundOwner": {
+            "bottom": 2626.5,
+            "height": 2545.5,
+            "right": 1424,
+            "width": 1424,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1424,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1439px"
+          },
+          "documentHeight": 2808,
+          "documentWidth": 1424,
+          "expectedModule": {
+            "height": 2602.1916666666666,
+            "width": 1439
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1439,
+          "scale": 0.9993055555555556,
+          "sections": {
+            "engineering": {
+              "bottom": 1035.5625,
+              "height": 474.5625,
+              "right": 1376,
+              "width": 1328,
+              "x": 48,
+              "y": 561
+            },
+            "evidence_contact": {
+              "bottom": 2500.90625,
+              "height": 275.28125,
+              "right": 857.40625,
+              "width": 809.40625,
+              "x": 48,
+              "y": 2225.625
+            },
+            "footer": {
+              "bottom": 2703.5,
+              "height": 44,
+              "right": 1384,
+              "width": 1344,
+              "x": 40,
+              "y": 2659.5
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1424,
+              "width": 1424,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 561,
+              "height": 480,
+              "right": 1376,
+              "width": 1328,
+              "x": 48,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 1376,
+              "width": 210,
+              "x": 1166,
+              "y": 804
+            },
+            "process": {
+              "bottom": 2161.625,
+              "height": 401.28125,
+              "right": 1376,
+              "width": 1328,
+              "x": 48,
+              "y": 1760.34375
+            },
+            "projects": {
+              "bottom": 1760.34375,
+              "height": 724.78125,
+              "right": 1376,
+              "width": 1328,
+              "x": 48,
+              "y": 1035.5625
+            }
+          }
+        },
+        "1440": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 2604.0,
+            "width": 1440
+          },
+          "backgroundOwner": {
+            "bottom": 2626.65625,
+            "height": 2545.65625,
+            "right": 1425,
+            "width": 1425,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1425,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1440px"
+          },
+          "documentHeight": 2808,
+          "documentWidth": 1425,
+          "expectedModule": {
+            "height": 2604.0,
+            "width": 1440
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1440,
+          "scale": 1.0,
+          "sections": {
+            "engineering": {
+              "bottom": 1035.5625,
+              "height": 474.5625,
+              "right": 1377,
+              "width": 1329,
+              "x": 48,
+              "y": 561
+            },
+            "evidence_contact": {
+              "bottom": 2501.0625,
+              "height": 275.28125,
+              "right": 858.03125,
+              "width": 810.03125,
+              "x": 48,
+              "y": 2225.78125
+            },
+            "footer": {
+              "bottom": 2703.65625,
+              "height": 44,
+              "right": 1384.5,
+              "width": 1344,
+              "x": 40.5,
+              "y": 2659.65625
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1425,
+              "width": 1425,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 561,
+              "height": 480,
+              "right": 1377,
+              "width": 1329,
+              "x": 48,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 1377,
+              "width": 210,
+              "x": 1167,
+              "y": 804
+            },
+            "process": {
+              "bottom": 2161.78125,
+              "height": 401.28125,
+              "right": 1377,
+              "width": 1329,
+              "x": 48,
+              "y": 1760.5
+            },
+            "projects": {
+              "bottom": 1760.5,
+              "height": 724.9375,
+              "right": 1377,
+              "width": 1329,
+              "x": 48,
+              "y": 1035.5625
+            }
+          }
+        },
+        "1600": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 2893.3333333333335,
+            "width": 1600
+          },
+          "backgroundOwner": {
+            "bottom": 2628.84375,
+            "height": 2547.84375,
+            "right": 1585,
+            "width": 1585,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1585,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1600px"
+          },
+          "documentHeight": 2810,
+          "documentWidth": 1585,
+          "expectedModule": {
+            "height": 2893.3333333333335,
+            "width": 1600
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1600,
+          "scale": 1.1111111111111112,
+          "sections": {
+            "engineering": {
+              "bottom": 1035.5625,
+              "height": 474.5625,
+              "right": 1464.5,
+              "width": 1344,
+              "x": 120.5,
+              "y": 561
+            },
+            "evidence_contact": {
+              "bottom": 2503.25,
+              "height": 275.28125,
+              "right": 940.015625,
+              "width": 819.515625,
+              "x": 120.5,
+              "y": 2227.96875
+            },
+            "footer": {
+              "bottom": 2705.84375,
+              "height": 44,
+              "right": 1464.5,
+              "width": 1344,
+              "x": 120.5,
+              "y": 2661.84375
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1585,
+              "width": 1585,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 561,
+              "height": 480,
+              "right": 1464.5,
+              "width": 1344,
+              "x": 120.5,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 1537,
+              "width": 210,
+              "x": 1327,
+              "y": 804
+            },
+            "process": {
+              "bottom": 2163.96875,
+              "height": 401.28125,
+              "right": 1464.5,
+              "width": 1344,
+              "x": 120.5,
+              "y": 1762.6875
+            },
+            "projects": {
+              "bottom": 1762.6875,
+              "height": 727.125,
+              "right": 1464.5,
+              "width": 1344,
+              "x": 120.5,
+              "y": 1035.5625
+            }
+          }
+        },
+        "1920": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 3472.0,
+            "width": 1920
+          },
+          "backgroundOwner": {
+            "bottom": 2628.84375,
+            "height": 2547.84375,
+            "right": 1905,
+            "width": 1905,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 1905,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "1920px"
+          },
+          "documentHeight": 2810,
+          "documentWidth": 1905,
+          "expectedModule": {
+            "height": 3472.0,
+            "width": 1920
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 1920,
+          "scale": 1.3333333333333333,
+          "sections": {
+            "engineering": {
+              "bottom": 1035.5625,
+              "height": 474.5625,
+              "right": 1624.5,
+              "width": 1344,
+              "x": 280.5,
+              "y": 561
+            },
+            "evidence_contact": {
+              "bottom": 2503.25,
+              "height": 275.28125,
+              "right": 1100.015625,
+              "width": 819.515625,
+              "x": 280.5,
+              "y": 2227.96875
+            },
+            "footer": {
+              "bottom": 2705.84375,
+              "height": 44,
+              "right": 1624.5,
+              "width": 1344,
+              "x": 280.5,
+              "y": 2661.84375
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 1905,
+              "width": 1905,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 561,
+              "height": 480,
+              "right": 1624.5,
+              "width": 1344,
+              "x": 280.5,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 852,
+              "height": 48,
+              "right": 1857,
+              "width": 210,
+              "x": 1647,
+              "y": 804
+            },
+            "process": {
+              "bottom": 2163.96875,
+              "height": 401.28125,
+              "right": 1624.5,
+              "width": 1344,
+              "x": 280.5,
+              "y": 1762.6875
+            },
+            "projects": {
+              "bottom": 1762.6875,
+              "height": 727.125,
+              "right": 1624.5,
+              "width": 1344,
+              "x": 280.5,
+              "y": 1035.5625
+            }
+          }
+        },
+        "360": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 651.0,
+            "width": 360
+          },
+          "backgroundOwner": {
+            "bottom": 6673.71875,
+            "height": 6600.71875,
+            "right": 345,
+            "width": 345,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 345,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "360px"
+          },
+          "documentHeight": 7028,
+          "documentWidth": 345,
+          "expectedModule": {
+            "height": 651.0,
+            "width": 360
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 360,
+          "scale": 0.25,
+          "sections": {
+            "engineering": {
+              "bottom": 2335.59375,
+              "height": 1230.59375,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 1105
+            },
+            "evidence_contact": {
+              "bottom": 6219.671875,
+              "height": 625.65625,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 5594.015625
+            },
+            "footer": {
+              "bottom": 6923.5,
+              "height": 216.78125,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 6706.71875
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 345,
+              "width": 345,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 1105,
+              "height": 1032,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 880,
+              "height": 48,
+              "right": 325,
+              "width": 210,
+              "x": 115,
+              "y": 832
+            },
+            "process": {
+              "bottom": 5546.015625,
+              "height": 1379.46875,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 4166.546875
+            },
+            "projects": {
+              "bottom": 4166.546875,
+              "height": 1830.953125,
+              "right": 325,
+              "width": 305,
+              "x": 20,
+              "y": 2335.59375
+            }
+          }
+        },
+        "390": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 705.25,
+            "width": 390
+          },
+          "backgroundOwner": {
+            "bottom": 6326.765625,
+            "height": 6253.765625,
+            "right": 375,
+            "width": 375,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 375,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "390px"
+          },
+          "documentHeight": 6681,
+          "documentWidth": 375,
+          "expectedModule": {
+            "height": 705.25,
+            "width": 390
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 390,
+          "scale": 0.2708333333333333,
+          "sections": {
+            "engineering": {
+              "bottom": 2141.59375,
+              "height": 1122.59375,
+              "right": 354.109375,
+              "width": 333.234375,
+              "x": 20.875,
+              "y": 1019
+            },
+            "evidence_contact": {
+              "bottom": 5872.71875,
+              "height": 549.46875,
+              "right": 354.109375,
+              "width": 333.234375,
+              "x": 20.875,
+              "y": 5323.25
+            },
+            "footer": {
+              "bottom": 6576.546875,
+              "height": 216.78125,
+              "right": 355,
+              "width": 335,
+              "x": 20,
+              "y": 6359.765625
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 375,
+              "width": 375,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 1019,
+              "height": 946,
+              "right": 354.109375,
+              "width": 333.234375,
+              "x": 20.875,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 879.125,
+              "height": 48,
+              "right": 354.125,
+              "width": 210,
+              "x": 144.125,
+              "y": 831.125
+            },
+            "process": {
+              "bottom": 5275.25,
+              "height": 1357.46875,
+              "right": 354.109375,
+              "width": 333.234375,
+              "x": 20.875,
+              "y": 3917.78125
+            },
+            "projects": {
+              "bottom": 3917.78125,
+              "height": 1776.1875,
+              "right": 354.109375,
+              "width": 333.234375,
+              "x": 20.875,
+              "y": 2141.59375
+            }
+          }
+        },
+        "480": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 868.0,
+            "width": 480
+          },
+          "backgroundOwner": {
+            "bottom": 6217.1875,
+            "height": 6144.1875,
+            "right": 465,
+            "width": 465,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 465,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "480px"
+          },
+          "documentHeight": 6571,
+          "documentWidth": 465,
+          "expectedModule": {
+            "height": 868.0,
+            "width": 480
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 480,
+          "scale": 0.3333333333333333,
+          "sections": {
+            "engineering": {
+              "bottom": 2051.59375,
+              "height": 1066.59375,
+              "right": 441.46875,
+              "width": 417.9375,
+              "x": 23.53125,
+              "y": 985
+            },
+            "evidence_contact": {
+              "bottom": 5787.9375,
+              "height": 549.46875,
+              "right": 441.46875,
+              "width": 417.9375,
+              "x": 23.53125,
+              "y": 5238.46875
+            },
+            "footer": {
+              "bottom": 6466.96875,
+              "height": 216.78125,
+              "right": 445,
+              "width": 425,
+              "x": 20,
+              "y": 6250.1875
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 465,
+              "width": 465,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 985,
+              "height": 912,
+              "right": 441.46875,
+              "width": 417.9375,
+              "x": 23.53125,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 876.484375,
+              "height": 48,
+              "right": 441.484375,
+              "width": 210,
+              "x": 231.484375,
+              "y": 828.484375
+            },
+            "process": {
+              "bottom": 5190.46875,
+              "height": 1355.46875,
+              "right": 441.46875,
+              "width": 417.9375,
+              "x": 23.53125,
+              "y": 3835
+            },
+            "projects": {
+              "bottom": 3835,
+              "height": 1783.40625,
+              "right": 441.46875,
+              "width": 417.9375,
+              "x": 23.53125,
+              "y": 2051.59375
+            }
+          }
+        },
+        "600": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1085.0,
+            "width": 600
+          },
+          "backgroundOwner": {
+            "bottom": 6057.421875,
+            "height": 5984.421875,
+            "right": 585,
+            "width": 585,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 585,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "600px"
+          },
+          "documentHeight": 6411,
+          "documentWidth": 585,
+          "expectedModule": {
+            "height": 1085.0,
+            "width": 600
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 600,
+          "scale": 0.4166666666666667,
+          "sections": {
+            "engineering": {
+              "bottom": 1921.59375,
+              "height": 962.59375,
+              "right": 557.9375,
+              "width": 530.875,
+              "x": 27.0625,
+              "y": 959
+            },
+            "evidence_contact": {
+              "bottom": 5660.359375,
+              "height": 505.46875,
+              "right": 557.9375,
+              "width": 530.875,
+              "x": 27.0625,
+              "y": 5154.890625
+            },
+            "footer": {
+              "bottom": 6307.203125,
+              "height": 216.78125,
+              "right": 565,
+              "width": 545,
+              "x": 20,
+              "y": 6090.421875
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 585,
+              "width": 585,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 959,
+              "height": 886,
+              "right": 557.9375,
+              "width": 530.875,
+              "x": 27.0625,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 872.953125,
+              "height": 48,
+              "right": 557.953125,
+              "width": 210,
+              "x": 347.953125,
+              "y": 824.953125
+            },
+            "process": {
+              "bottom": 5106.890625,
+              "height": 1345.46875,
+              "right": 557.9375,
+              "width": 530.875,
+              "x": 27.0625,
+              "y": 3761.421875
+            },
+            "projects": {
+              "bottom": 3761.421875,
+              "height": 1839.828125,
+              "right": 557.9375,
+              "width": 530.875,
+              "x": 27.0625,
+              "y": 1921.59375
+            }
+          }
+        },
+        "767": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1386.9916666666666,
+            "width": 767
+          },
+          "backgroundOwner": {
+            "bottom": 5469,
+            "height": 5396,
+            "right": 752,
+            "width": 752,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 752,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "767px"
+          },
+          "documentHeight": 5650,
+          "documentWidth": 752,
+          "expectedModule": {
+            "height": 1386.9916666666666,
+            "width": 767
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 767,
+          "scale": 0.5326388888888889,
+          "sections": {
+            "engineering": {
+              "bottom": 1799.125,
+              "height": 676.125,
+              "right": 720.015625,
+              "width": 688.046875,
+              "x": 31.96875,
+              "y": 1123
+            },
+            "evidence_contact": {
+              "bottom": 5048.828125,
+              "height": 311.5625,
+              "right": 720.015625,
+              "width": 688.046875,
+              "x": 31.96875,
+              "y": 4737.265625
+            },
+            "footer": {
+              "bottom": 5546,
+              "height": 44,
+              "right": 732,
+              "width": 712,
+              "x": 20,
+              "y": 5502
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 752,
+              "width": 752,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 1123,
+              "height": 1050,
+              "right": 720.015625,
+              "width": 688.046875,
+              "x": 31.96875,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 868.03125,
+              "height": 48,
+              "right": 720.03125,
+              "width": 210,
+              "x": 510.03125,
+              "y": 820.03125
+            },
+            "process": {
+              "bottom": 4673.265625,
+              "height": 859.234375,
+              "right": 720.015625,
+              "width": 688.046875,
+              "x": 31.96875,
+              "y": 3814.03125
+            },
+            "projects": {
+              "bottom": 3814.03125,
+              "height": 2014.90625,
+              "right": 720.015625,
+              "width": 688.046875,
+              "x": 31.96875,
+              "y": 1799.125
+            }
+          }
+        },
+        "768": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1388.8,
+            "width": 768
+          },
+          "backgroundOwner": {
+            "bottom": 5470.703125,
+            "height": 5397.703125,
+            "right": 753,
+            "width": 753,
+            "x": 0,
+            "y": 73
+          },
+          "clientWidth": 753,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "768px"
+          },
+          "documentHeight": 5652,
+          "documentWidth": 753,
+          "expectedModule": {
+            "height": 1388.8,
+            "width": 768
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 768,
+          "scale": 0.5333333333333333,
+          "sections": {
+            "engineering": {
+              "bottom": 1799.1875,
+              "height": 676.1875,
+              "right": 721,
+              "width": 689,
+              "x": 32,
+              "y": 1123
+            },
+            "evidence_contact": {
+              "bottom": 5050.359375,
+              "height": 311.625,
+              "right": 721,
+              "width": 689,
+              "x": 32,
+              "y": 4738.734375
+            },
+            "footer": {
+              "bottom": 5547.703125,
+              "height": 44,
+              "right": 733,
+              "width": 713,
+              "x": 20,
+              "y": 5503.703125
+            },
+            "header": {
+              "bottom": 73,
+              "height": 73,
+              "right": 753,
+              "width": 753,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 1123,
+              "height": 1050,
+              "right": 721,
+              "width": 689,
+              "x": 32,
+              "y": 73
+            },
+            "juju_ai": {
+              "bottom": 868,
+              "height": 48,
+              "right": 721,
+              "width": 210,
+              "x": 511,
+              "y": 820
+            },
+            "process": {
+              "bottom": 4674.734375,
+              "height": 859.3125,
+              "right": 721,
+              "width": 689,
+              "x": 32,
+              "y": 3815.421875
+            },
+            "projects": {
+              "bottom": 3815.421875,
+              "height": 2016.234375,
+              "right": 721,
+              "width": 689,
+              "x": 32,
+              "y": 1799.1875
+            }
+          }
+        },
+        "900": {
+          "actualCanonicalModule": {
+            "basis": "computed 100vw auto against Figma canonical 1440x2604 geometry",
+            "height": 1627.5,
+            "width": 900
+          },
+          "backgroundOwner": {
+            "bottom": 4623.046875,
+            "height": 4542.046875,
+            "right": 885,
+            "width": 885,
+            "x": 0,
+            "y": 81
+          },
+          "clientWidth": 885,
+          "computed": {
+            "image": "url(\"http://localhost:8000/static/images/background/homepage-background-desktop-02.png\")",
+            "pointerEvents": "none",
+            "position": "50% 0%",
+            "positionType": "absolute",
+            "repeat": "repeat-y",
+            "size": "900px"
+          },
+          "documentHeight": 4804,
+          "documentWidth": 885,
+          "expectedModule": {
+            "height": 1627.5,
+            "width": 900
+          },
+          "horizontalOverflow": false,
+          "innerWidth": 900,
+          "scale": 0.625,
+          "sections": {
+            "engineering": {
+              "bottom": 1793.234375,
+              "height": 662.234375,
+              "right": 844.75,
+              "width": 804.5,
+              "x": 40.25,
+              "y": 1131
+            },
+            "evidence_contact": {
+              "bottom": 4180.78125,
+              "height": 321.671875,
+              "right": 844.75,
+              "width": 804.5,
+              "x": 40.25,
+              "y": 3859.109375
+            },
+            "footer": {
+              "bottom": 4700.046875,
+              "height": 44,
+              "right": 865,
+              "width": 845,
+              "x": 20,
+              "y": 4656.046875
+            },
+            "header": {
+              "bottom": 81,
+              "height": 81,
+              "right": 885,
+              "width": 885,
+              "x": 0,
+              "y": 0
+            },
+            "hero": {
+              "bottom": 1131,
+              "height": 1050,
+              "right": 844.75,
+              "width": 804.5,
+              "x": 40.25,
+              "y": 81
+            },
+            "juju_ai": {
+              "bottom": 859.75,
+              "height": 48,
+              "right": 844.75,
+              "width": 210,
+              "x": 634.75,
+              "y": 811.75
+            },
+            "process": {
+              "bottom": 3795.109375,
+              "height": 750.671875,
+              "right": 844.75,
+              "width": 804.5,
+              "x": 40.25,
+              "y": 3044.4375
+            },
+            "projects": {
+              "bottom": 3044.4375,
+              "height": 1251.203125,
+              "right": 844.75,
+              "width": 804.5,
+              "x": 40.25,
+              "y": 1793.234375
+            }
+          }
+        }
+      }
+    }
+  ],
+  "schemaVersion": 1
+}

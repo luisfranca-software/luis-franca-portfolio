@@ -1,0 +1,12 @@
+{
+  "gate_b": "PASS",
+  "mappings": [
+    {"trace_id":"IMG-00","dom":"[data-trace-id=IMG-00] picture > .profile-photo","css":".home-hero__visual picture; .profile-photo","asset":"images/profile/luis-franca-transparent-02.png"},
+    {"trace_id":"HERO-02","dom":"h1[data-trace-id=HERO-02]","css":".home-hero__titles; .home-hero__title","asset":null},
+    {"trace_id":"HERO-07A","dom":"[data-trace-id=HERO-07A]","css":".home-hero__ide; .home-hero__code","asset":null},
+    {"trace_id":"HERO-08","dom":"[data-trace-id=HERO-08]","css":".home-hero__explorer","asset":null},
+    {"trace_id":"IMG-02","dom":".homepage[data-trace-id=IMG-02]","css":".homepage","asset":"images/background/homepage-background-desktop-02.png"},
+    {"trace_id":"HDR-00","dom":".site-header","css":".site-header; .site-nav","asset":"images/brand/lf-brand-approved.png"},
+    {"trace_id":"AIR-00","dom":"[data-trace-id=AIR-00]","css":".home-ai-rag","asset":null}
+  ]
+}

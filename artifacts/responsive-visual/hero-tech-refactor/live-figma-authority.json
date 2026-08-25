@@ -1,0 +1,23 @@
+{
+  "captured_for": "SDD-RWD-001 hero technology composition refactor",
+  "file_key": "7XIYTbKZrLk77biI0UhRIb",
+  "img_02": {
+    "image_hash": "b06fb16c...",
+    "scale_mode": "FILL",
+    "source": {"width": 933, "height": 1686},
+    "frames": {
+      "360": {"node": "316:616", "x": 0, "y": 0, "width": 360, "height": 6960},
+      "768": {"node": "297:374", "x": 0, "y": 0, "width": 768, "height": 5416},
+      "1024": {"node": "270:1358", "x": 0, "y": 0, "width": 1024, "height": 4428},
+      "1440": {"node": "199:1358", "x": 0, "y": 0, "width": 1440, "height": 2604}
+    }
+  },
+  "hero_technology": {
+    "360": {"node": "316:626", "width": 320, "height": 500, "gutter": [0,21,16,336], "ide": [13,21,186,448], "explorer": [172,21,148,310], "portrait": [0,220,320,262.58]},
+    "768": {"node": "297:384", "width": 704, "height": 600, "gutter": [32,0,19,336], "ide": [57,0,295,384], "explorer": [410,0,294,384], "portrait": [72,97,561,522]},
+    "1024": {"node": "270:1368", "width": 480, "height": 544, "gutter": [0,36,22,336], "ide": [28,36,332,336], "explorer": [306,36,174,324], "portrait": [-16,122,531,427]},
+    "1440": {"node": "153:1199", "width": 608, "height": 384, "gutter": [0,12,22,336], "ide": [28,12,332,336], "explorer": [360,20,248,324], "portrait": [-24,75.87,600,492.13]}
+  },
+  "stack_order": ["atmosphere", "gutter", "ide", "explorer", "portrait"],
+  "rejected_effect": {"trace_id": "HERO-09A", "display": "none"}
+}

@@ -32,3 +32,10 @@ htmlcov/
 # Operating system
 .DS_Store
 Thumbs.db
+
+# Reproducible local responsive-visual diagnostics (canonical evidence is tracked).
+/artifacts/responsive-visual/img02-continuous/homepage-en-us-1600.png
+/artifacts/responsive-visual/img02-continuous/homepage-en-us-1920.png
+/artifacts/responsive-visual/img02-continuous/sweep-screenshots/
+/artifacts/responsive-visual/img02-human-visible/
+/artifacts/responsive-visual/integrated-remediation/sweep-boundaries/

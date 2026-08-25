@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "normalRestoredSha256": "3ae93355cf2c259461ffe6ec7b3c8bf641394527dc2a74c9bc3ac043b4b2ae1f",
+  "sectionBackgroundsDisabledSha256": "3ae93355cf2c259461ffe6ec7b3c8bf641394527dc2a74c9bc3ac043b4b2ae1f",
+  "pagePseudosDisabledSha256": "3ae93355cf2c259461ffe6ec7b3c8bf641394527dc2a74c9bc3ac043b4b2ae1f",
+  "suspectedCoveringsDisabledSha256": "3ae93355cf2c259461ffe6ec7b3c8bf641394527dc2a74c9bc3ac043b4b2ae1f",
+  "img02DisabledSha256": "2cb0c8a18d7f2c605f98fa5191ec36c609a4685a87d8dfc26d2a06e5ec906172",
+  "img02DisabledAbsolutePixelDifference": 3164880,
+  "img02DisabledDifferenceFraction": 0.783821,
+  "coveringSelector": null,
+  "persistentCorrection": null,
+  "conclusion": "IMG-02 is visibly painted; suspected covering layers do not alter the rendered screenshot."
+}
