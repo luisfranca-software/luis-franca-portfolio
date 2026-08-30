@@ -18,7 +18,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 FIT_HARNESS = REPO_ROOT / "scripts/measure-responsive-fit.py"
 REFERENCE_WIDTHS = (360, 768, 1024, 1440)
-INTERPOLATION_WIDTHS = (390, 480, 640, 820, 900, 1100, 1280)
+INTERPOLATION_WIDTHS = (390, 480, 639, 640, 820, 900, 1100, 1280)
 
 
 def _fit_module() -> Any:

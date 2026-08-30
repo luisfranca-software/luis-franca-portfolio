@@ -17,6 +17,13 @@ def test_existing_route_navigation_appears_on_non_homepage_routes(path: str) -> 
     navigation = _navigation(Client().get(path).content.decode())
 
     assert 'href="/"' in navigation
+    if path == "/contact/":
+        assert "data-contact-navigation" in navigation
+        assert 'href="/#engineering"' in navigation
+        assert 'href="/#projects"' in navigation
+        for legacy_path in ("/about/", "/skills/", "/experience/", "/portfolio/"):
+            assert f'href="{legacy_path}"' not in navigation
+        return
     assert 'href="/about/"' in navigation
     assert 'href="/skills/"' in navigation
     assert 'href="/experience/"' in navigation

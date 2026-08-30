@@ -2,13 +2,21 @@
 <div class="homepage-footer" data-trace-id="FTR-01">
   <div class="homepage-footer__brand" data-trace-id="FTR-02">
     {% include "includes/brand-logo.html" %}
+    {% if request.resolver_match.namespace == "contact" %}
+    <div class="homepage-footer__brand-copy">
+      <p class="homepage-footer__copyright">© {% now "Y" %} Luís França.</p>
+      <p class="homepage-footer__tagline">{% trans "Engineering with evidence." %}</p>
+    </div>
+    {% endif %}
   </div>
+  {% if request.resolver_match.namespace != "contact" %}
   <p class="homepage-footer__copyright">© {% now "Y" %} Luís França</p>
   <p class="homepage-footer__tagline">{% trans "Engineering with evidence." %}</p>
+  {% endif %}
   <nav class="homepage-footer__nav" aria-label="{% trans 'Footer navigation' %}">
     <ul>
-      <li><a href="#projects" data-trace-id="FTR-03">{% trans "Projects" %}</a></li>
-      <li><a href="#contact" data-trace-id="FTR-04">{% trans "Contact" %}</a></li>
+      <li><a href="{% if is_homepage %}#projects{% else %}{% url 'home:home' %}#projects{% endif %}" data-trace-id="FTR-03">{% trans "Projects" %}</a></li>
+      <li><a href="{% if is_homepage %}#contact{% elif request.resolver_match.namespace == 'contact' %}{% url 'contact:contact' %}{% else %}{% url 'home:home' %}#contact{% endif %}" data-trace-id="FTR-04"{% if request.resolver_match.namespace == "contact" %} aria-current="page"{% endif %}>{% trans "Contact" %}</a></li>
     </ul>
   </nav>
   <nav class="homepage-footer__social" aria-label="{% trans 'Professional links' %}">

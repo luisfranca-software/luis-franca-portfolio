@@ -4,6 +4,8 @@ Governing documents: SPEC-002 (SPEC-002-REQ-002, REQ-003, REQ-004, section 9),
 ARCH-001 (15.6, 17.2, 17.3, 17.4).
 """
 
+from typing import Any
+
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
@@ -36,7 +38,12 @@ class ContactForm(forms.ModelForm):
         model = ContactRequest
         fields = ["full_name", "email", "subject", "communication_type", "message"]
         widgets = {
-            "message": forms.Textarea(attrs={"rows": 6}),
+            "full_name": forms.TextInput(attrs={"placeholder": _("Type your name")}),
+            "email": forms.EmailInput(attrs={"placeholder": _("name@example.com")}),
+            "subject": forms.TextInput(attrs={"placeholder": _("How can I help?")}),
+            "message": forms.Textarea(
+                attrs={"rows": 6, "placeholder": _("Write your message")}
+            ),
         }
         labels = {
             "full_name": _("Full name"),
@@ -45,6 +52,22 @@ class ContactForm(forms.ModelForm):
             "communication_type": _("Communication type"),
             "message": _("Message"),
         }
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        if not self.is_bound:
+            return
+
+        for field_name in self.errors:
+            field = self.fields.get(field_name)
+            if field is None:
+                continue
+            field.widget.attrs["aria-invalid"] = "true"
+            error_id = f"{self[field_name].id_for_label}-errors"
+            described_by = str(field.widget.attrs.get("aria-describedby", "")).split()
+            if error_id not in described_by:
+                described_by.append(error_id)
+            field.widget.attrs["aria-describedby"] = " ".join(described_by)
 
     def clean_full_name(self) -> str:
         return self._clean_text("full_name")

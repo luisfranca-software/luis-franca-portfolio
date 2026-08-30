@@ -98,16 +98,24 @@ def test_release_1_renders_no_live_demo_links() -> None:
         assert project.demo_url is None
 
 
-def test_no_example_com_placeholders_in_tracked_implementation_files() -> None:
+def test_example_com_is_only_the_authorized_contact_email_placeholder() -> None:
     placeholder_domain = "example." + "com"
+    authorized_files = {
+        "backend/apps/contact/forms.py",
+        "backend/locale/pt_BR/LC_MESSAGES/django.po",
+        "tests/integration/test_contact_i18n.py",
+    }
     offenders = []
     for path in _tracked_implementation_files():
+        relative_path = str(path.relative_to(REPO_ROOT))
+        if relative_path in authorized_files or relative_path.startswith("artifacts/"):
+            continue
         try:
             text = path.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
             continue
         if placeholder_domain in text:
-            offenders.append(str(path))
+            offenders.append(relative_path)
     assert offenders == []
 
 

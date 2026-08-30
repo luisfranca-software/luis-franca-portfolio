@@ -30,12 +30,14 @@
   </main>
 
   <footer class="site-footer{% block footer_class %}{% endblock %}">
+    {% block footer_content %}
     {% if is_homepage %}
     {% include "includes/homepage-footer.html" %}
     {% else %}
     {% include "includes/footer-links.html" %}
     <p class="site-footer__copyright">© {% now "Y" %} Luís França. {% trans "All rights reserved." %}</p>
     {% endif %}
+    {% endblock %}
   </footer>
 
   <script src="{% static 'js/site.js' %}" defer></script>

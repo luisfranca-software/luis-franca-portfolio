@@ -7,32 +7,51 @@
 <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 {% endblock %}
 
+{% block main_class %} site-main--contact{% endblock %}
+{% block footer_class %} site-footer--contact{% endblock %}
+{% block footer_content %}{% include "includes/homepage-footer.html" %}{% endblock %}
+
 {% block content %}
-<section class="contact-page">
-  <h1>{% trans "Contact" %}</h1>
-  <p class="contact-page__lead">{% trans "Send a message or request a quotation." %}</p>
+<div class="contact-page" data-trace-id="CNT-00">
+  <div class="contact-page__technology-background" data-trace-id="IMG-02" aria-hidden="true"></div>
+  <section class="contact-page__content" aria-labelledby="contact-heading" data-trace-id="CNT-01">
+    <div class="contact-page__container">
+      <header class="contact-page__heading-row">
+        <h1 id="contact-heading" data-trace-id="CNT-02">{% trans "Contact" %}</h1>
+        {% if contact_links.resume %}
+        <a class="contact-page__resume" href="{{ contact_links.resume }}" target="_blank" rel="noopener noreferrer" data-trace-id="CNT-03">
+          <svg data-trace-id="CNT-04" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h6v6"></path>
+            <path d="M10 14 21 3"></path>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          </svg>{% trans "View résumé" %}
+        </a>
+        {% endif %}
+      </header>
 
-  {% include "includes/contact-info.html" %}
-
-  <form method="post" class="contact-form" novalidate>
-    {% csrf_token %}
-    {% if form.non_field_errors %}
-    <ul class="contact-form__errors">
-      {% for error in form.non_field_errors %}<li>{{ error }}</li>{% endfor %}
-    </ul>
-    {% endif %}
-    {% for field in form %}
-    <div class="contact-form__field">
-      {{ field.label_tag }}
-      {{ field }}
-      {% if field.errors %}
-      <ul class="contact-form__errors">
-        {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
-      </ul>
-      {% endif %}
+      <form method="post" class="contact-form" novalidate data-trace-id="FRM-00">
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+        <ul class="contact-form__errors contact-form__errors--form" role="alert">
+          {% for error in form.non_field_errors %}<li>{{ error }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+        {% for field in form %}
+        <div class="contact-form__field contact-form__field--{{ field.name }}" data-trace-id="FRM-0{{ forloop.counter }}">
+          <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span aria-hidden="true">*</span>{% endif %}</label>
+          {{ field }}
+          {% if field.errors %}
+          <ul class="contact-form__errors" id="{{ field.id_for_label }}-errors" role="alert">
+            {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+        <button type="submit" class="contact-form__submit" data-trace-id="FRM-06">
+          {% trans "Send message" %}<span aria-hidden="true">→</span>
+        </button>
+      </form>
     </div>
-    {% endfor %}
-    <button type="submit" class="contact-form__submit">{% trans "Send message" %}</button>
-  </form>
-</section>
+  </section>
+</div>
 {% endblock %}

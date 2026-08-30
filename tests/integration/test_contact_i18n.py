@@ -28,6 +28,7 @@ def test_english_is_the_default_language() -> None:
 
     assert "Contact" in content
     assert "Full name" in content
+    assert 'placeholder="name@example.com"' in content
 
 
 def test_pt_br_page_renders_translated_content() -> None:
@@ -36,6 +37,11 @@ def test_pt_br_page_renders_translated_content() -> None:
     assert "Contato" in content
     assert "Nome completo" in content
     assert "Enviar mensagem" in content
+    assert "Visualizar currículo" in content
+    assert 'placeholder="Digite seu nome"' in content
+    assert 'placeholder="Como posso ajudar?"' in content
+    assert 'placeholder="Escreva sua mensagem"' in content
+    assert 'placeholder="nome@exemplo.com"' in content
 
 
 def test_pt_br_success_page_is_translated() -> None:

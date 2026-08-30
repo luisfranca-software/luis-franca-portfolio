@@ -19,6 +19,14 @@ def test_footer_appears_on_every_page(path: str) -> None:
 def test_footer_contains_navigation_shortcuts(path: str) -> None:
     content = Client().get(path).content.decode()
 
+    if path == "/contact/":
+        assert 'aria-label="Footer navigation"' in content
+        assert 'href="/#projects"' in content
+        assert 'href="/contact/"' in content
+        assert 'aria-current="page"' in content
+        assert 'class="homepage-footer__tagline"' in content
+        assert "Engineering with evidence." in content
+        return
     assert "Navigation" in content
     assert 'href="/"' in content
     assert 'href="/about/"' in content
@@ -45,3 +53,11 @@ def test_footer_does_not_duplicate_whatsapp_link(contact_links) -> None:
     footer_section = content.split("Professional links")[1]
     footer_professional_links = footer_section.split("All rights reserved")[0]
     assert contact_links["whatsapp"] not in footer_professional_links
+
+
+def test_homepage_footer_contact_link_is_not_marked_as_current() -> None:
+    content = Client().get("/").content.decode()
+    footer = content.split('<footer class="site-footer', maxsplit=1)[1]
+
+    assert 'href="#contact"' in footer
+    assert 'href="#contact" aria-current="page"' not in footer

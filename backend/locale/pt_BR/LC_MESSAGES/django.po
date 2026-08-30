@@ -51,14 +51,17 @@ msgstr "Início"
 msgid "Toggle navigation"
 msgstr "Alternar navegação"
 
+#: frontend/templates/about/about.html
 #: frontend/templates/includes/navigation.html
 msgid "About"
 msgstr "Sobre"
 
 #: frontend/templates/includes/navigation.html
+#: frontend/templates/skills/skills.html
 msgid "Skills"
 msgstr "Habilidades"
 
+#: frontend/templates/experience/experience.html
 #: frontend/templates/includes/navigation.html
 msgid "Experience"
 msgstr "Experiência"
@@ -108,6 +111,7 @@ msgid "LinkedIn"
 msgstr "LinkedIn"
 
 #: frontend/templates/includes/footer-links.html
+#: frontend/templates/skills/skills.html
 msgid "GitHub"
 msgstr "GitHub"
 
@@ -152,10 +156,6 @@ msgid "Learn about Luís França, a Software Engineer specializing in Python bac
 msgstr "Conheça Luís França, Engenheiro de Software especializado em desenvolvimento backend Python, automação e aplicações de IA/LLM."
 
 #: frontend/templates/about/about.html
-msgid "About"
-msgstr "Sobre"
-
-#: frontend/templates/about/about.html
 msgid "I am a Software Engineer specializing in Python backend development, automation, and AI/LLM applications. I build software through a disciplined engineering process that connects requirements, specification, architecture, implementation, automated testing, validation, and production delivery."
 msgstr "Sou Engenheiro de Software especializado em desenvolvimento backend Python, automação e aplicações de IA/LLM. Construo software por meio de um processo de engenharia disciplinado que conecta requisitos, especificação, arquitetura, implementação, testes automatizados, validação e entrega em produção."
 
@@ -168,10 +168,6 @@ msgid "Explore the professional skills of Luís França: Python, backend enginee
 msgstr "Explore as habilidades profissionais de Luís França: Python, engenharia backend, integração de IA/LLM, testes automatizados, DevOps e desenvolvimento orientado a especificações."
 
 #: frontend/templates/skills/skills.html
-msgid "Skills"
-msgstr "Habilidades"
-
-#: frontend/templates/skills/skills.html
 msgid "Professional technology stack approved for my software engineering practice."
 msgstr "Stack tecnológico profissional aprovado para minha prática de engenharia de software."
 
@@ -179,6 +175,7 @@ msgstr "Stack tecnológico profissional aprovado para minha prática de engenhar
 msgid "Software Engineering"
 msgstr "Engenharia de Software"
 
+#: backend/apps/home/content.py
 #: frontend/templates/skills/skills.html
 msgid "Software Architecture"
 msgstr "Arquitetura de Software"
@@ -320,10 +317,6 @@ msgid "Git"
 msgstr "Git"
 
 #: frontend/templates/skills/skills.html
-msgid "GitHub"
-msgstr "GitHub"
-
-#: frontend/templates/skills/skills.html
 msgid "Docker"
 msgstr "Docker"
 
@@ -354,10 +347,6 @@ msgstr " habilidades"
 #: frontend/templates/experience/experience.html
 msgid "Read about Luís França's professional experience across architecture, BIM, construction, business management, and software engineering."
 msgstr "Leia sobre a experiência profissional de Luís França em arquitetura, BIM, construção, gestão de negócios e engenharia de software."
-
-#: frontend/templates/experience/experience.html
-msgid "Experience"
-msgstr "Experiência"
 
 #: frontend/templates/experience/experience.html
 msgid "My professional journey combines more than 20 years of experience in technology, architectural design, BIM, construction, business management, and software development. I am currently pursuing a degree in Software Engineering and hold a technical background in Building Construction, bringing a multidisciplinary perspective to the design and development of software systems."
@@ -512,10 +501,6 @@ msgstr "Engenharia Backend"
 #: backend/apps/home/content.py
 msgid "Robust Python services, domain logic, persistence, and production-ready backend systems."
 msgstr "Serviços Python robustos, lógica de domínio, persistência e sistemas backend prontos para produção."
-
-#: backend/apps/home/content.py
-msgid "Software Architecture"
-msgstr "Arquitetura de Software"
 
 #: backend/apps/home/content.py
 msgid "Modular boundaries, explicit interfaces, specification-driven decisions, and maintainable delivery."
@@ -681,3 +666,23 @@ msgstr "Pergunte à IA / RAG"
 
 msgid "Explore engineering context"
 msgstr "Explore o contexto de engenharia"
+
+#: frontend/templates/contact/contact.html
+msgid "View résumé"
+msgstr "Visualizar currículo"
+
+#: backend/apps/contact/forms.py
+msgid "Type your name"
+msgstr "Digite seu nome"
+
+#: backend/apps/contact/forms.py
+msgid "How can I help?"
+msgstr "Como posso ajudar?"
+
+#: backend/apps/contact/forms.py
+msgid "Write your message"
+msgstr "Escreva sua mensagem"
+
+#: backend/apps/contact/forms.py
+msgid "name@example.com"
+msgstr "nome@exemplo.com"
