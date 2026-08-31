@@ -125,6 +125,13 @@ for size in 1024 768 480; do
         -quality 88 "${PROFILE_DIR}/${HOMEPAGE_PORTRAIT_MASTER%.png}-${size}.webp"
 done
 
+# --- Homepage background WebP delivery derivative -----------------------------
+# Modern browsers receive the much smaller WebP; older browsers fall back to
+# the approved PNG master.
+
+"${IM}" "${BACKGROUND_DIR}/${HOMEPAGE_BACKGROUND_MASTER}" \
+    -quality 88 "${BACKGROUND_DIR}/${HOMEPAGE_BACKGROUND_MASTER%.png}.webp"
+
 # --- Favicon candidates (deterministic crop of the approved logo master) ----
 #
 # The LF brand mark occupies x=217..1115, y=286..802 within the 1254x1254

@@ -25,16 +25,16 @@
     </h1>
     <p class="home-hero__positioning" data-trace-id="HERO-03">{{ positioning }}</p>
     <div class="home-hero__actions" data-trace-id="HERO-04">
-      <a class="home-hero__cta button button--primary" href="{{ cta_url }}" data-trace-id="HERO-04A">
+      <a class="home-hero__cta button button--primary" href="{{ cta_url }}" data-trace-id="HERO-04A" data-analytics="contact_cta">
         {{ cta_label }} <span aria-hidden="true">→</span>
       </a>
       {% if contact_links.linkedin %}
-      <a class="home-hero__social" href="{{ contact_links.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'LinkedIn' %}" data-trace-id="HERO-05A">
+      <a class="home-hero__social" href="{{ contact_links.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'LinkedIn' %}" data-trace-id="HERO-05A" data-analytics="professional_link" data-analytics-meta='{"network": "linkedin"}'>
         <img src="{% static 'images/brand/linkedin.svg' %}" alt="" width="24" height="24" aria-hidden="true">
       </a>
       {% endif %}
       {% if contact_links.github %}
-      <a class="home-hero__social" href="{{ contact_links.github }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'GitHub' %}" data-trace-id="HERO-06">
+      <a class="home-hero__social" href="{{ contact_links.github }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'GitHub' %}" data-trace-id="HERO-06" data-analytics="professional_link" data-analytics-meta='{"network": "github"}'>
         <img src="{% static 'images/brand/github.svg' %}" alt="" width="24" height="24" aria-hidden="true">
       </a>
       {% endif %}
@@ -120,7 +120,7 @@
   </header>
   <div class="home-projects__list">
     {% for project in featured_projects %}
-      {% include "home/includes/project-card.html" with project=project %}
+      {% include "home/includes/project-card.html" with project=project cta_analytics="contact_cta" %}
     {% endfor %}
   </div>
 </section>
@@ -157,7 +157,7 @@
     <p class="home-contact__eyebrow" aria-hidden="true">06</p>
     <h2 id="contact-heading" data-trace-id="CTA-01">{% trans "Let's build something meaningful" %}</h2>
     <p class="home-contact__copy" data-trace-id="CTA-02">{% trans "Open to challenging software engineering work and purposeful collaboration." %}</p>
-    <a class="home-contact__action button button--primary" href="{{ contact_cta_url }}" data-trace-id="CTA-03">
+    <a class="home-contact__action button button--primary" href="{{ contact_cta_url }}" data-trace-id="CTA-03" data-analytics="contact_cta">
       {% trans "Contact me" %} <span aria-hidden="true">→</span>
     </a>
   </section>

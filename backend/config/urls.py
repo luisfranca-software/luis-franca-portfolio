@@ -19,6 +19,7 @@ SITEMAPS = {
 
 urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
+    path("", include("apps.common.urls")),
     path(
         "sitemap.xml",
         sitemap,

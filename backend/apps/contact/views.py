@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import FormView, TemplateView
 
+from apps.common.models import AnalyticsEvent
 from apps.contact.forms import ContactForm
 from apps.contact.integrations.smtp_email_notifier import SmtpTransactionalEmailNotifier
 from apps.contact.models import RequestStatus
@@ -28,6 +29,12 @@ class ContactView(FormView):
             subject=form.cleaned_data["subject"],
             message=form.cleaned_data["message"],
             communication_type=form.cleaned_data["communication_type"],
+        )
+        AnalyticsEvent.record(
+            event_type=AnalyticsEvent.EventType.CONTACT_SUCCESS,
+            request=self.request,
+            path=self.request.path_info,
+            metadata={"communication_type": contact_request.communication_type},
         )
         if contact_request.status == RequestStatus.NOTIFICATION_FAILED:
             return redirect("contact:failure")

@@ -3,11 +3,11 @@
 <div class="language-selector" data-trace-id="HDR-02" role="group" aria-label="{% trans 'Language selector' %}">
   <form action="{% url 'set_language' %}" method="post">
     {% csrf_token %}<input type="hidden" name="language" value="pt-br"><input type="hidden" name="next" value="{{ request.path }}">
-    <button type="submit" lang="pt-BR" aria-label="Português (Brasil)"{% if CURRENT_LANGUAGE == "pt-br" %} aria-current="true"{% endif %}>PT</button>
+    <button type="submit" lang="pt-BR" aria-label="Português (Brasil)" data-analytics="language_change" data-analytics-meta='{"language": "pt-br"}'{% if CURRENT_LANGUAGE == "pt-br" %} aria-current="true"{% endif %}>PT</button>
   </form>
   <span aria-hidden="true">|</span>
   <form action="{% url 'set_language' %}" method="post">
     {% csrf_token %}<input type="hidden" name="language" value="en"><input type="hidden" name="next" value="{{ request.path }}">
-    <button type="submit" lang="en" aria-label="English"{% if CURRENT_LANGUAGE == "en" %} aria-current="true"{% endif %}>EN</button>
+    <button type="submit" lang="en" aria-label="English" data-analytics="language_change" data-analytics-meta='{"language": "en"}'{% if CURRENT_LANGUAGE == "en" %} aria-current="true"{% endif %}>EN</button>
   </form>
 </div>

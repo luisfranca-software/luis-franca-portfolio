@@ -33,3 +33,30 @@ def test_favicon_links_present() -> None:
     assert 'rel="apple-touch-icon"' in content
     assert "favicon-32x32.png" in content
     assert "apple-touch-icon.png" in content
+
+
+def test_robots_txt_allows_all_crawlers_and_points_to_sitemap() -> None:
+    response = Client().get("/robots.txt")
+
+    assert response.status_code == 200
+    content = response.content.decode()
+    assert "User-agent: *" in content
+    assert "Allow: /" in content
+    assert "/sitemap.xml" in content
+
+
+def test_home_page_has_og_image() -> None:
+    content = Client().get("/").content.decode()
+
+    assert 'property="og:image"' in content
+    assert "luis-franca-transparent-02.png" in content
+    assert 'property="og:image:width"' in content
+    assert 'property="og:image:height"' in content
+
+
+def test_home_page_has_twitter_card() -> None:
+    content = Client().get("/").content.decode()
+
+    assert 'name="twitter:card"' in content
+    assert 'name="twitter:title"' in content
+    assert 'name="twitter:image"' in content

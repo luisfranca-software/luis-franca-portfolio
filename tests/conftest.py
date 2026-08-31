@@ -6,8 +6,18 @@ provider connection (ARCH-001 16.2).
 """
 
 import pytest
+from django.conf import settings as django_settings
 from django.core import mail
 from django.test import override_settings
+
+
+@pytest.fixture(autouse=True)
+def _disable_analytics():
+    """Disable analytics by default to avoid DB writes in non-DB tests."""
+    original = getattr(django_settings, "ANALYTICS_ENABLED", True)
+    django_settings.ANALYTICS_ENABLED = False
+    yield
+    django_settings.ANALYTICS_ENABLED = original
 
 
 @pytest.fixture

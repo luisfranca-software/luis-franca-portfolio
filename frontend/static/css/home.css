@@ -40,6 +40,10 @@
     inset: 0;
     pointer-events: none;
     background-image: url("../images/background/homepage-background-desktop-02.png");
+    background-image: image-set(
+        url("../images/background/homepage-background-desktop-02.webp") type("image/webp"),
+        url("../images/background/homepage-background-desktop-02.png") type("image/png")
+    );
     background-position: top left;
     background-size: 100vw auto;
     background-repeat: repeat-y;

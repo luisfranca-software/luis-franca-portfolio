@@ -143,9 +143,9 @@ def test_responsive_behavior_is_defined() -> None:
 def test_portfolio_does_not_add_module_specific_javascript() -> None:
     content = Client().get("/portfolio/").content.decode()
 
-    # The only script is the shared site.js used by global navigation
-    # (SPEC-001-REQ-002); the Portfolio module itself adds no scripts.
+    # Shared platform scripts (site.js for navigation and analytics.js for
+    # Release 1.1 analytics) are present; the Portfolio module adds no scripts.
     assert "<script" in content
-    assert content.count("<script") == 1
     assert "js/site.js" in content
+    assert "js/analytics.js" in content
     assert "portfolio.js" not in content

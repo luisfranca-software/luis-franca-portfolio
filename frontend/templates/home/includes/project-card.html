@@ -24,8 +24,8 @@
       {% endfor %}
     </ul>
     <footer class="home-project__actions">
-      <a class="home-project__case-study" href="{% url 'portfolio:portfolio' %}">{% trans "View case study" %} <span aria-hidden="true">→</span></a>
-      <a class="home-project__source" href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" aria-label="{% blocktrans with title=project.title %}View {{ title }} source on GitHub{% endblocktrans %}">
+      <a class="home-project__case-study" href="{% url 'portfolio:portfolio' %}" data-analytics="project_interaction" data-analytics-meta='{"project": "{{ project.slug }}", "action": "case_study"}'>{% trans "View case study" %} <span aria-hidden="true">→</span></a>
+      <a class="home-project__source" href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" aria-label="{% blocktrans with title=project.title %}View {{ title }} source on GitHub{% endblocktrans %}" data-analytics="project_interaction" data-analytics-meta='{"project": "{{ project.slug }}", "action": "source"}'>
         <img src="{% static 'images/brand/github.svg' %}" alt="" width="24" height="24" aria-hidden="true">
       </a>
       {% if project.demo_url %}

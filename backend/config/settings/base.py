@@ -54,6 +54,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "apps.common.middleware.AnalyticsMiddleware",
 ]
 
 # --- Templates ----------------------------------------------------------------
@@ -130,6 +131,13 @@ DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="")
 
 CONTACT_NOTIFICATION_EMAIL = env("CONTACT_NOTIFICATION_EMAIL", default="")
 CONTACT_RETENTION_DAYS = int(env("CONTACT_RETENTION_DAYS", default="90"))
+
+# --- Analytics (Release 1.1) --------------------------------------------------
+# Essential analytics with data minimization. Server-side events are stored in
+# PostgreSQL; no third-party provider or PII is collected. Disabled by setting
+# ANALYTICS_ENABLED=False in the environment.
+
+ANALYTICS_ENABLED = env_bool("ANALYTICS_ENABLED", default=True)
 
 # Public professional links are presentation configuration per ARCH-001 (16.3);
 # values differ per environment and are never secrets.
