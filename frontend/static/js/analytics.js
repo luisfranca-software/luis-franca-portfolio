@@ -3,23 +3,25 @@
  * Governing documents: ADR-001 (Release 1.1 analytics), ARCH-001 (15.7 PII).
  * Events are sent to the server-side analytics endpoint via navigator.sendBeacon
  * when available, with a fetch fallback. No personal data is captured.
+ *
+ * The server records the request path and language automatically; only
+ * approved event types and allowlisted metadata keys are persisted.
  */
 
 (function () {
     "use strict";
 
     var endpoint = "/analytics/event/";
-    var csrfToken = "";
+    var csrfValue = "";
     var csrfMeta = document.querySelector('meta[name="csrf-token"]');
     if (csrfMeta) {
-        csrfToken = csrfMeta.getAttribute("content") || "";
+        csrfValue = csrfMeta.getAttribute("content") || "";
     }
 
     function sendEvent(eventType, metadata) {
         var data = new FormData();
         data.append("event_type", eventType);
-        data.append("path", window.location.pathname);
-        data.append("csrfmiddlewaretoken", csrfToken);
+        data.append("csrfmiddlewaretoken", csrfValue);
         if (metadata && typeof metadata === "object") {
             data.append("metadata", JSON.stringify(metadata));
         }

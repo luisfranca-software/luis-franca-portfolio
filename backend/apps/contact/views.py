@@ -4,6 +4,8 @@ Governing documents: SPEC-002 (SPEC-002-REQ-001, REQ-003, REQ-005, section 7),
 ARCH-001 (12.1, 17.4, 22.3), ADR-004.
 """
 
+import logging
+
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import FormView, TemplateView
@@ -13,6 +15,8 @@ from apps.contact.forms import ContactForm
 from apps.contact.integrations.smtp_email_notifier import SmtpTransactionalEmailNotifier
 from apps.contact.models import RequestStatus
 from apps.contact.services.contact_service import ContactService
+
+logger = logging.getLogger(__name__)
 
 
 class ContactView(FormView):
@@ -30,12 +34,18 @@ class ContactView(FormView):
             message=form.cleaned_data["message"],
             communication_type=form.cleaned_data["communication_type"],
         )
-        AnalyticsEvent.record(
-            event_type=AnalyticsEvent.EventType.CONTACT_SUCCESS,
-            request=self.request,
-            path=self.request.path_info,
-            metadata={"communication_type": contact_request.communication_type},
-        )
+        try:
+            AnalyticsEvent.record(
+                event_type=AnalyticsEvent.EventType.CONTACT_SUCCESS,
+                request=self.request,
+                path=self.request.path_info,
+                metadata={"communication_type": contact_request.communication_type},
+            )
+        except Exception:
+            # Analytics are non-critical; persistence or validation failures
+            # must never break the core Contact submission flow.
+            logger.exception("Failed to record contact success analytics event")
+
         if contact_request.status == RequestStatus.NOTIFICATION_FAILED:
             return redirect("contact:failure")
         return redirect("contact:success")

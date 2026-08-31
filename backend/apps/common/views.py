@@ -6,6 +6,8 @@ SPEC-001 (section 10).
 
 from __future__ import annotations
 
+import json
+
 from django.http import JsonResponse
 from django.views import View
 from django.views.generic import TemplateView
@@ -32,7 +34,7 @@ class AnalyticsEventView(View):
 
     Events are accepted only for the approved ``AnalyticsEvent.EventType``
     choices. The current request path and language are captured automatically;
-    caller-supplied metadata is restricted to a small JSON object.
+    caller-supplied metadata is restricted to a small allowlisted JSON object.
     """
 
     http_method_names = ["post"]
@@ -55,18 +57,26 @@ class AnalyticsEventView(View):
         raw_metadata = request.POST.get("metadata")
         if raw_metadata:
             try:
-                import json
-
                 metadata = json.loads(raw_metadata)
                 if not isinstance(metadata, dict):
-                    metadata = {}
+                    return JsonResponse(
+                        {"error": "metadata must be a JSON object"},
+                        status=400,
+                    )
             except ValueError:
-                metadata = {}
+                return JsonResponse(
+                    {"error": "metadata must be valid JSON"},
+                    status=400,
+                )
 
-        AnalyticsEvent.record(
-            event_type=event_type,
-            request=request,
-            path=request.POST.get("path", request.path_info),
-            metadata=metadata,
-        )
+        try:
+            AnalyticsEvent.record(
+                event_type=event_type,
+                request=request,
+                path=request.path_info,
+                metadata=metadata,
+            )
+        except ValueError as exc:
+            return JsonResponse({"error": str(exc)}, status=400)
+
         return JsonResponse({"ok": True})

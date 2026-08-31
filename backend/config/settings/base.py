@@ -138,6 +138,7 @@ CONTACT_RETENTION_DAYS = int(env("CONTACT_RETENTION_DAYS", default="90"))
 # ANALYTICS_ENABLED=False in the environment.
 
 ANALYTICS_ENABLED = env_bool("ANALYTICS_ENABLED", default=True)
+ANALYTICS_RETENTION_DAYS = int(env("ANALYTICS_RETENTION_DAYS", default="365"))
 
 # Public professional links are presentation configuration per ARCH-001 (16.3);
 # values differ per environment and are never secrets.
