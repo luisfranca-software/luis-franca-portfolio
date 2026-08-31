@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "apps.portfolio.apps.PortfolioConfig",
     "apps.common.apps.CommonConfig",
     "apps.contact.apps.ContactConfig",
+    "apps.knowledge.apps.KnowledgeConfig",
 ]
 
 MIDDLEWARE = [
@@ -143,6 +144,16 @@ DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="")
 
 CONTACT_NOTIFICATION_EMAIL = env("CONTACT_NOTIFICATION_EMAIL", default="")
 CONTACT_RETENTION_DAYS = int(env("CONTACT_RETENTION_DAYS", default="90"))
+
+# --- Knowledge Base / RAG (Release 2) -----------------------------------------
+# Governing documents: ADR-006, SPEC-004.
+
+OPENAI_API_KEY = env("OPENAI_API_KEY", default="")
+KNOWLEDGE_EMBEDDING_MODEL = env("KNOWLEDGE_EMBEDDING_MODEL", default="text-embedding-3-small")
+KNOWLEDGE_EMBEDDING_DIMENSIONS = int(env("KNOWLEDGE_EMBEDDING_DIMENSIONS", default="1024"))
+KNOWLEDGE_OPENAI_TIMEOUT = float(env("KNOWLEDGE_OPENAI_TIMEOUT", default="30"))
+KNOWLEDGE_OPENAI_MAX_RETRIES = int(env("KNOWLEDGE_OPENAI_MAX_RETRIES", default="3"))
+KNOWLEDGE_OPENAI_BATCH_SIZE = int(env("KNOWLEDGE_OPENAI_BATCH_SIZE", default="32"))
 
 # --- Analytics (Release 1.1) --------------------------------------------------
 # Essential analytics with data minimization. Server-side events are stored in
