@@ -31,6 +31,24 @@ def test_approved_app_modules_are_installed() -> None:
         "apps.experience",
         "apps.portfolio",
         "apps.common",
+        "apps.contact",
     }
     installed_modules = {config.name for config in apps.get_app_configs()}
     assert approved_modules.issubset(installed_modules)
+
+
+def test_administration_apps_are_installed() -> None:
+    admin_apps = {
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.messages",
+        "django.contrib.sessions",
+    }
+    installed_modules = {config.name for config in apps.get_app_configs()}
+    assert admin_apps.issubset(installed_modules)
+
+
+def test_authentication_middleware_is_installed() -> None:
+    assert "django.contrib.auth.middleware.AuthenticationMiddleware" in settings.MIDDLEWARE
+    assert "django.contrib.messages.middleware.MessageMiddleware" in settings.MIDDLEWARE

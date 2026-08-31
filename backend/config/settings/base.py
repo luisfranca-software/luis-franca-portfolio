@@ -29,14 +29,18 @@ ASGI_APPLICATION = "config.asgi.application"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # --- Applications -------------------------------------------------------------
-# Product modules are limited to those approved by SPEC-001. Authentication and
-# administrative components are outside Release 1 scope per ARCH-001 (17.9).
+# Product modules are limited to those approved by SPEC-001. Release 2 adds
+# Django's native administration and authentication components per ARCH-001
+# (17.9) and ADR-001 (Release 2 — Platform Evolution).
 
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
+    "django.contrib.auth",
     "django.contrib.sessions",
+    "django.contrib.messages",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
+    "django.contrib.admin",
     "apps.core.apps.CoreConfig",
     "apps.home.apps.HomeConfig",
     "apps.about.apps.AboutConfig",
@@ -53,8 +57,14 @@ MIDDLEWARE = [
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "apps.common.middleware.AnalyticsMiddleware",
+]
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
 ]
 
 # --- Templates ----------------------------------------------------------------
@@ -68,6 +78,8 @@ TEMPLATES = [
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.i18n",
                 "apps.common.context_processors.public_contact_links",
             ],
