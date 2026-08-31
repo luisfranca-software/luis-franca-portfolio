@@ -51,7 +51,7 @@ def test_footer_does_not_duplicate_whatsapp_link(contact_links) -> None:
     # Header WhatsApp is the canonical persistent entry point and must not be
     # duplicated in the Footer professional links.
     footer_section = content.split("Professional links")[1]
-    footer_professional_links = footer_section.split("All rights reserved")[0]
+    footer_professional_links = footer_section.split("</footer>")[0]
     assert contact_links["whatsapp"] not in footer_professional_links
 
 

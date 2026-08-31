@@ -4,13 +4,13 @@
     {% include "includes/brand-logo.html" %}
     {% if request.resolver_match.namespace == "contact" %}
     <div class="homepage-footer__brand-copy">
-      <p class="homepage-footer__copyright">© {% now "Y" %} Luís França.</p>
+      <p class="homepage-footer__copyright">© {% now "Y" %} Luís França · <a href="{% url 'admin:index' %}">Admin</a></p>
       <p class="homepage-footer__tagline">{% trans "Engineering with evidence." %}</p>
     </div>
     {% endif %}
   </div>
   {% if request.resolver_match.namespace != "contact" %}
-  <p class="homepage-footer__copyright">© {% now "Y" %} Luís França</p>
+  <p class="homepage-footer__copyright">© {% now "Y" %} Luís França · <a href="{% url 'admin:index' %}">Admin</a></p>
   <p class="homepage-footer__tagline">{% trans "Engineering with evidence." %}</p>
   {% endif %}
   <nav class="homepage-footer__nav" aria-label="{% trans 'Footer navigation' %}">

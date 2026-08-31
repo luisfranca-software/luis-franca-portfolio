@@ -43,7 +43,7 @@
     {% include "includes/homepage-footer.html" %}
     {% else %}
     {% include "includes/footer-links.html" %}
-    <p class="site-footer__copyright">© {% now "Y" %} Luís França. {% trans "All rights reserved." %}</p>
+    <p class="site-footer__copyright">© {% now "Y" %} Luís França · <a href="{% url 'admin:index' %}">Admin</a></p>
     {% endif %}
     {% endblock %}
   </footer>
