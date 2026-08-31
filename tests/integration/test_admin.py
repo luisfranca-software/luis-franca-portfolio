@@ -5,13 +5,25 @@ Governing documents: ARCH-001 (17.9), ADR-001 (Release 2 — Platform Evolution)
 
 from __future__ import annotations
 
+import re
+
 import pytest
-from django.contrib.auth.models import User
+from django.contrib.auth.models import Group, Permission, User
 from django.test import Client
 
 from apps.contact.models import CommunicationType, ContactRequest
 
 pytestmark = pytest.mark.django_db
+
+
+def _csrf_token(response) -> str:
+    """Extract the CSRF token from a rendered admin form response."""
+    match = re.search(
+        r'<input[^>]+name="csrfmiddlewaretoken"[^>]+value="([^"]+)"',
+        response.content.decode(),
+    )
+    assert match is not None, "CSRF token not found in response"
+    return match.group(1)
 
 
 @pytest.fixture
@@ -58,7 +70,7 @@ class TestAdminAuthenticationBoundary:
         response = Client().get("/admin/")
 
         assert response.status_code == 302
-        assert response.url.startswith("/admin/login/")
+        assert response.url.startswith("/admin/login/")  # type: ignore[attr-defined]
 
     def test_regular_user_cannot_access_admin(self, regular_user) -> None:
         client = Client()
@@ -67,7 +79,7 @@ class TestAdminAuthenticationBoundary:
         response = client.get("/admin/")
 
         assert response.status_code == 302
-        assert response.url.startswith("/admin/login/")
+        assert response.url.startswith("/admin/login/")  # type: ignore[attr-defined]
 
     def test_staff_user_can_access_admin(self, staff_user) -> None:
         client = Client()
@@ -106,6 +118,205 @@ class TestAdminUserManagement:
 
         assert response.status_code == 200
         assert b"Select group to change" in response.content
+
+
+class TestAdminUserOperations:
+    def test_superuser_can_access_user_add_surface(self, admin_user) -> None:
+        client = Client()
+        client.login(username="admin", password="admin-password-123")
+
+        response = client.get("/admin/auth/user/add/")
+
+        assert response.status_code == 200
+        assert b"Add user" in response.content
+
+    def test_superuser_can_create_user_via_admin(self, admin_user) -> None:
+        client = Client()
+        client.login(username="admin", password="admin-password-123")
+
+        add_response = client.get("/admin/auth/user/add/")
+        response = client.post(
+            "/admin/auth/user/add/",
+            {
+                "csrfmiddlewaretoken": _csrf_token(add_response),
+                "username": "newoperator",
+                "password1": "new-operator-pass-456",
+                "password2": "new-operator-pass-456",
+            },
+        )
+
+        assert response.status_code == 302
+        user = User.objects.get(username="newoperator")
+        assert user.check_password("new-operator-pass-456") is True
+        assert user.is_active is True
+
+    def test_superuser_can_edit_user_administrative_fields(self, admin_user, regular_user) -> None:
+        client = Client()
+        client.login(username="admin", password="admin-password-123")
+
+        change_url = f"/admin/auth/user/{regular_user.pk}/change/"
+        change_response = client.get(change_url)
+        response = client.post(
+            change_url,
+            {
+                "csrfmiddlewaretoken": _csrf_token(change_response),
+                "username": regular_user.username,
+                "is_active": "on",
+                "is_staff": "on",
+                "is_superuser": "",
+                "groups": [],
+                "user_permissions": [],
+                "date_joined_0": regular_user.date_joined.strftime("%Y-%m-%d"),
+                "date_joined_1": regular_user.date_joined.strftime("%H:%M:%S"),
+            },
+        )
+
+        assert response.status_code == 302
+        regular_user.refresh_from_db()
+        assert regular_user.is_active is True
+        assert regular_user.is_staff is True
+
+    def test_superuser_can_deactivate_user(self, admin_user, regular_user) -> None:
+        regular_user.is_active = True
+        regular_user.save()
+        client = Client()
+        client.login(username="admin", password="admin-password-123")
+
+        change_url = f"/admin/auth/user/{regular_user.pk}/change/"
+        change_response = client.get(change_url)
+        response = client.post(
+            change_url,
+            {
+                "csrfmiddlewaretoken": _csrf_token(change_response),
+                "username": regular_user.username,
+                "is_staff": "",
+                "is_superuser": "",
+                "groups": [],
+                "user_permissions": [],
+                "date_joined_0": regular_user.date_joined.strftime("%Y-%m-%d"),
+                "date_joined_1": regular_user.date_joined.strftime("%H:%M:%S"),
+                # is_active intentionally omitted -> False
+            },
+        )
+
+        assert response.status_code == 302
+        regular_user.refresh_from_db()
+        assert regular_user.is_active is False
+
+    def test_superuser_can_assign_and_remove_staff_status(self, admin_user, regular_user) -> None:
+        client = Client()
+        client.login(username="admin", password="admin-password-123")
+
+        change_url = f"/admin/auth/user/{regular_user.pk}/change/"
+        # Assign staff status.
+        change_response = client.get(change_url)
+        response = client.post(
+            change_url,
+            {
+                "csrfmiddlewaretoken": _csrf_token(change_response),
+                "username": regular_user.username,
+                "is_active": "on",
+                "is_staff": "on",
+                "is_superuser": "",
+                "groups": [],
+                "user_permissions": [],
+                "date_joined_0": regular_user.date_joined.strftime("%Y-%m-%d"),
+                "date_joined_1": regular_user.date_joined.strftime("%H:%M:%S"),
+            },
+        )
+        assert response.status_code == 302
+        regular_user.refresh_from_db()
+        assert regular_user.is_staff is True
+
+        # Remove staff status.
+        change_response = client.get(change_url)
+        response = client.post(
+            change_url,
+            {
+                "csrfmiddlewaretoken": _csrf_token(change_response),
+                "username": regular_user.username,
+                "is_active": "on",
+                "is_staff": "",
+                "is_superuser": "",
+                "groups": [],
+                "user_permissions": [],
+                "date_joined_0": regular_user.date_joined.strftime("%Y-%m-%d"),
+                "date_joined_1": regular_user.date_joined.strftime("%H:%M:%S"),
+            },
+        )
+        assert response.status_code == 302
+        regular_user.refresh_from_db()
+        assert regular_user.is_staff is False
+
+
+class TestAdminGroupAndPermissionOperations:
+    def test_superuser_can_create_group_via_admin(self, admin_user) -> None:
+        client = Client()
+        client.login(username="admin", password="admin-password-123")
+
+        add_response = client.get("/admin/auth/group/add/")
+        response = client.post(
+            "/admin/auth/group/add/",
+            {
+                "csrfmiddlewaretoken": _csrf_token(add_response),
+                "name": "Editors",
+            },
+        )
+
+        assert response.status_code == 302
+        group = Group.objects.get(name="Editors")
+        assert group.name == "Editors"
+
+    def test_superuser_can_assign_permission_to_group_via_admin(self, admin_user) -> None:
+        permission = Permission.objects.first()
+        assert permission is not None
+
+        client = Client()
+        client.login(username="admin", password="admin-password-123")
+
+        add_response = client.get("/admin/auth/group/add/")
+        response = client.post(
+            "/admin/auth/group/add/",
+            {
+                "csrfmiddlewaretoken": _csrf_token(add_response),
+                "name": "Operators",
+                "permissions": [str(permission.pk)],
+            },
+        )
+
+        assert response.status_code == 302
+        group = Group.objects.get(name="Operators")
+        assert list(group.permissions.all()) == [permission]
+
+    def test_superuser_can_assign_permission_to_user_via_admin(
+        self, admin_user, regular_user
+    ) -> None:
+        permission = Permission.objects.first()
+        assert permission is not None
+
+        client = Client()
+        client.login(username="admin", password="admin-password-123")
+
+        change_url = f"/admin/auth/user/{regular_user.pk}/change/"
+        change_response = client.get(change_url)
+        response = client.post(
+            change_url,
+            {
+                "csrfmiddlewaretoken": _csrf_token(change_response),
+                "username": regular_user.username,
+                "is_active": "on",
+                "is_staff": "",
+                "is_superuser": "",
+                "groups": [],
+                "user_permissions": [str(permission.pk)],
+                "date_joined_0": regular_user.date_joined.strftime("%Y-%m-%d"),
+                "date_joined_1": regular_user.date_joined.strftime("%H:%M:%S"),
+            },
+        )
+
+        assert response.status_code == 302
+        regular_user.refresh_from_db()
+        assert list(regular_user.user_permissions.all()) == [permission]
 
 
 class TestAdminCsrfProtection:
