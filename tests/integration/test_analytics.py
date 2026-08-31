@@ -10,6 +10,7 @@ from unittest import mock
 
 import pytest
 from django.core.management import call_command
+from django.core.management.base import CommandError
 from django.test import Client, override_settings
 from django.utils import timezone
 
@@ -57,6 +58,14 @@ class TestPageViewTracking:
     def test_non_200_responses_do_not_create_page_view(self, analytics_enabled) -> None:
         Client().get("/nonexistent/")
         assert AnalyticsEvent.objects.count() == 0
+
+    def test_page_view_persistence_failure_does_not_break_response(self, analytics_enabled) -> None:
+        with mock.patch.object(
+            AnalyticsEvent.objects, "create", side_effect=RuntimeError("DB down")
+        ):
+            response = Client().get("/")
+
+        assert response.status_code == 200
 
 
 class TestEventEndpoint:
@@ -149,6 +158,60 @@ class TestEventEndpoint:
                 "event_type": "contact_cta",
                 "path": "https://evil.example.test/",
             },
+        )
+
+        assert response.status_code == 200
+        event = AnalyticsEvent.objects.get()
+        assert event.path == "/analytics/event/"
+
+    def test_same_origin_homepage_referer_is_used(self, analytics_enabled) -> None:
+        response = Client().post(
+            "/analytics/event/",
+            {"event_type": "contact_cta"},
+            HTTP_REFERER="http://testserver/",
+        )
+
+        assert response.status_code == 200
+        event = AnalyticsEvent.objects.get()
+        assert event.path == "/"
+
+    def test_same_origin_contact_referer_is_used(self, analytics_enabled) -> None:
+        response = Client().post(
+            "/analytics/event/",
+            {"event_type": "contact_cta"},
+            HTTP_REFERER="http://testserver/contact/",
+        )
+
+        assert response.status_code == 200
+        event = AnalyticsEvent.objects.get()
+        assert event.path == "/contact/"
+
+    def test_external_referer_path_is_not_persisted(self, analytics_enabled) -> None:
+        response = Client().post(
+            "/analytics/event/",
+            {"event_type": "contact_cta"},
+            HTTP_REFERER="https://evil.example.test/contact/",
+        )
+
+        assert response.status_code == 200
+        event = AnalyticsEvent.objects.get()
+        assert event.path == "/analytics/event/"
+
+    def test_missing_referer_uses_safe_fallback(self, analytics_enabled) -> None:
+        response = Client().post(
+            "/analytics/event/",
+            {"event_type": "contact_cta"},
+        )
+
+        assert response.status_code == 200
+        event = AnalyticsEvent.objects.get()
+        assert event.path == "/analytics/event/"
+
+    def test_invalid_same_origin_referer_uses_safe_fallback(self, analytics_enabled) -> None:
+        response = Client().post(
+            "/analytics/event/",
+            {"event_type": "contact_cta"},
+            HTTP_REFERER="http://testserver/../etc/passwd",
         )
 
         assert response.status_code == 200
@@ -271,3 +334,31 @@ class TestAnalyticsRetention:
         call_command("purge_analytics_events")
 
         assert AnalyticsEvent.objects.count() == 0
+
+    def test_purge_rejects_zero_days(self, analytics_enabled) -> None:
+        self._create(
+            AnalyticsEvent.EventType.PAGE_VIEW,
+            timezone.now() - timedelta(days=400),
+        )
+
+        with pytest.raises(CommandError):
+            call_command("purge_analytics_events", "--days", "0")
+
+        assert AnalyticsEvent.objects.count() == 1
+
+    def test_purge_rejects_negative_days(self, analytics_enabled) -> None:
+        self._create(
+            AnalyticsEvent.EventType.PAGE_VIEW,
+            timezone.now() - timedelta(days=400),
+        )
+
+        with pytest.raises(CommandError):
+            call_command("purge_analytics_events", "--days", "-1")
+
+        assert AnalyticsEvent.objects.count() == 1
+
+    def test_purge_expired_rejects_non_positive_days(self, analytics_enabled) -> None:
+        with pytest.raises(ValueError, match="retention_days must be a positive integer"):
+            AnalyticsEvent.purge_expired(retention_days=0)
+        with pytest.raises(ValueError, match="retention_days must be a positive integer"):
+            AnalyticsEvent.purge_expired(retention_days=-1)

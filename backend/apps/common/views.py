@@ -69,11 +69,13 @@ class AnalyticsEventView(View):
                     status=400,
                 )
 
+        origin_path = AnalyticsEvent._trusted_origin_path(request)
+
         try:
             AnalyticsEvent.record(
                 event_type=event_type,
                 request=request,
-                path=request.path_info,
+                path=origin_path,
                 metadata=metadata,
             )
         except ValueError as exc:

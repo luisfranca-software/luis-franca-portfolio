@@ -5,9 +5,13 @@ Governing documents: ARCH-001 (14.6), ADR-001 (Release 1.1 analytics).
 
 from __future__ import annotations
 
+import logging
+
 from django.conf import settings
 
 from apps.common.models import AnalyticsEvent
+
+logger = logging.getLogger(__name__)
 
 
 class AnalyticsMiddleware:
@@ -17,6 +21,9 @@ class AnalyticsMiddleware:
     application pages. Other event types are recorded explicitly by views or
     client-side event tracking. Analytics can be disabled with the
     ``ANALYTICS_ENABLED`` setting.
+
+    Analytics persistence failures are non-critical and must never break the
+    original application response.
     """
 
     _IGNORED_PATH_PREFIXES = (
@@ -34,7 +41,12 @@ class AnalyticsMiddleware:
 
     def __call__(self, request):
         response = self.get_response(request)
-        self._maybe_record_page_view(request, response)
+        try:
+            self._maybe_record_page_view(request, response)
+        except Exception:
+            # Analytics are non-critical; any analytics-related failure must
+            # not alter the application response.
+            logger.exception("Failed to record page view analytics event")
         return response
 
     def _maybe_record_page_view(self, request, response) -> None:

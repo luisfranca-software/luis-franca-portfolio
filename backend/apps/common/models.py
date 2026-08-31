@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from datetime import timedelta
 from typing import Any
+from urllib.parse import urlparse
 
 from django.db import models
 from django.utils import timezone
@@ -147,6 +148,35 @@ class AnalyticsEvent(models.Model):
         return sanitized
 
     @classmethod
+    def _trusted_origin_path(cls, request) -> str:
+        """Return the trusted originating application path for client events.
+
+        The analytics endpoint is posted to from arbitrary application pages.
+        The originating path is derived from the HTTP Referer header when it
+        shares the request's origin; otherwise the request's own path is used
+        as a safe fallback. No external URL or authority component is persisted.
+        """
+        referer = request.META.get("HTTP_REFERER")
+        if not referer:
+            return request.path_info
+
+        try:
+            parsed = urlparse(referer)
+        except ValueError:
+            return request.path_info
+
+        if parsed.scheme != request.scheme:
+            return request.path_info
+        if parsed.netloc != request.get_host():
+            return request.path_info
+
+        origin_path = parsed.path or "/"
+        try:
+            return cls._validate_path(origin_path)
+        except ValueError:
+            return request.path_info
+
+    @classmethod
     def record(
         cls,
         *,
@@ -193,6 +223,9 @@ class AnalyticsEvent(models.Model):
             if retention_days is not None
             else getattr(settings, "ANALYTICS_RETENTION_DAYS", 365)
         )
+        if not isinstance(days, int) or days < 1:
+            raise ValueError("retention_days must be a positive integer")
+
         cutoff = timezone.now() - timedelta(days=days)
         expired = cls.objects.filter(created_at__lt=cutoff)
         count = expired.count()
