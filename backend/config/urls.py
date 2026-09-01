@@ -34,4 +34,5 @@ urlpatterns = [
     path("experience/", include("apps.experience.urls")),
     path("portfolio/", include("apps.portfolio.urls")),
     path("contact/", include("apps.contact.urls")),
+    path("assistant/", include("apps.assistant.urls")),
 ]

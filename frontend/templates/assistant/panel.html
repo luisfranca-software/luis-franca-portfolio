@@ -1,0 +1,65 @@
+{% load i18n %}
+<div class="assistant-panel" role="dialog" aria-modal="true" aria-labelledby="assistant-title" data-trace-id="IAA-00">
+  <div class="assistant-panel__header">
+    <h2 id="assistant-title" class="assistant-panel__title">{% trans "IA Jujuju" %}</h2>
+    <button
+      type="button"
+      class="assistant-panel__close"
+      aria-label="{% trans 'Close assistant' %}"
+      data-trace-id="IAA-01"
+      onclick="this.closest('.assistant-panel').remove()"
+    >×</button>
+  </div>
+
+  <div
+    id="assistant-messages"
+    class="assistant-panel__messages"
+    aria-live="polite"
+    aria-atomic="false"
+    data-trace-id="IAA-02"
+  >
+    {% if assistant_messages %}
+      {% for message in assistant_messages %}
+        <div class="assistant-message assistant-message--{{ message.role }}" data-role="{{ message.role }}">
+          <div class="assistant-message__content">{{ message.content|linebreaksbr }}</div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="assistant-panel__intro">{% trans "Ask me anything about Luís França's professional portfolio." %}</p>
+    {% endif %}
+  </div>
+
+  <form
+    class="assistant-panel__form"
+    hx-post="{% url 'assistant:ask' %}"
+    hx-target="#assistant-messages"
+    hx-swap="beforeend"
+    hx-indicator="#assistant-loading"
+    data-trace-id="IAA-03"
+  >
+    {% csrf_token %}
+    {% if conversation_id %}
+      <input type="hidden" name="conversation_id" value="{{ conversation_id }}">
+    {% endif %}
+    <label for="assistant-question" class="visually-hidden">{% trans "Your question" %}</label>
+    <input
+      id="assistant-question"
+      name="question"
+      type="text"
+      class="assistant-panel__input"
+      placeholder="{% trans 'Type your question...' %}"
+      maxlength="500"
+      required
+      aria-describedby="assistant-input-help"
+      data-trace-id="IAA-04"
+    >
+    <span id="assistant-input-help" class="visually-hidden">{% trans "Maximum 500 characters" %}</span>
+    <button type="submit" class="assistant-panel__submit" data-trace-id="IAA-05">
+      <span>{% trans "Send" %}</span>
+      <span id="assistant-loading" class="assistant-panel__loading" aria-hidden="true">
+        <span class="assistant-panel__spinner"></span>
+        <span class="visually-hidden">{% trans "IA Jujuju is processing your question" %}</span>
+      </span>
+    </button>
+  </form>
+</div>

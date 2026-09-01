@@ -1,0 +1,23 @@
+{% load i18n %}
+{% if not result.success %}
+  <div class="assistant-message assistant-message--error" role="alert" data-trace-id="IAA-ERR">
+    <div class="assistant-message__content">
+      {% if result.error_code == "invalid_question" %}
+        {% trans "Please enter a valid question." %}
+      {% elif result.error_code == "invalid_conversation" %}
+        {% trans "Conversation not found or not available for this session." %}
+      {% elif result.error_code == "abuse_protection" %}
+        {% trans "Too many requests. Please wait a moment and try again." %}
+      {% else %}
+        {% trans "IA Jujuju is temporarily unavailable. Please try again." %}
+      {% endif %}
+    </div>
+  </div>
+{% else %}
+  <div class="assistant-message assistant-message--user" data-role="user" data-trace-id="IAA-USER">
+    <div class="assistant-message__content">{{ question|linebreaksbr }}</div>
+  </div>
+  <div class="assistant-message assistant-message--assistant" data-role="assistant" data-trace-id="IAA-ASSISTANT">
+    <div class="assistant-message__content">{{ result.assistant_message.content|linebreaksbr }}</div>
+  </div>
+{% endif %}

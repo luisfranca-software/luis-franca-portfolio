@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "apps.common.apps.CommonConfig",
     "apps.contact.apps.ContactConfig",
     "apps.knowledge.apps.KnowledgeConfig",
+    "apps.assistant.apps.AssistantConfig",
 ]
 
 MIDDLEWARE = [
@@ -154,6 +155,20 @@ KNOWLEDGE_EMBEDDING_DIMENSIONS = int(env("KNOWLEDGE_EMBEDDING_DIMENSIONS", defau
 KNOWLEDGE_OPENAI_TIMEOUT = float(env("KNOWLEDGE_OPENAI_TIMEOUT", default="30"))
 KNOWLEDGE_OPENAI_MAX_RETRIES = int(env("KNOWLEDGE_OPENAI_MAX_RETRIES", default="3"))
 KNOWLEDGE_OPENAI_BATCH_SIZE = int(env("KNOWLEDGE_OPENAI_BATCH_SIZE", default="32"))
+
+# --- IA Jujuju Assistant (Release 2 Day 4) ------------------------------------
+# Governing documents: ADR-007, SPEC-005.
+
+ASSISTANT_MODEL = env("ASSISTANT_MODEL", default="gpt-5.6-luna")
+ASSISTANT_OPENAI_TIMEOUT = float(env("ASSISTANT_OPENAI_TIMEOUT", default="30"))
+ASSISTANT_OPENAI_MAX_RETRIES = int(env("ASSISTANT_OPENAI_MAX_RETRIES", default="3"))
+ASSISTANT_MAX_OUTPUT_TOKENS = int(env("ASSISTANT_MAX_OUTPUT_TOKENS", default="512"))
+ASSISTANT_CONTEXT_CHARS = int(env("ASSISTANT_CONTEXT_CHARS", default="4000"))
+ASSISTANT_TOP_K = int(env("ASSISTANT_TOP_K", default="5"))
+ASSISTANT_MAX_QUESTION_LENGTH = int(env("ASSISTANT_MAX_QUESTION_LENGTH", default="500"))
+ASSISTANT_RETENTION_DAYS = int(env("ASSISTANT_RETENTION_DAYS", default="90"))
+ASSISTANT_ABUSE_WINDOW_SECONDS = int(env("ASSISTANT_ABUSE_WINDOW_SECONDS", default="60"))
+ASSISTANT_ABUSE_MAX_REQUESTS = int(env("ASSISTANT_ABUSE_MAX_REQUESTS", default="10"))
 
 # --- Analytics (Release 1.1) --------------------------------------------------
 # Essential analytics with data minimization. Server-side events are stored in

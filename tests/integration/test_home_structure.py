@@ -104,10 +104,11 @@ def test_contact_cta_uses_existing_contact_route() -> None:
     assert 'href="/contact/"' in contact_section
 
 
-def test_homepage_preserves_route_aware_navigation_and_reserved_visual() -> None:
+def test_homepage_preserves_route_aware_navigation_and_interactive_ai_launcher() -> None:
     content = _home_content()
 
-    assert content.count('class="home-ai-rag" aria-hidden="true"') == 1
+    assert content.count('class="home-ai-rag"') == 1
+    assert "aria-hidden" not in content.split('class="home-ai-rag"', 1)[1].split("</button>", 1)[0]
     assert content.count("site-nav__whatsapp") == 1
     assert "whatsapp-button" not in content
     assert 'href="#engineering"' in content

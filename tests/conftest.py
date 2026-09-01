@@ -32,6 +32,21 @@ def email_backend():
         yield
 
 
+@pytest.fixture(scope="session")
+def django_db_modify_db_settings():
+    """Use a prepared template database that already has the pgvector extension.
+
+    The application database user is not a PostgreSQL superuser and therefore
+    cannot execute ``CREATE EXTENSION vector`` inside the test database created
+    by pytest-django. The template ``test_template_luis_franca_portfolio`` is
+    provisioned separately with the extension and a clean schema.
+    """
+    from django.conf import settings
+
+    settings.DATABASES["default"].setdefault("TEST", {})
+    settings.DATABASES["default"]["TEST"]["TEMPLATE"] = "test_template_luis_franca_portfolio"
+
+
 @pytest.fixture(autouse=True)
 def _reset_mail_outbox():
     outbox = getattr(mail, "outbox", None)

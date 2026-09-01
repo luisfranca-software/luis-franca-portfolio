@@ -51,5 +51,6 @@
   <meta name="csrf-token" content="{{ csrf_token }}">
   <script src="{% static 'js/analytics.js' %}" defer></script>
   <script src="{% static 'js/site.js' %}" defer></script>
+  {% block extra_js %}{% endblock %}
 </body>
 </html>

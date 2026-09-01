@@ -7,14 +7,8 @@ from django.test import Client
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 HOME_CSS = REPO_ROOT / "frontend/static/css/home.css"
-VISUAL_EVIDENCE = (
-    REPO_ROOT
-    / "artifacts/responsive-visual/block14/block14-visual-validation.json"
-)
-SWEEP_EVIDENCE = (
-    REPO_ROOT
-    / "artifacts/responsive-visual/block14/block14-full-width-sweep.json"
-)
+VISUAL_EVIDENCE = REPO_ROOT / "artifacts/responsive-visual/block14/block14-visual-validation.json"
+SWEEP_EVIDENCE = REPO_ROOT / "artifacts/responsive-visual/block14/block14-full-width-sweep.json"
 
 
 def test_hero_background_uses_approved_asset_and_continuity_contract() -> None:
@@ -31,14 +25,14 @@ def test_hero_background_uses_approved_asset_and_continuity_contract() -> None:
     assert "933px" not in background
 
 
-def test_footer_has_local_clearance_for_fixed_ai_visual() -> None:
+def test_footer_has_local_clearance_for_fixed_ai_launcher() -> None:
     css = HOME_CSS.read_text(encoding="utf-8")
     footer = css.split(".site-footer--homepage {", 1)[1].split("}", 1)[0]
     ai = css.split(".home-ai-rag {", 1)[1].split("}", 1)[0]
 
     assert "calc(clamp(2rem, 6vw, 3rem) + 3.5rem)" in footer
     assert "position: fixed" in ai
-    assert "pointer-events: none" in ai
+    assert "pointer-events: none" not in ai
     assert "padding-bottom" not in css.split(".homepage {", 1)[1].split("}", 1)[0]
 
 
@@ -61,8 +55,17 @@ def test_reference_and_interpolation_visual_evidence_is_collision_free() -> None
     assert evidence["interpolation_widths"] == [390, 480, 640, 820, 900, 1100, 1280]
     for locale in evidence["locales"]:
         assert set(locale["widths"]) == {
-            "360", "390", "480", "640", "768", "820",
-            "900", "1024", "1100", "1280", "1440",
+            "360",
+            "390",
+            "480",
+            "640",
+            "768",
+            "820",
+            "900",
+            "1024",
+            "1100",
+            "1280",
+            "1440",
         }
         for width, result in locale["widths"].items():
             assert result["overflow"] == {"page": False, "selectors": []}
@@ -79,8 +82,7 @@ def test_final_sweep_preserves_every_fit_and_has_no_ai_collision() -> None:
     for locale in evidence["locales"]:
         assert locale["sweep"]["page_overflow_widths"] == []
         assert all(
-            transition["state"] == "FIT-VALIDATED"
-            for transition in locale["transitions"].values()
+            transition["state"] == "FIT-VALIDATED" for transition in locale["transitions"].values()
         )
         assert all(
             not any(collisions.values())

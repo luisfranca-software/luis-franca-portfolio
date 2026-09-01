@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="{% static 'css/home.css' %}?v=r3c-hero02">
 {% endblock %}
 
+{% block extra_js %}
+<script src="{% static 'js/htmx.min.js' %}" defer></script>
+{% endblock %}
+
 {% block main_class %} site-main--homepage{% endblock %}
 {% block footer_class %} site-footer--homepage{% endblock %}
 
@@ -163,9 +167,20 @@
   </section>
 </div>
 
-<div class="home-ai-rag" aria-hidden="true" data-trace-id="AIR-00">
+<button
+  class="home-ai-rag"
+  type="button"
+  aria-label="{% trans 'Open IA Jujuju assistant' %}"
+  aria-expanded="false"
+  aria-controls="assistant-container"
+  data-trace-id="AIR-00"
+  hx-get="{% url 'assistant:panel' %}"
+  hx-target="#assistant-container"
+  hx-swap="innerHTML"
+>
   <span><b>Juju IA</b></span>
   <i></i>
-</div>
+</button>
+<div id="assistant-container" class="assistant-container" aria-live="polite"></div>
 </div>
 {% endblock %}

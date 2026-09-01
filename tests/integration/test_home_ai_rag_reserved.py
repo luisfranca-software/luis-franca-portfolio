@@ -1,4 +1,9 @@
-"""Contracts for the nonfunctional SDD-RWD-001 Block 10 AI/RAG visual."""
+"""Contracts for the SDD-RWD-001 Block 10 AI/RAG interactive launcher.
+
+Governing documents: ADR-007 §20, SPEC-005 §37.
+The visual has evolved from a decorative reserved element into the functional,
+accessible IA Jujuju launcher.
+"""
 
 from pathlib import Path
 
@@ -13,39 +18,34 @@ def _home_content() -> str:
     return Client().get("/").content.decode()
 
 
-def test_reserved_visual_renders_once_only_on_homepage() -> None:
+def test_launcher_renders_once_only_on_homepage() -> None:
     content = _home_content()
 
-    assert content.count('class="home-ai-rag" aria-hidden="true"') == 1
+    assert content.count('class="home-ai-rag"') == 1
     for path in ("/about/", "/skills/", "/experience/", "/portfolio/", "/contact/"):
         assert "home-ai-rag" not in Client().get(path).content.decode()
 
 
-def test_reserved_visual_is_neutral_and_noninteractive() -> None:
+def test_launcher_is_interactive_button() -> None:
     content = _home_content()
     start = content.index('class="home-ai-rag"')
-    visual = content[content.rfind("<", 0, start) : content.index("</div>", start)]
+    visual = content[content.rfind("<", 0, start) : content.index("</button>", start)]
 
-    assert visual.startswith("<div")
+    assert visual.startswith("<button")
     assert visual.count("Juju IA") == 1
     assert "Jujuju AI" not in visual
     assert "Juju AI" not in visual
     assert "Ask AI / RAG" not in visual
     assert "Explore engineering context" not in visual
-    assert "Pergunte à IA / RAG" not in visual
+    assert "Pergunte \u00e0 IA / RAG" not in visual
     assert "Explore o contexto de engenharia" not in visual
-    for prohibited in (
-        "<a ",
-        "<button",
-        "href=",
-        "tabindex=",
-        "role=",
-        "aria-expanded=",
-        "aria-controls=",
-        "aria-haspopup=",
-        "onclick=",
-    ):
-        assert prohibited not in visual
+    assert 'type="button"' in visual
+    assert "aria-label=" in visual
+    assert "aria-expanded=" in visual
+    assert "aria-controls=" in visual
+    assert "hx-get=" in visual
+    assert "hx-target=" in visual
+    assert "tabindex=" not in visual
 
 
 def test_fixed_gutter_safe_area_and_layer_contracts_exist() -> None:
@@ -56,15 +56,20 @@ def test_fixed_gutter_safe_area_and_layer_contracts_exist() -> None:
     assert "z-index: 20" in rule
     assert "right: max(var(--homepage-gutter), env(safe-area-inset-right, 0px))" in rule
     assert "bottom: max(var(--homepage-gutter), env(safe-area-inset-bottom, 0px))" in rule
-    assert "pointer-events: none" in rule
     normal_flow_rule = css.split(
         ".homepage > :not(.homepage__technology-background):not(.home-ai-rag) {",
         1,
     )[1].split("}", 1)[0]
     assert "position: relative" in normal_flow_rule
-    assert "z-index: 30" in (
-        REPO_ROOT / "frontend/static/css/site.css"
-    ).read_text(encoding="utf-8")
+    assert "z-index: 30" in (REPO_ROOT / "frontend/static/css/site.css").read_text(encoding="utf-8")
+
+
+def test_launcher_has_interactive_styles() -> None:
+    css = HOME_CSS.read_text(encoding="utf-8")
+    rule = css.split(".home-ai-rag {", 1)[1].split("}", 1)[0]
+
+    assert "cursor: pointer" in rule
+    assert 'input:not([type="button"])' not in rule
 
 
 def test_no_ai_rag_runtime_or_release_two_scaffolding_exists() -> None:
@@ -87,7 +92,7 @@ def test_product_name_is_locale_invariant() -> None:
     assert "Juju AI" not in english + portuguese
 
 
-def test_reserved_visual_is_independent_of_footer_and_fit_states() -> None:
+def test_launcher_is_independent_of_footer_and_fit_states() -> None:
     content = _home_content()
     footer_start = content.index('<footer class="site-footer')
     visual_start = content.index('class="home-ai-rag"')

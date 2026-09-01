@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "IA Jujuju" %}{% endblock %}
+
+{% block content %}
+<div class="assistant-page">
+  <h1>{% trans "IA Jujuju" %}</h1>
+  {% include "assistant/panel.html" %}
+  <div class="assistant-result">
+    {% include "assistant/partials/exchange.html" %}
+  </div>
+</div>
+{% endblock %}

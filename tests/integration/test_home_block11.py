@@ -36,10 +36,22 @@ def test_decorative_layers_and_reserved_visual_stay_out_of_tab_order() -> None:
         'home-hero__ide" aria-hidden="true"',
         'home-hero__explorer" aria-hidden="true"',
         'home-hero__portrait-rim" aria-hidden="true"',
-        'home-ai-rag" aria-hidden="true"',
     ):
         assert marker in content
-    assert 'class="home-ai-rag" aria-hidden="true" tabindex=' not in content
+
+
+def test_ai_rag_launcher_is_interactive_and_accessible() -> None:
+    content = _home()
+
+    start = content.index('class="home-ai-rag"')
+    launcher = content[content.rfind("<", 0, start) : content.index("</button>", start)]
+
+    assert launcher.startswith("<button")
+    assert 'type="button"' in launcher
+    assert "aria-label=" in launcher
+    assert 'aria-expanded="false"' in launcher
+    assert 'aria-controls="assistant-container"' in launcher
+    assert "aria-hidden=" not in launcher.split('class="home-ai-rag"')[1].split(">", 1)[0]
 
 
 def test_changed_header_controls_keep_target_and_focus_contracts() -> None:
