@@ -70,7 +70,7 @@ class ConversationAdmin(admin.ModelAdmin):
         "status",
         "created_at",
     )
-    search_fields = ("pk", "session_key")
+    search_fields = ("pk",)
     readonly_fields = (
         "session_key",
         "language",
@@ -128,7 +128,7 @@ class ConversationMessageAdmin(admin.ModelAdmin):
         "conversation__language",
         "conversation__status",
     )
-    search_fields = ("content", "conversation__session_key")
+    search_fields = ("content",)
     readonly_fields = (
         "conversation",
         "sequence",

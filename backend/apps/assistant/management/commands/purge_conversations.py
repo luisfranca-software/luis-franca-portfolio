@@ -26,15 +26,17 @@ class Command(BaseCommand):
         retention_days = int(getattr(settings, "ASSISTANT_RETENTION_DAYS", 90))
         cutoff = timezone.now() - timedelta(days=retention_days)
         queryset = Conversation.objects.filter(created_at__lt=cutoff)
-        count, _ = queryset.delete()
+        conversation_count = queryset.count()
+        queryset.delete()
 
         self.stdout.write(
             self.style.SUCCESS(
-                f"Purged {count} expired conversation(s) older than {retention_days} days."
+                f"Purged {conversation_count} expired conversation(s) "
+                f"older than {retention_days} days."
             )
         )
         logger.info(
             "Purged %d expired IA Jujuju conversation(s) older than %d days.",
-            count,
+            conversation_count,
             retention_days,
         )

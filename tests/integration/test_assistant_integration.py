@@ -411,11 +411,21 @@ class TestRetention:
         )
         old.created_at = timezone.now() - timedelta(days=91)
         old.save(update_fields=["created_at"])
-        ConversationMessage.objects.create(
+        message = ConversationMessage.objects.create(
             conversation=old,
             sequence=0,
             role=MessageRole.USER,
             content="Hello",
+        )
+        SourceEvidence.objects.create(
+            message=message,
+            rank=1,
+            distance=0.1,
+            document_title="Doc",
+            document_slug="doc",
+            document_language="en",
+            document_category="GENERAL",
+            chunk_content="Chunk",
         )
         recent = Conversation.objects.create(
             session_key="recent-session",
@@ -434,5 +444,8 @@ class TestRetention:
 
         assert not Conversation.objects.filter(pk=old.pk).exists()
         assert Conversation.objects.filter(pk=recent.pk).exists()
-        assert "Purged" in out.getvalue()
-        assert "expired" in out.getvalue()
+        assert not ConversationMessage.objects.filter(conversation=old).exists()
+        assert not SourceEvidence.objects.filter(message=message).exists()
+        output = out.getvalue()
+        assert "Purged 1 expired conversation(s)" in output
+        assert "expired" in output

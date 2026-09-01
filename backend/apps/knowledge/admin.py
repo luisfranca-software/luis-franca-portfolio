@@ -115,7 +115,10 @@ class KnowledgeDocumentAdmin(admin.ModelAdmin):
         try:
             provider = self._create_provider()
         except EmbeddingError as exc:
-            logger.warning("Admin reindex provider setup failed: %s", exc)
+            logger.warning(
+                "Admin reindex provider setup failed: %s",
+                exc.__class__.__name__,
+            )
             self.message_user(
                 request,
                 _(
@@ -136,7 +139,11 @@ class KnowledgeDocumentAdmin(admin.ModelAdmin):
                 success_count += 1
             except EmbeddingError as exc:
                 failure_count += 1
-                logger.warning("Admin reindex failed for document %s: %s", document.pk, exc)
+                logger.warning(
+                    "Admin reindex failed for document %s: %s",
+                    document.pk,
+                    exc.__class__.__name__,
+                )
 
         self.message_user(
             request,

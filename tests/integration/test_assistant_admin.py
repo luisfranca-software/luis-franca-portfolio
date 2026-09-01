@@ -11,6 +11,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.test import Client
 from django.urls import reverse
 
+from apps.assistant.admin import ConversationAdmin, ConversationMessageAdmin
 from apps.assistant.models import (
     Conversation,
     ConversationMessage,
@@ -218,3 +219,18 @@ class TestAssistantAdminReadOnly:
         content = response.content.decode()
         # Read-only fields are rendered as text, not as editable inputs.
         assert 'id="id_chunk_content"' not in content or "readonly" in content
+
+
+@pytest.mark.django_db
+class TestAssistantAdminSearchFields:
+    """Session identifiers must not be searchable in Django Admin."""
+
+    def test_conversation_admin_does_not_search_session_key(self) -> None:
+        assert "session_key" not in ConversationAdmin.search_fields
+
+    def test_conversation_message_admin_does_not_search_session_key(self) -> None:
+        assert "conversation__session_key" not in ConversationMessageAdmin.search_fields
+
+    def test_approved_search_fields_preserved(self) -> None:
+        assert "pk" in ConversationAdmin.search_fields
+        assert "content" in ConversationMessageAdmin.search_fields

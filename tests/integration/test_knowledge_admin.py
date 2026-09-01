@@ -5,6 +5,8 @@ Governing documents: SPEC-004 §54.
 
 from __future__ import annotations
 
+import logging
+
 import pytest
 from django.contrib.auth.models import Permission, User
 from django.contrib.contenttypes.models import ContentType
@@ -18,6 +20,7 @@ from apps.knowledge.models import (
     KnowledgeDocument,
     Language,
 )
+from apps.knowledge.services.embedding_provider import EmbeddingError
 
 INLINE_MANAGEMENT_DATA = {
     "chunks-TOTAL_FORMS": "0",
@@ -428,3 +431,77 @@ class TestKnowledgeChunkAdminAuthorization:
         assert response.status_code == 200
         content = response.content.decode()
         assert 'id="id_content"' not in content or "readonly" in content
+
+
+@pytest.mark.django_db
+class TestKnowledgeAdminLogSanitization:
+    """Provider/reindex exceptions must be logged by class, not raw text."""
+
+    def test_provider_setup_error_does_not_log_raw_exception_text(
+        self, superuser_staff, settings, caplog
+    ) -> None:
+        settings.OPENAI_API_KEY = ""
+        doc = KnowledgeDocument.objects.create(
+            title="Doc",
+            slug="log-provider-setup",
+            language=Language.EN,
+            category=Category.GENERAL,
+            content="Content to reindex.",
+        )
+        client = Client()
+        client.force_login(superuser_staff)
+
+        with caplog.at_level(logging.WARNING):
+            response = client.post(
+                "/admin/knowledge/knowledgedocument/",
+                {
+                    "action": "reindex_selected_documents",
+                    "_selected_action": [str(doc.pk)],
+                },
+                follow=True,
+            )
+
+        assert response.status_code == 200
+        content = response.content.decode()
+        assert "not configured" in content or "unavailable" in content.lower()
+        assert "OPENAI_API_KEY" not in caplog.text
+        assert "is not configured" not in caplog.text
+        assert "EmbeddingError" in caplog.text
+
+    def test_reindex_failure_does_not_log_raw_exception_text(
+        self, superuser_staff, monkeypatch, openai_api_key, caplog
+    ) -> None:
+        doc = KnowledgeDocument.objects.create(
+            title="Doc",
+            slug="log-reindex-failure",
+            language=Language.EN,
+            category=Category.GENERAL,
+            content="Content to reindex.",
+        )
+
+        def fail_indexing(self, document):
+            raise EmbeddingError("sensitive provider response body")
+
+        monkeypatch.setattr(
+            "apps.knowledge.services.indexing.IndexingService.index_document",
+            fail_indexing,
+        )
+
+        client = Client()
+        client.force_login(superuser_staff)
+
+        with caplog.at_level(logging.WARNING):
+            response = client.post(
+                "/admin/knowledge/knowledgedocument/",
+                {
+                    "action": "reindex_selected_documents",
+                    "_selected_action": [str(doc.pk)],
+                },
+                follow=True,
+            )
+
+        assert response.status_code == 200
+        content = response.content.decode()
+        assert "0 document(s), 1 failed" in content
+        assert "sensitive provider response body" not in caplog.text
+        assert "EmbeddingError" in caplog.text
