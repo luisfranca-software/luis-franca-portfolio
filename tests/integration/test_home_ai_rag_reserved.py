@@ -32,7 +32,8 @@ def test_launcher_is_interactive_button() -> None:
     visual = content[content.rfind("<", 0, start) : content.index("</button>", start)]
 
     assert visual.startswith("<button")
-    assert visual.count("Juju IA") == 1
+    assert visual.count("IA Jujuju") == 2
+    assert "Juju IA" not in visual
     assert "Jujuju AI" not in visual
     assert "Juju AI" not in visual
     assert "Ask AI / RAG" not in visual
@@ -88,8 +89,9 @@ def test_product_name_is_locale_invariant() -> None:
     english = Client(HTTP_ACCEPT_LANGUAGE="en").get("/").content.decode()
     portuguese = Client(HTTP_ACCEPT_LANGUAGE="pt-br").get("/").content.decode()
 
-    assert english.count("Juju IA") == 1
-    assert portuguese.count("Juju IA") == 1
+    assert english.count("IA Jujuju") == 2
+    assert portuguese.count("IA Jujuju") == 2
+    assert "Juju IA" not in english + portuguese
     assert "Jujuju AI" not in english + portuguese
     assert "Juju AI" not in english + portuguese
 
