@@ -56,11 +56,13 @@ def test_fixed_gutter_safe_area_and_layer_contracts_exist() -> None:
     assert "z-index: 20" in rule
     assert "right: max(var(--homepage-gutter), env(safe-area-inset-right, 0px))" in rule
     assert "bottom: max(var(--homepage-gutter), env(safe-area-inset-bottom, 0px))" in rule
-    normal_flow_rule = css.split(
-        ".homepage > :not(.homepage__technology-background):not(.home-ai-rag) {",
-        1,
-    )[1].split("}", 1)[0]
+    child_layering_selector = (
+        ".homepage > :not(.homepage__technology-background)"
+        ":not(.home-ai-rag):not(.assistant-container) {"
+    )
+    normal_flow_rule = css.split(child_layering_selector, 1)[1].split("}", 1)[0]
     assert "position: relative" in normal_flow_rule
+    assert ".assistant-container" not in normal_flow_rule
     assert "z-index: 30" in (REPO_ROOT / "frontend/static/css/site.css").read_text(encoding="utf-8")
 
 
@@ -103,3 +105,26 @@ def test_launcher_is_independent_of_footer_and_fit_states() -> None:
     assert "FIT-" not in css.split(".home-ai-rag {", 1)[1].split("}", 1)[0]
     assert "overflow-x: hidden" not in css
     assert ".site-footer--homepage { padding: 32px var(--homepage-gutter, 20px) 104px; }" in css
+
+
+def test_assistant_container_escapes_homepage_child_layering_rule() -> None:
+    """Regression: .assistant-container must keep position: fixed / z-index: 40.
+
+    The generic Homepage child-layering selector previously captured
+    .assistant-container and overrode its fixed positioning, causing the panel
+    to render in normal flow near the footer instead of floating.
+    """
+    css = HOME_CSS.read_text(encoding="utf-8")
+    child_layering_selector = (
+        ".homepage > :not(.homepage__technology-background)"
+        ":not(.home-ai-rag):not(.assistant-container) {"
+    )
+    assert child_layering_selector in css
+
+    child_layering_rule = css.split(child_layering_selector, 1)[1].split("}", 1)[0]
+    assert "position: relative" in child_layering_rule
+    assert ".assistant-container" not in child_layering_rule
+
+    panel_rule = css.split(".assistant-container {", 1)[1].split("}", 1)[0]
+    assert "position: fixed" in panel_rule
+    assert "z-index: 40" in panel_rule
