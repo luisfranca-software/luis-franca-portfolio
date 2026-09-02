@@ -692,8 +692,8 @@ msgid "Open IA Jujuju assistant"
 msgstr "Abrir assistente IA Jujuju"
 
 #: frontend/templates/assistant/panel.html
-msgid "Ask me anything about Luís França's professional portfolio."
-msgstr "Pergunte-me qualquer coisa sobre o portfólio profissional de Luís França."
+msgid "Hi, I'm Jujuju, your virtual assistant for Luís França's professional portfolio."
+msgstr "Olá, sou a Jujuju, sua assistente virtual do portfólio profissional de Luís França."
 
 #: frontend/templates/assistant/panel.html
 msgid "Type your question..."

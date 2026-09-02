@@ -74,10 +74,13 @@ class TestAssistantPanelEndpoint:
         assert response.status_code == 200
         content = response.content.decode()
 
-        assert "Ask me anything about Luís França's professional portfolio." in content
+        assert (
+            "Hi, I'm Jujuju, your virtual assistant for Luís França's professional portfolio."
+            in content
+        )
         assert "Type your question..." in content
         assert "Send" in content
-        assert "Pergunte-me qualquer coisa" not in content
+        assert "Olá, sou a Jujuju" not in content
         assert "Digite sua pergunta" not in content
         assert "Enviar" not in content
 
@@ -88,11 +91,15 @@ class TestAssistantPanelEndpoint:
         content = response.content.decode()
 
         assert (
-            "Pergunte-me qualquer coisa sobre o portfólio profissional de Luís França." in content
+            "Olá, sou a Jujuju, sua assistente virtual do portfólio profissional de Luís França."
+            in content
         )
         assert "Digite sua pergunta..." in content
         assert "Enviar" in content
-        assert "Ask me anything about Luís França's professional portfolio." not in content
+        assert (
+            "Hi, I'm Jujuju, your virtual assistant for Luís França's professional portfolio."
+            not in content
+        )
         assert "Type your question..." not in content
         assert ">Send<" not in content
 
