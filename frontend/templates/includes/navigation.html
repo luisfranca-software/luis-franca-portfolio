@@ -8,13 +8,15 @@
     {% endif %}
   </a>
 
-  {% include "includes/language-selector.html" %}
+  <div class="site-nav__actions">
+    {% include "includes/language-selector.html" %}
 
-  {% if contact_links.whatsapp %}
-  <a class="site-nav__whatsapp-action" href="{{ contact_links.whatsapp }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'Chat on WhatsApp' %}" data-trace-id="HDR-03">
-    {% load static %}<img src="{% static 'images/brand/whatsapp.svg' %}" alt="" width="24" height="24" aria-hidden="true">
-  </a>
-  {% endif %}
+    {% if contact_links.whatsapp %}
+    <a class="site-nav__whatsapp-action" href="{{ contact_links.whatsapp }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'Chat on WhatsApp' %}" data-trace-id="HDR-03">
+      {% load static %}<img src="{% static 'images/brand/whatsapp.svg' %}" alt="" width="24" height="24" aria-hidden="true">
+    </a>
+    {% endif %}
+  </div>
 
   <button
     class="site-nav__toggle"

@@ -174,3 +174,26 @@ def test_legacy_floating_whatsapp_css_is_removed() -> None:
     css = SITE_CSS.read_text(encoding="utf-8")
 
     assert ".whatsapp-button" not in css
+
+
+def test_full_header_uses_three_region_grid_for_centered_navigation() -> None:
+    css = SITE_CSS.read_text(encoding="utf-8")
+    full_block = css.split("@media (min-width: 848px)", 1)[1]
+    full_header = full_block.split("@media (max-width: 847px)", 1)[0]
+
+    assert "grid-template-columns: 1fr auto 1fr" in full_header
+    assert 'grid-template-areas: "brand menu actions"' in full_header
+    assert ".site-nav__brand { grid-area: brand;" in full_header
+    assert ".site-nav__menu { grid-area: menu;" in full_header
+    assert ".site-nav__actions { grid-area: actions;" in full_header
+    assert "justify-self: center" in full_header
+    assert "justify-self: end" in full_header
+    assert "!important" not in full_header
+    assert "margin-inline: 0" in full_header
+
+
+def test_actions_wrapper_exists_for_full_and_compact_headers() -> None:
+    css = SITE_CSS.read_text(encoding="utf-8")
+
+    assert ".site-nav__actions {" in css
+    assert "display: flex" in css

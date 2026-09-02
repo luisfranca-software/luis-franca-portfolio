@@ -292,6 +292,7 @@ li {
 .site-nav { max-width: 1440px; min-height: 80px; padding: 0 48px; gap: 16px; background: #020b1f; }
 .site-nav__brand { order: 1; }
 .site-nav__menu { order: 2; margin-inline: auto 0; }
+.site-nav__actions { order: 3; display: flex; align-items: center; gap: 16px; }
 .language-selector { order: 3; gap: 6px; height: 44px; }
 .site-nav__whatsapp-action { order: 4; }
 .site-nav__toggle { order: 5; }
@@ -303,11 +304,28 @@ li {
 .language-selector > span { color: #24324a; }
 .site-nav__whatsapp-action { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #24324a; border-radius: 8px; }
 .site-nav__whatsapp-action img { width: 24px; height: 24px; }
+
+/* P-UX-02 — Full Header geometric navigation centering. */
+@media (min-width: 848px) {
+    .site-nav {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        grid-template-areas: "brand menu actions";
+        align-items: center;
+    }
+
+    .site-nav__brand { grid-area: brand; justify-self: start; }
+    .site-nav__menu { grid-area: menu; justify-self: center; margin-inline: 0; }
+    .site-nav__actions { grid-area: actions; justify-self: end; }
+    .site-nav__toggle { display: none; }
+}
+
 @media (max-width: 847px) {
     .site-nav { min-height: 72px; padding: 0 24px; gap: 8px; }
     .site-nav__brand .brand-logo { width: 68px; height: 44px; }
     .site-nav__brand { margin-right: auto; }
     .site-nav__menu { order: 6; margin: 0; }
+    .site-nav__actions { gap: 8px; }
     .language-selector { gap: 2px; }
     .language-selector button { min-width: 24px; padding-inline: 2px; }
 }

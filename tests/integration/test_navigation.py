@@ -1,5 +1,7 @@
 """Integration tests for global navigation (SPEC-001-REQ-002, SPEC-001-REQ-008)."""
 
+import re
+
 import pytest
 from django.test import Client
 
@@ -95,3 +97,32 @@ def test_homepage_responsive_scope_is_not_loaded_on_unrelated_routes(path: str) 
     assert "site-main--homepage" not in content
     assert 'class="homepage"' not in content
     assert 'href="/static/css/home.css"' not in content
+
+
+def _actions_group(navigation: str) -> str | None:
+    match = re.search(
+        r'<div class="site-nav__actions">\s*(.*?)\s*<button\s+class="site-nav__toggle"',
+        navigation,
+        re.DOTALL,
+    )
+    return match.group(1) if match else None
+
+
+@pytest.mark.parametrize("path", PAGE_PATHS)
+def test_full_header_actions_wrap_language_and_whatsapp(path: str, contact_links) -> None:
+    navigation = _navigation(Client().get(path).content.decode())
+
+    actions = _actions_group(navigation)
+    assert actions is not None
+    assert 'class="language-selector"' in actions
+    assert "site-nav__whatsapp-action" in actions
+
+
+def test_header_actions_group_renders_without_whatsapp(settings) -> None:
+    settings.CONTACT_LINKS = {**settings.CONTACT_LINKS, "whatsapp": ""}
+    navigation = _navigation(Client().get("/").content.decode())
+
+    actions = _actions_group(navigation)
+    assert actions is not None
+    assert 'class="language-selector"' in actions
+    assert "site-nav__whatsapp-action" not in actions
