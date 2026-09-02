@@ -69,6 +69,33 @@ class TestAssistantPanelEndpoint:
         response = client.get(f"/assistant/{conversation.pk}/")
         assert response.status_code == 200
 
+    def test_panel_renders_english_strings_by_default(self) -> None:
+        response = Client().get("/assistant/")
+        assert response.status_code == 200
+        content = response.content.decode()
+
+        assert "Ask me anything about Luís França's professional portfolio." in content
+        assert "Type your question..." in content
+        assert "Send" in content
+        assert "Pergunte-me qualquer coisa" not in content
+        assert "Digite sua pergunta" not in content
+        assert "Enviar" not in content
+
+    def test_panel_renders_translated_strings_in_pt_br(self) -> None:
+        client_pt = Client(HTTP_ACCEPT_LANGUAGE="pt-br")
+        response = client_pt.get("/assistant/")
+        assert response.status_code == 200
+        content = response.content.decode()
+
+        assert (
+            "Pergunte-me qualquer coisa sobre o portfólio profissional de Luís França." in content
+        )
+        assert "Digite sua pergunta..." in content
+        assert "Enviar" in content
+        assert "Ask me anything about Luís França's professional portfolio." not in content
+        assert "Type your question..." not in content
+        assert ">Send<" not in content
+
 
 @pytest.mark.django_db
 class TestAskEndpoint:

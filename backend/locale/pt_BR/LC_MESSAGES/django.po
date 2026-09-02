@@ -686,3 +686,27 @@ msgstr "Escreva sua mensagem"
 #: backend/apps/contact/forms.py
 msgid "name@example.com"
 msgstr "nome@exemplo.com"
+
+#: frontend/templates/home/home.html
+msgid "Open IA Jujuju assistant"
+msgstr "Abrir assistente IA Jujuju"
+
+#: frontend/templates/assistant/panel.html
+msgid "Ask me anything about Luís França's professional portfolio."
+msgstr "Pergunte-me qualquer coisa sobre o portfólio profissional de Luís França."
+
+#: frontend/templates/assistant/panel.html
+msgid "Type your question..."
+msgstr "Digite sua pergunta..."
+
+#: frontend/templates/assistant/panel.html
+msgid "Send"
+msgstr "Enviar"
+
+#: frontend/templates/assistant/panel.html
+msgid "IA Jujuju is processing your question"
+msgstr "A IA Jujuju está processando sua pergunta"
+
+#: frontend/templates/assistant/partials/exchange.html
+msgid "IA Jujuju is temporarily unavailable. Please try again."
+msgstr "A IA Jujuju está temporariamente indisponível. Tente novamente."
