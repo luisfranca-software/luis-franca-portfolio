@@ -965,7 +965,7 @@ A implantação já possui evidência operacional significativa, inclusive para 
 
 #### EN
 
-Title: Site Portfólio — Production Delivery
+Title: Site Portfolio — Production Delivery
 Slug: site-portfolio-production-delivery-en
 Language: en
 Review Status: APPROVED
