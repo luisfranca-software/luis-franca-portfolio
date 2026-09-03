@@ -1019,9 +1019,9 @@ Wave 3 uses categories:
 
 All Wave 3 KnowledgeDocument variants are Human Approved.
 
-PCS-002 additionally remains:
+PCS-002 documentary consolidation is complete:
 
-- APPROVED — DOCUMENTARY CONSOLIDATION REQUIRED
+- APPROVED — DOCUMENTARY CONSOLIDATION COMPLETE
 
 ### KB-PCS-001 — Specification-Driven Development na Engenharia de Software
 
@@ -1103,7 +1103,7 @@ Grounded Answer Validation: NOT STARTED
 Title: Workflow de Engenharia Assistida por IA
 Slug: ai-assisted-engineering-workflow-pt-br
 Language: pt-br
-Review Status: APPROVED — DOCUMENTARY CONSOLIDATION REQUIRED
+Review Status: APPROVED — DOCUMENTARY CONSOLIDATION COMPLETE
 
 ##### Approved Content
 
@@ -1124,7 +1124,7 @@ A experiência do Site Portfólio demonstra, portanto, um modelo de engenharia g
 Title: AI-Assisted Engineering Workflow
 Slug: ai-assisted-engineering-workflow-en
 Language: en
-Review Status: APPROVED — DOCUMENTARY CONSOLIDATION REQUIRED
+Review Status: APPROVED — DOCUMENTARY CONSOLIDATION COMPLETE
 
 ##### Approved Content
 
@@ -1142,9 +1142,13 @@ The Site Portfolio experience therefore demonstrates a model of human-governed, 
 
 #### Evidence / Maturity Notes
 
-O workflow foi efetivamente executado e é aprovado pelo Product Owner. O repositório possui evidência técnica substancial de Figma, validação visual, validação baseada em Git e separação entre evidência automatizada e Human Review. Entretanto, a identificação nominal e a atribuição completa dos papéis de ChatGPT, Codex, Figma MCP e OpenCode não foram consolidadas de forma suficiente nos artefatos contemporâneos do projeto. Essa lacuna documental deve ser preservada como tal e corrigida antes de este conceito adquirir autoridade documental integral para o RAG.
+O workflow foi efetivamente executado e é aprovado pelo Product Owner. O repositório possui evidência técnica substancial de Figma, validação visual, validação baseada em Git e separação entre evidência automatizada e Human Review. A consolidação retrospectiva aprovada e certificada em Git resolve a lacuna documental de PCS-002.
 
-The workflow was actually executed and is approved by the Product Owner. The repository contains substantial technical evidence of Figma, visual validation, Git-based validation, and separation between automated evidence and Human Review. However, the nominal identification and complete attribution of the roles of ChatGPT, Codex, Figma MCP, and OpenCode were not sufficiently consolidated in the project's contemporaneous artifacts. This documentation gap must be preserved as such and corrected before this concept acquires full documentary authority for RAG.
+Fonte editorial de consolidação retrospectiva: `docs/engineering/PCS-002-AI-ASSISTED-ENGINEERING-WORKFLOW-EVIDENCE.md` (Human Approved e Git-certified; resolve a lacuna documental).
+
+The workflow was actually executed and is approved by the Product Owner. The repository contains substantial technical evidence of Figma, visual validation, Git-based validation, and separation between automated evidence and Human Review. The approved retrospective evidence consolidation and Git certification resolve the PCS-002 documentary gap.
+
+Editorial retrospective consolidation source: `docs/engineering/PCS-002-AI-ASSISTED-ENGINEERING-WORKFLOW-EVIDENCE.md` (Human Approved and Git-certified; resolves the documentary gap).
 
 #### Approval
 
@@ -2181,7 +2185,7 @@ GEN-001 é um documento de cobertura e orientação semântica. Ele sintetiza fa
 
 Cada resposta herda a autoridade e o maturity level dos conceitos aos quais se refere. Em caso de diferença entre uma resposta desta FAQ e um KnowledgeDocument especializado aprovado, o conceito especializado e sua evidência específica devem prevalecer.
 
-A afirmação sobre o workflow assistido por IA preserva o controle de PCS-002: o processo foi executado e aprovado pelo Product Owner, mas permanece DOCUMENTARY CONSOLIDATION REQUIRED antes de adquirir autoridade documental integral para o RAG.
+A afirmação sobre o workflow assistido por IA preserva o controle de PCS-002: o processo foi executado, sua consolidação documental retrospectiva foi concluída e sua autoridade especializada aprovada pode agora sustentar esse tema no RAG dentro dos limites de evidência já estabelecidos.
 
 A afirmação sobre produção preserva o controle de ENG-005: componentes comprovados podem ser descritos como production-demonstrated, mas o status global Release 2 Production Deployment: CLOSED não deve ser afirmado enquanto os gates finais permanecerem abertos.
 
@@ -2189,7 +2193,7 @@ GEN-001 is a semantic-coverage and orientation document. It synthesizes facts al
 
 Each answer inherits the authority and maturity level of the concepts to which it refers. If a response in this FAQ differs from an approved specialized KnowledgeDocument, the specialized concept and its specific evidence must prevail.
 
-The statement concerning the AI-assisted workflow preserves the PCS-002 control: the process was executed and approved by the Product Owner but remains DOCUMENTARY CONSOLIDATION REQUIRED before acquiring full documentary authority for RAG.
+The statement concerning the AI-assisted workflow preserves the PCS-002 control: the process was executed, its retrospective documentary consolidation is complete, and its approved specialized authority may now support this topic in RAG within the already established evidence boundaries.
 
 The production statement preserves the ENG-005 control: demonstrated components may be described as production-demonstrated, but the overall status Release 2 Production Deployment: CLOSED must not be asserted while the final gates remain open.
 
@@ -2271,4 +2275,4 @@ These are validation intentions only. Retrieval tests have not yet been executed
 - Maturity changes require new supporting evidence.
 - Capability-strength changes require CER-01 reassessment.
 
-PCS-002 remains APPROVED — DOCUMENTARY CONSOLIDATION REQUIRED until its documentary gap is resolved.
+PCS-002 is currently APPROVED — DOCUMENTARY CONSOLIDATION COMPLETE. Future maturity or authority changes require new supporting evidence.
