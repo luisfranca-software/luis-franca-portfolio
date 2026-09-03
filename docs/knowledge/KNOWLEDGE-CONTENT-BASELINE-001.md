@@ -3,9 +3,16 @@
 Document-ID: KNOWLEDGE-CONTENT-BASELINE-001
 Version: 1.0.0
 Status: HUMAN APPROVED
-Scope: Wave 1 — Core Professional Authority
-Knowledge Concepts: 7
-KnowledgeDocuments: 14
+Scope: Waves 1–5 — Approved Editorial Corpus
+Knowledge Concepts: 29
+KnowledgeDocuments: 58
+
+Editorial corpus cardinality:
+
+- 29 Knowledge Concepts
+- 58 KnowledgeDocument language variants
+
+This cardinality certifies approved editorial corpus scope only. It does not certify Django materialization, persistence, chunking, embeddings, pgvector population, indexing, retrieval validation, grounded-answer validation, PCS-002 documentary consolidation, or Release 2 Production Deployment closure.
 
 Languages:
 
@@ -21,7 +28,7 @@ Grounded Answer Validation: NOT STARTED
 
 ## 1. Purpose
 
-KNOWLEDGE-CONTENT-BASELINE-001 is the authoritative, version-controlled editorial baseline for the approved Wave 1 Knowledge Content of IA Jujuju.
+KNOWLEDGE-CONTENT-BASELINE-001 is the authoritative, version-controlled editorial baseline for the approved Wave 1 through Wave 5 Knowledge Content of IA Jujuju.
 
 Editorial approval is not equivalent to database persistence, chunk generation, embedding generation, vector indexing, retrieval validation, or grounded-answer validation.
 
@@ -1988,7 +1995,210 @@ POR-001 is a cross-project synthesis. Each statement concerning a project inheri
 Human Review: APPROVED
 Editorial Baseline: APPROVED
 
-## 8. Wave 1 Traceability Matrix
+## 8. Wave 5 — Retrieval Coverage
+
+Wave 5 contains 1 Knowledge Concept and 2 KnowledgeDocument variants.
+
+Wave 5 uses category:
+
+- GENERAL
+
+All Wave 5 KnowledgeDocument variants are Human Approved.
+
+### KB-GEN-001 — Perguntas Frequentes sobre Luís França e seu Portfólio
+
+#### Metadata
+
+Concept ID: GEN-001
+Category: GENERAL
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Perguntas Frequentes sobre Luís França e seu Portfólio
+Slug: professional-faq-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+**Quem é Luís França?**
+
+Luís França é um profissional com trajetória multidisciplinar e atuação em desenvolvimento e engenharia de software. Seu portfólio registra uma evolução desde projetos anteriores em Python até sistemas mais recentes desenvolvidos com processos explícitos de especificação, arquitetura, implementação, testes, validação e deployment.
+
+**Quais são suas principais áreas de engenharia de software?**
+
+Seu trabalho demonstrado no portfólio abrange Python e engenharia backend, arquitetura de software, Specification-Driven Development, APIs e integrações, bancos de dados, testes e qualidade, segurança, deployment e produção, além de aplicações de Inteligência Artificial, LLM e Retrieval-Augmented Generation.
+
+A maturidade dessas competências deve ser avaliada pelas evidências específicas disponíveis em cada projeto, e não apenas pela presença de uma tecnologia ou termo no portfólio.
+
+**Luís trabalha com Python e backend?**
+
+Sim. Python e engenharia backend estão entre as competências demonstradas por seus projetos. O Site Portfólio, por exemplo, utiliza Django em uma arquitetura modular, PostgreSQL para persistência e integrações externas controladas, além de possuir testes e execução em ambiente de produção.
+
+Outros projetos também utilizam Python em diferentes contextos e níveis de maturidade.
+
+**Luís trabalha com arquitetura de software e SDD?**
+
+Sim. Specification-Driven Development é utilizado como processo para relacionar requisitos, decisões, especificações, implementação, testes, evidências e aceite.
+
+No Site Portfólio, esse processo possui evidências que atravessam especificação, implementação, validação e entrega em produção. A Enterprise Platform também possui uma extensa baseline documental e arquitetural orientada por especificações, embora sua implementação permaneça em evolução.
+
+**Luís trabalha com Inteligência Artificial, LLM e RAG?**
+
+Sim, com evidências específicas de implementação e operação no Site Portfólio. A IA Jujuju utiliza uma Knowledge Base própria, embeddings, PostgreSQL com pgvector, recuperação vetorial e Retrieval-Augmented Generation para fornecer contexto controlado ao modelo de linguagem.
+
+Essa evidência não significa que todas as capacidades de IA mencionadas em outros projetos estejam implementadas. Na Intelligent Currency Platform, por exemplo, Machine Learning e Inteligência Artificial permanecem capacidades planejadas no roadmap.
+
+**O que é a IA Jujuju?**
+
+IA Jujuju é a assistente virtual do portfólio profissional de Luís França. Ela utiliza Retrieval-Augmented Generation para recuperar conhecimento autorizado do próprio portfólio antes da geração das respostas.
+
+Sua arquitetura mantém documentos de conhecimento, chunks, embeddings e recuperação vetorial, além de registrar conversas, mensagens e evidências das fontes recuperadas para preservar rastreabilidade.
+
+**Qual projeto demonstra de forma mais completa a engenharia atual de Luís?**
+
+O Site Portfólio constitui atualmente o caso mais completo documentado no próprio portfólio. O projeto percorreu especificação, arquitetura, implementação, testes, validação, evolução de UX/UI, integração com design e implantação em produção. Também incorpora administração, Knowledge Base, recuperação vetorial, RAG e a IA Jujuju.
+
+Isso não significa que todos os projetos do portfólio possuam o mesmo maturity level.
+
+**O Site Portfólio está em produção?**
+
+Sim. Componentes centrais do Site Portfólio possuem evidência real de implantação e operação em produção, incluindo backend, PostgreSQL e o pipeline RAG utilizado pela IA Jujuju.
+
+Entretanto, estados administrativos de encerramento do deployment devem seguir os gates formais do projeto. A existência de componentes operacionais em produção não deve ser utilizada para afirmar que um ciclo de implantação está formalmente encerrado antes de sua certificação final.
+
+**Quais outros projetos fazem parte da trajetória apresentada?**
+
+Além do Site Portfólio, o corpus apresenta a Enterprise Platform, a Intelligent Currency Platform, um sistema legado de cotação de moedas e gerenciadores de tarefas desktop e web.
+
+Esses projetos representam diferentes momentos da trajetória e possuem diferentes níveis de maturidade. A Enterprise Platform está em desenvolvimento, a Intelligent Currency Platform possui especificação e implementação inicial, e os projetos anteriores são preservados como evidência histórica.
+
+**Os projetos legados ainda são relevantes?**
+
+Sim. Eles registram experiências anteriores com Python, aplicações desktop e web, persistência baseada em arquivos, integração com APIs, orientação a objetos, organização arquitetural e testes.
+
+Seu valor no portfólio também está na possibilidade de observar a evolução para processos posteriores com arquitetura mais explícita, SDD, rastreabilidade, bancos relacionais, validação sistemática, segurança e deployment controlado. Isso não autoriza atribuir retroativamente essas práticas modernas aos projetos históricos.
+
+**Como Luís utiliza IA no processo de desenvolvimento?**
+
+No Site Portfólio foi executado um workflow de engenharia assistida por IA sob governança humana. Diferentes ferramentas participaram de atividades de análise, especificação, implementação, refinamento e integração com design, enquanto requisitos, decisões relevantes, auditoria, revisão e aceite permaneceram controlados pelo processo de engenharia e pelo Product Owner.
+
+A evidência documental desse workflow ainda possui uma lacuna específica: a atribuição nominal completa dos papéis das diferentes ferramentas precisa ser consolidada documentalmente antes que esse conceito adquira autoridade documental integral para o RAG.
+
+**Todos os projetos e tecnologias apresentados possuem o mesmo nível de experiência comprovada?**
+
+Não. O portfólio diferencia intenção futura, design, especificação, implementação, validação, produção e evidência histórica. Uma tecnologia listada em roadmap não é tratada como capacidade implementada, assim como a maturidade demonstrada por um projeto não é transferida automaticamente para outro.
+
+Essa distinção é utilizada para manter as respostas da IA Jujuju alinhadas às evidências realmente disponíveis.
+
+#### EN
+
+Title: Frequently Asked Questions about Luís França and His Portfolio
+Slug: professional-faq-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+**Who is Luís França?**
+
+Luís França is a professional with a multidisciplinary background working in software development and engineering. His portfolio records an evolution from earlier Python projects to more recent systems developed through explicit processes involving specification, architecture, implementation, testing, validation, and deployment.
+
+**What are his main software-engineering areas?**
+
+His work demonstrated through the portfolio encompasses Python and backend engineering, software architecture, Specification-Driven Development, APIs and integrations, databases, testing and quality, security, deployment and production, as well as applications involving Artificial Intelligence, LLMs, and Retrieval-Augmented Generation.
+
+The maturity of these capabilities must be evaluated through the specific evidence available for each project rather than merely through the presence of a technology or term in the portfolio.
+
+**Does Luís work with Python and backend engineering?**
+
+Yes. Python and backend engineering are among the capabilities demonstrated through his projects. Site Portfolio, for example, uses Django within a modular architecture, PostgreSQL for persistence, and controlled external integrations, together with testing and operation in a production environment.
+
+Other projects also use Python in different contexts and at different maturity levels.
+
+**Does Luís work with software architecture and SDD?**
+
+Yes. Specification-Driven Development is used as a process for connecting requirements, decisions, specifications, implementation, tests, evidence, and acceptance.
+
+In Site Portfolio, this process has evidence spanning specification, implementation, validation, and production delivery. The Enterprise Platform also has an extensive specification-driven documentation and architecture baseline, although its implementation remains in progress.
+
+**Does Luís work with Artificial Intelligence, LLMs, and RAG?**
+
+Yes, with specific implementation and operational evidence in Site Portfolio. IA Jujuju uses its own Knowledge Base, embeddings, PostgreSQL with pgvector, vector retrieval, and Retrieval-Augmented Generation to provide controlled context to the language model.
+
+This evidence does not mean that every AI capability mentioned in other projects has been implemented. In the Intelligent Currency Platform, for example, machine-learning and AI capabilities remain planned roadmap items.
+
+**What is IA Jujuju?**
+
+IA Jujuju is the virtual assistant for Luís França's professional portfolio. It uses Retrieval-Augmented Generation to retrieve authorized knowledge from the portfolio itself before responses are generated.
+
+Its architecture maintains knowledge documents, chunks, embeddings, and vector retrieval, while also recording conversations, messages, and retrieved source evidence to preserve traceability.
+
+**Which project most completely demonstrates Luís's current engineering approach?**
+
+Site Portfolio currently constitutes the most complete case documented within the portfolio itself. The project progressed through specification, architecture, implementation, testing, validation, UX/UI evolution, design integration, and production deployment. It also incorporates administration, a Knowledge Base, vector retrieval, RAG, and IA Jujuju.
+
+This does not mean that every project in the portfolio has the same maturity level.
+
+**Is Site Portfolio in production?**
+
+Yes. Core components of Site Portfolio have real deployment and production-operation evidence, including the backend, PostgreSQL, and the RAG pipeline used by IA Jujuju.
+
+However, administrative deployment-closure states must follow the project's formal gates. The existence of operational production components must not be used to claim that a deployment cycle has been formally closed before its final certification.
+
+**What other projects are part of the trajectory presented in the portfolio?**
+
+In addition to Site Portfolio, the corpus presents the Enterprise Platform, the Intelligent Currency Platform, a legacy currency quotation system, and desktop and web task managers.
+
+These projects represent different stages of the trajectory and have different maturity levels. The Enterprise Platform is under development, the Intelligent Currency Platform has specification and early implementation evidence, and the earlier projects are preserved as historical evidence.
+
+**Are the legacy projects still relevant?**
+
+Yes. They record earlier experience involving Python, desktop and web applications, file-based persistence, API integration, object-oriented programming, architectural organization, and testing.
+
+Their value within the portfolio also lies in showing the evolution toward later processes involving more explicit architecture, SDD, traceability, relational databases, systematic validation, security, and controlled deployment. This does not authorize retroactively assigning those modern practices to the historical projects.
+
+**How does Luís use AI in the software-development process?**
+
+An AI-assisted engineering workflow under human governance was executed in Site Portfolio. Different tools participated in analysis, specification, implementation, refinement, and design-integration activities, while requirements, relevant decisions, auditing, review, and acceptance remained controlled by the engineering process and the Product Owner.
+
+The documentary evidence for this workflow still has a specific gap: complete nominal attribution of the roles of the different tools must be consolidated in project documentation before this concept acquires full documentary authority for RAG.
+
+**Do all projects and technologies presented have the same demonstrated experience level?**
+
+No. The portfolio distinguishes future intention, design, specification, implementation, validation, production, and historical evidence. A technology listed in a roadmap is not treated as an implemented capability, just as maturity demonstrated by one project is not automatically transferred to another.
+
+This distinction is used to keep IA Jujuju's responses aligned with the evidence that is actually available.
+
+#### Evidence / Maturity Notes
+
+GEN-001 é um documento de cobertura e orientação semântica. Ele sintetiza fatos já aprovados nos conceitos especializados do corpus e não cria autoridade independente para novas alegações profissionais.
+
+Cada resposta herda a autoridade e o maturity level dos conceitos aos quais se refere. Em caso de diferença entre uma resposta desta FAQ e um KnowledgeDocument especializado aprovado, o conceito especializado e sua evidência específica devem prevalecer.
+
+A afirmação sobre o workflow assistido por IA preserva o controle de PCS-002: o processo foi executado e aprovado pelo Product Owner, mas permanece DOCUMENTARY CONSOLIDATION REQUIRED antes de adquirir autoridade documental integral para o RAG.
+
+A afirmação sobre produção preserva o controle de ENG-005: componentes comprovados podem ser descritos como production-demonstrated, mas o status global Release 2 Production Deployment: CLOSED não deve ser afirmado enquanto os gates finais permanecerem abertos.
+
+GEN-001 is a semantic-coverage and orientation document. It synthesizes facts already approved in specialized corpus concepts and does not establish independent authority for new professional claims.
+
+Each answer inherits the authority and maturity level of the concepts to which it refers. If a response in this FAQ differs from an approved specialized KnowledgeDocument, the specialized concept and its specific evidence must prevail.
+
+The statement concerning the AI-assisted workflow preserves the PCS-002 control: the process was executed and approved by the Product Owner but remains DOCUMENTARY CONSOLIDATION REQUIRED before acquiring full documentary authority for RAG.
+
+The production statement preserves the ENG-005 control: demonstrated components may be described as production-demonstrated, but the overall status Release 2 Production Deployment: CLOSED must not be asserted while the final gates remain open.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+## 9. Wave 1 Traceability Matrix
 
 | ID | Category | PT-BR | EN | CER-01 | Maturity | Equivalence | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -2000,7 +2210,7 @@ Editorial Baseline: APPROVED
 | KB-SKL-003 | SKILL | Approved | Approved | PASS | PASS | PASS | APPROVED |
 | KB-SKL-004 | SKILL | Approved | Approved | PASS | PASS | PASS | APPROVED |
 
-## 9. Wave 4 Traceability Matrix
+## 10. Wave 4 Traceability Matrix
 
 | ID | Category | PT-BR | EN | CER-01 | Maturity | Equivalence | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -2011,7 +2221,13 @@ Editorial Baseline: APPROVED
 | KB-PRJ-011 | PROJECT | Approved | Approved | PASS | PASS | PASS | APPROVED |
 | KB-POR-001 | PORTFOLIO | Approved | Approved | PASS | PASS | PASS | APPROVED |
 
-## 10. Retrieval Acceptance Intent
+## 11. Wave 5 Traceability Matrix
+
+| ID | Category | PT-BR | EN | CER-01 | Maturity | Equivalence | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| KB-GEN-001 | GENERAL | Approved | Approved | PASS | PASS | PASS | APPROVED |
+
+## 12. Retrieval Acceptance Intent
 
 The approved corpus must later support questions concerning:
 
@@ -2039,9 +2255,13 @@ Negative-boundary validation intent includes ensuring that the assistant does no
 
 These are validation intentions only. Retrieval tests have not yet been executed against this baseline.
 
-## 11. Approval and Change Control
+## 13. Approval and Change Control
 
 - Wave 1 editorial content is Human Approved.
+- Wave 2 editorial content is Human Approved.
+- Wave 3 editorial content is Human Approved.
+- Wave 4 editorial content is Human Approved.
+- Wave 5 editorial content is Human Approved.
 - The baseline is immutable except through an explicit reviewed revision.
 - Future content changes require a new editorial revision.
 - Materialization into Django must preserve the approved content.
@@ -2051,4 +2271,4 @@ These are validation intentions only. Retrieval tests have not yet been executed
 - Maturity changes require new supporting evidence.
 - Capability-strength changes require CER-01 reassessment.
 
-Future Waves may extend this baseline through controlled revisions. No future Wave is marked as approved in this document.
+PCS-002 remains APPROVED — DOCUMENTARY CONSOLIDATION REQUIRED until its documentary gap is resolved.
