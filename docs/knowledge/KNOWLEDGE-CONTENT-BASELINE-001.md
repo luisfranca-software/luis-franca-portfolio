@@ -1597,7 +1597,398 @@ Site Portfolio has real deployment and production-operation evidence for core co
 Human Review: APPROVED
 Editorial Baseline: APPROVED
 
-## 7. Wave 1 Traceability Matrix
+## 7. Wave 4 — Portfolio Breadth
+
+Wave 4 contains 6 Knowledge Concepts and 12 KnowledgeDocument variants.
+
+Wave 4 uses categories:
+
+- PROJECT
+- PORTFOLIO
+
+All Wave 4 KnowledgeDocument variants are Human Approved.
+
+### KB-PRJ-007 — Enterprise Platform — Plataforma Empresarial Orientada por Especificações
+
+#### Metadata
+
+Concept ID: PRJ-007
+Category: PROJECT
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Enterprise Platform — Plataforma Empresarial Orientada por Especificações
+Slug: enterprise-platform-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís está desenvolvendo a Enterprise Platform, um projeto orientado por especificações destinado a estabelecer uma arquitetura reutilizável para aplicações empresariais. O projeto aplica princípios de engenharia de software para estruturar uma base capaz de evoluir de forma modular, testável e controlada.
+
+O repositório contém uma extensa baseline documental e arquitetural. Requisitos, decisões, arquitetura e responsabilidades do sistema são tratados antes e durante a implementação, permitindo que a evolução do código seja confrontada com autoridades documentais explícitas em vez de depender exclusivamente do estado corrente da implementação.
+
+A arquitetura foi concebida em torno de uma abordagem modular, privilegiando separação de responsabilidades e evolução incremental sem introduzir complexidade distribuída sem necessidade demonstrada. Essa abordagem busca fornecer uma fundação reutilizável para capacidades empresariais, mantendo rastreabilidade entre necessidades de produto, decisões técnicas e implementação.
+
+O projeto também demonstra uma diferença importante entre arquitetura projetada e funcionalidade efetivamente entregue. Embora a baseline documental estabeleça uma visão ampla para a plataforma, sua implementação permanece em evolução. Capacidades descritas por especificações ou roadmap não devem ser apresentadas automaticamente como funcionalidades concluídas.
+
+A Enterprise Platform representa, portanto, a aplicação de Specification-Driven Development em um sistema empresarial em construção, demonstrando como uma baseline arquitetural pode orientar implementação progressiva sem antecipar como concluído aquilo que ainda está sendo desenvolvido.
+
+#### EN
+
+Title: Enterprise Platform — Specification-Driven Enterprise Platform
+Slug: enterprise-platform-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís is developing the Enterprise Platform, a specification-driven project intended to establish a reusable architecture for enterprise applications. The project applies software-engineering principles to structure a foundation capable of evolving in a modular, testable, and controlled manner.
+
+The repository contains an extensive documentation and architecture baseline. Requirements, decisions, architecture, and system responsibilities are addressed before and during implementation, allowing code evolution to be evaluated against explicit documentary authorities rather than depending exclusively on the current implementation state.
+
+The architecture was designed around a modular approach, prioritizing separation of responsibilities and incremental evolution without introducing distributed complexity in the absence of a demonstrated need. This approach is intended to provide a reusable foundation for enterprise capabilities while maintaining traceability among product needs, technical decisions, and implementation.
+
+The project also demonstrates an important distinction between designed architecture and actually delivered functionality. Although the documentation baseline establishes a broad vision for the platform, implementation remains in progress. Capabilities described by specifications or the roadmap must not automatically be presented as completed functionality.
+
+The Enterprise Platform therefore represents the application of Specification-Driven Development to an enterprise system under construction, demonstrating how an architecture baseline can guide progressive implementation without prematurely presenting unfinished capabilities as complete.
+
+#### Evidence / Maturity Notes
+
+A Enterprise Platform possui forte evidência documental e arquitetural e implementação em evolução. Claims sobre funcionalidades específicas devem respeitar o estado comprovado de cada capacidade. Não deve ser apresentada como plataforma empresarial integralmente implementada ou implantada em produção sem evidência correspondente.
+
+The Enterprise Platform has strong documentation and architecture evidence, with implementation in progress. Claims concerning specific functionality must preserve the demonstrated state of each capability. It must not be represented as a fully implemented or production-deployed enterprise platform without corresponding evidence.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PRJ-008 — Intelligent Currency Platform — Evolução de Sistema de Cotações
+
+#### Metadata
+
+Concept ID: PRJ-008
+Category: PROJECT
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Intelligent Currency Platform — Evolução de Sistema de Cotações
+Slug: intelligent-currency-platform-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís está desenvolvendo a Intelligent Currency Platform como uma evolução planejada do domínio de software de cotação de moedas trabalhado anteriormente em um projeto legado. A iniciativa busca reavaliar o problema utilizando práticas contemporâneas de arquitetura e engenharia de software, em vez de simplesmente ampliar a implementação histórica.
+
+O projeto possui uma baseline de produto e especificação que descreve a direção pretendida para a plataforma. Essa documentação estabelece requisitos e capacidades planejadas para uma solução mais estruturada, incluindo evolução da arquitetura, persistência e interfaces de aplicação.
+
+O roadmap do projeto inclui capacidades planejadas de Machine Learning e Inteligência Artificial. Essas capacidades pertencem à direção futura do produto e não devem ser descritas como funcionalidades já implementadas ou validadas.
+
+A implementação encontra-se em estágio inicial. Por esse motivo, a Knowledge Base distingue explicitamente aquilo que foi especificado ou planejado daquilo que possui evidência de implementação. Essa separação evita transformar intenção arquitetural ou roadmap em alegação de produto concluído.
+
+A Intelligent Currency Platform demonstra uma abordagem de evolução de software na qual experiência adquirida em uma solução anterior é utilizada como insumo para uma nova avaliação de produto, arquitetura e engenharia, com maior disciplina de especificação e rastreabilidade.
+
+#### EN
+
+Title: Intelligent Currency Platform — Currency System Evolution
+Slug: intelligent-currency-platform-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís is developing the Intelligent Currency Platform as a planned evolution of the currency-quotation software domain previously explored through a legacy project. The initiative seeks to reassess the problem using contemporary software architecture and engineering practices rather than simply extending the historical implementation.
+
+The project has a product and specification baseline describing the intended direction of the platform. This documentation establishes requirements and planned capabilities for a more structured solution, including architectural evolution, persistence, and application interfaces.
+
+The project's roadmap includes planned machine-learning and AI capabilities. These capabilities belong to the future direction of the product and must not be described as already implemented or validated functionality.
+
+Implementation is currently at an early stage. For this reason, the Knowledge Base explicitly distinguishes what has been specified or planned from what has implementation evidence. This separation prevents architectural intent or roadmap items from becoming claims of completed product functionality.
+
+The Intelligent Currency Platform demonstrates a software-evolution approach in which experience acquired from an earlier solution is used as input for a new assessment of product, architecture, and engineering, with greater specification discipline and traceability.
+
+#### Evidence / Maturity Notes
+
+O projeto possui evidência de especificação e implementação inicial. Funcionalidades futuras descritas no PRD ou roadmap permanecem planejadas até que implementação e validação correspondentes sejam comprovadas. Em particular, capacidades de Machine Learning e IA são planejadas.
+
+The project has specification evidence and early implementation evidence. Future functionality described in the PRD or roadmap remains planned until corresponding implementation and validation are demonstrated. In particular, machine-learning and AI capabilities are planned.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PRJ-009 — Sistema Legado de Cotação de Moedas
+
+#### Metadata
+
+Concept ID: PRJ-009
+Category: PROJECT
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Sistema Legado de Cotação de Moedas
+Slug: legacy-currency-system-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+O Sistema Legado de Cotação de Moedas registra uma etapa anterior da trajetória de desenvolvimento de software de Luís. O projeto foi construído em Python para automatizar atividades relacionadas à consulta de cotações de moedas e à produção de informações derivadas dessas consultas.
+
+A implementação trabalhou com integração a uma API externa de cotações e automação do processamento dos dados retornados. O projeto também explorou geração de relatórios e organização progressiva do código conforme sua complexidade aumentava.
+
+Sua evolução registra uma transição de uma implementação inicialmente mais direta para uma organização orientada a objetos e posteriormente estruturada segundo responsabilidades inspiradas em MVC. Testes e mocks também passaram a fazer parte do projeto, permitindo exercitar comportamentos sem depender exclusivamente da integração externa real.
+
+Esse projeto é preservado no portfólio como evidência histórica, e não como representação da arquitetura atualmente recomendada por Luís. Seu valor está também em permitir observar problemas, decisões e práticas de uma fase anterior e compará-los com projetos posteriores orientados por especificações, arquitetura explícita, testes sistemáticos e processos de validação mais rigorosos.
+
+A experiência adquirida nesse domínio contribui para a posterior reavaliação representada pela Intelligent Currency Platform, sem implicar que os dois projetos possuam a mesma arquitetura ou maturity level.
+
+#### EN
+
+Title: Legacy Currency Quotation System
+Slug: legacy-currency-system-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+The Legacy Currency Quotation System records an earlier stage in Luís's software-development trajectory. The project was built in Python to automate activities related to retrieving currency quotations and producing information derived from those queries.
+
+The implementation worked with integration to an external currency-quotation API and automated processing of the returned data. The project also explored report generation and progressive organization of the code as its complexity increased.
+
+Its evolution records a transition from an initially more direct implementation toward object-oriented organization and subsequently toward responsibilities inspired by MVC. Tests and mocks also became part of the project, allowing behaviors to be exercised without depending exclusively on the real external integration.
+
+This project is preserved in the portfolio as historical evidence rather than as a representation of the architecture Luís currently recommends. Its value also lies in making it possible to observe problems, decisions, and practices from an earlier stage and compare them with later projects driven by specifications, explicit architecture, systematic testing, and more rigorous validation processes.
+
+Experience acquired in this domain contributes to the later reassessment represented by the Intelligent Currency Platform, without implying that the two projects share the same architecture or maturity level.
+
+#### Evidence / Maturity Notes
+
+O projeto possui evidência histórica de implementação. Claims devem permanecer associados às capacidades comprovadas pelo repositório legado e não devem atribuir retroativamente práticas, arquitetura ou maturidade pertencentes aos projetos atuais.
+
+The project has historical implementation evidence. Claims must remain associated with capabilities demonstrated by the legacy repository and must not retroactively assign practices, architecture, or maturity belonging to current projects.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PRJ-010 — Gerenciador de Tarefas Desktop
+
+#### Metadata
+
+Concept ID: PRJ-010
+Category: PROJECT
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Gerenciador de Tarefas Desktop
+Slug: task-manager-desktop-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+O Gerenciador de Tarefas Desktop é um projeto histórico desenvolvido por Luís em Python com interface gráfica baseada em Tkinter. A aplicação explora o gerenciamento local de tarefas por meio de uma interface desktop e persistência baseada em arquivos JSON.
+
+O projeto permitiu trabalhar conceitos fundamentais de desenvolvimento de aplicações, incluindo interação com usuário, manipulação de estado, persistência local e organização do código necessária para coordenar comportamento de interface e dados.
+
+Sua utilização de Tkinter e JSON corresponde às necessidades e ao estágio técnico em que o projeto foi desenvolvido. Esses elementos são preservados como parte da evidência histórica e não devem ser reinterpretados como escolhas arquiteturais para os sistemas atuais do portfólio.
+
+Dentro da trajetória de engenharia, o projeto ajuda a demonstrar a progressão entre aplicações locais relativamente autocontidas e sistemas posteriores com arquitetura web, bancos relacionais, APIs, processos formais de especificação, testes, deployment e integrações de IA.
+
+O Gerenciador de Tarefas Desktop é, portanto, relevante não apenas pela funcionalidade construída, mas por registrar uma etapa concreta da evolução técnica representada pelo portfólio.
+
+#### EN
+
+Title: Desktop Task Manager
+Slug: task-manager-desktop-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+The Desktop Task Manager is a historical project developed by Luís in Python with a graphical interface based on Tkinter. The application explores local task management through a desktop interface and JSON-based persistence.
+
+The project provided experience with fundamental application-development concepts, including user interaction, state manipulation, local persistence, and the code organization required to coordinate interface behavior and data.
+
+Its use of Tkinter and JSON corresponds to the needs and technical stage in which the project was developed. These elements are preserved as part of the historical evidence and must not be reinterpreted as architectural choices for the portfolio's current systems.
+
+Within the engineering trajectory, the project helps demonstrate progression from relatively self-contained local applications toward later systems involving web architecture, relational databases, APIs, formal specification processes, testing, deployment, and AI integrations.
+
+The Desktop Task Manager is therefore relevant not only for the functionality that was built, but also because it records a concrete stage in the technical evolution represented by the portfolio.
+
+#### Evidence / Maturity Notes
+
+Projeto histórico com evidência de implementação em Python, Tkinter e persistência JSON. O conteúdo não deve atribuir ao projeto práticas modernas que não estejam comprovadas em sua implementação histórica.
+
+This is a historical project with implementation evidence involving Python, Tkinter, and JSON persistence. The content must not attribute modern practices to the project unless they are demonstrated by its historical implementation.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PRJ-011 — Gerenciador de Tarefas Web — Baseline Legada
+
+#### Metadata
+
+Concept ID: PRJ-011
+Category: PROJECT
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Gerenciador de Tarefas Web — Baseline Legada
+Slug: task-manager-web-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+O Gerenciador de Tarefas Web é um projeto histórico desenvolvido por Luís utilizando Python e Flask. A aplicação levou o domínio de gerenciamento de tarefas para uma interface web, mantendo uma solução de persistência baseada em JSON.
+
+O projeto registra uma etapa de transição entre aplicações desktop e desenvolvimento web. Sua implementação permitiu trabalhar rotas HTTP, renderização de páginas, processamento de entradas do usuário e integração entre a camada web e a persistência da aplicação.
+
+A arquitetura e as decisões do projeto refletem o contexto técnico em que ele foi construído. Ele é atualmente tratado como software legado e não como baseline de arquitetura recomendada para novos sistemas.
+
+O projeto possui relevância adicional porque foi selecionado como candidato para uma futura modernização. A intenção é reavaliar seus requisitos e arquitetura utilizando práticas contemporâneas de engenharia e Specification-Driven Development, em vez de simplesmente refatorar incrementalmente o código existente.
+
+Essa modernização ainda é uma intenção futura. Portanto, práticas, tecnologias ou arquitetura que venham a ser adotadas nesse ciclo não devem ser atribuídas à baseline legada antes de serem especificadas, implementadas e validadas.
+
+#### EN
+
+Title: Web Task Manager — Legacy Baseline
+Slug: task-manager-web-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+The Web Task Manager is a historical project developed by Luís using Python and Flask. The application brought the task-management domain to a web interface while retaining a JSON-based persistence solution.
+
+The project records a transition stage between desktop applications and web development. Its implementation provided experience with HTTP routes, page rendering, user-input processing, and integration between the web layer and application persistence.
+
+The project's architecture and decisions reflect the technical context in which it was built. It is currently treated as legacy software rather than as a recommended architecture baseline for new systems.
+
+The project has additional relevance because it has been selected as a candidate for future modernization. The intention is to reassess its requirements and architecture using contemporary engineering practices and Specification-Driven Development rather than simply refactoring the existing code incrementally.
+
+This modernization remains a future intention. Therefore, practices, technologies, or architecture that may be adopted during that cycle must not be attributed to the legacy baseline before they are specified, implemented, and validated.
+
+#### Evidence / Maturity Notes
+
+A implementação Flask/JSON pertence à evidência histórica do projeto. A modernização por SDD é planejada e deve permanecer descrita como futura até que o novo ciclo de engenharia produza evidências de especificação, implementação e validação.
+
+The Flask/JSON implementation belongs to the project's historical evidence. Modernization through SDD is planned and must remain described as future work until the new engineering cycle produces specification, implementation, and validation evidence.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-POR-001 — Evolução da Engenharia no Portfólio de Luís França
+
+#### Metadata
+
+Concept ID: POR-001
+Category: PORTFOLIO
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Evolução da Engenharia no Portfólio de Luís França
+Slug: portfolio-engineering-evolution-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+O portfólio de Luís França registra uma trajetória de evolução técnica por meio de projetos construídos em diferentes momentos, com níveis distintos de arquitetura, processo, validação e maturidade operacional. Os projetos são preservados não apenas para apresentar resultados, mas também para tornar visível essa evolução.
+
+Projetos históricos, como os gerenciadores de tarefas desktop e web e o sistema legado de cotação de moedas, registram experiências com Python, interfaces desktop, desenvolvimento web, persistência em arquivos, integração com APIs, orientação a objetos, organização arquitetural e testes em estágios anteriores da trajetória.
+
+Projetos mais recentes demonstram uma mudança para processos de engenharia mais explícitos. Specification-Driven Development, decisões arquiteturais registradas, rastreabilidade, testes sistemáticos, Git como autoridade de validação, bancos relacionais, deployment controlado e práticas de segurança passam a fazer parte da construção e evolução dos sistemas.
+
+O Site Portfólio constitui o caso mais completo dessa evolução atualmente demonstrado no próprio portfólio. O projeto percorreu especificação, arquitetura, implementação, testes, validação, evolução de UX/UI, integração com design, deployment em produção e construção de uma Knowledge Base com recuperação vetorial e RAG para a IA Jujuju.
+
+Outros projetos representam diferentes pontos dessa trajetória. A Enterprise Platform possui uma baseline documental e arquitetural extensa com implementação em evolução. A Intelligent Currency Platform reavalia um domínio anteriormente explorado e possui capacidades futuras especificadas ou planejadas que ainda não devem ser confundidas com implementação concluída. Projetos legados permanecem preservados como evidência histórica e como referência para futuros ciclos de modernização.
+
+Essa composição permite avaliar competência profissional sem nivelar artificialmente todos os projetos pelo mesmo maturity level. O portfólio procura mostrar tanto o que foi construído no passado quanto a forma como decisões, arquitetura, qualidade, segurança, IA e produção passaram a ser tratadas de maneira progressivamente mais sistemática.
+
+#### EN
+
+Title: Engineering Evolution Across Luís França's Portfolio
+Slug: portfolio-engineering-evolution-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís França's portfolio records a trajectory of technical evolution through projects built at different times and exhibiting distinct levels of architecture, process, validation, and operational maturity. The projects are preserved not only to present results, but also to make this evolution visible.
+
+Historical projects, such as the desktop and web task managers and the legacy currency quotation system, record experience with Python, desktop interfaces, web development, file-based persistence, API integration, object-oriented programming, architectural organization, and testing at earlier stages of the trajectory.
+
+More recent projects demonstrate a shift toward more explicit engineering processes. Specification-Driven Development, recorded architectural decisions, traceability, systematic testing, Git as a validation authority, relational databases, controlled deployment, and security practices become part of the construction and evolution of the systems.
+
+Site Portfolio currently constitutes the most complete case of this evolution demonstrated within the portfolio itself. The project progressed through specification, architecture, implementation, testing, validation, UX/UI evolution, design integration, production deployment, and construction of a Knowledge Base with vector retrieval and RAG for IA Jujuju.
+
+Other projects represent different points along this trajectory. The Enterprise Platform has an extensive documentation and architecture baseline with implementation in progress. The Intelligent Currency Platform reassesses a previously explored domain and includes future capabilities that are specified or planned but must not be confused with completed implementation. Legacy projects remain preserved as historical evidence and as references for future modernization cycles.
+
+This composition makes it possible to evaluate professional capability without artificially assigning the same maturity level to every project. The portfolio seeks to show both what was built in the past and how decisions, architecture, quality, security, AI, and production have progressively been addressed in a more systematic engineering process.
+
+#### Evidence / Maturity Notes
+
+POR-001 é uma síntese transversal. Cada afirmação sobre um projeto herda o maturity level e a autoridade das evidências daquele projeto. O conceito não pode utilizar a maturidade do Site Portfólio para elevar retroativamente projetos históricos ou projetos ainda em desenvolvimento.
+
+POR-001 is a cross-project synthesis. Each statement concerning a project inherits the maturity level and authority of that project's evidence. The concept must not use the maturity of Site Portfolio to retroactively elevate historical projects or projects that remain under development.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+## 8. Wave 1 Traceability Matrix
 
 | ID | Category | PT-BR | EN | CER-01 | Maturity | Equivalence | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1609,7 +2000,18 @@ Editorial Baseline: APPROVED
 | KB-SKL-003 | SKILL | Approved | Approved | PASS | PASS | PASS | APPROVED |
 | KB-SKL-004 | SKILL | Approved | Approved | PASS | PASS | PASS | APPROVED |
 
-## 8. Retrieval Acceptance Intent
+## 9. Wave 4 Traceability Matrix
+
+| ID | Category | PT-BR | EN | CER-01 | Maturity | Equivalence | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| KB-PRJ-007 | PROJECT | Approved | Approved | PASS | PASS | PASS | APPROVED |
+| KB-PRJ-008 | PROJECT | Approved | Approved | PASS | PASS | PASS | APPROVED |
+| KB-PRJ-009 | PROJECT | Approved | Approved | PASS | PASS | PASS | APPROVED |
+| KB-PRJ-010 | PROJECT | Approved | Approved | PASS | PASS | PASS | APPROVED |
+| KB-PRJ-011 | PROJECT | Approved | Approved | PASS | PASS | PASS | APPROVED |
+| KB-POR-001 | PORTFOLIO | Approved | Approved | PASS | PASS | PASS | APPROVED |
+
+## 10. Retrieval Acceptance Intent
 
 The approved corpus must later support questions concerning:
 
@@ -1637,7 +2039,7 @@ Negative-boundary validation intent includes ensuring that the assistant does no
 
 These are validation intentions only. Retrieval tests have not yet been executed against this baseline.
 
-## 9. Approval and Change Control
+## 11. Approval and Change Control
 
 - Wave 1 editorial content is Human Approved.
 - The baseline is immutable except through an explicit reviewed revision.
