@@ -216,7 +216,7 @@ His portfolio is used not only to present projects but also to demonstrate the e
 
 #### Evidence / Maturity Notes
 
-Approved as Wave 1 human-reviewed professional profile. Professional capabilities are declared/approved (E1) and, where noted, supported by implemented and production-deployed evidence in the Site Portfolio (E5).
+Professional Profile is supported by approved professional declarations together with historical and current project evidence. Specific capabilities span different evidence levels, including designed, implemented, validated, and production-demonstrated work, and each claim must retain the maturity established by its own supporting evidence under CER-01.
 
 #### Approval
 
@@ -271,7 +271,7 @@ His portfolio also reflects this professional evolution: historical projects doc
 
 #### Evidence / Maturity Notes
 
-Approved as Wave 1 v1.1. Includes the approved AutoLISP/AutoCAD historical automation addition. Historical background is presented as context; current Software Engineering focus is supported by implemented and production evidence in the Site Portfolio.
+Multidisciplinary background approved as professional and historical context. The AutoLISP/AutoCAD experience is historical evidence and must not be retrospectively characterized with the engineering maturity of current Software Engineering projects.
 
 #### Approval
 
@@ -334,7 +334,7 @@ His experience is therefore presented in the portfolio with an explicit distinct
 
 #### Evidence / Maturity Notes
 
-Approved as Wave 1 human-reviewed professional experience. Distinctions between historical background, current demonstrated capabilities, systems under development, and planned capabilities are preserved at claim granularity.
+Professional experience combines approved professional background with project evidence at different maturity levels. Historical, planned, in-development, validated, and production claims must retain their respective evidence-based maturity.
 
 #### Approval
 
@@ -393,7 +393,7 @@ His backend engineering approach prioritizes solutions proportional to actual re
 
 #### Evidence / Maturity Notes
 
-Approved as Wave 1 human-reviewed skill statement. Django in the Site Portfolio is supported by implemented, validated, and production-deployed evidence (E5). Other Python ecosystem technologies are declared/approved (E1) or supported by historical/implemented evidence at lower maturity.
+Python and backend engineering are approved professional capabilities. Django backend engineering in the Site Portfolio has production evidence; other technologies and experiences must retain only the maturity supported by their specific evidence under CER-01.
 
 #### Approval
 
@@ -452,7 +452,7 @@ The process is also applied incrementally. Changes to an existing system begin w
 
 #### Evidence / Maturity Notes
 
-Approved as Wave 1 human-reviewed skill statement. Architecture and SDD process are supported by implemented, validated, and production-deployed evidence in the Site Portfolio (E5), including formal specification artifacts retained in the repository.
+Software Architecture and SDD are approved professional capabilities supported across multiple projects at different maturity levels. The Site Portfolio demonstrates specification, architectural decision-making, implementation, validation, and production delivery. Enterprise Platform and Intelligent Currency Platform provide additional specification and architecture evidence within their respective maturity levels, while the historical Currency Quotation System provides evidence of architectural evolution including MVC. Each architectural claim must retain its project-specific maturity under CER-01.
 
 #### Approval
 
@@ -515,7 +515,7 @@ This approach does not assume that every project requires the same number of tes
 
 #### Evidence / Maturity Notes
 
-Approved as Wave 1 human-reviewed skill statement. Testing, quality, and delivery practices in the Site Portfolio are supported by implemented, validated, and production-deployed evidence (E5), including the Release 2 test suite and quality gates.
+Testing, quality, and delivery are approved professional capabilities. The Site Portfolio provides implementation, validation, quality-gate, and production-delivery evidence; maturity must remain proportional to the evidence available for each specific claim.
 
 #### Approval
 
@@ -582,7 +582,7 @@ Other portfolio projects have different levels of Artificial Intelligence maturi
 
 #### Evidence / Maturity Notes
 
-Approved as Wave 1 human-reviewed skill statement. AI/LLM/RAG capabilities in the Site Portfolio are supported by implemented, validated, and production-deployed evidence (E5). Other portfolio AI capabilities remain at lower maturity levels (planned or specified).
+AI, LLM, and RAG engineering are supported by implemented, validated, and production evidence in the Site Portfolio. Planned AI or Machine Learning capabilities in other projects must not be represented as implemented or production capabilities.
 
 #### Approval
 
