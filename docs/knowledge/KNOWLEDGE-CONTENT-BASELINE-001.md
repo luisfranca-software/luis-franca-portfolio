@@ -589,7 +589,419 @@ AI, LLM, and RAG engineering are supported by implemented, validated, and produc
 Human Review: APPROVED
 Editorial Baseline: APPROVED
 
-## 5. Wave 1 Traceability Matrix
+## 5. Wave 2 — Flagship Case
+
+Wave 2 contains 6 Knowledge Concepts and 12 KnowledgeDocument variants.
+
+Category for all Wave 2 concepts: PROJECT
+
+All Wave 2 KnowledgeDocument variants have Review Status: APPROVED.
+
+### KB-PRJ-001 — Site Portfólio — Product Overview
+
+#### Metadata
+
+Concept ID: KB-PRJ-001
+Category: PROJECT
+Editorial Version: v1.0
+
+#### PT-BR
+
+Title: Site Portfólio — Product Overview
+Slug: site-portfolio-product-overview-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+O Site Portfólio é uma plataforma digital profissional desenvolvida por Luís França para apresentar seu perfil, experiência, competências, projetos e práticas de Engenharia de Software. Mais do que uma página de apresentação, o projeto foi concebido para que o próprio produto também funcione como evidência do processo de engenharia empregado em sua construção e evolução.
+
+O sistema foi desenvolvido como uma aplicação web baseada em Django e PostgreSQL, utilizando renderização server-side com Django Templates, HTML, CSS e JavaScript de forma proporcional às necessidades do produto. Sua arquitetura segue um monólito modular, preservando separação de responsabilidades sem introduzir a complexidade operacional de uma arquitetura distribuída sem necessidade comprovada.
+
+O produto oferece conteúdo profissional bilíngue em português brasileiro e inglês, apresentação de projetos e competências, canais de contato e comunicação, administração baseada no Django Admin e uma base de conhecimento utilizada pela IA Jujuju.
+
+A IA Jujuju é a assistente virtual integrada ao portfólio. Ela utiliza Retrieval-Augmented Generation (RAG) para recuperar conteúdo autorizado da base de conhecimento antes da geração das respostas. O pipeline utiliza embeddings, armazenamento vetorial no PostgreSQL por meio do pgvector, recuperação semântica com filtros controlados e integração com modelos da OpenAI por abstrações de provider.
+
+O desenvolvimento do Site Portfólio foi conduzido de forma orientada por especificações. Requisitos, decisões arquiteturais, contratos, critérios de teste, implantação e evolução foram documentados e relacionados à implementação e às evidências de validação. O projeto também passou por ciclos de refinamento responsivo, UX/UI, validação visual e preparação operacional para produção.
+
+O Site Portfólio está implantado em infraestrutura de produção e suas principais capacidades de aplicação, incluindo o backend Django, PostgreSQL e o pipeline de Knowledge Base, recuperação vetorial e IA Jujuju, possuem evidência de execução e validação em produção. O processo de fechamento operacional global da evolução atual permanece sujeito aos gates finais definidos para o projeto.
+
+#### EN
+
+Title: Site Portfolio — Product Overview
+Slug: site-portfolio-product-overview-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Site Portfolio is a professional digital platform developed by Luís França to present his profile, experience, capabilities, projects, and Software Engineering practices. More than a presentation website, the project was conceived so that the product itself could also serve as evidence of the engineering process applied throughout its construction and evolution.
+
+The system was developed as a web application based on Django and PostgreSQL, using server-side rendering with Django Templates, HTML, CSS, and JavaScript proportionally to the product's actual needs. Its architecture follows a modular monolith approach, preserving separation of responsibilities without introducing the operational complexity of a distributed architecture where no demonstrated need exists.
+
+The product provides bilingual professional content in Brazilian Portuguese and English, presentation of projects and capabilities, contact and communication channels, administration based on Django Admin, and a knowledge base used by IA Jujuju.
+
+IA Jujuju is the virtual assistant integrated into the portfolio. It uses Retrieval-Augmented Generation (RAG) to retrieve authorized content from the knowledge base before generating responses. The pipeline uses embeddings, vector storage in PostgreSQL through pgvector, semantic retrieval with controlled filters, and integration with OpenAI models through provider abstractions.
+
+Site Portfolio development was conducted through a specification-driven process. Requirements, architectural decisions, contracts, testing criteria, deployment, and evolution were documented and related to implementation and validation evidence. The project also underwent responsive, UX/UI, visual validation, and production-readiness refinement cycles.
+
+Site Portfolio is deployed on production infrastructure, and its principal application capabilities, including the Django backend, PostgreSQL, and the Knowledge Base, vector retrieval, and IA Jujuju pipeline, have evidence of production execution and validation. The overall operational closure of the current evolution remains subject to the project's remaining final gates.
+
+#### Evidence / Maturity Notes
+
+O Site Portfólio possui evidência de especificação, implementação, validação e operação em produção. Claims individuais devem preservar sua temporalidade: funcionalidades ou etapas que ainda estejam em processo de fechamento não devem ser descritas como formalmente encerradas apenas porque outras capacidades do sistema já possuem evidência de produção.
+
+Site Portfolio is supported by specification, implementation, validation, and production-operation evidence. Individual claims must preserve their temporal context: features or stages still undergoing closure must not be described as formally closed merely because other system capabilities already have production evidence.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PRJ-002 — Site Portfólio — Legacy Modernization
+
+#### Metadata
+
+Concept ID: KB-PRJ-002
+Category: PROJECT
+Editorial Version: v1.0
+
+#### PT-BR
+
+Title: Site Portfólio — Legacy Modernization
+Slug: site-portfolio-legacy-modernization-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+O Site Portfólio representa a modernização de uma presença profissional anterior para um produto de software estruturado por práticas contemporâneas de Engenharia de Software. Em vez de tratar a evolução como uma simples atualização visual do site legado, o projeto utilizou a oportunidade para reavaliar requisitos, arquitetura, experiência do usuário, responsividade, qualidade, segurança, operação e capacidade de evolução.
+
+A modernização foi conduzida progressivamente. O produto passou por uma fundação inicial, implementação das capacidades essenciais e ciclos posteriores de maturidade da plataforma. Esse processo permitiu preservar comportamentos e objetivos relevantes enquanto decisões antigas eram reavaliadas com base nos requisitos atuais.
+
+A evolução da interface também foi tratada como um problema de engenharia. O projeto estabeleceu referências de design e implementou requisitos responsivos verificáveis, considerando diferentes larguras de viewport e comportamentos específicos de componentes. O repositório preserva especificações responsivas, medições de geometria, evidências de fit, screenshots de validação, regressões visuais e rastreabilidade entre referências de design e comportamento observado no navegador.
+
+Figma foi utilizado como autoridade de design integrada a partes desse ciclo por meio de MCP com Codex. Composições e propriedades aprovadas foram comparadas com a implementação, e evidências de geometria e rastreabilidade foram produzidas para apoiar refinamentos responsivos e visuais. A automação e as evidências técnicas complementaram, mas não substituíram, a revisão visual e o aceite humano.
+
+O trabalho incluiu refinamentos em elementos como composição da homepage, comportamento responsivo, header, footer, áreas de conteúdo, imagens, backgrounds e integração visual da IA Jujuju. Correções foram verificadas contra viewports de referência e, quando aplicável, contra limites de transição para reduzir regressões entre tamanhos de tela.
+
+A modernização resultou em uma plataforma que combina apresentação profissional com backend, persistência, administração, testes, documentação, operação e capacidades de IA/RAG. Dessa forma, o projeto demonstra uma evolução de produto baseada em reavaliação arquitetural e validação incremental, e não apenas uma substituição estética do sistema anterior.
+
+#### EN
+
+Title: Site Portfolio — Legacy Modernization
+Slug: site-portfolio-legacy-modernization-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Site Portfolio represents the modernization of a previous professional web presence into a software product structured through contemporary Software Engineering practices. Rather than treating the evolution as a simple visual update of the legacy website, the project used the opportunity to reassess requirements, architecture, user experience, responsiveness, quality, security, operations, and evolvability.
+
+Modernization was conducted progressively. The product went through an initial foundation, implementation of essential capabilities, and subsequent platform-maturity cycles. This process made it possible to preserve relevant behaviors and objectives while reassessing previous decisions against current requirements.
+
+Interface evolution was also treated as an engineering problem. The project established design references and implemented verifiable responsive requirements, considering different viewport widths and component-specific behaviors. The repository preserves responsive specifications, geometry measurements, fit evidence, validation screenshots, visual regression evidence, and traceability between design references and behavior observed in the browser.
+
+Figma was used as a design authority integrated into parts of this cycle through MCP with Codex. Approved compositions and properties were compared with the implementation, and geometry and traceability evidence was produced to support responsive and visual refinements. Automation and technical evidence complemented, but did not replace, human visual review and acceptance.
+
+The work included refinements to elements such as homepage composition, responsive behavior, header, footer, content areas, images, backgrounds, and the visual integration of IA Jujuju. Corrections were verified against reference viewports and, where applicable, transition boundaries to reduce regressions across screen sizes.
+
+Modernization resulted in a platform that combines professional presentation with backend engineering, persistence, administration, testing, documentation, operations, and AI/RAG capabilities. The project therefore demonstrates product evolution based on architectural reassessment and incremental validation rather than merely an aesthetic replacement of the previous system.
+
+#### Evidence / Maturity Notes
+
+A modernização do Site Portfólio é suportada por especificações, implementação, artefatos de validação responsiva e visual e evidência de produção. O uso de Figma integrado por MCP com Codex faz parte do processo efetivamente executado e aprovado pelo Product Owner; a documentação do repositório preserva ampla evidência de Figma e validação, mas não consolidou adequadamente a identificação nominal dessa integração, constituindo uma lacuna documental reconhecida. O site legado deve permanecer caracterizado segundo sua maturidade histórica, sem atribuição retroativa das práticas de engenharia adotadas na plataforma atual.
+
+Site Portfolio modernization is supported by specifications, implementation, responsive and visual validation artifacts, and production evidence. The use of Figma integrated through MCP with Codex is part of the process actually executed and approved by the Product Owner; the repository preserves extensive Figma and validation evidence but did not adequately consolidate the nominal identification of this integration, which is a recognized documentation gap. The legacy website must remain characterized according to its historical maturity without retroactively attributing the engineering practices adopted in the current platform.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PRJ-003 — Site Portfólio — Architecture
+
+#### Metadata
+
+Concept ID: KB-PRJ-003
+Category: PROJECT
+Editorial Version: v1.0
+
+#### PT-BR
+
+Title: Site Portfólio — Architecture
+Slug: site-portfolio-architecture-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+A arquitetura do Site Portfólio foi projetada para equilibrar simplicidade, separação de responsabilidades, testabilidade, segurança, implantação e evolução. A solução adota Django como framework principal e uma arquitetura de monólito modular, evitando a introdução prematura de microserviços ou infraestrutura distribuída.
+
+A aplicação utiliza Django 5.2 sobre Python 3.13, Django Templates para renderização server-side e PostgreSQL como banco de dados relacional. HTML e CSS constituem a base da apresentação, com JavaScript utilizado de forma limitada e orientada às necessidades de interação. O ambiente Python e suas dependências são gerenciados de forma reproduzível com `uv`.
+
+As responsabilidades são separadas por módulos funcionais da aplicação. Capacidades como contato, administração, Knowledge Base e IA possuem seus próprios modelos, serviços, integrações e testes quando essa separação é necessária. Dependências externas são isoladas por abstrações, permitindo que testes utilizem providers controlados sem depender de chamadas reais a serviços externos.
+
+Para a Knowledge Base, o PostgreSQL foi estendido com pgvector em vez da introdução de um banco vetorial dedicado. Documentos autorizados são normalizados, divididos deterministicamente em chunks e convertidos em embeddings. Os vetores possuem 1024 dimensões e são pesquisados por similaridade cosseno. Para a escala atual do produto, a recuperação utiliza busca vetorial exata, sem índice ANN.
+
+A arquitetura da IA Jujuju reutiliza essa camada de recuperação. Uma consulta é processada pelo serviço da aplicação, submetida à recuperação semântica com idioma obrigatório e filtros controlados quando aplicáveis, convertida em contexto e enviada ao modelo de geração através de uma abstração de provider. Conversas, mensagens e evidências das fontes recuperadas são persistidas para garantir rastreabilidade.
+
+Na produção, a aplicação utiliza Nginx como reverse proxy e servidor de arquivos estáticos, Gunicorn como servidor WSGI, Django como aplicação e PostgreSQL como camada de persistência. O processo da aplicação é gerenciado pelo systemd, e configuração sensível é fornecida pelo ambiente em vez de incorporada ao código.
+
+Essa arquitetura é deliberadamente proporcional ao produto. Tecnologias adicionais são introduzidas somente quando resolvem uma necessidade comprovada, preservando menor complexidade operacional e mantendo o sistema compreensível, testável e evolutivo.
+
+#### EN
+
+Title: Site Portfolio — Architecture
+Slug: site-portfolio-architecture-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Site Portfolio architecture was designed to balance simplicity, separation of responsibilities, testability, security, deployment, and evolution. The solution uses Django as its primary framework and follows a modular monolith architecture, avoiding premature introduction of microservices or distributed infrastructure.
+
+The application uses Django 5.2 on Python 3.13, Django Templates for server-side rendering, and PostgreSQL as its relational database. HTML and CSS form the presentation foundation, with JavaScript used in a limited manner according to interaction requirements. The Python environment and dependencies are managed reproducibly with `uv`.
+
+Responsibilities are separated across functional application modules. Capabilities such as contact, administration, Knowledge Base, and AI have their own models, services, integrations, and tests where such separation is required. External dependencies are isolated through abstractions, allowing tests to use controlled providers without relying on real calls to external services.
+
+For the Knowledge Base, PostgreSQL was extended with pgvector rather than introducing a dedicated vector database. Authorized documents are normalized, deterministically divided into chunks, and converted into embeddings. Vectors have 1024 dimensions and are searched using cosine similarity. At the product's current scale, retrieval uses exact vector search without an ANN index.
+
+IA Jujuju's architecture reuses this retrieval layer. A query is processed by the application service, submitted to semantic retrieval with a mandatory language constraint and controlled filters where applicable, transformed into context, and sent to the generation model through a provider abstraction. Conversations, messages, and retrieved source evidence are persisted to provide traceability.
+
+In production, the application uses Nginx as a reverse proxy and static-file server, Gunicorn as its WSGI server, Django as the application layer, and PostgreSQL as the persistence layer. The application process is managed by systemd, and sensitive configuration is supplied through the environment rather than embedded in source code.
+
+The architecture is deliberately proportional to the product. Additional technologies are introduced only when they address a demonstrated requirement, preserving lower operational complexity while keeping the system understandable, testable, and evolvable.
+
+#### Evidence / Maturity Notes
+
+A arquitetura descrita possui evidência em documentos arquiteturais, ADRs, especificações, implementação, testes e ambiente de produção. Decisões deliberadamente não adotadas — como microserviços, banco vetorial dedicado e ANN na escala atual — devem ser tratadas como trade-offs arquiteturais, e não como capacidades ausentes por acidente.
+
+The described architecture is supported by architecture documentation, ADRs, specifications, implementation, tests, and the production environment. Deliberately unadopted approaches—such as microservices, a dedicated vector database, and ANN at the current scale—must be understood as architectural trade-offs rather than accidentally missing capabilities.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PRJ-004 — Site Portfólio — Release Evolution
+
+#### Metadata
+
+Concept ID: KB-PRJ-004
+Category: PROJECT
+Editorial Version: v1.0
+
+#### PT-BR
+
+Title: Site Portfólio — Release Evolution
+Slug: site-portfolio-release-evolution-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+A evolução do Site Portfólio foi organizada em releases para que cada incremento tivesse escopo, decisões, critérios de aceite, implementação e validação identificáveis. Essa estratégia permitiu evoluir o produto sem misturar indiscriminadamente fundação, refinamento da experiência e capacidades avançadas.
+
+O Release 1 estabeleceu a fundação do produto. Ele consolidou a homepage profissional, apresentação de competências e projetos, navegação, internacionalização, contato e comunicação, responsividade, persistência necessária ao produto e a base operacional da aplicação. O ciclo foi submetido a testes e validação antes de seu fechamento.
+
+Após essa fundação, o Release 1.1 foi utilizado para elevar a maturidade da plataforma. O ciclo incorporou análise de gaps e refinamentos de UX/UI, design e responsividade, além de trabalho relacionado a analytics, SEO, performance e validação conforme o escopo definido para essa evolução. A homepage passou por um processo particularmente detalhado de especificação responsiva, comparação de geometria, validação visual e refinamentos incrementais em múltiplos viewports.
+
+Nesse processo, referências de Figma foram integradas às atividades de design e validação por meio de MCP com Codex. A implementação foi comparada com composições aprovadas e submetida a medições, screenshots, verificações de fit, sweeps de largura e revisão humana. Os artefatos preservados no repositório permitem rastrear parte dessa evolução entre design, implementação e evidência.
+
+O Release 2 expandiu o produto para capacidades de administração, Knowledge Base e Inteligência Artificial. Django Admin passou a fornecer administração controlada; a Knowledge Base introduziu documentos, chunks, embeddings e recuperação vetorial; e a IA Jujuju passou a utilizar esse conhecimento através de um pipeline RAG com rastreabilidade das fontes.
+
+A engenharia e documentação do Release 2 foram formalmente encerradas em sua baseline correspondente. Posteriormente, a implantação e validação operacional confirmaram em produção capacidades centrais da Knowledge Base, recuperação semântica e IA Jujuju. Refinamentos corretivos também foram aplicados durante o ciclo de produção.
+
+A evolução por releases demonstra uma estratégia incremental: primeiro estabelecer uma fundação funcional, depois amadurecer experiência e qualidade e, somente então, introduzir administração, conhecimento estruturado e IA. Cada etapa preserva sua própria autoridade temporal e nível de maturidade.
+
+#### EN
+
+Title: Site Portfolio — Release Evolution
+Slug: site-portfolio-release-evolution-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Site Portfolio evolution was organized into releases so that each increment had identifiable scope, decisions, acceptance criteria, implementation, and validation. This strategy allowed the product to evolve without indiscriminately mixing foundation work, experience refinement, and advanced capabilities.
+
+Release 1 established the product foundation. It consolidated the professional homepage, presentation of capabilities and projects, navigation, internationalization, contact and communication, responsiveness, the persistence required by the product, and the application's operational foundation. The cycle underwent testing and validation before closure.
+
+Following that foundation, Release 1.1 was used to increase platform maturity. The cycle incorporated gap analysis and UX/UI, design, and responsive refinements, as well as work related to analytics, SEO, performance, and validation according to the scope defined for this evolution. The homepage underwent a particularly detailed process of responsive specification, geometry comparison, visual validation, and incremental refinement across multiple viewports.
+
+During this process, Figma references were integrated into design and validation activities through MCP with Codex. The implementation was compared with approved compositions and subjected to measurements, screenshots, fit checks, width sweeps, and human review. Artifacts preserved in the repository make part of this evolution traceable across design, implementation, and evidence.
+
+Release 2 expanded the product with administration, Knowledge Base, and Artificial Intelligence capabilities. Django Admin provided controlled administration; the Knowledge Base introduced documents, chunks, embeddings, and vector retrieval; and IA Jujuju began using this knowledge through a RAG pipeline with source traceability.
+
+Release 2 engineering and documentation were formally closed in their corresponding baseline. Subsequently, deployment and operational validation confirmed central Knowledge Base, semantic retrieval, and IA Jujuju capabilities in production. Corrective refinements were also applied during the production cycle.
+
+The release evolution demonstrates an incremental strategy: first establish a functional foundation, then mature experience and quality, and only then introduce administration, structured knowledge, and AI. Each stage preserves its own temporal authority and maturity level.
+
+#### Evidence / Maturity Notes
+
+A evolução por releases possui documentação histórica e evidência técnica. O uso de Figma por MCP com Codex no ciclo responsivo é um fato aprovado do processo executado, embora sua identificação nominal não tenha sido adequadamente consolidada na documentação contemporânea. Release 1 e Release 1.1 devem ser descritos segundo seus respectivos fechamentos. Para Release 2, o fechamento de engenharia e documentação e a posterior evidência de produção devem ser distinguidos temporalmente do fechamento operacional global, que não deve ser antecipado enquanto seus gates finais permanecerem abertos.
+
+Release evolution is supported by historical documentation and technical evidence. The use of Figma through MCP with Codex during the responsive cycle is an approved fact of the executed process, although its nominal identification was not adequately consolidated in the contemporaneous documentation. Releases 1 and 1.1 must be described according to their respective closure states. For Release 2, engineering and documentation closure and subsequent production evidence must be temporally distinguished from overall operational closure, which must not be anticipated while final gates remain open.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PRJ-005 — Site Portfólio — IA Jujuju
+
+#### Metadata
+
+Concept ID: KB-PRJ-005
+Category: PROJECT
+Editorial Version: v1.0
+
+#### PT-BR
+
+Title: Site Portfólio — IA Jujuju
+Slug: site-portfolio-ia-jujuju-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+A IA Jujuju é a assistente virtual do portfólio profissional de Luís França. Sua função é permitir que visitantes consultem informações autorizadas sobre o perfil profissional, competências, experiência, projetos e práticas de engenharia apresentadas pelo portfólio.
+
+A solução utiliza Retrieval-Augmented Generation (RAG). Em vez de depender exclusivamente do conhecimento geral do modelo de linguagem, a aplicação recupera conteúdo da Knowledge Base do próprio portfólio e utiliza os resultados relevantes como contexto controlado para geração da resposta.
+
+A Knowledge Base é armazenada no PostgreSQL. Documentos são normalizados e divididos deterministicamente em chunks; embeddings são produzidos por uma integração com a OpenAI e armazenados com pgvector. A recuperação utiliza similaridade vetorial por cosseno, idioma obrigatório e filtros de categoria quando aplicáveis. A configuração atual utiliza embeddings de 1024 dimensões e recuperação exata com `top_k` padrão igual a cinco.
+
+A camada da IA Jujuju possui abstração própria para o provider de geração. A integração de produção utiliza a OpenAI Responses API, enquanto os testes podem substituir dependências externas por providers controlados. Essa separação reduz acoplamento e permite validar a lógica da aplicação sem exigir chamadas reais aos serviços externos durante a suíte automatizada.
+
+O contexto enviado ao modelo é construído a partir do conteúdo recuperado. O desenho inclui controles destinados a reduzir fabricação de respostas e interferência de instruções presentes nas fontes. A aplicação também mantém rastreabilidade entre conversas, mensagens e evidências recuperadas, permitindo relacionar uma resposta ao conhecimento utilizado em sua geração.
+
+As conversas são associadas à sessão anônima do visitante e persistidas para finalidade operacional e de rastreabilidade. O projeto define retenção configurável, atualmente estabelecida em 90 dias, e disponibiliza administração orientada à consulta desses registros.
+
+O pipeline completo foi implementado e validado. Em produção, foram verificadas a geração real de embeddings, a persistência de vetores no PostgreSQL/pgvector, a recuperação semântica e uma consulta end-to-end da IA Jujuju utilizando o mesmo caminho de aplicação empregado pelo produto.
+
+A IA Jujuju, portanto, não é apresentada como uma IA generalista nem como uma fonte independente de verdade. Sua função no produto é fornecer uma interface conversacional sobre uma base de conhecimento governada, recuperável e rastreável.
+
+#### EN
+
+Title: Site Portfolio — IA Jujuju
+Slug: site-portfolio-ia-jujuju-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+IA Jujuju is the virtual assistant for Luís França's professional portfolio. Its purpose is to allow visitors to query authorized information about the professional profile, capabilities, experience, projects, and engineering practices presented by the portfolio.
+
+The solution uses Retrieval-Augmented Generation (RAG). Rather than relying exclusively on the language model's general knowledge, the application retrieves content from the portfolio's own Knowledge Base and uses relevant results as controlled context for response generation.
+
+The Knowledge Base is stored in PostgreSQL. Documents are normalized and deterministically divided into chunks; embeddings are produced through an OpenAI integration and stored with pgvector. Retrieval uses cosine vector similarity, a mandatory language constraint, and category filters where applicable. The current configuration uses 1024-dimensional embeddings and exact retrieval with a default `top_k` of five.
+
+The IA Jujuju layer has its own abstraction for the generation provider. The production integration uses the OpenAI Responses API, while tests can replace external dependencies with controlled providers. This separation reduces coupling and allows application logic to be validated without requiring real external-service calls during the automated test suite.
+
+The context sent to the model is built from retrieved content. The design includes controls intended to reduce fabricated answers and interference from instructions contained in sources. The application also maintains traceability among conversations, messages, and retrieved evidence, allowing a response to be related to the knowledge used in its generation.
+
+Conversations are associated with the visitor's anonymous session and persisted for operational and traceability purposes. The project defines configurable retention, currently set to 90 days, and provides read-oriented administration for these records.
+
+The complete pipeline has been implemented and validated. In production, real embedding generation, vector persistence in PostgreSQL/pgvector, semantic retrieval, and an end-to-end IA Jujuju query using the same application path employed by the product were verified.
+
+IA Jujuju is therefore not presented as a general-purpose AI or as an independent source of truth. Its role in the product is to provide a conversational interface over a governed, retrievable, and traceable knowledge base.
+
+#### Evidence / Maturity Notes
+
+Knowledge Base, embeddings, recuperação vetorial, persistência de conversação e integração RAG da IA Jujuju possuem evidência de implementação, validação e execução em produção. O conteúdo que a assistente pode afirmar permanece condicionado à autoridade e maturidade dos documentos efetivamente aprovados e indexados na Knowledge Base.
+
+The Knowledge Base, embeddings, vector retrieval, conversation persistence, and IA Jujuju RAG integration have implementation, validation, and production-execution evidence. What the assistant may assert remains constrained by the authority and maturity of the documents actually approved and indexed in the Knowledge Base.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PRJ-006 — Site Portfólio — Production Delivery
+
+#### Metadata
+
+Concept ID: KB-PRJ-006
+Category: PROJECT
+Editorial Version: v1.0
+
+#### PT-BR
+
+Title: Site Portfólio — Production Delivery
+Slug: site-portfolio-production-delivery-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+A entrega em produção do Site Portfólio foi tratada como uma etapa de engenharia separada da conclusão do código. O processo considera configuração, persistência, runtime da aplicação, reverse proxy, arquivos estáticos, segurança, recuperação, validação operacional e evidência antes do fechamento definitivo da implantação.
+
+A arquitetura de produção utiliza uma instância de computação OCI executando Linux. Nginx recebe as requisições públicas e atua como reverse proxy para Gunicorn, que executa a aplicação Django por WSGI. PostgreSQL fornece a persistência relacional e também suporta a recuperação vetorial através da extensão pgvector.
+
+Gunicorn é gerenciado pelo systemd e executa a aplicação em uma interface local, evitando exposição direta do servidor de aplicação. Nginx também é responsável pelo atendimento dos arquivos estáticos. A configuração de produção do Django utiliza variáveis de ambiente para valores dependentes do ambiente e dados sensíveis.
+
+O deployment utiliza ambiente Python controlado e dependências bloqueadas. Antes da ativação de alterações, o processo considera operações como sincronização do código, dependências, migrações quando necessárias, coleta de arquivos estáticos e validações da aplicação.
+
+A estratégia operacional inclui preparação para recuperação. O projeto possui runbook específico e, durante a implantação do Release 2, foi criado um recovery point contendo evidências necessárias para restauração do estado anterior, incluindo backup do banco e configurações operacionais relevantes. O procedimento de restauração foi testado antes da progressão da implantação.
+
+A evolução do Release 2 também exigiu validação das dependências do pipeline RAG no ambiente real. PostgreSQL e pgvector foram verificados no servidor, incluindo suporte à dimensão vetorial utilizada pelo produto. Posteriormente, embeddings reais foram gerados, documentos foram indexados, recuperação semântica foi executada e a IA Jujuju respondeu por seu caminho end-to-end de produção.
+
+A implantação também foi acompanhada por correções controladas identificadas durante a validação pública, incluindo refinamentos de posicionamento, localização e nomenclatura da IA Jujuju, configuração de links públicos e alinhamento visual do header. Essas correções foram submetidas a controle de versão e validação conforme sua natureza.
+
+Segurança operacional foi tratada como parte do processo de produção. Credenciais expostas durante uma etapa operacional foram rotacionadas, os acessos afetados foram corrigidos e artefatos temporários contendo informações sensíveis foram removidos. Segredos não são mantidos no código-fonte e o arquivo de ambiente de produção permanece protegido por permissões restritas.
+
+A implantação já possui evidência operacional significativa, inclusive para Django, PostgreSQL, pgvector e IA Jujuju. Entretanto, o fechamento global da implantação do Release 2 permanece condicionado aos gates ainda abertos, incluindo a conclusão controlada da população da Knowledge Base, solução estrutural para cache busting de arquivos estáticos e certificação final de produção.
+
+#### EN
+
+Title: Site Portfólio — Production Delivery
+Slug: site-portfolio-production-delivery-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Site Portfolio production delivery was treated as an engineering stage distinct from code completion. The process considers configuration, persistence, application runtime, reverse proxy, static files, security, recovery, operational validation, and evidence before final deployment closure.
+
+The production architecture uses an OCI compute instance running Linux. Nginx receives public requests and acts as a reverse proxy to Gunicorn, which runs the Django application through WSGI. PostgreSQL provides relational persistence and also supports vector retrieval through the pgvector extension.
+
+Gunicorn is managed by systemd and runs the application on a local interface, preventing direct exposure of the application server. Nginx is also responsible for serving static files. Django production configuration uses environment variables for environment-dependent values and sensitive data.
+
+Deployment uses a controlled Python environment and locked dependencies. Before activating changes, the process considers operations such as code synchronization, dependency installation, migrations where required, static-file collection, and application validation.
+
+The operational strategy includes recovery preparation. The project has a dedicated runbook, and during Release 2 deployment a recovery point was created containing the evidence required to restore the previous state, including a database backup and relevant operational configuration. The restoration procedure was tested before deployment progressed.
+
+Release 2 evolution also required validation of RAG pipeline dependencies in the actual environment. PostgreSQL and pgvector were verified on the server, including support for the vector dimensionality used by the product. Subsequently, real embeddings were generated, documents were indexed, semantic retrieval was executed, and IA Jujuju responded through its end-to-end production path.
+
+Deployment was also accompanied by controlled corrections identified during public validation, including refinements to IA Jujuju positioning, localization and naming, public-link configuration, and visual header alignment. These corrections were subjected to version control and validation according to their nature.
+
+Operational security was treated as part of the production process. Credentials exposed during an operational step were rotated, affected access was corrected, and temporary artifacts containing sensitive information were removed. Secrets are not stored in source code, and the production environment file remains protected by restrictive permissions.
+
+Deployment already has significant operational evidence, including Django, PostgreSQL, pgvector, and IA Jujuju. However, overall Release 2 production-deployment closure remains conditional on the gates that are still open, including controlled completion of Knowledge Base population, a structural static-file cache-busting solution, and final production certification.
+
+#### Evidence / Maturity Notes
+
+A entrega do Site Portfólio possui evidência real de operação em produção e validação de componentes centrais. Isso permite classificar claims específicas comprovadas como production-demonstrated. Não permite antecipar o status administrativo de `Release 2 Production Deployment: CLOSED` enquanto os gates finais definidos pelo projeto permanecerem abertos.
+
+Site Portfolio delivery has real production-operation evidence and validation of central components. This allows specifically proven claims to be classified as production-demonstrated. It does not allow the administrative status `Release 2 Production Deployment: CLOSED` to be anticipated while the project's defined final gates remain open.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+## 6. Wave 1 Traceability Matrix
 
 | ID | Category | PT-BR | EN | CER-01 | Maturity | Equivalence | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -601,7 +1013,7 @@ Editorial Baseline: APPROVED
 | KB-SKL-003 | SKILL | Approved | Approved | PASS | PASS | PASS | APPROVED |
 | KB-SKL-004 | SKILL | Approved | Approved | PASS | PASS | PASS | APPROVED |
 
-## 6. Retrieval Acceptance Intent
+## 7. Retrieval Acceptance Intent
 
 The approved corpus must later support questions concerning:
 
@@ -629,7 +1041,7 @@ Negative-boundary validation intent includes ensuring that the assistant does no
 
 These are validation intentions only. Retrieval tests have not yet been executed against this baseline.
 
-## 7. Approval and Change Control
+## 8. Approval and Change Control
 
 - Wave 1 editorial content is Human Approved.
 - The baseline is immutable except through an explicit reviewed revision.
