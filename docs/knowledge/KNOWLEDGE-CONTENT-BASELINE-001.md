@@ -1001,7 +1001,603 @@ Site Portfolio delivery has real production-operation evidence and validation of
 Human Review: APPROVED
 Editorial Baseline: APPROVED
 
-## 6. Wave 1 Traceability Matrix
+## 6. Wave 3 — Engineering Process
+
+Wave 3 contains 9 Knowledge Concepts and 18 KnowledgeDocument variants.
+
+Wave 3 uses categories:
+
+- PROCESS
+- ENGINEERING
+
+All Wave 3 KnowledgeDocument variants are Human Approved.
+
+PCS-002 additionally remains:
+
+- APPROVED — DOCUMENTARY CONSOLIDATION REQUIRED
+
+### KB-PCS-001 — Specification-Driven Development na Engenharia de Software
+
+#### Metadata
+
+Concept ID: PCS-001
+Category: PROCESS
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Specification-Driven Development na Engenharia de Software
+Slug: specification-driven-development-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís utiliza Specification-Driven Development (SDD) como processo estruturante para transformar requisitos em decisões técnicas, especificações implementáveis, software verificável e evidências de aceitação. Nesse modelo, a implementação não é tratada como ponto inicial isolado: ela deriva de requisitos e decisões previamente compreendidos e registrados em nível proporcional à complexidade e ao risco da mudança.
+
+O processo estabelece uma cadeia de rastreabilidade entre requisitos, decisões, especificações, implementação, testes, evidências e aceite. Product briefs, especificações técnicas, documentos de arquitetura, ADRs, contratos, critérios de aceitação, planos de implantação e registros de validação podem exercer papéis distintos nessa cadeia. A documentação não é utilizada apenas como descrição posterior do código; ela participa do controle da engenharia e da definição do comportamento esperado antes e durante a implementação.
+
+No Site Portfólio, essa abordagem foi aplicada desde a fundação arquitetural até evoluções posteriores do produto. Decisões sobre arquitetura, backend, persistência, integração de e-mail, runtime de produção, Knowledge Base, recuperação vetorial e IA Jujuju foram formalizadas e relacionadas à implementação e à validação correspondente. O mesmo princípio foi aplicado ao trabalho responsivo e visual, no qual requisitos aprovados foram convertidos em critérios determinísticos e verificáveis.
+
+O processo também preserva a separação entre implementação, verificação técnica e aceite humano. A existência de código ou a passagem de um teste automatizado não substitui automaticamente a aprovação do resultado quando a decisão exige avaliação humana, visual ou de produto.
+
+Essa experiência demonstra o uso de SDD não apenas como prática documental, mas como mecanismo de governança técnica para reduzir ambiguidade, controlar mudanças, preservar decisões e permitir evolução rastreável do software.
+
+#### EN
+
+Title: Specification-Driven Software Engineering
+Slug: specification-driven-development-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís uses Specification-Driven Development (SDD) as a structuring process for transforming requirements into technical decisions, implementable specifications, verifiable software, and acceptance evidence. In this model, implementation is not treated as an isolated starting point: it derives from requirements and decisions that have first been understood and recorded at a level proportional to the complexity and risk of the change.
+
+The process establishes a traceability chain connecting requirements, decisions, specifications, implementation, tests, evidence, and acceptance. Product briefs, technical specifications, architecture documents, ADRs, contracts, acceptance criteria, deployment plans, and validation records may serve distinct roles within this chain. Documentation is not used merely as a retrospective description of code; it participates in engineering control and in defining expected behavior before and during implementation.
+
+In Site Portfolio, this approach was applied from the architectural foundation through subsequent product evolution. Decisions concerning architecture, backend engineering, persistence, email integration, production runtime, Knowledge Base, vector retrieval, and IA Jujuju were formalized and connected to their corresponding implementation and validation. The same principle was applied to responsive and visual engineering, where approved requirements were converted into deterministic and verifiable criteria.
+
+The process also preserves separation between implementation, technical verification, and human acceptance. The existence of code or the successful completion of an automated test does not automatically replace approval of the result when a decision requires human, visual, or product evaluation.
+
+This experience demonstrates the use of SDD not merely as a documentation practice, but as a technical governance mechanism for reducing ambiguity, controlling change, preserving decisions, and enabling traceable software evolution.
+
+#### Evidence / Maturity Notes
+
+O uso de SDD no Site Portfólio possui evidência de especificação, implementação, validação e entrega em produção. Outros projetos podem utilizar ou prever práticas semelhantes em níveis diferentes de maturidade; cada alegação deve preservar a evidência específica do respectivo projeto.
+
+The use of SDD in Site Portfolio is supported by specification, implementation, validation, and production-delivery evidence. Other projects may use or plan similar practices at different maturity levels; each claim must preserve the evidence specific to the respective project.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PCS-002 — Workflow de Engenharia Assistida por IA
+
+#### Metadata
+
+Concept ID: PCS-002
+Category: PROCESS
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Workflow de Engenharia Assistida por IA
+Slug: ai-assisted-engineering-workflow-pt-br
+Language: pt-br
+Review Status: APPROVED — DOCUMENTARY CONSOLIDATION REQUIRED
+
+##### Approved Content
+
+Luís utiliza um workflow de engenharia assistida por IA no qual ferramentas de inteligência artificial participam de atividades de análise, especificação, implementação e refinamento, mantendo a decisão de produto, a auditoria técnica e o aceite sob governança humana.
+
+No Site Portfólio, o processo executado distribuiu responsabilidades entre Product Owner, ChatGPT, Codex, Figma integrado por MCP, OpenCode, Git/Ubuntu e validação humana. O Product Owner permaneceu responsável por requisitos, restrições, decisões, revisão e aceite. ChatGPT foi utilizado em atividades de análise de engenharia, Specification-Driven Development, arquitetura, planejamento, auditoria e preparação das etapas de execução. Codex e OpenCode participaram de atividades de implementação e refinamento conforme as fases em que foram empregados.
+
+No ciclo de UX/UI e responsividade, Figma foi integrado ao processo de engenharia por MCP com Codex. Composições e propriedades de design aprovadas foram utilizadas como autoridade para especificações responsivas, comparação geométrica e validação visual. O repositório preserva evidências de consulta ao Figma vivo, interação programática com seus elementos, read-back de propriedades, screenshots e validações de geometria, além da separação entre evidência automatizada e revisão humana.
+
+Git e o ambiente Ubuntu foram utilizados como autoridade independente para auditar mudanças produzidas durante o desenvolvimento. Diffs, estado do repositório, testes, verificações estáticas e outras evidências eram inspecionados separadamente da ferramenta que havia realizado a implementação. Essa separação reduz a dependência da autoavaliação do agente executor e preserva um gate verificável antes de aceite e progressão.
+
+O workflow não atribui autonomia irrestrita aos agentes de IA. A responsabilidade é distribuída deliberadamente: ferramentas podem analisar ou executar trabalho técnico, enquanto requisitos, decisões relevantes, avaliação de evidências, aceite e autorização de progressão permanecem controlados pelo processo de engenharia e pelo Product Owner.
+
+A experiência do Site Portfólio demonstra, portanto, um modelo de engenharia governada por humanos e assistida por IA, no qual diferentes ferramentas são utilizadas conforme sua função, com separação entre decisão, execução, auditoria, validação e aceite.
+
+#### EN
+
+Title: AI-Assisted Engineering Workflow
+Slug: ai-assisted-engineering-workflow-en
+Language: en
+Review Status: APPROVED — DOCUMENTARY CONSOLIDATION REQUIRED
+
+##### Approved Content
+
+Luís uses an AI-assisted engineering workflow in which artificial intelligence tools participate in analysis, specification, implementation, and refinement activities while product decisions, technical auditing, and acceptance remain under human governance.
+
+In Site Portfolio, the executed process distributed responsibilities among the Product Owner, ChatGPT, Codex, Figma integrated through MCP, OpenCode, Git/Ubuntu, and human validation. The Product Owner remained responsible for requirements, constraints, decisions, review, and acceptance. ChatGPT was used for engineering analysis, Specification-Driven Development, architecture, planning, auditing, and preparation of execution stages. Codex and OpenCode participated in implementation and refinement activities according to the phases in which they were employed.
+
+During the UX/UI and responsive engineering cycle, Figma was integrated into the engineering process through MCP with Codex. Approved design compositions and properties were used as authorities for responsive specifications, geometry comparison, and visual validation. The repository preserves evidence of querying live Figma state, programmatic interaction with its elements, property read-back, screenshots, and geometry validation, together with separation between automated evidence and human review.
+
+Git and the Ubuntu environment were used as independent authorities for auditing changes produced during development. Diffs, repository state, tests, static checks, and other evidence were inspected separately from the tool that performed the implementation. This separation reduces dependence on self-assessment by the executing agent and preserves a verifiable gate before acceptance and progression.
+
+The workflow does not grant unrestricted autonomy to AI agents. Responsibility is deliberately distributed: tools may analyze or execute technical work, while requirements, relevant decisions, evidence assessment, acceptance, and authorization to progress remain controlled by the engineering process and the Product Owner.
+
+The Site Portfolio experience therefore demonstrates a model of human-governed, AI-assisted engineering, in which different tools are used according to their roles, with separation between decision-making, execution, auditing, validation, and acceptance.
+
+#### Evidence / Maturity Notes
+
+O workflow foi efetivamente executado e é aprovado pelo Product Owner. O repositório possui evidência técnica substancial de Figma, validação visual, validação baseada em Git e separação entre evidência automatizada e Human Review. Entretanto, a identificação nominal e a atribuição completa dos papéis de ChatGPT, Codex, Figma MCP e OpenCode não foram consolidadas de forma suficiente nos artefatos contemporâneos do projeto. Essa lacuna documental deve ser preservada como tal e corrigida antes de este conceito adquirir autoridade documental integral para o RAG.
+
+The workflow was actually executed and is approved by the Product Owner. The repository contains substantial technical evidence of Figma, visual validation, Git-based validation, and separation between automated evidence and Human Review. However, the nominal identification and complete attribution of the roles of ChatGPT, Codex, Figma MCP, and OpenCode were not sufficiently consolidated in the project's contemporaneous artifacts. This documentation gap must be preserved as such and corrected before this concept acquires full documentary authority for RAG.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PCS-003 — Validação de Engenharia Baseada em Git
+
+#### Metadata
+
+Concept ID: PCS-003
+Category: PROCESS
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Validação de Engenharia Baseada em Git
+Slug: git-based-engineering-validation-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís utiliza Git não apenas como mecanismo de versionamento, mas também como uma das autoridades de validação do processo de engenharia. Mudanças implementadas são verificadas a partir do estado real do repositório, permitindo distinguir o que uma ferramenta declara ter realizado daquilo que efetivamente foi incorporado ao código e à documentação.
+
+O processo pode verificar baseline inicial, branch, commit de origem, arquivos modificados, diff, integridade textual, escopo da alteração, árvore de trabalho, relação entre commits locais e remotos e ausência de mudanças não previstas. Comandos como `git status`, `git diff`, `git diff --check`, `git show`, `git log` e verificações de divergência são utilizados como evidências independentes conforme a necessidade da mudança.
+
+No Site Portfólio, essa disciplina foi combinada com quality gates de engenharia. Alterações relevantes foram submetidas, conforme o escopo, a testes automatizados, Ruff, mypy, verificações do Django, validações de migrations, staticfiles, segurança, geometria ou comportamento funcional. Resultados bloqueados pelo ambiente foram registrados como bloqueados em vez de convertidos artificialmente em sucesso.
+
+A separação entre executor e auditoria é especialmente relevante em um workflow assistido por IA. A ferramenta que modifica o repositório não é considerada autoridade suficiente para certificar sozinha sua própria alteração. O estado observado pelo Git e os resultados dos gates executados independentemente constituem evidência para a decisão humana de aceitar, corrigir ou rejeitar a mudança.
+
+Esse processo melhora rastreabilidade, reduz risco de alterações acidentais e permite associar uma decisão técnica a um conjunto verificável de mudanças e evidências antes do push, deployment ou encerramento de uma etapa.
+
+#### EN
+
+Title: Git-Based Engineering Validation
+Slug: git-based-engineering-validation-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís uses Git not only as a version-control mechanism, but also as one of the authorities for validating the engineering process. Implemented changes are verified against the actual repository state, making it possible to distinguish what a tool reports having done from what was actually incorporated into code and documentation.
+
+The process may verify the initial baseline, branch, source commit, modified files, diff, textual integrity, change scope, working tree, relationship between local and remote commits, and absence of unintended changes. Commands such as `git status`, `git diff`, `git diff --check`, `git show`, `git log`, and divergence checks are used as independent evidence according to the needs of the change.
+
+In Site Portfolio, this discipline was combined with engineering quality gates. Relevant changes were subjected, according to scope, to automated tests, Ruff, mypy, Django checks, migrations validation, staticfiles checks, security checks, geometry validation, or functional behavior verification. Results blocked by the environment were recorded as blocked rather than artificially converted into success.
+
+The separation between executor and audit is particularly relevant in an AI-assisted workflow. The tool modifying the repository is not considered sufficient authority to certify its own change independently. The state observed through Git and the results of independently executed gates provide evidence for the human decision to accept, correct, or reject the change.
+
+This process improves traceability, reduces the risk of accidental modifications, and makes it possible to associate a technical decision with a verifiable set of changes and evidence before push, deployment, or closure of an engineering stage.
+
+#### Evidence / Maturity Notes
+
+A validação baseada em Git possui evidência recorrente ao longo da engenharia do Site Portfólio, incluindo auditoria de diffs, quality gates, controle de commits e certificações de baseline. O processo foi aplicado durante implementação, validação e preparação de entregas em produção.
+
+Git-based validation has recurring evidence throughout Site Portfolio engineering, including diff auditing, quality gates, commit control, and baseline certifications. The process was applied during implementation, validation, and preparation for production delivery.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-PCS-004 — Modernização de Software Legado
+
+#### Metadata
+
+Concept ID: PCS-004
+Category: PROCESS
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Modernização de Software Legado
+Slug: legacy-software-modernization-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís aborda modernização de software legado como um processo de reavaliação de produto e engenharia, e não apenas como substituição de tecnologias. O objetivo é compreender o sistema existente, preservar o conhecimento útil, identificar limitações e redefinir arquitetura, requisitos, experiência de uso e critérios de qualidade de acordo com as necessidades atuais.
+
+O Site Portfólio constitui o principal caso atual dessa abordagem. Uma presença profissional anteriormente construída com menor formalização de engenharia foi reavaliada e transformada em uma plataforma desenvolvida por especificações, arquitetura explícita, backend estruturado, persistência relacional, testes, automação de qualidade, deployment controlado e posteriormente capacidades de Knowledge Base, recuperação vetorial e IA.
+
+A modernização incluiu também revisão progressiva da experiência visual e responsiva. Em vez de tratar diferentes tamanhos de tela apenas como reduções proporcionais do desktop, o projeto estabeleceu referências específicas, critérios geométricos e validação em múltiplos viewports. Figma integrado por MCP com Codex fez parte do processo efetivamente executado para determinadas atividades de design e refinamento, acompanhado de validação técnica e revisão humana.
+
+Esse método preserva uma distinção importante entre o sistema histórico e sua evolução. Práticas modernas não são atribuídas retroativamente ao legado. O sistema anterior permanece evidência de seu período e de sua maturidade original; a reengenharia posterior demonstra a evolução do processo, das decisões e da capacidade de entrega.
+
+A mesma abordagem fornece uma referência para futuras modernizações: primeiro compreender e classificar o legado; depois decidir o que preservar, substituir ou redesenhar; especificar o novo baseline; implementar de forma controlada; validar comportamento e qualidade; e somente então elevar a maturidade das alegações sobre o sistema.
+
+#### EN
+
+Title: Legacy Software Modernization
+Slug: legacy-software-modernization-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís approaches legacy software modernization as a product and engineering reassessment process rather than merely a replacement of technologies. The objective is to understand the existing system, preserve useful knowledge, identify limitations, and redefine architecture, requirements, user experience, and quality criteria according to current needs.
+
+Site Portfolio is the primary current case of this approach. A professional web presence previously built with less formal engineering was reassessed and transformed into a platform developed through specifications, explicit architecture, structured backend engineering, relational persistence, testing, quality automation, controlled deployment, and subsequently Knowledge Base, vector retrieval, and AI capabilities.
+
+Modernization also included progressive revision of the visual and responsive experience. Rather than treating different screen sizes merely as proportional reductions of desktop layouts, the project established specific references, geometric criteria, and validation across multiple viewports. Figma integrated through MCP with Codex was part of the process actually executed for specific design and refinement activities, accompanied by technical validation and human review.
+
+This method preserves an important distinction between the historical system and its evolution. Modern practices are not retroactively attributed to the legacy system. The previous system remains evidence of its period and original maturity; subsequent reengineering demonstrates the evolution of the process, decisions, and delivery capability.
+
+The same approach provides a reference for future modernization efforts: first understand and classify the legacy system; then decide what to preserve, replace, or redesign; specify the new baseline; implement in a controlled manner; validate behavior and quality; and only then elevate the maturity of claims about the system.
+
+#### Evidence / Maturity Notes
+
+A modernização do Site Portfólio possui evidência histórica, especificação, implementação, validação visual e técnica e operação em produção. Outros sistemas legados do portfólio não devem ser descritos como modernizados enquanto essa evolução não tiver sido efetivamente executada e comprovada.
+
+Site Portfolio modernization is supported by historical evidence, specification, implementation, visual and technical validation, and production operation. Other legacy systems in the portfolio must not be described as modernized until that evolution has actually been executed and demonstrated.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-ENG-001 — Engenharia Backend
+
+#### Metadata
+
+Concept ID: ENG-001
+Category: ENGINEERING
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Engenharia Backend
+Slug: backend-engineering-evidence-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís demonstra engenharia backend por meio da construção de aplicações em que regras de negócio, contratos, persistência, integrações e comportamento operacional são tratados como responsabilidades explícitas e testáveis, em vez de ficarem acoplados à interface.
+
+No Site Portfólio, o backend foi estruturado como um monólito modular em Django, com PostgreSQL como persistência relacional. A solução evoluiu para suportar funcionalidades como contato, administração, Knowledge Base, indexação, recuperação de conhecimento, conversações e IA Jujuju sem introduzir uma arquitetura distribuída desnecessária para a escala e os requisitos do produto.
+
+O desenvolvimento do backend inclui validação de entradas, contratos de dados, tratamento de falhas e isolamento de dependências externas. No fluxo de contato, por exemplo, a persistência da solicitação foi projetada para sobreviver a falhas da integração de notificação, evitando que indisponibilidade do provedor externo resulte em perda do dado principal.
+
+Na infraestrutura de conhecimento e IA, integrações com providers externos foram isoladas por abstrações próprias. Operações potencialmente lentas, como geração de embeddings ou chamadas ao modelo, foram mantidas fora de transações longas de banco de dados. A substituição dos chunks indexados utiliza uma etapa atômica curta, preservando um índice válido anterior quando uma tentativa posterior de reindexação falha.
+
+A engenharia backend aplicada no projeto demonstra preocupação conjunta com correção, simplicidade arquitetural, consistência de dados, tratamento de falhas, testabilidade e comportamento em produção.
+
+#### EN
+
+Title: Backend Engineering
+Slug: backend-engineering-evidence-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís demonstrates backend engineering through applications in which business rules, contracts, persistence, integrations, and operational behavior are treated as explicit and testable responsibilities rather than being coupled to the user interface.
+
+In Site Portfolio, the backend was structured as a Django modular monolith with PostgreSQL as relational persistence. The solution evolved to support capabilities such as contact handling, administration, Knowledge Base, indexing, knowledge retrieval, conversations, and IA Jujuju without introducing a distributed architecture unnecessary for the product's scale and requirements.
+
+Backend development includes input validation, data contracts, failure handling, and isolation of external dependencies. In the contact workflow, for example, request persistence was designed to survive notification-integration failures, preventing an external provider outage from causing loss of the primary data.
+
+Within the knowledge and AI infrastructure, integrations with external providers were isolated behind dedicated abstractions. Potentially slow operations, such as embedding generation or model calls, were kept outside long-running database transactions. Replacement of indexed chunks uses a short atomic stage, preserving a previously valid index when a later reindexing attempt fails.
+
+The backend engineering applied to the project demonstrates combined attention to correctness, architectural simplicity, data consistency, failure handling, testability, and production behavior.
+
+#### Evidence / Maturity Notes
+
+O Site Portfólio fornece evidência de implementação, testes, validação e operação em produção para seu backend Django e para funcionalidades centrais associadas. Tecnologias ou padrões utilizados em outros projetos devem conservar o nível de maturidade demonstrado pela evidência específica desses projetos.
+
+Site Portfolio provides implementation, testing, validation, and production-operation evidence for its Django backend and associated core capabilities. Technologies or patterns used in other projects must retain the maturity level demonstrated by the specific evidence for those projects.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-ENG-002 — Engenharia de Testes e Qualidade
+
+#### Metadata
+
+Concept ID: ENG-002
+Category: ENGINEERING
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Engenharia de Testes e Qualidade
+Slug: testing-quality-engineering-evidence-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís aplica testes e quality gates como mecanismos de redução de risco e produção de evidência sobre o comportamento do software. A estratégia de qualidade é definida de acordo com a natureza da mudança e pode combinar testes automatizados, análise estática, validação estrutural, inspeção de configuração, testes de integração e revisão humana.
+
+No Site Portfólio, pytest foi utilizado para validar comportamento de módulos como homepage, contato, administração, Knowledge Base, IA Jujuju e políticas de retenção. Ruff, mypy e verificações do Django complementaram os testes funcionais com análise de qualidade, tipagem e consistência da aplicação. Migrations, staticfiles e configurações relevantes também foram submetidos a gates específicos durante a evolução e preparação para produção.
+
+A validação não se limitou ao backend. O refinamento responsivo utilizou medições de geometria, screenshots, comparação com referências aprovadas e múltiplos viewports. Evidência automatizada foi deliberadamente separada de Human Review: uma correspondência geométrica ou a passagem de um teste não substitui o julgamento humano quando o requisito envolve qualidade visual ou decisão de produto.
+
+O processo também registra limitações de evidência. Quando um teste não pode ser executado por restrição ambiental, o resultado deve permanecer bloqueado ou não verificado, em vez de ser interpretado como aprovação. Da mesma forma, uma verificação parcial não é utilizada para elevar a maturidade de toda a funcionalidade.
+
+Essa disciplina permite que testes sejam tratados não apenas como mecanismo para encontrar defeitos, mas como parte da rastreabilidade entre requisito, implementação, evidência e aceite.
+
+#### EN
+
+Title: Testing & Quality Engineering
+Slug: testing-quality-engineering-evidence-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís applies testing and quality gates as mechanisms for reducing risk and producing evidence about software behavior. The quality strategy is defined according to the nature of the change and may combine automated testing, static analysis, structural validation, configuration inspection, integration testing, and human review.
+
+In Site Portfolio, pytest was used to validate the behavior of modules such as the homepage, contact, administration, Knowledge Base, IA Jujuju, and retention policies. Ruff, mypy, and Django checks complemented functional tests with quality analysis, typing verification, and application consistency checks. Migrations, staticfiles, and relevant configuration were also subjected to specific gates during product evolution and production preparation.
+
+Validation was not limited to the backend. Responsive refinement used geometry measurements, screenshots, comparison against approved references, and multiple viewports. Automated evidence was deliberately separated from Human Review: geometric correspondence or successful test execution does not replace human judgment when a requirement concerns visual quality or a product decision.
+
+The process also records limitations in evidence. When a test cannot be executed because of an environmental restriction, the result must remain blocked or unverified rather than being interpreted as approval. Likewise, a partial verification is not used to elevate the maturity of an entire capability.
+
+This discipline allows tests to be treated not merely as a mechanism for finding defects, but as part of the traceability between requirement, implementation, evidence, and acceptance.
+
+#### Evidence / Maturity Notes
+
+A engenharia de testes e qualidade do Site Portfólio possui evidência de suites automatizadas, análise estática, quality gates, validações visuais e geométricas e verificações realizadas no ciclo de produção. A abrangência de cada claim deve permanecer limitada aos gates efetivamente executados e aprovados.
+
+Testing and quality engineering in Site Portfolio is supported by automated suites, static analysis, quality gates, visual and geometric validation, and checks performed during the production cycle. The scope of each claim must remain limited to the gates actually executed and approved.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-ENG-003 — Engenharia de RAG e Recuperação Vetorial
+
+#### Metadata
+
+Concept ID: ENG-003
+Category: ENGINEERING
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Engenharia de RAG e Recuperação Vetorial
+Slug: rag-vector-retrieval-engineering-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís demonstra engenharia de Retrieval-Augmented Generation (RAG) no Site Portfólio por meio da implementação de uma arquitetura que conecta conhecimento aprovado, embeddings, recuperação vetorial, contexto controlado e geração de respostas pela IA Jujuju.
+
+A solução reutiliza PostgreSQL com pgvector como infraestrutura de armazenamento relacional e vetorial, evitando a introdução de um banco vetorial dedicado sem necessidade comprovada. Para a escala atual, a recuperação utiliza busca exata por similaridade de cosseno, sem índice ANN, reduzindo complexidade operacional enquanto mantém a arquitetura compatível com evolução futura caso volume e desempenho passem a justificar outra estratégia.
+
+Documentos da Knowledge Base são normalizados e divididos deterministicamente em chunks semanticamente manejáveis. Embeddings são gerados por provider isolado e armazenados como vetores de dimensão controlada. A indexação valida a dimensionalidade antes da persistência e utiliza substituição atômica dos chunks, preservando um índice anteriormente válido quando uma reindexação falha.
+
+A recuperação exige idioma e pode aplicar categoria como filtro tipado, combinando controle de metadados com similaridade vetorial. Os chunks recuperados são utilizados como contexto controlado para o modelo de linguagem, e evidências de origem podem ser associadas à conversa e às mensagens para preservar rastreabilidade entre conhecimento recuperado e resposta produzida.
+
+A arquitetura também separa retrieval e geração por abstrações de provider, permitindo testes determinísticos com fakes sem depender de chamadas externas ao executar a suíte automatizada. Chamadas reais aos providers são reservadas para validações operacionais controladas.
+
+Em produção, o pipeline foi validado com geração real de embeddings, armazenamento vetorial, recuperação semântica e execução end-to-end da IA Jujuju, incluindo persistência da conversa e da evidência associada.
+
+#### EN
+
+Title: RAG & Vector Retrieval Engineering
+Slug: rag-vector-retrieval-engineering-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís demonstrates Retrieval-Augmented Generation (RAG) engineering in Site Portfolio through the implementation of an architecture connecting approved knowledge, embeddings, vector retrieval, controlled context, and response generation by IA Jujuju.
+
+The solution reuses PostgreSQL with pgvector as relational and vector-storage infrastructure, avoiding the introduction of a dedicated vector database without demonstrated need. At the current scale, retrieval uses exact cosine-similarity search without an ANN index, reducing operational complexity while preserving an architecture capable of evolving if corpus size and performance requirements later justify a different strategy.
+
+Knowledge Base documents are normalized and deterministically divided into semantically manageable chunks. Embeddings are generated through an isolated provider and stored as vectors with controlled dimensionality. Indexing validates dimensionality before persistence and uses atomic chunk replacement, preserving a previously valid index when reindexing fails.
+
+Retrieval requires a language and may apply category as a typed filter, combining metadata control with vector similarity. Retrieved chunks are used as controlled context for the language model, and source evidence can be associated with conversations and messages to preserve traceability between retrieved knowledge and the generated response.
+
+The architecture also separates retrieval and generation through provider abstractions, enabling deterministic tests with fakes without depending on external calls during the automated test suite. Real provider calls are reserved for controlled operational validation.
+
+In production, the pipeline was validated with real embedding generation, vector storage, semantic retrieval, and end-to-end execution of IA Jujuju, including persistence of the conversation and its associated evidence.
+
+#### Evidence / Maturity Notes
+
+Knowledge Base, embeddings, pgvector, recuperação semântica, integração RAG e geração da IA Jujuju possuem evidência de implementação, validação e execução em produção no Site Portfólio. Isso não autoriza atribuir o mesmo maturity level a capacidades de IA ou Machine Learning apenas planejadas em outros projetos.
+
+Knowledge Base, embeddings, pgvector, semantic retrieval, RAG integration, and IA Jujuju generation have implementation, validation, and production-execution evidence in Site Portfolio. This does not authorize assigning the same maturity level to AI or Machine Learning capabilities that are only planned in other projects.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-ENG-004 — Engenharia de Segurança
+
+#### Metadata
+
+Concept ID: ENG-004
+Category: ENGINEERING
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Engenharia de Segurança
+Slug: security-engineering-evidence-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís aplica segurança como responsabilidade transversal da engenharia, abrangendo configuração da aplicação, controle de acesso, proteção de dados e segredos, integrações externas, comportamento em produção e resposta a incidentes.
+
+No Site Portfólio, a área administrativa utiliza os mecanismos nativos de autenticação, autorização, usuários, grupos e permissões do Django, evitando a criação de um sistema de identidade próprio sem necessidade. O acesso administrativo é separado da experiência pública, enquanto os dados e operações disponíveis no Admin respeitam as responsabilidades definidas para cada módulo.
+
+Configurações sensíveis são fornecidas por ambiente e não devem ser incorporadas ao código-fonte. O runtime de produção utiliza configurações específicas para HTTPS e cookies seguros, além de isolamento entre aplicação pública, Gunicorn, Nginx e PostgreSQL. Decisões de hardening são aplicadas proporcionalmente ao estado operacional e às condições verificadas do ambiente.
+
+O projeto também produziu evidência prática de resposta a exposição acidental de credenciais durante atividades operacionais. Segredos comprometidos foram tratados como comprometidos, rotacionados e invalidados quando aplicável, permissões do arquivo de ambiente foram verificadas e artefatos temporários contendo valores sensíveis foram removidos. A validação posterior foi realizada sem reutilizar os valores expostos como evidência pública.
+
+Na IA Jujuju, controles adicionais reduzem risco de abuso e de utilização inadequada do contexto recuperado. A arquitetura procura limitar respostas ao conhecimento autorizado, preservar rastreabilidade das fontes e separar instruções do sistema do conteúdo recuperado, reduzindo a confiança indevida em conteúdo que possa tentar alterar o comportamento do assistente.
+
+A experiência demonstra segurança como processo contínuo de prevenção, verificação e correção, e não como atributo presumido apenas pela escolha de um framework ou infraestrutura.
+
+#### EN
+
+Title: Security Engineering
+Slug: security-engineering-evidence-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís applies security as a cross-cutting engineering responsibility encompassing application configuration, access control, protection of data and secrets, external integrations, production behavior, and incident response.
+
+In Site Portfolio, the administrative area uses Django's native authentication, authorization, user, group, and permission mechanisms, avoiding the creation of a custom identity system without demonstrated need. Administrative access is separated from the public experience, while data and operations exposed through the Admin respect the responsibilities defined for each module.
+
+Sensitive configuration is provided through the environment and must not be incorporated into source code. The production runtime uses specific configuration for HTTPS and secure cookies, together with separation among the public application, Gunicorn, Nginx, and PostgreSQL. Hardening decisions are applied proportionally to the operational state and verified conditions of the environment.
+
+The project also produced practical evidence of response to accidental credential exposure during operational activities. Compromised secrets were treated as compromised, rotated and invalidated where applicable, environment-file permissions were verified, and temporary artifacts containing sensitive values were removed. Subsequent validation was performed without reusing the exposed values as public evidence.
+
+Within IA Jujuju, additional controls reduce the risk of abuse and inappropriate use of retrieved context. The architecture seeks to constrain responses to authorized knowledge, preserve source traceability, and separate system instructions from retrieved content, reducing undue trust in content that may attempt to alter assistant behavior.
+
+This experience demonstrates security as an ongoing process of prevention, verification, and correction rather than an attribute presumed solely from the choice of framework or infrastructure.
+
+#### Evidence / Maturity Notes
+
+O Site Portfólio possui evidência implementada e operacional para controles específicos de autenticação, autorização, configuração segura, proteção de segredos e resposta a incidentes. Segurança deve ser afirmada controle por controle; essa evidência não constitui alegação de segurança absoluta, ausência de vulnerabilidades ou certificação formal de segurança.
+
+Site Portfolio has implemented and operational evidence for specific authentication, authorization, secure-configuration, secret-protection, and incident-response controls. Security must be asserted control by control; this evidence does not constitute a claim of absolute security, absence of vulnerabilities, or formal security certification.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+---
+
+### KB-ENG-005 — Engenharia de Deployment e Produção
+
+#### Metadata
+
+Concept ID: ENG-005
+Category: ENGINEERING
+Editorial Version: v1.0
+Persistence Status: NOT STARTED
+Indexing Status: NOT STARTED
+Retrieval Validation: NOT STARTED
+Grounded Answer Validation: NOT STARTED
+
+#### PT-BR
+
+Title: Engenharia de Deployment e Produção
+Slug: deployment-production-engineering-evidence-pt-br
+Language: pt-br
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís demonstra engenharia de deployment e produção por meio da transformação de uma aplicação validada em um serviço operável, considerando runtime, banco de dados, proxy reverso, arquivos estáticos, configuração, recuperação, observabilidade operacional e validação pós-implantação.
+
+No Site Portfólio, a arquitetura de produção utiliza Nginx como ponto de entrada HTTP/HTTPS, Gunicorn como servidor WSGI, Django como aplicação e PostgreSQL como banco de dados. O serviço da aplicação é administrado pelo systemd, executado sem exposição direta do Gunicorn à Internet e configurado por variáveis de ambiente externas ao código-fonte.
+
+O processo de implantação inclui preparação e verificação do ambiente, sincronização do código aprovado, dependências bloqueadas, migrations, coleta de arquivos estáticos, reinicialização controlada dos serviços e smoke tests. Antes de mudanças relevantes no ambiente, foram produzidos pontos de recuperação contendo os artefatos necessários para suportar rollback e restauração.
+
+A introdução do RAG exigiu também validação das dependências de produção associadas ao PostgreSQL e pgvector. Após a implantação, foram executadas verificações reais do pipeline de conhecimento: criação e indexação de documento, geração de embedding pelo provider, recuperação vetorial e uma pergunta end-to-end à IA Jujuju, com persistência da conversa e evidência correspondente.
+
+A operação também revelou problemas que exigiram correções posteriores, incluindo ajustes de interface, configuração pública e comportamento de arquivos estáticos. Esses casos são tratados como parte da engenharia de produção: a existência de deployment não encerra automaticamente a validação, e problemas observados no ambiente real retornam ao ciclo de diagnóstico, correção, teste e nova implantação.
+
+Dessa forma, produção é tratada como um estado verificável do sistema e não apenas como a execução de um comando de deploy.
+
+#### EN
+
+Title: Deployment & Production Engineering
+Slug: deployment-production-engineering-evidence-en
+Language: en
+Review Status: APPROVED
+
+##### Approved Content
+
+Luís demonstrates deployment and production engineering by transforming a validated application into an operable service while considering runtime, database, reverse proxy, static assets, configuration, recovery, operational observability, and post-deployment validation.
+
+In Site Portfolio, the production architecture uses Nginx as the HTTP/HTTPS entry point, Gunicorn as the WSGI server, Django as the application, and PostgreSQL as the database. The application service is managed by systemd, runs without exposing Gunicorn directly to the Internet, and is configured through environment variables external to source code.
+
+The deployment process includes environment preparation and verification, synchronization of approved code, locked dependencies, migrations, static asset collection, controlled service restarts, and smoke tests. Before relevant environment changes, recovery points were produced containing the artifacts required to support rollback and restoration.
+
+Introducing RAG also required validation of production dependencies associated with PostgreSQL and pgvector. After deployment, real checks of the knowledge pipeline were executed: document creation and indexing, embedding generation through the provider, vector retrieval, and an end-to-end question to IA Jujuju, with persistence of the conversation and corresponding evidence.
+
+Operation also revealed issues requiring subsequent corrections, including interface adjustments, public configuration, and static-asset behavior. These cases are treated as part of production engineering: the existence of a deployment does not automatically close validation, and issues observed in the real environment return to the cycle of diagnosis, correction, testing, and redeployment.
+
+Production is therefore treated as a verifiable state of the system rather than merely the execution of a deployment command.
+
+#### Evidence / Maturity Notes
+
+O Site Portfólio possui evidência real de implantação e operação em produção para componentes centrais, incluindo backend, PostgreSQL e o pipeline RAG da IA Jujuju. Claims específicos comprovados podem ser classificados como production-demonstrated. Entretanto, o status administrativo global `Release 2 Production Deployment: CLOSED` não deve ser afirmado enquanto os gates finais definidos pelo projeto permanecerem abertos.
+
+Site Portfolio has real deployment and production-operation evidence for core components, including the backend, PostgreSQL, and the IA Jujuju RAG pipeline. Specifically demonstrated claims may be classified as production-demonstrated. However, the overall administrative status `Release 2 Production Deployment: CLOSED` must not be asserted while the project's defined final gates remain open.
+
+#### Approval
+
+Human Review: APPROVED
+Editorial Baseline: APPROVED
+
+## 7. Wave 1 Traceability Matrix
 
 | ID | Category | PT-BR | EN | CER-01 | Maturity | Equivalence | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1013,7 +1609,7 @@ Editorial Baseline: APPROVED
 | KB-SKL-003 | SKILL | Approved | Approved | PASS | PASS | PASS | APPROVED |
 | KB-SKL-004 | SKILL | Approved | Approved | PASS | PASS | PASS | APPROVED |
 
-## 7. Retrieval Acceptance Intent
+## 8. Retrieval Acceptance Intent
 
 The approved corpus must later support questions concerning:
 
@@ -1041,7 +1637,7 @@ Negative-boundary validation intent includes ensuring that the assistant does no
 
 These are validation intentions only. Retrieval tests have not yet been executed against this baseline.
 
-## 8. Approval and Change Control
+## 9. Approval and Change Control
 
 - Wave 1 editorial content is Human Approved.
 - The baseline is immutable except through an explicit reviewed revision.
