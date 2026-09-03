@@ -2092,7 +2092,7 @@ Seu valor no portfólio também está na possibilidade de observar a evolução 
 
 No Site Portfólio foi executado um workflow de engenharia assistida por IA sob governança humana. Diferentes ferramentas participaram de atividades de análise, especificação, implementação, refinamento e integração com design, enquanto requisitos, decisões relevantes, auditoria, revisão e aceite permaneceram controlados pelo processo de engenharia e pelo Product Owner.
 
-A evidência documental desse workflow ainda possui uma lacuna específica: a atribuição nominal completa dos papéis das diferentes ferramentas precisa ser consolidada documentalmente antes que esse conceito adquira autoridade documental integral para o RAG.
+A consolidação documental retrospectiva desse workflow foi concluída e sua autoridade especializada aprovada pode sustentar esse tema no RAG dentro dos limites de evidência já estabelecidos.
 
 **Todos os projetos e tecnologias apresentados possuem o mesmo nível de experiência comprovada?**
 
@@ -2171,7 +2171,7 @@ Their value within the portfolio also lies in showing the evolution toward later
 
 An AI-assisted engineering workflow under human governance was executed in Site Portfolio. Different tools participated in analysis, specification, implementation, refinement, and design-integration activities, while requirements, relevant decisions, auditing, review, and acceptance remained controlled by the engineering process and the Product Owner.
 
-The documentary evidence for this workflow still has a specific gap: complete nominal attribution of the roles of the different tools must be consolidated in project documentation before this concept acquires full documentary authority for RAG.
+The retrospective documentary consolidation of this workflow is complete, and its approved specialized authority may support this topic in RAG within the already established evidence boundaries.
 
 **Do all projects and technologies presented have the same demonstrated experience level?**
 
