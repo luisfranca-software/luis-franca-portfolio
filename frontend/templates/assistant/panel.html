@@ -35,12 +35,17 @@
     hx-target="#assistant-messages"
     hx-swap="beforeend"
     hx-indicator="#assistant-loading"
+    hx-sync="this:drop"
+    hx-disabled-elt="find button[type='submit']"
     data-trace-id="IAA-03"
   >
     {% csrf_token %}
-    {% if conversation_id %}
-      <input type="hidden" name="conversation_id" value="{{ conversation_id }}">
-    {% endif %}
+    <input
+      id="assistant-conversation-id"
+      type="hidden"
+      name="conversation_id"
+      value="{{ conversation_id|default:'' }}"
+    >
     <label for="assistant-question" class="visually-hidden">{% trans "Your question" %}</label>
     <input
       id="assistant-question"

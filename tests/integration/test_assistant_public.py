@@ -7,8 +7,9 @@ from __future__ import annotations
 
 import pytest
 from django.test import Client
+from django.urls import reverse
 
-from apps.assistant.models import Conversation
+from apps.assistant.models import Conversation, ConversationMessage, MessageRole
 from apps.assistant.services.orchestration import AssistantService
 from apps.knowledge.integrations.fake_embedding_provider import FakeEmbeddingProvider
 from apps.knowledge.models import Category, KnowledgeDocument, Language
@@ -103,6 +104,34 @@ class TestAssistantPanelEndpoint:
         assert "Type your question..." not in content
         assert ">Send<" not in content
 
+    def test_panel_has_htmx_submit_guards_and_stable_empty_conversation_field(self) -> None:
+        response = Client().get("/assistant/")
+        assert response.status_code == 200
+        content = response.content.decode()
+
+        assert 'hx-sync="this:drop"' in content
+        assert "hx-disabled-elt=\"find button[type='submit']\"" in content
+        assert content.count('id="assistant-conversation-id"') == 1
+        assert 'name="conversation_id"' in content
+        assert 'value=""' in content
+
+    def test_panel_with_existing_conversation_populates_stable_conversation_field(
+        self, client: Client
+    ) -> None:
+        session = client.session
+        session.create()
+        conversation = Conversation.objects.create(
+            session_key=session.session_key,
+            language="en",
+        )
+
+        response = client.get(reverse("assistant:panel_conversation", args=[conversation.pk]))
+        assert response.status_code == 200
+        content = response.content.decode()
+
+        assert content.count('id="assistant-conversation-id"') == 1
+        assert f'value="{conversation.pk}"' in content
+
 
 @pytest.mark.django_db
 class TestAskEndpoint:
@@ -176,6 +205,73 @@ class TestAskEndpoint:
         )
         assert response_two.status_code == 200
         assert conversation.messages.count() == 4
+
+    def test_successful_htmx_response_returns_single_exchange_and_oob_conversation_update(
+        self,
+        client: Client,
+        indexed_document: KnowledgeDocument,
+    ) -> None:
+        response = client.post(
+            "/assistant/ask/",
+            {"question": "python backend"},
+            HTTP_HX_REQUEST="true",
+        )
+
+        assert response.status_code == 200
+        content = response.content.decode()
+        conversation = Conversation.objects.get(session_key=client.session.session_key)
+
+        assert content.count('id="assistant-conversation-id"') == 1
+        assert 'hx-swap-oob="true"' in content
+        assert f'value="{conversation.pk}"' in content
+        assert content.count("assistant-message--user") == 1
+        assert content.count("assistant-message--assistant") == 1
+
+    def test_subsequent_post_reuses_returned_conversation_id_without_creating_new_conversation(
+        self,
+        client: Client,
+        indexed_document: KnowledgeDocument,
+    ) -> None:
+        first_response = client.post(
+            "/assistant/ask/",
+            {"question": "First"},
+            HTTP_HX_REQUEST="true",
+        )
+        assert first_response.status_code == 200
+
+        conversation = Conversation.objects.get(session_key=client.session.session_key)
+        second_response = client.post(
+            "/assistant/ask/",
+            {"question": "Second", "conversation_id": str(conversation.pk)},
+        )
+
+        assert second_response.status_code == 200
+        assert Conversation.objects.count() == 1
+        conversation.refresh_from_db()
+        messages = list(conversation.messages.order_by("sequence"))
+        assert [message.role for message in messages] == [
+            MessageRole.USER,
+            MessageRole.ASSISTANT,
+            MessageRole.USER,
+            MessageRole.ASSISTANT,
+        ]
+        assert messages[0].content == "First"
+        assert messages[2].content == "Second"
+
+    def test_successful_turn_persists_exactly_one_user_and_one_assistant_message(
+        self,
+        client: Client,
+        indexed_document: KnowledgeDocument,
+    ) -> None:
+        response = client.post("/assistant/ask/", {"question": "python backend"})
+        assert response.status_code == 200
+
+        conversation = Conversation.objects.get(session_key=client.session.session_key)
+        messages = ConversationMessage.objects.filter(conversation=conversation)
+
+        assert messages.count() == 2
+        assert messages.filter(role=MessageRole.USER).count() == 1
+        assert messages.filter(role=MessageRole.ASSISTANT).count() == 1
 
     def test_cross_session_rejection(
         self,
