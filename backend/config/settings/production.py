@@ -7,6 +7,12 @@ from .base import *  # noqa: F401, F403
 DEBUG = False
 ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS")
 
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+    }
+}
+
 # Transport security per ARCH-001 (17.5): HTTPS is mandatory in production.
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
