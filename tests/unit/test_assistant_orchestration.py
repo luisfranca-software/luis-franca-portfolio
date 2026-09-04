@@ -12,7 +12,11 @@ from django.test import RequestFactory
 
 from apps.assistant.integrations.fake_provider import FakeLLMProvider
 from apps.assistant.models import Conversation, ConversationStatus, MessageRole
-from apps.assistant.services.llm_provider import LLMNonRetryableError, LLMTransientError
+from apps.assistant.services.llm_provider import (
+    GenerationResult,
+    LLMNonRetryableError,
+    LLMTransientError,
+)
 from apps.assistant.services.orchestration import (
     AbuseError,
     AbuseProtection,
@@ -204,6 +208,96 @@ class TestAssistantServiceUnit:
         assert result.success is False
         conversation = Conversation.objects.get(pk=result.conversation_id)
         assert conversation.status == ConversationStatus.ACTIVE
+
+    def test_generation_input_receives_bounded_authorized_history(
+        self,
+        request_with_session,
+    ) -> None:
+        captured_questions: list[str] = []
+
+        class CapturingProvider:
+            def __init__(self) -> None:
+                self.call_count = 0
+
+            def generate(self, input_data):
+                captured_questions.append(input_data.user_question)
+                self.call_count += 1
+                return GenerationResult(
+                    content=f"Assistant reply {self.call_count}",
+                    model="capturing",
+                )
+
+        retrieval_service = MagicMock()
+        retrieval_service.retrieve.return_value = []
+        service = AssistantService(
+            llm_provider=CapturingProvider(),
+            retrieval_service=retrieval_service,
+            history_messages=4,
+        )
+
+        first = service.ask(request_with_session, "Turn one", "en")
+        service.ask(request_with_session, "Turn two", "en", conversation_id=first.conversation_id)
+        service.ask(
+            request_with_session,
+            "Turn three",
+            "en",
+            conversation_id=first.conversation_id,
+        )
+        result = service.ask(
+            request_with_session,
+            "Current question",
+            "en",
+            conversation_id=first.conversation_id,
+        )
+
+        assert result.success is True
+        conversation = Conversation.objects.get(pk=first.conversation_id)
+        history = service._recent_history(conversation, before_sequence=6)
+        assert history == [
+            ("user", "Turn two"),
+            ("assistant", "Assistant reply 2"),
+            ("user", "Turn three"),
+            ("assistant", "Assistant reply 3"),
+        ]
+
+        prompt = captured_questions[-1]
+        assert "Visitor: Turn one" not in prompt
+        assert "Assistant: Assistant reply 1" not in prompt
+        assert "Visitor: Turn two" in prompt
+        assert "Assistant: Assistant reply 2" in prompt
+        assert "Visitor: Turn three" in prompt
+        assert "Assistant: Assistant reply 3" in prompt
+        assert prompt.index("Visitor: Turn two") < prompt.index("Assistant: Assistant reply 2")
+        assert prompt.index("Assistant: Assistant reply 2") < prompt.index("Visitor: Turn three")
+        assert prompt.index("Visitor: Turn three") < prompt.index("Assistant: Assistant reply 3")
+        assert "Visitor question: Current question" in prompt
+
+    def test_retrieval_query_is_contextualized_with_recent_history(
+        self,
+        request_with_session,
+    ) -> None:
+        retrieval_service = MagicMock()
+        retrieval_service.retrieve.return_value = []
+        service = AssistantService(
+            llm_provider=FakeLLMProvider(),
+            retrieval_service=retrieval_service,
+        )
+
+        first = service.ask(request_with_session, "Does Luís have RAG experience?", "en")
+        assert first.success is True
+
+        second = service.ask(
+            request_with_session,
+            "Which project?",
+            "en",
+            conversation_id=first.conversation_id,
+        )
+
+        assert second.success is True
+        retrieval_query = retrieval_service.retrieve.call_args_list[-1].args[0]
+        assert "Does Luís have RAG experience?" in retrieval_query
+        assert "Test answer from IA Jujuju" in retrieval_query
+        assert "Which project?" in retrieval_query
 
 
 @pytest.mark.django_db

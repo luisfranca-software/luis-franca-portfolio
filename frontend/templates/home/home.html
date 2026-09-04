@@ -11,6 +11,7 @@
 
 {% block extra_js %}
 <script src="{% static 'js/htmx.min.js' %}" defer></script>
+<script src="{% static 'js/assistant.js' %}" defer></script>
 {% endblock %}
 
 {% block main_class %} site-main--homepage{% endblock %}
@@ -167,6 +168,8 @@
   </section>
 </div>
 
+</div>
+
 <button
   class="home-ai-rag"
   type="button"
@@ -182,5 +185,4 @@
   <i></i>
 </button>
 <div id="assistant-container" class="assistant-container" aria-live="polite"></div>
-</div>
 {% endblock %}

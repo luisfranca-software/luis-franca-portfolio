@@ -21,10 +21,10 @@
     value="{{ conversation_id|default:'' }}"
     hx-swap-oob="true"
   >
-  <div class="assistant-message assistant-message--user" data-role="user" data-trace-id="IAA-USER">
+  <div class="assistant-message assistant-message--user assistant-message--enter" data-role="user" data-trace-id="IAA-USER">
     <div class="assistant-message__content">{{ question|linebreaksbr }}</div>
   </div>
-  <div class="assistant-message assistant-message--assistant" data-role="assistant" data-trace-id="IAA-ASSISTANT">
-    <div class="assistant-message__content">{{ result.assistant_message.content|linebreaksbr }}</div>
+  <div class="assistant-message assistant-message--assistant assistant-message--enter" data-role="assistant" data-trace-id="IAA-ASSISTANT">
+    <div class="assistant-message__content" data-assistant-reveal="pending">{{ result.assistant_message.content|linebreaksbr }}</div>
   </div>
 {% endif %}

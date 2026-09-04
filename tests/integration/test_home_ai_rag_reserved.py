@@ -130,3 +130,28 @@ def test_assistant_container_escapes_homepage_child_layering_rule() -> None:
     panel_rule = css.split(".assistant-container {", 1)[1].split("}", 1)[0]
     assert "position: fixed" in panel_rule
     assert "z-index: 40" in panel_rule
+
+
+def test_mobile_assistant_overlay_contract_is_represented_in_markup_and_css() -> None:
+    content = _home_content()
+    css = HOME_CSS.read_text(encoding="utf-8")
+
+    assert content.index("</div>\n\n<button") < content.index('class="home-ai-rag"')
+    assert "body.assistant-open .home-ai-rag" in css
+    panel_rule = css.split(".assistant-container {", 1)[1].split("}", 1)[0]
+    assert "z-index: 40" in panel_rule
+    assert "position: fixed" in panel_rule
+    assert "top: max(0.75rem, env(safe-area-inset-top, 0px))" in css
+    assert "100dvh" in css
+
+
+def test_reduced_motion_and_assistant_motion_contracts_exist() -> None:
+    css = HOME_CSS.read_text(encoding="utf-8")
+    script = (REPO_ROOT / "frontend" / "static" / "js" / "assistant.js").read_text(encoding="utf-8")
+
+    assert ".assistant-message--enter" in css
+    assert "@keyframes assistant-message-enter" in css
+    assert ".assistant-message__word" in css
+    assert "@media (prefers-reduced-motion: reduce)" in css
+    assert 'matchMedia("(prefers-reduced-motion: reduce)")' in script
+    assert "htmx:afterSwap" in script

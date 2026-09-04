@@ -7,7 +7,7 @@
       class="assistant-panel__close"
       aria-label="{% trans 'Close assistant' %}"
       data-trace-id="IAA-01"
-      onclick="this.closest('.assistant-panel').remove()"
+      onclick="if (window.IAJujuju && window.IAJujuju.closePanel) { window.IAJujuju.closePanel(this); } else { const panel = this.closest('.assistant-panel'); if (panel) { panel.remove(); } }"
     >×</button>
   </div>
 

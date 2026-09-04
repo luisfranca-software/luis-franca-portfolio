@@ -258,6 +258,19 @@ class TestAskEndpoint:
         assert messages[0].content == "First"
         assert messages[2].content == "Second"
 
+    def test_non_htmx_fallback_remains_valid(
+        self,
+        client: Client,
+        indexed_document: KnowledgeDocument,
+    ) -> None:
+        response = client.post("/assistant/ask/", {"question": "python backend"})
+
+        assert response.status_code == 200
+        content = response.content.decode()
+        assert '<div class="assistant-page">' in content
+        assert 'id="assistant-question"' in content
+        assert "assistant-result" in content
+
     def test_successful_turn_persists_exactly_one_user_and_one_assistant_message(
         self,
         client: Client,

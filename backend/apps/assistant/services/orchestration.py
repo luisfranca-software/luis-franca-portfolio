@@ -160,6 +160,7 @@ class AssistantService:
 
     _DEFAULT_TOP_K = 5
     _DEFAULT_CONTEXT_CHARS = 4000
+    _DEFAULT_HISTORY_MESSAGES = 4
 
     def __init__(
         self,
@@ -171,6 +172,7 @@ class AssistantService:
         question_validator: QuestionValidator | None = None,
         abuse_protection: AbuseProtection | None = None,
         top_k: int | None = None,
+        history_messages: int | None = None,
     ) -> None:
         self.llm_provider = llm_provider
         self.retrieval_service = retrieval_service
@@ -185,6 +187,19 @@ class AssistantService:
             if top_k is not None
             else int(getattr(settings, "ASSISTANT_TOP_K", self._DEFAULT_TOP_K))
         )
+        self.history_messages = (
+            history_messages
+            if history_messages is not None
+            else int(
+                getattr(
+                    settings,
+                    "ASSISTANT_HISTORY_MESSAGES",
+                    self._DEFAULT_HISTORY_MESSAGES,
+                )
+            )
+        )
+        if self.history_messages < 0:
+            raise ValueError("history_messages must be non-negative")
 
     def ask(
         self,
@@ -238,8 +253,18 @@ class AssistantService:
                 conversation_id=None,
             )
 
+        conversation_history = self._recent_history(
+            conversation,
+            before_sequence=user_message.sequence,
+        )
+
         try:
-            results = self._retrieve(normalized_question, language)
+            retrieval_query = self.prompt_builder.build_retrieval_query(
+                language,
+                normalized_question,
+                conversation_history=conversation_history,
+            )
+            results = self._retrieve(retrieval_query, language)
         except RetrievalError as exc:
             self._mark_failed_if_non_recoverable(conversation, exc)
             return AskResult(
@@ -255,6 +280,7 @@ class AssistantService:
         user_prompt = self.prompt_builder.build_user_prompt(
             language,
             normalized_question,
+            conversation_history=conversation_history,
             has_evidence=controlled_context.has_evidence,
         )
 
@@ -363,6 +389,24 @@ class AssistantService:
         except Exception as exc:
             logger.warning("IA Jujuju retrieval failure: %s", exc.__class__.__name__)
             raise RetrievalError("Unable to retrieve portfolio knowledge.") from exc
+
+    def _recent_history(
+        self,
+        conversation: Conversation,
+        *,
+        before_sequence: int,
+    ) -> list[tuple[str, str]]:
+        """Return bounded prior messages from the authorized conversation only."""
+        if self.history_messages <= 0:
+            return []
+
+        messages = list(
+            conversation.messages.filter(sequence__lt=before_sequence).order_by("-sequence")[
+                : self.history_messages
+            ]
+        )
+        messages.reverse()
+        return [(message.role, message.content) for message in messages]
 
     def _build_retrieval_service(self) -> RetrievalService:
         """Return the production retrieval service using the configured provider."""

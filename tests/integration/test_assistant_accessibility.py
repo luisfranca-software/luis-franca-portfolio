@@ -81,6 +81,13 @@ def test_panel_has_live_region(indexed_document: KnowledgeDocument) -> None:
 
 
 @pytest.mark.django_db
+def test_homepage_loads_assistant_progressive_enhancement_asset() -> None:
+    content = Client().get("/").content.decode()
+
+    assert "js/assistant.js" in content
+
+
+@pytest.mark.django_db
 def test_success_response_has_readable_roles(indexed_document: KnowledgeDocument) -> None:
     client = Client()
     response = client.post("/assistant/ask/", {"question": "python backend"})

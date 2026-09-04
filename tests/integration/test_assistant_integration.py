@@ -20,12 +20,12 @@ from apps.assistant.models import (
     MessageRole,
     SourceEvidence,
 )
-from apps.assistant.services.llm_provider import LLMTransientError
+from apps.assistant.services.llm_provider import GenerationResult, LLMTransientError
 from apps.assistant.services.orchestration import AssistantService
 from apps.knowledge.integrations.fake_embedding_provider import FakeEmbeddingProvider
-from apps.knowledge.models import Category, KnowledgeDocument, Language
+from apps.knowledge.models import Category, KnowledgeChunk, KnowledgeDocument, Language
 from apps.knowledge.services.indexing import IndexingService
-from apps.knowledge.services.retrieval import RetrievalService
+from apps.knowledge.services.retrieval import RetrievalResult, RetrievalService
 
 
 @pytest.fixture
@@ -139,6 +139,23 @@ class TestConversationPersistence:
         assistant = conversation.messages.get(role=MessageRole.ASSISTANT)
         assert "Resposta de teste" in assistant.content
 
+    def test_follow_up_turn_uses_same_authorized_conversation(
+        self, service: AssistantService
+    ) -> None:
+        request = _request()
+        first = service.ask(request, "Luís tem experiência com RAG?", "pt-br")
+
+        second = service.ask(
+            request,
+            "Em qual projeto?",
+            "pt-br",
+            conversation_id=first.conversation_id,
+        )
+
+        assert second.success is True
+        conversation = Conversation.objects.get(pk=first.conversation_id)
+        assert conversation.messages.count() == 4
+
 
 @pytest.mark.django_db
 class TestRAGIntegration:
@@ -202,6 +219,126 @@ class TestRAGIntegration:
         assert result.success is True
         evidence = SourceEvidence.objects.filter(message=result.assistant_message)
         assert all(item.document_language == "pt-br" for item in evidence)
+
+    def test_single_assistant_message_can_hold_multiple_evidence_rows(self) -> None:
+        request = _request()
+        document_one = KnowledgeDocument.objects.create(
+            title="Project A",
+            slug="project-a",
+            language=Language.EN,
+            category=Category.PROJECT,
+            content="Luís built a production RAG assistant for Project A.",
+        )
+        document_two = KnowledgeDocument.objects.create(
+            title="Project B",
+            slug="project-b",
+            language=Language.EN,
+            category=Category.PROJECT,
+            content="Project B also used retrieval-augmented generation patterns.",
+        )
+        IndexingService(FakeEmbeddingProvider()).index_document(document_one)
+        IndexingService(FakeEmbeddingProvider()).index_document(document_two)
+        chunk_one = document_one.chunks.order_by("sequence").first()
+        chunk_two = document_two.chunks.order_by("sequence").first()
+        assert chunk_one is not None
+        assert chunk_two is not None
+
+        retrieval_service = MagicMock()
+        retrieval_service.retrieve.return_value = [
+            RetrievalResult(
+                chunk_id=chunk_one.pk,
+                document_id=document_one.pk,
+                document_title=document_one.title,
+                document_slug=document_one.slug,
+                content=chunk_one.content,
+                distance=0.11,
+                language="en",
+                category="PROJECT",
+            ),
+            RetrievalResult(
+                chunk_id=chunk_two.pk,
+                document_id=document_two.pk,
+                document_title=document_two.title,
+                document_slug=document_two.slug,
+                content=chunk_two.content,
+                distance=0.12,
+                language="en",
+                category="PROJECT",
+            ),
+        ]
+        service = AssistantService(
+            llm_provider=FakeLLMProvider(),
+            retrieval_service=retrieval_service,
+        )
+
+        result = service.ask(request, "rag project", "en")
+
+        assert result.success is True
+        assistant_messages = ConversationMessage.objects.filter(
+            conversation_id=result.conversation_id,
+            role=MessageRole.ASSISTANT,
+        )
+        assert assistant_messages.count() == 1
+        evidence = list(
+            SourceEvidence.objects.filter(message=result.assistant_message).order_by("rank")
+        )
+        assert len(evidence) == 2
+        assert {item.document_id for item in evidence} == {document_one.pk, document_two.pk}
+        assert {item.chunk_id for item in evidence} == {chunk_one.pk, chunk_two.pk}
+        assert all(KnowledgeChunk.objects.filter(pk=item.chunk_id).exists() for item in evidence)
+
+
+@pytest.mark.django_db
+class TestConversationalContinuity:
+    def test_generation_receives_bounded_recent_history_only(self) -> None:
+        captured_questions: list[str] = []
+
+        class CapturingProvider:
+            def __init__(self) -> None:
+                self.call_count = 0
+
+            def generate(self, input_data):
+                captured_questions.append(input_data.user_question)
+                self.call_count += 1
+                return GenerationResult(
+                    content=f"Assistant reply {self.call_count}",
+                    model="capturing",
+                )
+
+        request = _request()
+        service = AssistantService(
+            llm_provider=CapturingProvider(),
+            retrieval_service=RetrievalService(FakeEmbeddingProvider()),
+        )
+        first = service.ask(request, "First topic", "en")
+        service.ask(request, "Second topic", "en", conversation_id=first.conversation_id)
+        service.ask(request, "Third topic", "en", conversation_id=first.conversation_id)
+        service.ask(request, "Fourth topic", "en", conversation_id=first.conversation_id)
+        result = service.ask(request, "Current topic", "en", conversation_id=first.conversation_id)
+
+        assert result.success is True
+        conversation = Conversation.objects.get(pk=first.conversation_id)
+        history = service._recent_history(conversation, before_sequence=8)
+        assert history == [
+            ("user", "Third topic"),
+            ("assistant", "Assistant reply 3"),
+            ("user", "Fourth topic"),
+            ("assistant", "Assistant reply 4"),
+        ]
+
+        prompt = captured_questions[-1]
+        assert "Visitor: First topic" not in prompt
+        assert "Assistant: Assistant reply 1" not in prompt
+        assert "Visitor: Second topic" not in prompt
+        assert "Assistant: Assistant reply 2" not in prompt
+        assert "Visitor: Third topic" in prompt
+        assert "Assistant: Assistant reply 3" in prompt
+        assert "Visitor: Fourth topic" in prompt
+        assert "Assistant: Assistant reply 4" in prompt
+        assert prompt.index("Visitor: Third topic") < prompt.index("Assistant: Assistant reply 3")
+        assert prompt.index("Assistant: Assistant reply 3") < prompt.index("Visitor: Fourth topic")
+        assert prompt.index("Visitor: Fourth topic") < prompt.index("Assistant: Assistant reply 4")
+        assert "Visitor question: Current topic" in prompt
 
 
 @pytest.mark.django_db
