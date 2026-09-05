@@ -107,7 +107,35 @@ def test_production_settings_use_manifest_staticfiles_storage() -> None:
     backend = production.STORAGES["staticfiles"]["BACKEND"]
 
     assert backend == "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
-    assert "default" not in production.STORAGES
+    default_backend = production.STORAGES["default"]["BACKEND"]
+    assert default_backend == "django.core.files.storage.FileSystemStorage"
+
+
+def test_production_default_storage_resolves_to_filesystem_storage() -> None:
+    script = """
+import os
+
+os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.production"
+
+import django
+
+django.setup()
+
+from django.core.files.storage import default_storage
+
+print(default_storage.__class__.__module__ + "." + default_storage.__class__.__name__)
+"""
+
+    result = subprocess.run(
+        [str(REPO_ROOT / ".venv" / "bin" / "python"), "-c", script],
+        check=True,
+        capture_output=True,
+        text=True,
+        cwd=BACKEND_DIR,
+        env=_python_env(),
+    )
+
+    assert result.stdout.strip() == "django.core.files.storage.filesystem.FileSystemStorage"
 
 
 def test_home_template_uses_static_storage_without_manual_query_suffix() -> None:
